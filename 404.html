@@ -1,1 +1,35 @@
-404.html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+        (function() {
+            var currentUrl = window.location.href;
+            var targetPrefix = "https://o7planning.github.io/flutter-artist/";
+
+            if (currentUrl.indexOf(targetPrefix) !== -1) {
+                window.location.replace(targetPrefix);
+            } else { 
+                document.write('<h1>404 Not Found</h1><p>The requested page was not found on this server.</p>');
+                document.write('<a href="/">Go to Home</a>');
+            }
+        })();
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <p>Redirecting to FlutterArtist Showcase...</p>
+</body>
+</html>
