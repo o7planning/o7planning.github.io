@@ -4,10 +4,10 @@
     --accent: #00f2ff;
     --accent-dark: #0066ff;
     --bg: #050505;
-    --glass: rgba(255, 255, 255, 0.03);
+    --glass: rgba(255, 255, 255, 0.05);
     --border: rgba(255, 255, 255, 0.1);
     --text-primary: #ffffff;
-    --text-secondary: #888888;
+    --text-secondary: #a1a1aa;
 }
 
 * { box-sizing: border-box; }
@@ -18,191 +18,132 @@ body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg);
     color: var(--text-primary);
-    line-height: 1.6;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* Background Animation */
+/* Fix nền Mesh không đè lên nội dung */
 .mesh {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background:
-        radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.05) 0%, transparent 40%);
-    z-index: -1;
+        radial-gradient(circle at 20% 30%, rgba(0, 242, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.08) 0%, transparent 40%);
+    z-index: 0; /* Đẩy xuống dưới cùng */
 }
 
 .hero {
-    height: 100vh;
+    position: relative;
+    z-index: 10; /* Đảm bảo nội dung luôn ở trên lớp nền */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    max-width: 1100px;
-    padding: 0 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 2rem;
     text-align: center;
 }
 
 .badge {
     background: var(--glass);
     border: 1px solid var(--border);
-    padding: 0.5rem 1.2rem;
+    padding: 0.6rem 1.4rem;
     border-radius: 100px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     letter-spacing: 2px;
     color: var(--accent);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
 }
 
 h1 {
-    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-size: clamp(3.5rem, 10vw, 6rem);
     font-weight: 800;
     margin: 0;
-    line-height: 1;
-    letter-spacing: -2px;
+    line-height: 1.1;
+    letter-spacing: -3px;
+    /* Hiệu ứng đổ bóng để chữ nổi hơn */
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .gradient-text {
-    background: linear-gradient(to bottom, #fff 30%, var(--accent));
+    background: linear-gradient(to bottom, #ffffff, #666);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .description {
-    max-width: 600px;
-    font-size: 1.2rem;
+    max-width: 700px;
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    margin: 2rem 0 3rem;
+    margin: 2rem 0;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    width: 100%;
-    margin-bottom: 4rem;
-}
-
-.card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    padding: 2rem;
-    border-radius: 24px;
-    text-align: left;
-    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: var(--accent);
-    transform: translateY(-10px);
-}
-
-.card h3 {
-    font-size: 1.1rem;
-    margin: 0 0 1rem;
-    color: var(--accent);
-}
-
-.card p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-.btn {
-    background: var(--text-primary);
-    color: var(--bg);
-    padding: 1.2rem 3.5rem;
-    border-radius: 12px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: 0.3s;
-    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    background: var(--accent);
-    box-shadow: 0 0 50px rgba(0, 242, 255, 0.4);
-}
-
-code {
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--accent);
-}
-
-@media (max-width: 768px) {
-    .grid { grid-template-columns: 1fr; }
-    h1 { font-size: 3.5rem; }
-}
-
-
-/* Thêm vào cuối file style.css cũ */
-
+/* Container Video */
 .video-container {
     width: 100%;
-    max-width: 800px;
-    margin: 2rem 0 4rem;
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0, 242, 255, 0.2);
+    max-width: 850px;
+    margin: 3rem 0;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 24px;
+    padding: 8px; /* Tạo viền bao quanh video */
     border: 1px solid var(--border);
+    box-shadow: 0 0 100px rgba(0, 242, 255, 0.15);
 }
 
 .video-container iframe {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 100%;
+    border-radius: 18px;
     display: block;
 }
 
+.btn {
+    background: #fff;
+    color: #000;
+    padding: 1.2rem 4rem;
+    border-radius: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0 10px 40px rgba(255,255,255,0.1);
+}
+
+.btn:hover {
+    background: var(--accent);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 242, 255, 0.4);
+}
+
+/* GIF Showcase */
 .gif-showcase {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
     width: 100%;
-    margin: 4rem 0;
+    margin-top: 5rem;
 }
 
 .gif-box {
     background: var(--glass);
-    border-radius: 16px;
-    overflow: hidden;
     border: 1px solid var(--border);
-    transition: 0.3s;
-}
-
-.gif-box:hover {
-    border-color: var(--accent);
-    transform: scale(1.02);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .gif-box img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
-    display: block;
-    filter: grayscale(30%);
-    transition: 0.3s;
-}
-
-.gif-box:hover img {
-    filter: grayscale(0%);
 }
 
 .gif-label {
-    padding: 10px;
-    font-size: 0.75rem;
+    padding: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-secondary);
-    text-align: center;
-    border-top: 1px solid var(--border);
 }
