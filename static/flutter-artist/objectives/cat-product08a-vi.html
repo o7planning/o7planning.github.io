@@ -1,0 +1,17 @@
+<h3>Mối quan hệ Master-Detail đơn giản</h3>
+<p>
+  Ví dụ này minh họa cách thiết lập liên kết <b>Master-Detail</b> giữa hai block,
+  trong đó dữ liệu con sẽ tự động được lọc dựa trên lựa chọn ở block cha.
+</p>
+
+<ul>
+  <li><b>Đồng bộ tự động:</b> Khi người dùng chọn một <b>Danh mục</b> (Block Cha),
+  <b>Block Sản phẩm</b> (Block Con) sẽ nhận thông báo để tự động làm mới dữ liệu của mình.</li>
+  <li><b>Truy vấn dữ liệu:</b> Block Con sử dụng tham số <code>parentBlockCurrentItem</code>
+  trong hàm <code>performQuery()</code> để chỉ lấy các sản phẩm thuộc về Danh mục đang hoạt động.</li>
+  <li><b>Hiển thị chi tiết:</b> Thông tin chi tiết sản phẩm được trình bày qua
+  <b>BlockItemDetailView</b> đặt trong một Dialog, giúp không gian làm việc chính gọn gàng và tập trung.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ luồng dữ liệu Cha-Con thông qua ngữ cảnh <code>parentBlockCurrentItem</code>.</i></p>
+<p>Vui lòng xem <b>Bài viết liên quan</b> để tìm hiểu kỹ hơn về cách triển khai hàm <code>performQuery</code>.</p>
