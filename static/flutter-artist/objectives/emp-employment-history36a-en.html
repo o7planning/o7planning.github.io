@@ -1,0 +1,21 @@
+<h3>Hierarchical Relationships in FormModel</h3>
+<p>
+  This example demonstrates how to implement <b>Cascading Dependencies</b> within a
+  <b>FormModel</b>, ensuring data integrity during complex data entry tasks like
+  recording employment history.
+</p>
+
+<ul>
+  <li><b>Cascading Selection:</b> Similar to the FilterModel pattern, the <b>Company</b>
+  and <b>Department</b> properties are linked in a parent-child hierarchy. Selecting a
+  company automatically filters the available options for the department field.</li>
+  <li><b>Context-Aware Data Loading:</b> The <code>performLoadMultiOptPropXData</code>
+  method utilizes the <code>parentMultiOptPropValue</code> to fetch relevant departments,
+  eliminating manual state management between interdependent dropdowns.</li>
+  <li><b>Item Detail Extraction:</b> Shows how to use <code>extractMultiOptPropValueFromItemDetail</code>
+  to correctly populate hierarchical fields when editing an existing record, keeping the
+  UI in sync with the backend entity.</li>
+</ul>
+
+<p><i>Technical Focus: Replicating hierarchical cascading logic in FormModel for consistent and validated user inputs.</i></p>
+<p>Check the <code>multiOptPropDefs</code> configuration in <b>Related Documentation</b> to see the property nesting.</p>
