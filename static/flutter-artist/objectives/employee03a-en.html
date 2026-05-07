@@ -1,0 +1,14 @@
+<h3>Cascading Filters in FilterModel</h3>
+<p>
+  This example demonstrates a <b>Parent-Child</b> relationship between filter criteria,
+  ensuring data consistency across multiple selection levels.
+</p>
+
+<ul>
+  <li><b>Cascading Behavior:</b> When a user selects a value for the <b>Company</b> criterion, the <b>Department</b> criterion is automatically notified. It then re-fetches its data source to display only the departments belonging to that specific company.</li>
+  <li><b>Automatic Context Injection:</b> The <b>FilterModel</b> guarantees that <code>parentMultiOptTildeCriterionValue</code> is passed into the <code>performLoadMultiOptTildeCriterionXData()</code> method of the child criterion, removing the need for manual state management.</li>
+  <li><b>Dynamic UI Update:</b> The <b>FilterPanel</b> reactively updates the available options in the Department dropdown as soon as the Company selection changes, providing a seamless user experience.</li>
+</ul>
+
+<p><i>Technical Focus: Mastering hierarchical filter dependencies within a unified FilterModelStructure.</i></p>
+<p>Refer to the <code>performLoadMultiOptTildeCriterionXData</code> logic in <b>Related Documentation</b> for details.</p>
