@@ -1,0 +1,21 @@
+<h3>Hierarchical Filters & Default Value Initialization</h3>
+<p>
+  This example demonstrates how to manage <b>Multi-selection</b> in a parent-child relationship
+  and automatically initialize <b>Default Values</b> for search criteria.
+</p>
+
+<ul>
+  <li><b>Smart Default Selection:</b> When the <b>FilterModel</b> loads, it automatically selects
+  the first available <b>Company</b> and subsequently selects <i>all</i> <b>Departments</b>
+  within that company by default.</li>
+  <li><b>Dynamic Re-initialization:</b> Every time the user changes the Company selection, the
+  system reactivates the <code>specifyDefaultValueForMultiOptTildeCriterion</code> logic for
+  the Child Block, ensuring the Department list is always populated with a valid initial state.</li>
+  <li><b>Multi-Select Hierarchy:</b> Combines a single-selection Parent (Company) with a
+  multi-selection Child (Departments), showcasing how FlutterArtist handles mixed selection
+  modes in a cascading chain.</li>
+</ul>
+
+<p><i>Technical Focus: Mastering the <code>specifyDefaultValue</code> lifecycle to create intuitive,
+zero-click search experiences.</i></p>
+<p>Check the <b>Related Documentation</b> to see the <code>specifyDefaultValue</code> implementation.</p>
