@@ -1,0 +1,21 @@
+<h3>Bộ lọc tùy chỉnh nâng cao & Tích hợp Widget Cây</h3>
+<p>
+  Ví dụ này minh họa cách tích hợp các widget tùy chỉnh phức tạp vào
+  <b>FilterPanel</b> bằng cách sử dụng <code>FormBuilderField</code>, trong khi vẫn
+  duy trì được mối quan hệ lọc cha-con phản xạ.
+</p>
+
+<ul>
+  <li><b>Đầu vào Cây tùy chỉnh:</b> Thay vì sử dụng menu thả xuống tiêu chuẩn, tiêu chí <b>Company</b>
+  được hiển thị dưới dạng <b>CompanyTreeView</b>. Bằng cách bao bọc nó trong <code>FormBuilderField</code>,
+  nó hoạt động như một thành phần nhập liệu chuẩn, thay thế hoàn hảo cho <code>FormBuilderDropdown</code>.</li>
+  <li><b>Khả năng tương tác chuẩn:</b> Ngay cả với một Widget cây tùy chỉnh, hệ thống vẫn duy trì
+  khả năng tương thích hoàn toàn với các thành phần tiêu chuẩn như dropdown <b>Department</b>. Việc chọn
+  một nút trên Cây sẽ tự động kích hoạt logic phân cấp cho dropdown phụ thuộc.</li>
+  <li><b>Xử lý trạng thái phản xạ:</b> Việc sử dụng <code>field.didChange(item)</code> đảm bảo
+  <b>FilterModel</b> được thông báo tức thì về các lựa chọn của người dùng trong Widget Cây,
+  từ đó kích hoạt truy vấn dữ liệu theo thời gian thực.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Biến đổi bất kỳ widget UI tùy chỉnh nào thành một đầu vào bộ lọc tiêu chuẩn thông qua FormBuilder.</i></p>
+<p>Xem mã nguồn <code>Employee33aFilterPanel</code> trong phần <b>Bài viết liên quan</b> để biết chi tiết tích hợp.</p>
