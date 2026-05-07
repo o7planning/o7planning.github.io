@@ -1,0 +1,20 @@
+<h3>Cốt lõi về FormModel & Đồng bộ Dữ liệu</h3>
+<p>
+  Ví dụ này minh họa cách sử dụng cơ bản của <b>FormModel</b> để quản lý trạng thái,
+  kiểm tra tính hợp lệ và gửi dữ liệu trong một luồng CRUD chuyên nghiệp.
+</p>
+
+<ul>
+  <li><b>Khai báo thuộc tính:</b> Sử dụng <code>defineFormModelStructure</code> để định nghĩa
+  các trường dữ liệu và kiểu dữ liệu tương ứng (String, bool, dynamic). Mỗi thuộc tính trong
+  model sẽ ánh xạ trực tiếp với một <b>InputField</b> trên giao diện.</li>
+  <li><b>Quản lý trạng thái:</b> <b>FormView</b> lắng nghe model một cách phản xạ. Khi người dùng
+  nhập liệu hoặc chọn tùy chọn, <b>FormModel</b> tự động thu thập và tập trung hóa thông tin
+  này vào một đối tượng <code>Map&lt;String, dynamic&gt;</code> duy nhất.</li>
+  <li><b>Thực thi CRUD:</b> Minh họa cách dữ liệu tổng hợp được truyền vào hàm <code>performCreateItem()</code>
+  hoặc <code>performUpdateItem()</code>, giúp tách biệt hoàn toàn giữa thành phần giao diện
+  và logic gọi API.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ vòng đời của dữ liệu Form từ lúc nhập liệu đến khi đóng gói thành đối tượng Map để tích hợp API.</i></p>
+<p>Xem chi tiết <code>Supplier11aFormModel</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cách ánh xạ thuộc tính.</p>
