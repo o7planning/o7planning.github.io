@@ -1,21 +1,18 @@
-<h3>Bộ lọc phân cấp & Khởi tạo giá trị mặc định</h3>
+<h3>Khởi tạo bộ lọc & Giá trị mặc định</h3>
 <p>
-  Ví dụ này minh họa cách quản lý <b>Chọn nhiều</b> (Multi-selection) trong mối quan hệ cha-con
-  và tự động khởi tạo các <b>Giá trị mặc định</b> cho các tiêu chí tìm kiếm.
+  Ví dụ này minh họa mô hình <b>Bộ lọc phân cấp</b> kết hợp với khả năng định nghĩa
+  các <b>Giá trị mặc định ban đầu</b> cho các tiêu chí tìm kiếm.
 </p>
 
 <ul>
-  <li><b>Khởi tạo mặc định thông minh:</b> Khi <b>FilterModel</b> được tải, hệ thống tự động
-  chọn <b>Công ty</b> đầu tiên và tiếp sau đó mặc định chọn <i>tất cả</i> các <b>Phòng ban</b>
-  thuộc công ty đó.</li>
-  <li><b>Tái khởi tạo động:</b> Mỗi khi người dùng thay đổi lựa chọn Công ty, hệ thống sẽ
-  kích hoạt lại logic <code>specifyDefaultValueForMultiOptTildeCriterion</code> cho tiêu chí Con,
-  đảm bảo danh sách Phòng ban luôn có trạng thái ban đầu hợp lệ.</li>
-  <li><b>Cấu trúc phân cấp hỗn hợp:</b> Kết hợp tiêu chí Cha chọn đơn (Công ty) với tiêu chí Con
-  chọn nhiều (Phòng ban), cho thấy cách FlutterArtist xử lý các chế độ chọn khác nhau trong
-  một chuỗi phân cấp.</li>
+  <li><b>Thiết lập trạng thái ban đầu:</b> Khi <b>FilterModel</b> được tải lần đầu tiên,
+  hệ thống tự động điền các giá trị mặc định vào tiêu chí lọc. Ví dụ: tự động chọn
+  <b>Công ty</b> đầu tiên và tất cả các <b>Phòng ban</b> liên quan để hiển thị kết quả ngay lập tức.</li>
+  <li><b>Phân cấp động:</b> Hiển thị mối quan hệ Cha-Con nơi danh sách <b>Phòng ban</b>
+  (Chọn nhiều) tự động điều chỉnh các tùy chọn có sẵn dựa trên <b>Công ty</b> (Chọn đơn) được chọn.</li>
+  <li><b>Khởi đầu thuận tiện:</b> Bằng cách thiết lập giá trị mặc định trong lần tải đầu tiên,
+  hệ thống giảm thiểu số lần nhấp chuột cần thiết để người dùng thấy được nhóm dữ liệu liên quan đầu tiên.</li>
 </ul>
 
-<p><i>Trọng tâm kỹ thuật: Làm chủ vòng đời của <code>specifyDefaultValue</code> để tạo ra trải nghiệm
-tìm kiếm trực quan, giảm thiểu thao tác cho người dùng.</i></p>
-<p>Vui lòng xem phần <b>Bài viết liên quan</b> để tìm hiểu kỹ hơn về cách triển khai <code>specifyDefaultValue</code>.</p>
+<p><i>Trọng tâm kỹ thuật: Làm chủ hàm <code>specifyDefaultValue</code> để cấu hình trạng thái bắt đầu của bộ lọc.</i></p>
+<p>Vui lòng xem <b>Bài viết liên quan</b> để biết chi tiết triển khai logic giá trị mặc định.</p>
