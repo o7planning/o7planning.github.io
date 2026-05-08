@@ -1,0 +1,22 @@
+<h3>Batch Optimization: Deferring ExternalShelfEvent(s) on Dialog</h3>
+<p>
+  This example demonstrates the <b>Event Deferral</b> mechanism applied to <b>Dialogs</b>.
+  It highlights how multiple signals are consolidated and only broadcast when the Dialog is dismissed.
+</p>
+
+<ul>
+  <li><b>Dialog-Based Deferral:</b> When a user modifies data within a popup, immediate event
+  broadcasting is paused. This ensures the background UI remains stable and doesn't waste
+  resources on redundant re-renders while the user is still interacting with the Dialog.</li>
+  <li><b>Aggregation upon Dismissal:</b> The core feature is the <b>Automatic Consolidation</b>.
+  Once the Dialog closes, FlutterArtist analyzes the queued events, merges duplicates,
+  and triggers a single batch of reactions across all recipient Blocks and Scalars.</li>
+  <li><b>Optimized Network Usage:</b> By waiting for the Dialog to close before querying,
+  the application reduces the number of hits to the server, resulting in a more performant
+  and professional Enterprise-grade experience.</li>
+  <li><b>Seamless Implementation:</b> Showcases <code>openDialogAndDeferExternalShelfEventsUntilClosed()</code>,
+  allowing developers to wrap any dialog in an event-deferred container with a single method call.</li>
+</ul>
+
+<p><i>Technical Focus: Mastering event aggregation upon Dialog closure to balance high interactivity with optimized system performance.</i></p>
+<p>Refer to <code>openDialogAndDeferExternalShelfEventsUntilClosed</code> in <b>Related Documentation</b> to see the implementation details.</p>
