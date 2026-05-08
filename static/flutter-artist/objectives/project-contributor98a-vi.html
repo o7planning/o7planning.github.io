@@ -1,0 +1,21 @@
+<h3>Thực thi thủ tục máy chủ với BlockBackendAction</h3>
+<p>
+  Ví dụ này khám phá <b>BlockBackendAction</b>, một cơ chế mạnh mẽ được thiết kế để thực thi
+  các thủ tục phía máy chủ và đồng bộ hóa kết quả với trạng thái ứng dụng tại địa phương.
+</p>
+
+<ul>
+  <li><b>Thực thi các nghiệp vụ phức tạp:</b> <b>BackendAction</b> lý tưởng cho các thao tác
+  ảnh hưởng đến nhiều tài nguyên hoặc thực hiện các thủ tục cơ sở dữ liệu (ví dụ: thêm nhiều
+  người tham gia vào một dự án), nơi cấu trúc dữ liệu cuối cùng không chỉ đơn giản là cập nhật
+  một mục duy nhất.</li>
+  <li><b>Tự động làm mới trạng thái:</b> Ví dụ nhấn mạnh cấu hình <code>AfterBlockBackendAction.query</code>,
+  giúp <b>Block</b> tự động kích hoạt lại truy vấn sau khi thao tác máy chủ thành công.
+  Điều này đảm bảo UI luôn phản ánh dữ liệu mới nhất từ cơ sở dữ liệu.</li>
+  <li><b>Phát sự kiện & Khả năng quan sát:</b> <b>BackendAction</b> có thể phát ra các sự kiện
+  cả nội bộ và xuyên suốt <b>Shelf</b>. Điều này cho phép các <b>Block</b> hoặc <b>Scalar</b> khác
+  có thể lắng nghe và phản ứng (làm mới) theo những thay đổi, duy trì một hệ thống phản xạ đồng bộ hoàn toàn.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Quản lý vòng đời thủ công phía máy chủ và tận dụng logic tự động truy vấn lại để đồng bộ hóa trạng thái dữ liệu.</i></p>
+<p>Vui lòng xem cách triển khai <code>initDefaultConfig</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cấu hình tự động truy vấn.</p>

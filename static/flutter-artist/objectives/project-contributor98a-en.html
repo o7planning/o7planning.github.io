@@ -1,0 +1,21 @@
+<h3>Server-Side Procedures with BlockBackendAction</h3>
+<p>
+  This example explores <b>BlockBackendAction</b>, a powerful mechanism designed to execute
+  server-side procedures and synchronize the results with the local application state.
+</p>
+
+<ul>
+  <li><b>Executing Complex Operations:</b> <b>BackendAction</b> is ideal for operations that
+  impact multiple resources or execute database procedures (e.g., adding multiple contributors
+  to a project) where the final data structure might not be a simple single-item update.</li>
+  <li><b>Automated State Refresh:</b> It highlights the <code>AfterBlockBackendAction.query</code>
+  configuration, which ensures the <b>Block</b> automatically re-triggers its query after a
+  successful server operation. This guarantees the UI reflects the most up-to-date data
+  from the database.</li>
+  <li><b>Event Emission & Observability:</b> <b>BackendAction</b> can emit events both
+  internally and across the <b>Shelf</b>. This allows other <b>Blocks</b> or <b>Scalars</b>
+  to listen and react (refresh) to the changes, maintaining a fully synchronized reactive system.</li>
+</ul>
+
+<p><i>Technical Focus: Managing server-side procedure lifecycles and utilizing automatic re-querying logic for synchronized data states.</i></p>
+<p>Refer to the <code>initDefaultConfig</code> implementation in <b>Related Documentation</b> to see the auto-query configuration.</p>
