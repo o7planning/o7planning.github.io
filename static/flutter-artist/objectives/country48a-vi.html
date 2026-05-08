@@ -1,0 +1,21 @@
+<h3>Phân trang cuộn vô hạn với NotificationListener</h3>
+<p>
+  Ví dụ này minh họa mô hình <b>Cuộn vô hạn</b> (Infinite Scroll), mang lại trải nghiệm
+  duyệt dữ liệu mượt mà và không gián đoạn, thường thấy trong các ứng dụng di động
+  và mạng xã hội hiện đại.
+</p>
+
+<ul>
+  <li><b>Tải nội dung động:</b> Thay vì phải nhấn số trang, dữ liệu được tải tự động khi
+  người dùng cuộn đến cuối danh sách. Điều này tạo ra một luồng trải nghiệm liền mạch,
+  khuyến khích người dùng khám phá nội dung liên tục.</li>
+  <li><b>Phát hiện sự kiện cuộn:</b> Bằng cách sử dụng <code>NotificationListener&lt;ScrollEndNotification&gt;</code>,
+  hệ thống phát hiện một cách thông minh khi người dùng chạm ngưỡng <code>maxScrollExtent</code>
+  để kích hoạt lần tải dữ liệu tiếp theo.</li>
+  <li><b>Nối dữ liệu hiệu quả:</b> Tận dụng phương thức <code>block.queryMore()</code>
+  để lấy nhóm bản ghi tiếp theo và nối trực tiếp vào danh sách hiện tại mà không làm
+  vỡ luồng hiển thị, đảm bảo hiệu năng tối ưu cho ứng dụng.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Tích hợp thông báo cuộn của Flutter với API phân trang của Block để đạt được danh sách vô hạn hiệu năng cao.</i></p>
+<p>Vui lòng xem logic <code>_onScrollEndNotification</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cách phát hiện chạm đáy danh sách.</p>
