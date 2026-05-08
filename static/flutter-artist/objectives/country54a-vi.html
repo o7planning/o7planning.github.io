@@ -1,0 +1,20 @@
+<h3>Cuộn vô hạn trong Bố cục Lưới (Grid)</h3>
+<p>
+  Ví dụ này minh họa việc áp dụng <b>Cuộn vô hạn</b> bên trong một <b>GridView</b>,
+  cho thấy FlutterArtist duy trì logic phân trang nhất quán trên các cấu trúc bố cục khác nhau.
+</p>
+
+<ul>
+  <li><b>Khám phá dạng Lưới:</b> Người dùng có thể duyệt qua danh sách quốc gia dưới dạng lưới
+  trực quan sinh động. Dữ liệu mới được tải động khi họ cuộn, mang lại trải nghiệm khám phá
+  mở rộng đặc trưng của các ứng dụng dạng thư viện.</li>
+  <li><b>Phát hiện sự kiện nhất quán:</b> Ví dụ sử dụng cùng một mô hình <code>NotificationListener</code>
+  như các ví dụ dạng danh sách, chứng minh rằng logic phát hiện chạm đáy là phổ quát và
+  độc lập với loại widget cuộn được sử dụng.</li>
+  <li><b>Cấu trúc lưới linh hoạt:</b> Kết hợp với <code>SliverGridDelegate</code> tùy chỉnh,
+  nó đảm bảo các mục trong lưới luôn hiển thị đồng nhất trong khi <b>Block</b> xử lý hiệu quả
+  các yêu cầu <code>queryMore()</code> ở chế độ chạy ngầm.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Triển khai cuộn vô hạn hiệu năng cao cho GridView bằng cách tái sử dụng API phân trang của Block và trình lắng nghe thông báo cuộn.</i></p>
+<p>Vui lòng xem cách triển khai <code>buildContent</code> trong phần <b>Bài viết liên quan</b> để biết chi tiết về việc tích hợp GridView.</p>
