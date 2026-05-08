@@ -1,0 +1,25 @@
+<h3>Bulk Creation with BlockQuickMultiItemCreationAction</h3>
+<p>
+  This example demonstrates how to efficiently perform <b>Bulk Actions</b> to create multiple
+  items at once, featuring flexible <b>Confirmation Policies</b> to ensure data safety.
+</p>
+
+<ul>
+  <li><b>High-Efficiency Batching:</b> <code>BlockQuickMultiItemCreationAction</code> allows
+  developers to trigger the creation of multiple records in a single execution. The <b>Block</b>
+  automatically integrates the returned <code>PageData</code> into the current list.</li>
+  <li><b>Flexible Confirmation Levels:</b> It showcases three distinct user experience patterns:
+    <ul>
+      <li><b>No Confirmation:</b> Instant execution for high-speed tasks.</li>
+      <li><b>Default Dialog:</b> Uses the framework's built-in confirmation UI to prevent accidental clicks.</li>
+      <li><b>Custom Dialog:</b> Demonstrates full control by providing a specialized <code>CustomConfirmation</code>
+      widget for complex verification scenarios.</li>
+    </ul>
+  </li>
+  <li><b>Seamless State Sync:</b> Upon success, all new items are synchronized with the
+  internal data state, reflecting the changes across the entire <b>Block</b> without manual query calls.</li>
+</ul>
+
+<p><i>Technical Focus: Managing multi-record insertion lifecycles and customizing confirmation workflows for robust action execution.</i></p>
+<p>Refer to <code>createCustomConfirmation</code> in <b>Related Documentation</b> to see how
+custom dialogs are integrated into the action flow.</p>
