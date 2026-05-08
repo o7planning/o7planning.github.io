@@ -1,0 +1,21 @@
+<h3>Seamless Data Updates with BlockQuickAction</h3>
+<p>
+  This example demonstrates how to perform <b>Quick Actions</b> to modify Block items instantly
+  without the need for a traditional, multi-field <b>FormView</b>.
+</p>
+
+<ul>
+  <li><b>Bypassing Form Complexity:</b> <b>QuickAction</b> allows for immediate data
+  modification (e.g., updating a Customer's VIP status or Code) by executing logic directly
+  through the Block, skipping the manual data collection phase on a Form.</li>
+  <li><b>Direct Block Synchronization:</b> Once <code>performQuickUpdateItem()</code>
+  receives a success result from the API, the <b>Block</b> automatically updates the
+  corresponding item in its internal list, ensuring the UI reflects the change immediately.</li>
+  <li><b>Integrated Confirmation:</b> Supports built-in confirmation workflows (<code>needToConfirm</code>),
+  providing a safety net for critical actions like status toggles without writing extra boilerplate code.</li>
+</ul>
+
+<p><i>Technical Focus: Leveraging BlockQuickItemUpdateAction for lightweight, high-speed
+data manipulation and automated state synchronization.</i></p>
+<p>Check the <code>executeQuickItemUpdateAction</code> call in <b>Related Documentation</b>
+to see the execution flow.</p>
