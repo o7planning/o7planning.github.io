@@ -1,0 +1,23 @@
+<h3>Thống kê Phản xạ với Trình lắng nghe Sự kiện cấp Scalar</h3>
+<p>
+  Ví dụ này minh họa cách một <b>Scalar</b> (đại diện cho dữ liệu tổng hợp hoặc thống kê)
+  tự động cập nhật phản xạ trước các sự kiện được kích hoạt bởi các <b>Block</b> bên ngoài.
+</p>
+
+<ul>
+  <li><b>Đồng bộ Thống kê xuyên Shelf:</b> <code>SystemReport24aScalar</code> quản lý các con số
+  tổng quát (Nhân viên, Nhà cung cấp, Sản phẩm). Nó cần duy trì tính chính xác ngay cả khi
+  dữ liệu bị thay đổi ở một phần hoàn toàn khác của hệ thống như <code>SingleSupplierShelf</code>.</li>
+  <li><b>Phản ứng cấp Scalar:</b> Sử dụng <code>scalarLevelReactionOn: [Event(SupplierData)]</code>,
+  Scalar trở thành một quan sát viên. Ngay khi một nhà cung cấp mới được tạo, Scalar sẽ
+  bắt lấy sự kiện và tự kích hoạt <code>performQuery()</code> của chính nó để lấy các con số cập nhật.</li>
+  <li><b>Bộ phát Sự kiện:</b> Củng cố vai trò của <code>SingleSupplierBlock</code> như một bộ phát.
+  Bằng cách phát đi các sự kiện <code>SupplierData</code>, nó đảm bảo rằng tất cả các thành phần
+  quan tâm—dù là Danh sách (Block) hay Thống kê (Scalar)—đều có thể phản ứng phù hợp.</li>
+  <li><b>Mô hình Tích hợp Dashboard:</b> Nhấn mạnh một mô hình chuyên nghiệp để xây dựng các
+  Dashboard thời gian thực, nơi các widget tổng hợp tự động phản ánh các thay đổi dữ liệu chi tiết
+  mà không cần tải lại trang thủ công.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Triển khai các dashboard phản xạ hiệu năng cao bằng cách kết nối các hành động cấp Block với các trình nhận sự kiện cấp Scalar.</i></p>
+<p>Vui lòng xem <code>ExternalShelfEventScalarRecipient</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cấu hình trình lắng nghe cho Scalar.</p>
