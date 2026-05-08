@@ -1,0 +1,19 @@
+<h3>Phân trang theo số với BlockNumberPagination</h3>
+<p>
+  Ví dụ này minh họa mô hình điều hướng kiểu <b>Web-style</b> sử dụng thành phần
+  <b>BlockNumberPagination</b>, cực kỳ phù hợp cho các ứng dụng máy tính hoặc bảng điều khiển dữ liệu lớn.
+</p>
+
+<ul>
+  <li><b>Kiểm soát trang rõ ràng:</b> Người dùng có thể duyệt qua các tập dữ liệu lớn bằng cách
+  chọn trực tiếp số trang, giúp xác định vị trí chính xác trong tổng số bản ghi hiện có.</li>
+  <li><b>Điều hướng theo trạng thái:</b> <b>BlockNumberPagination</b> đồng bộ hóa một cách phản xạ
+  với trạng thái <code>Pageable</code> của Block. Nó tự động cập nhật mục đánh dấu trang đang hoạt động
+  và xử lý các lệnh "Đầu/Cuối" cũng như "Tiếp/Trước".</li>
+  <li><b>Tùy biến hiển thị:</b> Nhà phát triển có thể kiểm soát số lượng nút trang hiển thị
+  (ví dụ: <code>visiblePagesCount: 10</code>), đảm bảo giao diện luôn gọn gàng ngay cả
+  khi hệ thống có hàng trăm trang dữ liệu.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Triển khai logic phân trang có cấu trúc, không phụ thuộc thao tác cuộn, dành cho việc quản lý thông tin mật độ cao.</i></p>
+<p>Vui lòng xem cấu hình <code>BlockNumberPagination</code> trong phần <b>Bài viết liên quan</b> để biết chi tiết tùy chỉnh UI.</p>
