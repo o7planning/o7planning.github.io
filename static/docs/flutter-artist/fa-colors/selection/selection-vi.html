@@ -1,40 +1,40 @@
 <h1>Ngôn ngữ Thị giác cho Sự lựa chọn (Selection Namespace)</h1>
 <p>
-  Trong các ứng dụng quản lý dữ liệu phức tạp, việc giúp người dùng xác định rõ họ đang đứng ở đâu và đã chọn những gì là yếu tố then chốt. <b>Selection Namespace</b> được thiết kế riêng để giải quyết bài toán tương tác trên các dòng (rows) của Bảng dữ liệu hoặc Danh sách, giúp tạo ra trải nghiệm phản hồi nhất quán và chuyên nghiệp.
+  Trong các ứng dụng quản lý dữ liệu phức tạp, việc giúp người dùng xác định rõ họ đang đứng ở đâu và đã chọn những gì là yếu tố then chốt. <b>Selection Namespace</b> được thiết kế riêng để giải quyết bài toán tương tác trên các dòng (rows) của Bảng dữ liệu hoặc Danh sách.
 </p>
 
 <h3>1. Khi nào bạn cần đến Selection Namespace?</h3>
 <p>
-  Hãy tưởng tượng bạn đang xây dựng một bảng Danh mục sản phẩm hoặc một Danh sách đơn hàng. Khi người dùng di chuyển chuột qua một dòng, click để chọn một hoặc nhiều mục, hoặc dùng phím mũi tên để điều hướng – đó chính là lúc bạn cần gọi đến <code>context.faColors.selection</code>.
+  Hãy tưởng tượng bạn đang xây dựng một bảng Danh mục sản phẩm hoặc một Danh sách đơn hàng. Khi người dùng di chuyển chuột qua một dòng, click để chọn hoặc điều hướng bàn phím – đó chính là lúc bạn cần gọi đến <code>context.faColors.selection</code>.
 </p>
 
 <h3>2. Các trạng thái tương tác được hỗ trợ</h3>
 <ul>
   <li><b>Trạng thái Nghỉ (Normal):</b> Màu nền mặc định khi dòng chưa có tác động.</li>
   <li><b>Trạng thái Lựa chọn (Selected):</b> Đánh dấu các mục đã được chọn và lưu vào bộ nhớ.</li>
-  <li><b>Trạng thái Tập trung (Current):</b> Chỉ định vị trí con trỏ hiện tại của người dùng (Focus), giúp điều hướng bàn phím chính xác.</li>
-  <li><b>Trạng thái Phản hồi (Hover & Pressed):</b> Cung cấp hiệu ứng thị giác tức thì khi tương tác chuột.</li>
+  <li><b>Trạng thái Tập trung (Current):</b> Chỉ định vị trí con trỏ hiện tại (Focus).</li>
+  <li><b>Trạng thái Phản hồi (Hover & Pressed):</b> Cung cấp hiệu ứng thị giác tức thì khi di chuột hoặc nhấn giữ.</li>
 </ul>
 
 <h3>3. Quy tắc "Bộ ba đồng nhất" (Surface - Text - Border)</h3>
 <p>
-  Điểm đặc biệt của FlutterArtist là tính toán sự phối hợp màu sắc theo nhóm. Để đạt được hiệu quả thẩm mỹ và độ tương phản tối ưu, bạn nên sử dụng các token theo bộ:
+  Để đạt được hiệu quả thẩm mỹ tối ưu, bạn nên sử dụng các token theo bộ:
 </p>
 <ul>
-  <li><b>Nền (Surface):</b> Sử dụng <code>faColors.selection.rowXXX</code> để thiết lập màu sắc cho bề mặt của dòng.</li>
-  <li><b>Nội dung (Text/Icon):</b> Sử dụng <code>faColors.selection.textXXX</code>. Màu chữ này đã được tinh chỉnh để luôn nổi bật trên nền tương ứng.</li>
-  <li><b>Điểm nhấn (Border):</b> Sử dụng <code>faColors.selection.borderXXX</code> để tạo đường viền sắc nét, giúp item "thoát" khỏi nền chung.</li>
+  <li><b>Nền (Surface):</b> Sử dụng <code>faColors.selection.rowXXX</code>.</li>
+  <li><b>Nội dung (Text/Icon):</b> Sử dụng <code>faColors.selection.textXXX</code>.</li>
+  <li><b>Điểm nhấn (Border):</b> Sử dụng <code>faColors.selection.borderXXX</code>.</li>
 </ul>
 
-<div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 4px; margin: 15px 0;">
-  <strong>CẢNH BÁO TỪ NGHỆ SĨ:</strong>
-  Tuyệt đối không kết hợp <code>faColors.selection</code> với các nhóm màu khác như <code>faColors.text.xxx</code> (vốn đi cùng Surface lớn) hay <code>faColors.action.xxx</code> (dành riêng cho Button/Chip). Việc "râu ông nọ chắp cằm bà kia" sẽ phá vỡ logic tương phản và làm UI trở nên thiếu chuyên nghiệp.
+<div class="warning-box">
+  <strong>ARTIST'S WARNING:</strong>
+  Tuyệt đối không trộn <code>faColors.selection</code> với <code>faColors.text.xxx</code> (dành cho Surface lớn) hoặc <code>faColors.action.xxx</code> (dành cho Button). Việc này sẽ phá vỡ logic tương phản và làm UI thiếu nhất quán.
 </div>
 
 <h3>4. Triết lý thiết kế chuyên sâu</h3>
 <ul>
-  <li><b>Quy tắc Phối màu Chữ:</b> Màu chữ trong Selection thường được thiết kế để giữ được sự điềm đạm, không quá rực rỡ như Button nhưng đủ rõ ràng để người dùng đọc thông tin trong thời gian dài mà không mỏi mắt.</li>
-  <li><b>Viền đối ứng (Border Mirroring):</b> Việc sử dụng Border kết hợp với màu nền Selected tạo ra một "khung nhận diện" vững chãi, giúp dòng được chọn trông "lì" và có chiều sâu hơn.</li>
+  <li><b>Sự điềm đạm:</b> Màu chữ trong Selection được thiết kế để đọc trong thời gian dài mà không mỏi mắt, khác với sự rực rỡ của Action buttons.</li>
+  <li><b>Viền đối ứng:</b> Kết hợp Border với nền Selected giúp item trông "lì" và có chiều sâu hơn.</li>
 </ul>
 
-<p><i>Để hiểu rõ hơn về giá trị màu sắc cụ thể, vui lòng xem chi tiết tại tab <b>Token Docs</b> cho từng mục tương ứng.</i></p>
+<p><i>Xem chi tiết từng Token tại tab <b>Token Docs</b>.</i></p>
