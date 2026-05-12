@@ -1,0 +1,46 @@
+<h1>Interaction & Feedback Language (Action Namespace)</h1>
+<p>
+  While Selection is dedicated to data rows, the <b>Action Namespace</b> is the soul of independent interactive components. This set is optimized for small surfaces with high interaction density, helping users intuitively identify clickable and command-driven elements.
+</p>
+
+<h3>1. Scope of Application</h3>
+<p>
+  Whenever you create "clickable" elements that are not table rows, think of Action tokens. Specifically:
+</p>
+<ul>
+  <li><b>Navigation Elements:</b> Buttons (Primary, Secondary, Ghost).</li>
+  <li><b>Status & Label Elements:</b> Chips, Badges, Tags.</li>
+  <li><b>Quick Selection:</b> Filters or toggle switches.</li>
+</ul>
+
+<h3>2. The "Interactive Trio" Philosophy (Surface - Text - Border)</h3>
+<p>
+  To ensure buttons remain sharp and prominent on any background, the Action Namespace strictly follows the coordination between:
+</p>
+<ul>
+  <li><b>Background (Surface):</b> <code>faColors.action.surface.xxx</code> defines the color for the button or chip body.</li>
+  <li><b>Content (Text/Icon):</b> <code>faColors.action.text.xxx</code> ensures text and icons maintain perfect contrast against the button surface.</li>
+  <li><b>Stroke (Border):</b> <code>faColors.action.border.xxx</code> is essential for Outlined Buttons or Chips requiring subtle separation.</li>
+</ul>
+
+<h3>3. Multi-Environment Adaptability</h3>
+<p>
+  One of the core strengths of the Action set is its ability to "survive" on various surfaces. These Buttons and Chips can be safely placed on:
+</p>
+<ul>
+  <li><b>Standard Surfaces:</b> Main content areas.</li>
+  <li><b>Control Bars:</b> Inside AppBars or ToolBars.</li>
+  <li><b>Navigation Bars:</b> Where Actions can function as Menu Items.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>NAVIGATION NOTE:</strong>
+  When Buttons or Chips serve as primary Menu Items on a navigation bar, you have a flexible choice: Use <code>faColors.action.xxx</code> for independent interactions, or <code>faColors.nav.xxx</code> to leverage specialized Active/Inactive states for navigation flows.
+</div>
+
+<h3>4. The "No-Mix" Coordination Rule</h3>
+<p>
+  Similar to Selection, you <b>should not</b> use standard text colors (<code>faColors.text.primary</code>) on a Primary Action button. Always use its designated partner, <code>faColors.action.text.primary</code>, to ensure FlutterArtist's contrast calculation algorithms perform at their best.
+</p>
+
+<p><i>Explore specific technical values in the <b>Token Docs</b> tab.</i></p>
