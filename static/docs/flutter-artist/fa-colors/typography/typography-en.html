@@ -1,0 +1,31 @@
+<h1>Information & Content Hierarchy (Typography Namespace)</h1>
+<p>
+  The <b>Typography Namespace</b> is more than just a collection of colors. It defines the "role" and "weight" of information within the UI, allowing users to quickly scan and grasp key content in data-heavy environments.
+</p>
+
+<h3>1. Key Semantic Roles</h3>
+<p>
+  Each token in <code>context.faColors.text.xxx</code> is crafted for a specific purpose:
+</p>
+<ul>
+  <li><b>Primary:</b> Reserved for main headlines and critical content requiring immediate attention.</li>
+  <li><b>Secondary:</b> Used for descriptions, sub-headers, or supporting body text.</li>
+  <li><b>Label:</b> Dedicated to input field labels, table headers, or small metadata.</li>
+  <li><b>Muted:</b> For captions, timestamps, or disabled states that still require legibility.</li>
+</ul>
+
+<h3>2. The "Surface Partnership" Rule</h3>
+<p>
+  To achieve optimal aesthetics and contrast, the Typography Namespace is designed to thrive on foundational background layers.
+</p>
+<div class="warning-box">
+  <strong>SURFACE RESTRICTION:</strong>
+  These Typography tokens are optimized exclusively for <code>faColors.surface.xxx</code> layers (Base, Container, Low, High). Never use them for buttons or chips; instead, utilize <code>faColors.action.text.xxx</code> for action-based elements.
+</div>
+
+<h3>3. Semantic Status Text</h3>
+<p>
+  Beyond hierarchy, Typography provides status colors (Success, Warning, Danger, Info). These colors convey emotion and urgency at a glance, providing context even before the user reads the actual text.
+</p>
+
+<p><i>Technical Hex values for each text type are available in the <b>Token Docs</b> tab.</i></p>
