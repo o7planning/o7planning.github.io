@@ -1,0 +1,21 @@
+<h3>Tích hợp Cuộn vô hạn với Bảng Davi</h3>
+<p>
+  Ví dụ này minh họa tính linh hoạt của FlutterArtist thông qua việc tích hợp <b>Cuộn vô hạn</b>
+  vào <b>DAVI</b>, một thư viện bảng (table) mạnh mẽ và có khả năng tùy biến cao.
+</p>
+
+<ul>
+  <li><b>Tích hợp Bảng bên thứ ba:</b> Cho thấy cách liên kết <code>block.items</code> trực tiếp
+  vào <b>FaDaviTable</b>, duy trì sự đồng bộ hoàn toàn giữa trạng thái dữ liệu của Block
+  và việc hiển thị các hàng trong bảng.</li>
+  <li><b>Kích hoạt qua Trailing Widget:</b> Tận dụng <code>trailingWidget</code> và callback
+  <code>onTrailingWidget</code> chuyên biệt của Davi để phát hiện khi người dùng cuộn đến
+  cuối bảng, từ đó tự động kích hoạt lệnh <code>block.queryMore()</code>.</li>
+  <li><b>Hiển thị dữ liệu mật độ cao:</b> Nhấn mạnh khả năng xử lý các tập dữ liệu lớn,
+  được phân trang bên trong một định dạng lưới có cấu trúc, đi kèm với các cột dữ liệu
+  đã được định dạng (Dân số, Diện tích) và hiển thị hình ảnh.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Kết nối vòng đời phân trang của Block với các bộ điều khiển bảng bên thứ ba để xây dựng các bảng quản trị chuyên nghiệp và giàu dữ liệu.</i></p>
+<p>Vui lòng xem <code>_onTrailingWidget</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu
+cách kích hoạt phân trang thủ công cho mô hình Davi.</p>

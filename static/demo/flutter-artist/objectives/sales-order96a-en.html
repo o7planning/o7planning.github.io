@@ -1,0 +1,22 @@
+<h3>Seamless Parent-Child Sync with InternalShelfEvent</h3>
+<p>
+  This example illustrates the <b>InternalShelfEvent</b> mechanism, where components within
+  the same <b>Shelf</b> act as a unified entity to maintain real-time data consistency.
+</p>
+
+<ul>
+  <li><b>Internal Reactivity:</b> When a <code>SalesOrderLine</code> is created, modified,
+  or deleted, it automatically triggers an internal signal. The parent <code>SalesOrderBlock</code>
+  receives this and refreshes itself to show updated totals (Amount, Tax, etc.).</li>
+  <li><b>Item-Level Reaction:</b> Highlights the <code>itemLevelReactionOn</code> configuration.
+  Instead of re-querying the entire list, the <b>Block</b> intelligently reloads only the
+  <b>current active item</b>, ensuring a high-performance and smooth user experience.</li>
+  <li><b>Unified Entity Logic:</b> Demonstrates how Blocks, Scalars, and Shelves coordinate
+  seamlessly. Any action—from Form saves to QuickActions or BackendActions—within the
+  Shelf triggers these internal reactions automatically.</li>
+  <li><b>Automated Data Integrity:</b> Eliminates the need for manual refresh logic,
+  ensuring that the Header and Detail views are always in perfect synchronization.</li>
+</ul>
+
+<p><i>Technical Focus: Leveraging InternalShelfEventBlockRecipient to automate data refreshing between hierarchical Blocks within a single Shelf.</i></p>
+<p>Refer to <code>Evt.ofBlock</code> in the <b>SalesOrder96aShelf</b> configuration to see how internal dependencies are defined.</p>

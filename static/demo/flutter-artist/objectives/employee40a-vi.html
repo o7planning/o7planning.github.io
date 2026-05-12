@@ -1,0 +1,22 @@
+<h3>Lọc đa lựa chọn & Truy vấn bằng code với FilterInput</h3>
+<p>
+  Ví dụ này minh họa các kỹ thuật lọc nâng cao, bao gồm khả năng <b>Chọn nhiều</b>
+  (Multi-selection) và sử dụng <b>FilterInput</b> để thực hiện các truy vấn dữ liệu tự động bằng mã.
+</p>
+
+<ul>
+  <li><b>Lọc đa chọn thông minh:</b> Tiêu chí <b>Department</b> cho phép chọn nhiều phòng ban
+  cùng lúc nhờ cấu hình <code>multiSelection</code>. Hệ thống sử dụng toán tử <code>inCollection</code>
+  trong <b>FilterModel</b> để xử lý danh sách lựa chọn này.</li>
+  <li><b>Điều khiển bằng mã (FilterInput):</b> Minh họa cách kích hoạt tìm kiếm phức tạp thông qua
+  <code>Employee40aFilterInput</code>. Điều này giúp loại bỏ việc nhập liệu thủ công, lý tưởng cho
+  các nút "lọc nhanh", deep link hoặc đồng bộ tìm kiếm giữa các màn hình.</li>
+  <li><b>Ánh xạ trạng thái tự động:</b> Cho thấy cách <b>FilterModel</b> tự động dịch các mã
+  (như "VINFAST-HR") từ <b>FilterInput</b> ngược lại thành các đối tượng UI, giúp <b>FilterPanel</b>
+  luôn hiển thị chính xác trạng thái tìm kiếm hiện tại.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ cầu nối giữa tương tác UI thủ công và lọc dữ liệu tự động
+bằng lập trình thông qua FilterInput.</i></p>
+<p>Vui lòng xem phần <b>Bài viết liên quan</b> để tìm hiểu kỹ hơn về logic <code>FilterInput</code>
+và hàm <code>extractUpdateValue</code>.</p>

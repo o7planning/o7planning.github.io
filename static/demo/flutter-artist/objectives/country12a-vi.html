@@ -1,0 +1,24 @@
+<h3>Sắp xếp Thống nhất & Tích hợp API</h3>
+<p>
+  Ví dụ này minh họa cơ chế <b>Sắp xếp kép</b> sử dụng <b>SortModelBuilder</b>, tập trung
+  vào cách các tiêu chí sắp xếp được chuyển đổi mượt mà thành các tham số gọi API.
+</p>
+
+<ul>
+  <li><b>Định nghĩa thống nhất:</b> Khai báo các tiêu chí (Tên, Dân số, Diện tích) một lần duy nhất
+  trong <code>defineSortModelStructure</code> để sinh ra các model độc lập cho cả việc tổ chức
+  UI tại chỗ và truy vấn cơ sở dữ liệu từ xa.</li>
+  <li><b>Số hóa phía Server:</b> Trong hàm <code>performQuery</code>, framework cung cấp đối tượng
+  <code>SortableCriteria</code>. Đối tượng này được chuyển đổi qua <code>toJsonString()</code>
+  để gửi đi như một tham số truy vấn, cho phép backend thực hiện sắp xếp chính xác ở cấp độ
+  cơ sở dữ liệu cho các kết quả phân trang.</li>
+  <li><b>Sự linh hoạt phía Client:</b> Sắp xếp tại chỗ sử dụng <code>getComparisonValue</code>
+  để thay đổi thứ tự các mục đã tải trong bộ nhớ ngay lập tức, mang lại phản hồi không có
+  độ trễ cho các tập dữ liệu nhỏ.</li>
+  <li><b>Quản lý trạng thái:</b> Nhấn mạnh việc sử dụng <code>SortStrategy.modelBased</code>
+  trong <b>BlockConfig</b>, đảm bảo trạng thái sắp xếp luôn nhất quán và phản xạ xuyên suốt
+  vòng đời của Block.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Kết nối các điều khiển sắp xếp trên UI với truy vấn cơ sở dữ liệu backend thông qua SortableCriteria đã được số hóa.</i></p>
+<p>Vui lòng xem <code>CountryRestProvider.query</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cách triển khai tham số sắp xếp JSON.</p>

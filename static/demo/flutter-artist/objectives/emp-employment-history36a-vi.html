@@ -1,0 +1,21 @@
+<h3>Mối quan hệ phân cấp trong FormModel</h3>
+<p>
+  Ví dụ này minh họa cách triển khai <b>Phụ thuộc phân cấp</b> (Cascading) bên trong
+  <b>FormModel</b>, đảm bảo tính toàn vẹn của dữ liệu trong các tác vụ nhập liệu phức tạp
+  như ghi lại lịch sử làm việc.
+</p>
+
+<ul>
+  <li><b>Lựa chọn phân cấp:</b> Tương tự như mô hình trong FilterModel, các thuộc tính
+  <b>Company</b> và <b>Department</b> được liên kết theo thứ bậc cha-con. Việc chọn
+  một công ty sẽ tự động lọc các tùy chọn có sẵn cho trường phòng ban.</li>
+  <li><b>Tải dữ liệu theo ngữ cảnh:</b> Hàm <code>performLoadMultiOptPropXData</code>
+  sử dụng giá trị <code>parentMultiOptPropValue</code> để lấy các phòng ban liên quan,
+  loại bỏ việc quản lý trạng thái thủ công giữa các menu thả xuống phụ thuộc nhau.</li>
+  <li><b>Trích xuất chi tiết mục:</b> Minh họa cách sử dụng <code>extractMultiOptPropValueFromItemDetail</code>
+  để điền chính xác dữ liệu vào các trường phân cấp khi chỉnh sửa bản ghi, giữ cho UI luôn
+  đồng bộ với thực thể phía backend.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Tái hiện logic phân cấp trong FormModel để tạo ra các đầu vào người dùng nhất quán và đã được kiểm chứng.</i></p>
+<p>Vui lòng xem cấu hình <code>multiOptPropDefs</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cách lồng ghép các thuộc tính.</p>

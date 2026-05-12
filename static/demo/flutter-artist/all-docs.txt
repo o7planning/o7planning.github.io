@@ -1,0 +1,1 @@
+https://o7planning.github.io/static/flutter-artist/all-docs.json

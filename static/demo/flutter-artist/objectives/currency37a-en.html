@@ -1,0 +1,24 @@
+<h3>Interactive Grid Reordering with ReorderableGridView</h3>
+<p>
+  This example demonstrates advanced <b>Manual Sorting</b> within a grid layout,
+  leveraging the power of the <code>reorderable_grid_view</code> library integrated
+  seamlessly with the FlutterArtist <b>Block</b>.
+</p>
+
+<ul>
+  <li><b>Grid-Based Drag & Drop:</b> Extends manual sorting capabilities to 2D layouts.
+  Users can freely move items across rows and columns, providing a flexible way to
+  organize visually rich content like currency cards.</li>
+  <li><b>Manual Sort Strategy:</b> Reinforces the requirement of <code>SortStrategy.manual</code>
+  in <b>BlockConfig</b>, ensuring the <b>Block</b> internal list logic is dedicated
+  to user-defined positions rather than automated rules.</li>
+  <li><b>State Synchronization:</b> Every reorder action triggers <code>block.moveItemByIndexPosition()</code>,
+  instantly updating the data state. The use of <code>Future.microtask</code> or precise
+  index handling ensures smooth animations and data consistency.</li>
+  <li><b>Custom Scroll Control:</b> Showcases advanced integration by utilizing
+  <code>scrollSpeedController</code> to fix common timestamp errors in reorderable
+  widgets, ensuring a professional and bug-free user experience.</li>
+</ul>
+
+<p><i>Technical Focus: Bridging third-party reorderable grid components with Block's manual sorting API for highly interactive and responsive dashboards.</i></p>
+<p>Check the <code>onReorder</code> and <code>scrollSpeedController</code> implementation in <b>Related Documentation</b> for advanced configuration tips.</p>

@@ -1,0 +1,20 @@
+<h3>Nhập liệu hiệu quả với BlockQuickItemCreationAction</h3>
+<p>
+  Ví dụ này minh họa cách triển khai các hành động <b>Tạo nhanh</b>, cho phép thêm mới
+  các mục vào Block ngay lập tức mà không cần sử dụng <b>FormView</b> tiêu chuẩn.
+</p>
+
+<ul>
+  <li><b>Quy trình tinh gọn:</b> <b>QuickItemCreationAction</b> loại bỏ quy trình điền form
+  truyền thống. Đây là giải pháp hoàn hảo cho các tác vụ tạo mới đơn giản (như ghi chú nhanh)
+  nơi dữ liệu được thu thập qua các hộp thoại nhẹ hoặc trường văn bản đơn giản.</li>
+  <li><b>Phản hồi UI tức thì:</b> Sau khi <code>performQuickCreateItem()</code> thực thi thành công,
+  đối tượng <b>ITEM_DETAIL</b> mới tạo sẽ được tự động tích hợp vào danh sách hiện tại của Block,
+  giúp dữ liệu mới hiển thị ngay lập tức mà không cần tải lại trang.</li>
+  <li><b>Tối ưu hóa lập trình:</b> Bằng cách lược bỏ việc định nghĩa một <b>FormModel</b>
+  đầy đủ cho các tác vụ đơn giản, nhà phát triển có thể triển khai logic tạo mới nhanh hơn
+  trong khi vẫn duy trì tính nhất quán với trạng thái dữ liệu của Block.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ việc chèn dữ liệu nhẹ nhàng bằng BlockQuickItemCreationAction để tạo ra trải nghiệm người dùng tốc độ cao và mang tính tương tác.</i></p>
+<p>Vui lòng xem cách triển khai <code>executeQuickItemCreationAction</code> trong phần <b>Bài viết liên quan</b> để biết chi tiết luồng tạo mới.</p>

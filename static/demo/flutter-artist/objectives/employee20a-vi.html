@@ -1,0 +1,18 @@
+<h3>Khởi tạo bộ lọc & Giá trị mặc định</h3>
+<p>
+  Ví dụ này minh họa mô hình <b>Bộ lọc phân cấp</b> kết hợp với khả năng định nghĩa
+  các <b>Giá trị mặc định ban đầu</b> cho các tiêu chí tìm kiếm.
+</p>
+
+<ul>
+  <li><b>Thiết lập trạng thái ban đầu:</b> Khi <b>FilterModel</b> được tải lần đầu tiên,
+  hệ thống tự động điền các giá trị mặc định vào tiêu chí lọc. Ví dụ: tự động chọn
+  <b>Công ty</b> đầu tiên và tất cả các <b>Phòng ban</b> liên quan để hiển thị kết quả ngay lập tức.</li>
+  <li><b>Phân cấp động:</b> Hiển thị mối quan hệ Cha-Con nơi danh sách <b>Phòng ban</b>
+  (Chọn nhiều) tự động điều chỉnh các tùy chọn có sẵn dựa trên <b>Công ty</b> (Chọn đơn) được chọn.</li>
+  <li><b>Khởi đầu thuận tiện:</b> Bằng cách thiết lập giá trị mặc định trong lần tải đầu tiên,
+  hệ thống giảm thiểu số lần nhấp chuột cần thiết để người dùng thấy được nhóm dữ liệu liên quan đầu tiên.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ hàm <code>specifyDefaultValue</code> để cấu hình trạng thái bắt đầu của bộ lọc.</i></p>
+<p>Vui lòng xem <b>Bài viết liên quan</b> để biết chi tiết triển khai logic giá trị mặc định.</p>

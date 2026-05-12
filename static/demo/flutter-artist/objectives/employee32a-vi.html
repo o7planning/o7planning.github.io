@@ -1,0 +1,20 @@
+<h3>Lọc với RadioGroup & Logic Phân cấp</h3>
+<p>
+  Ví dụ này minh họa cách triển khai mối quan hệ lọc <b>Cha-Con</b> bằng cách sử dụng
+  các thành phần UI khác nhau để tăng cường trải nghiệm tương tác.
+</p>
+
+<ul>
+  <li><b>Tích hợp RadioGroup:</b> Thay vì menu thả xuống tiêu chuẩn, tiêu chí <b>Company</b>
+  sử dụng <code>FormBuilderRadioGroup</code>. Điều này cho phép người dùng xem tất cả các công ty
+  sẵn có và lựa chọn chỉ với một lần bấm.</li>
+  <li><b>Sự đa dạng về Giao diện:</b> Ví dụ chứng minh rằng <b>FilterModel</b> hoàn toàn tách biệt
+  với giao diện. Cho dù bạn dùng RadioGroup, Dropdown hay Tree, logic phân cấp bên dưới vẫn
+  giữ nguyên và nhất quán.</li>
+  <li><b>Phụ thuộc Phản xạ:</b> Việc chọn một nút radio cho Công ty sẽ lập tức kích hoạt
+  dropdown <b>Department</b> làm mới danh sách, chỉ hiển thị các phòng ban liên quan đến
+  công ty đã chọn.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Thay đổi linh hoạt các thành phần UI (RadioGroup và Dropdown) trong khi vẫn duy trì logic Bộ lọc Phân cấp mạnh mẽ.</i></p>
+<p>Vui lòng xem mã nguồn <code>Employee32aFilterPanel</code> trong phần <b>Bài viết liên quan</b> để biết chi tiết triển khai UI.</p>

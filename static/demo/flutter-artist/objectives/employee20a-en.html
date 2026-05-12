@@ -1,0 +1,19 @@
+<h3>Filter Initialization & Default Values</h3>
+<p>
+  This example demonstrates the <b>Cascading Filter</b> pattern combined with the ability
+  to define <b>Initial Default Values</b> for search criteria.
+</p>
+
+<ul>
+  <li><b>Initial State Setup:</b> When the <b>FilterModel</b> is first loaded, it automatically
+  populates the criteria with predefined values. For instance, it can select the first
+  <b>Company</b> and all its associated <b>Departments</b> to provide an immediate result set.</li>
+  <li><b>Cascading Hierarchy:</b> Shows a Parent-Child relationship where the <b>Department</b>
+  list (Multi-selection) dynamically adjusts its available options based on the selected
+  <b>Company</b> (Single-selection).</li>
+  <li><b>User-Friendly Start:</b> By setting defaults during the initial load, the system
+  reduces the number of clicks required for a user to see the first relevant batch of data.</li>
+</ul>
+
+<p><i>Technical Focus: Mastering <code>specifyDefaultValue</code> to configure the filter's starting state.</i></p>
+<p>Check the <b>Related Documentation</b> for details on implementing default value logic.</p>

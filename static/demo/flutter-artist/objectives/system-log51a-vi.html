@@ -1,0 +1,24 @@
+<h3>Thao tác Hàng loạt: Làm chủ Multi-Selection và Multi-Check</h3>
+<p>
+  Ví dụ này minh họa khả năng <b>Quản lý hàng loạt</b> tinh tế của FlutterArtist, được thiết kế
+  để quản trị dữ liệu hiệu suất cao và phục vụ các quy trình công việc chuyên nghiệp.
+</p>
+
+<ul>
+  <li><b>Đánh dấu hai lớp:</b> Tìm hiểu cách phân biệt giữa <b>Selection</b> (chọn để làm nổi bật)
+  và <b>Checking</b> (đánh dấu để xử lý hàng loạt). Cách tiếp cận hai lớp này mang lại sự linh hoạt
+  tối đa cho các tương tác người dùng phức tạp.</li>
+  <li><b>API Điều khiển Toàn diện:</b> Khám phá các phương thức có sẵn của Block để thao tác tập hợp,
+  bao gồm <code>selectAllItems()</code>, <code>checkAllItems()</code> và các phương thức tương ứng
+  để đặt lại trạng thái nhanh chóng.</li>
+  <li><b>Logic Xóa Chính xác:</b> Nhấn mạnh cơ chế <code>CurrentItemInclusion</code>, cho phép nhà
+  phát triển xác định chính xác cách "Mục hiện thời" (Current Item) được xử lý trong quá trình xóa
+  hàng loạt (Bao gồm, Loại trừ, hoặc Nếu khớp), ngăn chặn việc mất dữ liệu ngoài ý muốn của bản ghi đang hoạt động.</li>
+  <li><b>Quản lý Trạng thái Sạch:</b> Phô diễn tính năng <code>clearCurrentItem()</code>, yếu tố cần
+  thiết cho các kịch bản mà giao diện cần quay trở lại trạng thái trung lập không có bản ghi nào được chọn.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Tận dụng quản lý trạng thái tập hợp của Block để thao tác lưới dữ liệu
+chuyên nghiệp và thực hiện các quy trình xóa lô an toàn.</i></p>
+<p>Vui lòng xem triển khai các <b>Phương thức Xóa</b> trong <code>SystemLog51aButtons</code> để
+biết cách áp dụng các chính sách bao hàm (inclusion policies).</p>

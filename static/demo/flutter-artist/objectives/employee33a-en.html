@@ -1,0 +1,21 @@
+<h3>Advanced Custom Filters & Tree Integration</h3>
+<p>
+  This example demonstrates how to integrate complex custom widgets into the
+  <b>FilterPanel</b> using <code>FormBuilderField</code>, while maintaining reactive
+  parent-child relationships.
+</p>
+
+<ul>
+  <li><b>Custom Tree Input:</b> Instead of a standard dropdown, the <b>Company</b> criterion is
+  rendered as a <b>CompanyTreeView</b>. By wrapping it in <code>FormBuilderField</code>, it
+  functions as a standard Form input, seamlessly replacing <code>FormBuilderDropdown</code>.</li>
+  <li><b>Standard Interoperability:</b> Even with a custom Tree widget, the system maintains
+  full compatibility with standard components like the <b>Department</b> dropdown. Selecting
+  a node in the Tree automatically triggers the cascading logic for the dependent dropdown.</li>
+  <li><b>Reactive State Handling:</b> The use of <code>field.didChange(item)</code> ensures that
+  the <b>FilterModel</b> is instantly notified of user selections within the custom Tree,
+  triggering real-time data queries.</li>
+</ul>
+
+<p><i>Technical Focus: Transforming any custom UI widget into a standardized Filter Input using FormBuilder wrappers.</i></p>
+<p>Check the <code>Employee33aFilterPanel</code> source code in <b>Related Documentation</b> for integration details.</p>

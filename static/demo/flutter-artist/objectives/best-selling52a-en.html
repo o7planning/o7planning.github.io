@@ -1,0 +1,22 @@
+<h3>Advanced Multi-Sorting with BreadCrumbSortPanel</h3>
+<p>
+  This example demonstrates the <b>Multi-level Sorting</b> capability of FlutterArtist,
+  allowing users to organize complex datasets using multiple criteria simultaneously.
+</p>
+
+<ul>
+  <li><b>Multi-Sort Mode:</b> By setting <code>SortMode.multi</code> in the <b>SortModelBuilder</b>,
+  the application can handle a chain of sorting rules (e.g., Category > Amount > Product Name).</li>
+  <li><b>Breadcrumb Navigation:</b> The <b>BreadCrumbSortPanel</b> provides a visual path
+  of active sorting layers. Each "breadcrumb" represents a sorting level that users can
+  individually toggle or remove to refine their data view.</li>
+  <li><b>Directional Selection Only:</b> Highlights the <code>directionalSelectionOnly</code>
+  configuration, which forces a criterion to always have a sort direction (Asc/Desc)
+  once selected, preventing an "unsorted" state for critical business logic.</li>
+  <li><b>Complex Comparison Logic:</b> The <code>getComparisonValue</code> method is
+  extensively used to provide precise sorting values for diverse data types like
+  Strings (Product Name) and Numbers (Total Units/Amount).</li>
+</ul>
+
+<p><i>Technical Focus: Mastering hierarchical multi-sorting logic and utilizing BreadCrumbSortPanel for professional data reporting interfaces.</i></p>
+<p>Check the <code>BestSelling52aSortModelBuilder</code> in <b>Related Documentation</b> to see how multi-mode sorting is structured.</p>

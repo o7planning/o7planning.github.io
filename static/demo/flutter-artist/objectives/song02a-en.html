@@ -1,0 +1,14 @@
+<h3>Dynamic Filtering with FilterModel</h3>
+<p>
+  This example demonstrates how to build a flexible search system by combining
+  <b>FilterModel</b> and <b>Block</b> to query songs by title and album.
+</p>
+
+<ul>
+  <li><b>Declarative Filter Structure:</b> Use <code>FilterModelStructure</code> to define search criteria (Simple text, Multi-option) and logical conditions (Contains, Equal To) without writing complex UI logic.</li>
+  <li><b>Automated Data Loading:</b> The <b>FilterModel</b> automatically fetches master data (like the list of Albums) and populates selection components within the <b>FilterPanel</b>.</li>
+  <li><b>Criteria to Query:</b> User inputs are transformed into a <code>FilterCriteria</code> object, which is then passed directly into the Block's <code>performQuery()</code> method to filter server-side data.</li>
+</ul>
+
+<p><i>Technical Focus: Centralizing filtering logic within FilterModel for seamless UI synchronization and robust data querying.</i></p>
+<p>Explore the <code>Song02aFilterModel</code> implementation in the <b>Related Documentation</b> for details.</p>

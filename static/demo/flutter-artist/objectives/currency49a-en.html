@@ -1,0 +1,20 @@
+<h3>Manual Item Reordering with SortStrategy.manual</h3>
+<p>
+  This example demonstrates how to empower users with <b>Manual Sorting</b> capabilities,
+  allowing them to directly define the order of items through intuitive <b>Drag & Drop</b> interactions.
+</p>
+
+<ul>
+  <li><b>Manual Strategy Configuration:</b> To enable user-driven reordering, the <b>BlockConfig</b>
+  must be explicitly set to <code>SortStrategy.manual</code>. This disables automatic sorting
+  and hands over full control of the item sequence to the client-side logic.</li>
+  <li><b>Drag & Drop Integration:</b> Shows the seamless integration with Flutter's
+  <code>ReorderableListView</code>. The UI captures the movement, and the <b>Block</b>
+  synchronizes its internal state via the <code>moveItemByIndexPosition()</code> method.</li>
+  <li><b>Persistent State Consistency:</b> Even after reordering, the <b>Block</b> maintains
+  the correct "Current Item" context. Using <code>refreshItemAndSetAsCurrent()</code>
+  ensures that selecting an item remains accurate regardless of its new position in the list.</li>
+</ul>
+
+<p><i>Technical Focus: Implementing interactive reordering by bridging ReorderableListView events with Block's manual sort management.</i></p>
+<p>Check the <code>_onReorder</code> implementation in <b>Related Documentation</b> to see the index calculation and movement logic.</p>

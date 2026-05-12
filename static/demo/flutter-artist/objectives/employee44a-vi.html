@@ -1,0 +1,22 @@
+<h3>Chọn nhiều với CheckboxGroup & Giá trị mặc định</h3>
+<p>
+  Ví dụ này minh họa cách sử dụng <b>CheckboxGroup</b> để chọn nhiều trong mối quan hệ
+  lọc phân cấp, kết hợp với việc thiết lập các <b>Giá trị mặc định ban đầu</b>.
+</p>
+
+<ul>
+  <li><b>Chọn nhiều trực quan:</b> Thay vì menu thả xuống, tiêu chí <b>Phòng ban</b>
+  sử dụng <code>FaFormBuilderCheckboxGroup</code>. Bố cục này cho phép người dùng xem
+  tất cả các phòng ban cùng lúc và chọn nhiều mục với độ hiển thị cao.</li>
+  <li><b>Giá trị mặc định ban đầu:</b> Tương tự như Ví dụ 20a, <b>FilterModel</b>
+  tự động thiết lập trạng thái bắt đầu khi bộ lọc được tải lần đầu—mặc định chọn
+  <b>Công ty</b> đầu tiên và tất cả các <b>Phòng ban</b> của nó.</li>
+  <li><b>Linh hoạt thành phần UI:</b> Ví dụ này khẳng định logic của <b>FilterModel</b>
+  tách biệt với widget UI. Bạn có thể hoán đổi giữa <code>MultiDropdown</code> và
+  <code>CheckboxGroup</code> mà không cần thay đổi logic lọc cốt lõi.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Tích hợp các widget chọn nhiều trực quan và làm chủ thiết lập
+giá trị mặc định ban đầu để người dùng bắt đầu thuận tiện nhất.</i></p>
+<p>Vui lòng xem mã nguồn <code>Employee44aFilterPanel</code> trong phần <b>Bài viết liên quan</b>
+để biết chi tiết triển khai UI.</p>
