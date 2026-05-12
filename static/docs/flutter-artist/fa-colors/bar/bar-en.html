@@ -1,0 +1,26 @@
+<h1>Control & Toolbars (Bar Namespace)</h1>
+<p>
+  The <b>Bar Namespace</b> focuses on directional and control components located at the edges of the application. Unlike the "containing" nature of Surfaces, Bars are "instructional" by nature.
+</p>
+
+<h3>1. When to use Bar instead of Surface?</h3>
+<p>
+  Even though a Bar is technically a surface, it is separated to manage navigation systems such as: AppBar (top), BottomBar/Footer (bottom), or functional ToolBars.
+</p>
+
+<h3>2. Border Separation Techniques</h3>
+<p>
+  For Bars, Borders act as essential "Technical Lines":
+</p>
+<ul>
+  <li><b>AppBar:</b> Use <code>faColors.border.strong</code> at the bottom edge to separate the header from the content.</li>
+  <li><b>BottomBar:</b> Use <code>faColors.border.strong</code> at the top edge to anchor the tool area.</li>
+  <li><b>Vertical Splits:</b> Use <code>faColors.border.subtle</code> to divide icon groups within a toolbar.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>DESIGN TIP:</strong>
+  When placing buttons (Actions) on a Bar, consider using Ghost or Outlined buttons to keep the navigation bar clean and avoid visual conflict with the Bar's <code>border.strong</code> lines.
+</div>
+
+<p><i>Check out real-world applications in the <b>Live Preview</b> section of the Bar tab.</i></p>

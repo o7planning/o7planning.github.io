@@ -1,0 +1,30 @@
+<h1>Phân cấp Bề mặt (Surface Namespace)</h1>
+<p>
+  <b>Surface Namespace</b> định nghĩa các lớp nền tảng của ứng dụng. Đây là nơi chứa đựng toàn bộ nội dung, phân chia bố cục và tạo ra chiều sâu thị giác thông qua các lớp bề mặt chồng lên nhau.
+</p>
+
+<h3>1. Các lớp bề mặt lớn</h3>
+<p>
+  Các token trong nhóm <code>faColors.surface.xxx</code> được thiết kế để áp dụng cho các thành phần có diện tích lớn như Scaffold Base, Containers, Cards, hoặc Dialogs.
+</p>
+
+<h3>2. Quy tắc phối hợp "Bộ ba nền tảng"</h3>
+<p>
+  Vì Surface là những mảng màu lớn, việc chọn màu chữ và viền đi kèm là cực kỳ quan trọng:
+</p>
+<ul>
+  <li><b>Văn bản & Icon:</b> Bắt buộc sử dụng <code>faColors.text.xxx</code> để đảm bảo độ đọc tốt nhất.</li>
+  <li><b>Đường viền (Border):</b> Sử dụng <code>faColors.border.subtle</code> cho các khối nội dung nhẹ nhàng (Card) hoặc <code>faColors.border.strong</code> cho các khung hình vững chãi.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>QUY TẮC VÀNG:</strong>
+  Khi sử dụng màu nền từ <code>faColors.surface.xxx</code>, hãy luôn đi kèm với <code>faColors.text.xxx</code> và <code>faColors.border.xxx</code>. Đây là bộ màu được tính toán để đảm bảo an toàn về tương phản trên mọi chủ đề (Theme).
+</div>
+
+<h3>3. Phân cấp độ cao (Z-Index)</h3>
+<p>
+  Hệ thống cung cấp các mức độ từ <code>low</code> đến <code>high</code>. Sử dụng <code>surface.low</code> cho các thành phần chìm bên dưới và <code>surface.high</code> cho các thành phần cần "nổi" lên trên, giúp tạo ra phân tầng thị giác rõ ràng.
+</p>
+
+<p><i>Chi tiết mã màu cụ thể có thể tìm thấy tại tab <b>Token Docs</b>.</i></p>

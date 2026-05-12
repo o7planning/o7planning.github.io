@@ -1,0 +1,26 @@
+<h1>Thanh điều khiển & Công cụ (Bar Namespace)</h1>
+<p>
+  <b>Bar Namespace</b> tập trung vào các thành phần định hướng và điều khiển nằm ở các cạnh của ứng dụng. Khác với Surface mang tính chất "chứa đựng", Bar mang tính chất "chỉ dẫn".
+</p>
+
+<h3>1. Khi nào dùng Bar thay vì Surface?</h3>
+<p>
+  Mặc dù Bar cũng là một bề mặt, nhưng nó được tách riêng để quản lý hệ thống điều hướng như: AppBar (phía trên), BottomBar/Footer (phía dưới) hoặc các ToolBar chức năng.
+</p>
+
+<h3>2. Kỹ thuật ngăn cách bằng Border</h3>
+<p>
+  Đối với các thanh Bar, Border đóng vai trò là "Đường kẻ kỹ thuật" cực kỳ quan trọng:
+</p>
+<ul>
+  <li><b>AppBar:</b> Sử dụng <code>faColors.border.strong</code> ở cạnh dưới để phân tách tiêu đề với nội dung.</li>
+  <li><b>BottomBar:</b> Sử dụng <code>faColors.border.strong</code> ở cạnh trên để định vị vùng công cụ.</li>
+  <li><b>Phân tách dọc:</b> Sử dụng <code>faColors.border.subtle</code> để chia nhỏ các nhóm icon trên thanh công cụ.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>MẸO THIẾT KẾ:</strong>
+  Nếu bạn đặt các nút bấm (Action) lên trên Bar, hãy dùng Ghost hoặc Outlined Button để giữ cho thanh điều hướng thanh thoát, không bị tranh chấp thị giác với đường viền <code>border.strong</code> của Bar.
+</div>
+
+<p><i>Tham khảo cách áp dụng thực tế tại phần <b>Live Preview</b> của tab Bar.</i></p>
