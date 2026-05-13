@@ -1,0 +1,30 @@
+<h1>Surface Hierarchy (Surface Namespace)</h1>
+<p>
+  The <b>Surface Namespace</b> defines the fundamental layers of your application. It hosts all content, manages layouts, and creates visual depth through overlapping surface levels.
+</p>
+
+<h3>1. Large Surface Layers</h3>
+<p>
+  Tokens in the <code>faColors.surface.xxx</code> group are designed for high-area components such as Scaffold Base, Containers, Cards, or Dialogs.
+</p>
+
+<h3>2. The "Foundational Trio" Rule</h3>
+<p>
+  Since Surfaces consist of large color areas, coordination between text and borders is crucial:
+</p>
+<ul>
+  <li><b>Text & Icons:</b> Must use <code>faColors.ink.xxx</code> to ensure optimal readability.</li>
+  <li><b>Borders:</b> Use <code>faColors.border.subtle</code> for gentle content separation (Cards) or <code>faColors.border.strong</code> for solid structural outlines.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>THE GOLDEN RULE:</strong>
+  When using background colors from <code>faColors.surface.xxx</code>, always pair them with <code>faColors.ink.xxx</code> and <code>faColors.border.xxx</code>. This set is calibrated to ensure safe contrast ratios across all themes.
+</div>
+
+<h3>3. Visual Elevation (Z-Index)</h3>
+<p>
+  The system provides levels from <code>low</code> to <code>high</code>. Use <code>surface.low</code> for recessed components and <code>surface.high</code> for elements that need to "float" above, creating a clear visual hierarchy.
+</p>
+
+<p><i>Technical color values are available in the <b>Token Docs</b> tab.</i></p>
