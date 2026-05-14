@@ -1,0 +1,50 @@
+<h1>faColors.action.fill.danger</h1>
+<p>
+  The <code>faColors.action.fill.danger</code> token defines the background color for destructive or high-risk actions, such as "Delete", "Remove", "Block", or "Critical Error" alerts.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.danger</code> serves as the most intense visual signal. It utilizes a deep, high-chroma red optimized to command immediate attention and signal that the associated action has permanent or severe consequences.
+</p>
+
+<div class="warning-box">
+  <strong>The "Red Alert" Principle:</strong><br>
+  Always pair this background with <code>faColors.action.ink.onDangerFill</code>.
+  Due to the psychological weight of red, this fill should only be used for actions that are truly destructive. For non-destructive warnings, use <code>faColors.action.fill.warning</code> instead.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Destructive Action Button (e.g., Delete Account)
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // The high-urgency danger fill
+    color: context.faColors.action.fill.danger,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.delete_forever_rounded,
+        // CORRECT: Contrast ink for danger background
+        color: context.faColors.action.ink.onDangerFill,
+        size: 18,
+      ),
+      const SizedBox(width: 8),
+      Text(
+        'Delete Permanent',
+        style: TextStyle(
+          // CORRECT: Contrast ink for danger background
+          color: context.faColors.action.ink.onDangerFill,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.fill.danger</code> is mapped to the semantic error/danger color, ensuring maximum visibility across all themes.</i>

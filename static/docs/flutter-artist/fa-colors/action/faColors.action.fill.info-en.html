@@ -1,0 +1,50 @@
+<h1>faColors.action.fill.info</h1>
+<p>
+  The <code>faColors.action.fill.info</code> token defines the background color for informational actions or states that provide neutral guidance, such as "Details", "Learn More", or "Instruction" banners.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.info</code> provides a visual signal for helpful but non-critical content. It typically utilizes a specific blue hue, chosen to be distinct from the primary brand color to avoid confusion between "Primary Actions" and "Informational Context".
+</p>
+
+<div class="warning-box">
+  <strong>Informational Clarity:</strong><br>
+  Always pair this background with <code>faColors.action.ink.onInfoFill</code>.
+  This fill should be reserved for elements that help the user understand the system state without implying success, warning, or danger.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating an Informational Action Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+  decoration: BoxDecoration(
+    // The calm informational blue fill
+    color: context.faColors.action.fill.info,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.info_outline_rounded,
+        // CORRECT: Contrast ink for info background
+        color: context.faColors.action.ink.onInfoFill,
+        size: 18,
+      ),
+      const SizedBox(width: 8),
+      Text(
+        'View Instructions',
+        style: TextStyle(
+          // CORRECT: Contrast ink for info background
+          color: context.faColors.action.ink.onInfoFill,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.fill.info</code> is mapped to a balanced cyan or sky-blue palette to ensure a neutral and professional tone.</i>

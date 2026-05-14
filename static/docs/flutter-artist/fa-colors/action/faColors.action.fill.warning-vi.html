@@ -1,0 +1,50 @@
+<h1>faColors.action.fill.warning</h1>
+<p>
+  Token <code>faColors.action.fill.warning</code> xác định màu nền cho các hành động mang tính thận trọng hoặc các trạng thái yêu cầu sự chú ý của người dùng mà không có tính chất phá hủy, chẳng hạn như "Yêu cầu cập nhật", "Số dư thấp" hoặc "Tiếp tục một cách thận trọng".
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.warning</code> cung cấp một tín hiệu thị giác có độ hiển thị cao, nằm giữa các bề mặt trung tính và các trạng thái nguy hiểm (danger). Nó sử dụng sắc thái vàng hoặc hổ phách có độ bão hòa cao, được tinh chỉnh đặc biệt để nổi bật trên các thành phần UI tiêu chuẩn nhằm ngăn chặn sự bỏ sót vô ý.
+</p>
+
+<div class="warning-box">
+  <strong>Quản lý sự chú ý:</strong><br>
+  Luôn kết hợp nền này với <code>faColors.action.ink.onWarningFill</code>.
+  <b>TRÁNH</b> sử dụng lớp lấp đầy này cho các mục đích trang trí không khẩn cấp; nó nên được dành riêng cho những mục thực sự cần người dùng "nhìn lại lần hai" để duy trì tính toàn vẹn của hệ thống tín hiệu trong ứng dụng.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Nút bấm Cảnh báo (Warning Button)
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // Lớp fill warning có độ hiển thị cao
+    color: context.faColors.action.fill.warning,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.warning_amber_rounded,
+        // ĐÚNG: Mực tương phản dành cho nền warning
+        color: context.faColors.action.ink.onWarningFill,
+        size: 18,
+      ),
+      const SizedBox(width: 8),
+      Text(
+        'Xác minh danh tính',
+        style: TextStyle(
+          // ĐÚNG: Mực tương phản dành cho nền warning
+          color: context.faColors.action.ink.onWarningFill,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.fill.warning</code> thường được ánh xạ tới bảng màu hổ phách hoặc tông cam để đảm bảo khả năng hiển thị trong cả chế độ Sáng và Tối.</i>

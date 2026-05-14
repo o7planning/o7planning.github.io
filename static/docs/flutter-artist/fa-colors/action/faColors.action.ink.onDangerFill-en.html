@@ -1,0 +1,39 @@
+<h1>faColors.action.ink.onDangerFill</h1>
+<p>
+  The <code>faColors.action.ink.onDangerFill</code> token defines the specific ink color for text and icons that sit directly on top of a <code>faColors.action.fill.danger</code> background.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, this token acts as the ultimate contrast anchor. Since danger backgrounds use high-saturation red, this ink is mathematically tuned to maintain maximum legibility (typically white or high-luminance neutral), ensuring that critical confirmation labels like "Delete Forever" are unmistakable.
+</p>
+
+<div class="warning-box">
+  <strong>The "Red Surface" Rule:</strong><br>
+  This token <b>MUST</b> be paired with <code>faColors.action.fill.danger</code>.
+  Attempting to use <code>faColors.action.ink.onDangerFill</code> on a neutral or white background will likely result in <b>invisible</b> content, as its luminance is designed specifically to contrast against deep red.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct implementation of a Critical Danger Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+  decoration: BoxDecoration(
+    // REQUIRED: The deep red danger fill
+    color: context.faColors.action.fill.danger,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Text(
+    'CONFIRM DELETE',
+    style: TextStyle(
+      // CORRECT: Maximum contrast ink for the danger fill
+      color: context.faColors.action.ink.onDangerFill,
+      fontWeight: FontWeight.black,
+      letterSpacing: 1.2,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: Within the FaColorGraph, this token is typically mapped to a pure white or an ultra-light tint to meet high accessibility standards (WCAG AAA) on dangerous surfaces.</i>

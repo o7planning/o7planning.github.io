@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onWarningFill</h1>
+<p>
+  Token <code>faColors.action.ink.onWarningFill</code> xác định màu mực cụ thể cho văn bản và biểu tượng nằm trực tiếp trên lớp nền <code>faColors.action.fill.warning</code>.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, token này đóng vai trò là một lớp tương phản cực kỳ quan trọng. Vì nền cảnh báo thường có độ sáng cao (vàng hoặc hổ phách), loại mực này được tinh chỉnh đặc biệt (thường là màu trung tính cực tối) để đảm bảo thông điệp thận trọng luôn dễ đọc hoàn hảo trong mọi điều kiện môi trường.
+</p>
+
+<div class="warning-box">
+  <strong>Khóa khả năng hiển thị:</strong><br>
+  Token này <b>BẮT BUỘC</b> phải được sử dụng đi kèm với <code>faColors.action.fill.warning</code>.
+  Nếu bạn sử dụng <code>faColors.action.ink.onWarningFill</code> cho một nhãn đứng độc lập trên <code>faColors.surface.xxx</code>, độ tương phản sẽ không đủ, thường khiến chữ gần như <b>vô hình</b>.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Triển khai đúng cho một nút hành động Cảnh báo
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // BẮT BUỘC: Lớp lấp đầy warning rực rỡ
+    color: context.faColors.action.fill.warning,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Text(
+    'Yêu cầu cập nhật',
+    style: TextStyle(
+      // ĐÚNG: Mực tương phản cao dành cho nền warning
+      color: context.faColors.action.ink.onWarningFill,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, token này hầu như luôn được ánh xạ tới màu xám cực đậm hoặc màu đen để đảm bảo độ tương phản tối đa trên nền vàng/hổ phách sáng của warning.</i>

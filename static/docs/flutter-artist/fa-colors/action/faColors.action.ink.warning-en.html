@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.warning</h1>
+<p>
+  The <code>faColors.action.ink.warning</code> token defines the semantic warning color (typically amber or orange) for text, icons, and vector graphics used in interactive actions.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.warning</code> is visually aligned with the warning fill palette. The "Ink" designation ensures that cautionary messages or status icons remain sharp and legible when placed directly on neutral <code>faColors.surface.xxx</code> layers.
+</p>
+
+<div class="warning-box">
+  <strong>Standalone Caution:</strong><br>
+  Use this token for <b>TextButtons</b> or icons that signal a non-critical issue, such as a "Low Battery" indicator or an "Incomplete Profile" link. It provides high chromatic contrast on light/dark grounds without the visual "weight" of a filled button.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Warning Text Button (No Background)
+Row(
+  children: [
+    Icon(
+      Icons.error_outline_rounded,
+      // CORRECT: Use warning ink for a standalone caution icon
+      color: context.faColors.action.ink.warning,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Subscription Expiring Soon',
+        style: TextStyle(
+          // CORRECT: Semantic warning color for interactive text
+          color: context.faColors.action.ink.warning,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: Never use this token on top of <code>faColors.action.fill.warning</code>. Use <code>faColors.action.ink.onWarningFill</code> to ensure optimal legibility.</i>

@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onInfoFill</h1>
+<p>
+  The <code>faColors.action.ink.onInfoFill</code> token defines the specific ink color for text and icons that sit directly on top of a <code>faColors.action.fill.info</code> background.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, this token serves as a high-contrast companion for informational surfaces. Since info backgrounds use a specific blue/cyan hue, this ink is mathematically tuned to provide maximum legibility, ensuring that auxiliary guidance or "Learn More" primary buttons are unmistakably clear.
+</p>
+
+<div class="warning-box">
+  <strong>The Informational Lock:</strong><br>
+  This token <b>MUST</b> be used with <code>faColors.action.fill.info</code>.
+  If you attempt to use <code>faColors.action.ink.onInfoFill</code> for standalone text on a <code>faColors.surface.xxx</code>, the lack of contrast will likely render the content <b>invisible</b>.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct implementation of an Info Action Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // REQUIRED: The informational blue fill
+    color: context.faColors.action.fill.info,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Text(
+    'Show Tutorial',
+    style: TextStyle(
+      // CORRECT: High-contrast ink for the info fill
+      color: context.faColors.action.ink.onInfoFill,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, this token is typically mapped to a crisp white or a very deep navy, depending on the specific blue luminance of your info theme.</i>

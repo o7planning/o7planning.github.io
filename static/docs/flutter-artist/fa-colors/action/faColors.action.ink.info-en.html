@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.info</h1>
+<p>
+  The <code>faColors.action.ink.info</code> token defines the semantic information color (blue) specifically for text, icons, and vector graphics used in interactive informational actions.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.info</code> is visually aligned with the info fill palette. The "Ink" designation ensures that guidance-related content remains sharp and maintains professional contrast when placed directly on neutral <code>faColors.surface.xxx</code> layers.
+</p>
+
+<div class="warning-box">
+  <strong>Informational Affordance:</strong><br>
+  Use this token for <b>TextButtons</b> like "Details" or "Read Manual" and standalone icons that provide extra context. It distinguishes helpful information from primary brand actions, creating a clearer hierarchy of intent.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating an Informational Text Button (No Background)
+Row(
+  children: [
+    Icon(
+      Icons.help_center_rounded,
+      // CORRECT: Use info ink for a standalone guidance icon
+      color: context.faColors.action.ink.info,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Learn More About This Feature',
+        style: TextStyle(
+          // CORRECT: Semantic info color for interactive text
+          color: context.faColors.action.ink.info,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: Never use this token on top of <code>faColors.action.fill.info</code>. Use <code>faColors.action.ink.onInfoFill</code> to ensure optimal contrast and legibility.</i>

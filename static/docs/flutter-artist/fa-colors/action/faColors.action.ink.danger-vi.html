@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.danger</h1>
+<p>
+  Token <code>faColors.action.ink.danger</code> xác định màu nguy hiểm ngữ nghĩa (màu đỏ) dành riêng cho văn bản, biểu tượng và đồ họa vector được sử dụng trong các hành động tương tác.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.danger</code> được căn chỉnh thị giác với bảng màu danger fill. Định danh "Ink" đảm bảo rằng các nhãn mang tính phá hủy luôn sắc nét và đáp ứng tiêu chuẩn truy cập khi đặt trực tiếp trên các lớp <code>faColors.surface.xxx</code> hoặc <code>faColors.bar.xxx</code> trung tính.
+</p>
+
+<div class="warning-box">
+  <strong>Phá hủy độc lập:</strong><br>
+  Sử dụng token này cho các <b>TextButton</b> mang tính phá hủy (như "Loại bỏ mục") hoặc các biểu tượng báo hiệu lỗi nghiêm trọng. Nó cung cấp một tín hiệu "Dừng lại" rõ ràng mà không gây choáng ngợp thị giác như một nút bấm đỏ có nền.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Text Button Danger (Không có nền)
+Row(
+  children: [
+    Icon(
+      Icons.no_accounts_rounded,
+      // ĐÚNG: Sử dụng mực danger cho icon phá hủy đứng độc lập
+      color: context.faColors.action.ink.danger,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Hủy liên kết tài khoản',
+        style: TextStyle(
+          // ĐÚNG: Màu đỏ ngữ nghĩa cho văn bản mang tính phá hủy
+          color: context.faColors.action.ink.danger,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Tuyệt đối không dùng token này đè lên nền <code>faColors.action.fill.danger</code>. Hãy sử dụng <code>faColors.action.ink.onDangerFill</code> để đảm bảo nội dung không bị "nuốt chửng" bởi nền.</i>

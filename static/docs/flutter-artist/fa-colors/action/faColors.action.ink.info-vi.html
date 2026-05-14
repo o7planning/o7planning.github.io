@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.info</h1>
+<p>
+  Token <code>faColors.action.ink.info</code> xác định màu thông tin ngữ nghĩa (màu xanh dương) dành riêng cho văn bản, biểu tượng và đồ họa vector được sử dụng trong các hành động mang tính chỉ dẫn.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.info</code> được căn chỉnh thị giác với bảng màu info fill. Định danh "Ink" đảm bảo rằng nội dung hướng dẫn luôn sắc nét và duy trì độ tương phản chuyên nghiệp khi đặt trực tiếp trên các lớp <code>faColors.surface.xxx</code> trung tính.
+</p>
+
+<div class="warning-box">
+  <strong>Gợi ý thông tin:</strong><br>
+  Sử dụng token này cho các <b>TextButton</b> như "Chi tiết" hoặc "Đọc hướng dẫn" và các biểu tượng đứng độc lập cung cấp thêm ngữ cảnh. Nó phân biệt thông tin hữu ích với các hành động thương hiệu chính, tạo ra một hệ thống phân cấp ý định rõ ràng hơn.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Text Button Thông tin (Không có nền)
+Row(
+  children: [
+    Icon(
+      Icons.help_center_rounded,
+      // ĐÚNG: Sử dụng mực info cho icon hướng dẫn đứng độc lập
+      color: context.faColors.action.ink.info,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Tìm hiểu thêm về tính năng này',
+        style: TextStyle(
+          // ĐÚNG: Màu xanh dương ngữ nghĩa cho văn bản tương tác
+          color: context.faColors.action.ink.info,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Tuyệt đối không dùng token này đè lên nền <code>faColors.action.fill.info</code>. Hãy sử dụng <code>faColors.action.ink.onInfoFill</code> để đảm bảo khả năng hiển thị và độ đọc tối ưu.</i>

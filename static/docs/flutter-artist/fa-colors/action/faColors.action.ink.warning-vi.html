@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.warning</h1>
+<p>
+  Token <code>faColors.action.ink.warning</code> xác định màu cảnh báo ngữ nghĩa (thường là màu hổ phách hoặc cam) cho văn bản, biểu tượng và đồ họa vector được sử dụng trong các hành động tương tác.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.warning</code> được căn chỉnh thị giác với bảng màu warning fill. Định danh "Ink" đảm bảo rằng các thông điệp thận trọng hoặc biểu tượng trạng thái luôn sắc nét và dễ đọc khi đặt trực tiếp trên các lớp <code>faColors.surface.xxx</code> trung tính.
+</p>
+
+<div class="warning-box">
+  <strong>Cảnh báo độc lập:</strong><br>
+  Sử dụng token này cho các <b>TextButton</b> hoặc biểu tượng báo hiệu một vấn đề không quá nghiêm trọng, chẳng hạn như chỉ báo "Pin yếu" hoặc liên kết "Hồ sơ chưa hoàn thiện". Nó mang lại độ tương phản màu sắc cao trên nền sáng/tối mà không gây "nặng" giao diện như một nút bấm có nền.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Text Button Cảnh báo (Không có nền)
+Row(
+  children: [
+    Icon(
+      Icons.error_outline_rounded,
+      // ĐÚNG: Sử dụng mực warning cho icon cảnh báo đứng độc lập
+      color: context.faColors.action.ink.warning,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Gói đăng ký sắp hết hạn',
+        style: TextStyle(
+          // ĐÚNG: Màu warning ngữ nghĩa cho văn bản tương tác
+          color: context.faColors.action.ink.warning,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Tuyệt đối không dùng token này đè lên nền <code>faColors.action.fill.warning</code>. Hãy sử dụng <code>faColors.action.ink.onWarningFill</code> để đảm bảo khả năng đọc tối ưu.</i>

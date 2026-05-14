@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.danger</h1>
+<p>
+  The <code>faColors.action.ink.danger</code> token defines the semantic danger color (red) specifically for text, icons, and vector graphics used in interactive actions.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.danger</code> is visually aligned with the danger fill palette. The "Ink" designation ensures that destructive labels remain sharp and meet accessibility standards when placed directly on neutral <code>faColors.surface.xxx</code> or <code>faColors.bar.xxx</code> layers.
+</p>
+
+<div class="warning-box">
+  <strong>Standalone Destruction:</strong><br>
+  Use this token for destructive <b>TextButtons</b> (like "Remove item") or icons that signal a critical error. It provides a clear "Stop" signal without the overwhelming visual dominance of a filled red button.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Danger Text Button (No Background)
+Row(
+  children: [
+    Icon(
+      Icons.no_accounts_rounded,
+      // CORRECT: Use danger ink for a standalone destructive icon
+      color: context.faColors.action.ink.danger,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Unbind Account',
+        style: TextStyle(
+          // CORRECT: Semantic danger color for destructive text
+          color: context.faColors.action.ink.danger,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: Never use this token on top of <code>faColors.action.fill.danger</code>. Use <code>faColors.action.ink.onDangerFill</code> to ensure the content remains visible and legible.</i>

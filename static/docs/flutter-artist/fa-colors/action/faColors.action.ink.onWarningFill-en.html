@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onWarningFill</h1>
+<p>
+  The <code>faColors.action.ink.onWarningFill</code> token defines the specific ink color for text and icons that sit directly on top of a <code>faColors.action.fill.warning</code> background.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, this token serves as a critical contrast layer. Since warning backgrounds are often high-luminance (yellow or amber), this ink is specifically tuned (typically to a deep dark neutral) to ensure that the cautionary message remains perfectly legible under all environmental conditions.
+</p>
+
+<div class="warning-box">
+  <strong>The Visibility Lock:</strong><br>
+  This token <b>MUST</b> be used exclusively with <code>faColors.action.fill.warning</code>.
+  If you use <code>faColors.action.ink.onWarningFill</code> for a standalone label on a <code>faColors.surface.xxx</code>, the contrast will be insufficient, often making the text appear nearly <b>invisible</b>.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct implementation of a Warning Action Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // REQUIRED: The vibrant warning fill
+    color: context.faColors.action.fill.warning,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Text(
+    'Update Required',
+    style: TextStyle(
+      // CORRECT: High-contrast ink for the warning fill
+      color: context.faColors.action.ink.onWarningFill,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: Within the FaColorGraph, this token is almost always mapped to a very dark gray or black to ensure maximum contrast against the bright warning yellow/amber.</i>
