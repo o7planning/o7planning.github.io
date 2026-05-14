@@ -1,6 +1,39 @@
-
-<h1> faColors.selection.inkSelected </h1>
+<h1>faColors.selection.inkSelected</h1>
 <p>
-  The specific text color for rows in the <code>faColors.selection.rowSelected</code> state.
-  Since selection backgrounds often use color blending effects, <code>faColors.selection.inkSelected</code> is calibrated to prevent the text from "sinking" into the tint, keeping critical info sharp.
+  The <code>faColors.selection.inkSelected</code> token defines the color for text and icons when their parent container is in the selected state (<code>rowSelected</code>).
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>inkSelected</code> is a functional contrast ink. While <code>inkNormal</code> focuses on legibility against neutral grounds, <code>inkSelected</code> is mathematically tuned to maintain a high contrast ratio against the primary/brand-colored surface of a selected row.
+</p>
+
+<div class="warning-box">
+  <strong>Dynamic Contrast:</strong><br>
+  This ink automatically switches between light and dark values depending on the luminance of your <code>rowSelected</code> fill, ensuring the content remains readable in any theme.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Drawing content on a selected surface
+Row(
+  children: [
+    Icon(
+      Icons.check_circle_rounded,
+      // Use selected ink for icons
+      color: context.faColors.selection.inkSelected,
+    ),
+    const SizedBox(width: 8),
+    Text(
+      'Confirmed Selection',
+      style: TextStyle(
+        // Use selected ink for text
+        color: context.faColors.selection.inkSelected,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: <code>faColors.selection.inkSelected</code> is often an alias for <code>faColors.ink.primary</code> (in alpha-based selections) or <code>textOnPrimary</code> (in solid-color selections) within the FaColorGraph.</i>

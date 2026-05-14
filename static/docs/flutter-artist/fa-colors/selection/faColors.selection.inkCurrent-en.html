@@ -1,7 +1,39 @@
-
-
-<h1> faColors.selection.inkCurrent </h1>
+<h1>faColors.selection.inkCurrent</h1>
 <p>
-  The text color for the row currently in the <code>faColors.selection.rowCurrent</code> state.
-  Similar to <code>faColors.selection.inkSelected</code>, it helps maintain visual focus on the navigated item, ensuring consistency between the surface and its content.
+  The <code>faColors.selection.inkCurrent</code> token defines the color for text and icons within a row that currently holds the focus or navigation pointer (<code>rowCurrent</code>).
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>inkCurrent</code> ensures that content remains primary and sharp while the user is actively navigating. Since <code>rowCurrent</code> usually represents a transient state, this ink is designed to work in perfect harmony with secondary-level backgrounds without losing the visual weight of the information.
+</p>
+
+<div class="warning-box">
+  <strong>Navigation Focus:</strong><br>
+  Use <code>inkCurrent</code> to provide subtle yet clear feedback that this specific item is the current target of keyboard or pointer navigation.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Drawing content on a focused/current surface
+Row(
+  children: [
+    Icon(
+      Icons.arrow_forward_ios_rounded,
+      // Apply ink for current focus state
+      color: context.faColors.selection.inkCurrent,
+      size: 16,
+    ),
+    const SizedBox(width: 8),
+    Text(
+      'Navigating System Item',
+      style: TextStyle(
+        // Use current ink for optimal legibility during navigation
+        color: context.faColors.selection.inkCurrent,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: <code>faColors.selection.inkCurrent</code> is typically an alias for <code>faColors.ink.primary</code> to ensure that focused content stays consistent with the main typography of the application.</i>

@@ -1,6 +1,39 @@
-
-<h1> faColors.selection.inkSelected </h1>
+<h1>faColors.selection.inkSelected</h1>
 <p>
-  Màu chữ dành riêng cho dòng ở trạng thái <code>faColors.selection.rowSelected</code>.
-  Vì nền của dòng chọn thường dùng hiệu ứng pha trộn màu, <code>faColors.selection.inkSelected</code> được tính toán để không bị "chìm" vào màu nền, đảm bảo thông tin quan trọng luôn sắc nét.
+  Token <code>faColors.selection.inkSelected</code> xác định màu sắc cho văn bản và biểu tượng khi lớp chứa (container) của chúng ở trạng thái được chọn (<code>rowSelected</code>).
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>inkSelected</code> là loại mực tương phản chức năng. Trong khi <code>inkNormal</code> tập trung vào khả năng đọc trên nền trung tính, <code>inkSelected</code> được tinh chỉnh để duy trì tỷ lệ tương phản cao trên bề mặt mang màu sắc thương hiệu của một hàng đang được chọn.
+</p>
+
+<div class="warning-box">
+  <strong>Tương phản động:</strong><br>
+  Loại mực này tự động chuyển đổi giữa các giá trị sáng và tối tùy thuộc vào độ sáng của lớp lấp đầy <code>rowSelected</code>, đảm bảo nội dung luôn dễ đọc trong mọi bộ giao diện (theme).
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Vẽ nội dung trên một bề mặt đang được chọn
+Row(
+  children: [
+    Icon(
+      Icons.check_circle_rounded,
+      // Sử dụng mực selected cho biểu tượng
+      color: context.faColors.selection.inkSelected,
+    ),
+    const SizedBox(width: 8),
+    Text(
+      'Confirmed Selection',
+      style: TextStyle(
+        // Sử dụng mực selected cho văn bản
+        color: context.faColors.selection.inkSelected,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: <code>faColors.selection.inkSelected</code> thường là bí danh của <code>faColors.ink.primary</code> (trong các vùng chọn dựa trên alpha) hoặc <code>textOnPrimary</code> (trong các vùng chọn màu đặc) bên trong FaColorGraph.</i>
