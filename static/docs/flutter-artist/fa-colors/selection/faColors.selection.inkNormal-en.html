@@ -1,5 +1,38 @@
-<h1> faColors.selection.rowNormal </h1>
+<h1>faColors.selection.inkNormal</h1>
 <p>
-  The default background color for a row in a table or list when in its idle state.
-  It usually aligns with <code>faColors.selection.surface.base</code> or <code>faColors.selection.surface.container</code> to provide a seamless visual flow.
+  The <code>faColors.selection.inkNormal</code> token defines the primary color for text, icons, and vector graphics within a selection row in its default state.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  As part of the <b>Fill - Ink - Stroke</b> architecture, <code>inkNormal</code> represents the core content layer. It is mapped to the highest contrast neutral color available in the current theme, ensuring that all data remains sharp and legible against the <code>rowNormal</code> ground.
+</p>
+
+<div class="warning-box">
+  <strong>The Semantic Anchor:</strong><br>
+  <code>inkNormal</code> is not just a text color. It is a universal ink applied to all foreground elements—including SVG icons and glyphs—to maintain visual unity within the row.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Drawing content with standard selection ink
+Row(
+  children: [
+    Icon(
+      Icons.data_object_rounded,
+      // Apply ink to the icon
+      color: context.faColors.selection.inkNormal,
+    ),
+    const SizedBox(width: 8),
+    Text(
+      'System Architecture Log',
+      style: TextStyle(
+        // Apply ink to the text
+        color: context.faColors.selection.inkNormal,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: <code>faColors.selection.inkNormal</code> is typically an alias for <code>faColors.ink.primary</code>, ensuring that list content follows the application's global typography standards.</i>
