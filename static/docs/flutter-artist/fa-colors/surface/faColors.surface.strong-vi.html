@@ -1,7 +1,46 @@
-
-
-<h1> faColors.surface.strong </h1>
+<h1>faColors.surface.strong</h1>
 <p>
-  Định nghĩa màu cho các bề mặt có độ cao thấp hoặc các vùng nội dung mang tính chất "chìm" xuống (recessed).
-  Thường được sử dụng để phân biệt các khu vực phụ trợ mà không làm xao nhãng người dùng khỏi nội dung chính.
+  Token <code>faColors.surface.strong</code> xác định cấp độ bề mặt cao nhất trong hệ thống phân cấp, cung cấp độ tương phản tối đa so với lớp nền (ground).
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.surface.strong</code> được thiết kế cho các thành phần cấu trúc yêu cầu sự phân tách dứt khoát với các yếu tố bố cục khác. Nó đại diện cho mật độ bề mặt mạnh nhất hiện có trước khi chuyển sang các lớp lấp đầy dựa trên hành động (action-based fills).
+</p>
+
+<div class="warning-box">
+  <strong>Quyền năng cấu trúc:</strong><br>
+  Sử dụng <code>faColors.surface.strong</code> cho các thanh bên (sidebars) cố định, tiêu đề modal có độ tương phản cao, hoặc các panel chuyên dụng dùng để định nghĩa cấu trúc chính của ứng dụng.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một thanh bên cấu trúc có độ tương phản cao
+Container(
+  width: 250,
+  // Bề mặt mạnh nhất để định nghĩa cấu trúc
+  color: context.faColors.surface.strong,
+  decoration: BoxDecoration(
+    border: Border(
+      right: BorderSide(
+        // Kết hợp với stroke strong để tạo sự phân tách tuyệt đối
+        color: context.faColors.stroke.strong,
+        width: 1,
+      ),
+    ),
+  ),
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Text(
+      'Main System Navigation',
+      style: TextStyle(
+        // Bề mặt strong yêu cầu mực primary có độ tương phản cao
+        color: context.faColors.ink.primary,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.surface.strong</code> được ánh xạ tới <code>surfaceContainerHighest</code> để đảm bảo nó đứng ở đỉnh của ngăn xếp độ cao bề mặt.</i>

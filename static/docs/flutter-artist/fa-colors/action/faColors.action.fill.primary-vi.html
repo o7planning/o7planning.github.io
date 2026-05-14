@@ -1,5 +1,50 @@
-<h1> faColors.action.fill.primary </h1>
+<h1>faColors.action.fill.primary</h1>
 <p>
-  Màu nền dành cho các hành động quan trọng nhất (Cấp độ 1).
-  Thường được sử dụng cho các nút bấm chính (Primary Button) để thu hút sự chú ý của người dùng vào luồng xử lý chính.
+  Token <code>faColors.action.fill.primary</code> xác định màu nền nổi bật nhất cho các hành động chính, chẳng hạn như các nút "Gửi", "Lưu" hoặc "Xác nhận".
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.primary</code> đại diện cho cấp độ nhấn mạnh tương tác cao nhất. Nó sử dụng màu thương hiệu đậm nhất từ bảng màu để đảm bảo thu hút sự chú ý ngay lập tức. Token này được thiết kế đặc biệt cho các thành phần có mật độ cao yêu cầu một lớp lấp đầy (fill) thị giác mạnh mẽ.
+</p>
+
+<div class="warning-box">
+  <strong>Quy tắc tương phản quan trọng:</strong><br>
+  Luôn kết hợp nền này với <code>faColors.action.ink.onPrimaryFill</code> cho nội dung (chữ/biểu tượng).
+  <b>TUYỆT ĐỐI KHÔNG</b> sử dụng <code>faColors.action.ink.primary</code> đè lên nền này, vì token đó dành cho các phần tử đứng độc lập và sẽ không đủ độ tương phản tại đây.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Nút bấm Chính (Primary Button) có độ nhấn cao
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+  decoration: BoxDecoration(
+    // Lớp fill primary đậm đà cho hành động chính
+    color: context.faColors.action.fill.primary,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.check_rounded,
+        // ĐÚNG: Mực tương phản dành cho nền primary
+        color: context.faColors.action.ink.onPrimaryFill,
+        size: 18,
+      ),
+      const SizedBox(width: 8),
+      Text(
+        'Confirm Action',
+        style: TextStyle(
+          // ĐÚNG: Mực tương phản dành cho nền primary
+          color: context.faColors.action.ink.onPrimaryFill,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: <code>faColors.action.fill.primary</code> được ánh xạ tới màu thương hiệu chính trong FaActionSurfaceResolvers.</i>

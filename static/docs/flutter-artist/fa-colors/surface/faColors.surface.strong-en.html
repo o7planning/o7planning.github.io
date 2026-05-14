@@ -1,7 +1,46 @@
-
-
-<h1> faColors.surface.strong </h1>
+<h1>faColors.surface.strong</h1>
 <p>
-  Defines the color for surfaces with low elevation or "recessed" content areas.
-  Commonly used to distinguish secondary regions without distracting the user from the primary content.
+  The <code>faColors.surface.strong</code> token defines the highest elevation surface level in the hierarchy, providing the maximum contrast against the base ground.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.surface.strong</code> is designed for structural components that require definitive separation from other layout elements. It represents the most intense surface density available before transitioning into action-based fills.
+</p>
+
+<div class="warning-box">
+  <strong>Structural Authority:</strong><br>
+  Use <code>faColors.surface.strong</code> for persistent sidebars, high-contrast modal headers, or specialized panels that define the primary structure of your application.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a high-contrast structural sidebar
+Container(
+  width: 250,
+  // The strongest surface for structural definition
+  color: context.faColors.surface.strong,
+  decoration: BoxDecoration(
+    border: Border(
+      right: BorderSide(
+        // Pair with strong stroke for absolute separation
+        color: context.faColors.stroke.strong,
+        width: 1,
+      ),
+    ),
+  ),
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Text(
+      'Main System Navigation',
+      style: TextStyle(
+        // Strong surface requires high-contrast primary ink
+        color: context.faColors.ink.primary,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.surface.strong</code> is mapped to <code>surfaceContainerHighest</code> to ensure it stands at the peak of the surface elevation stack.</i>

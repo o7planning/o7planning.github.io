@@ -1,5 +1,50 @@
-<h1> faColors.action.fill.primary </h1>
+<h1>faColors.action.fill.primary</h1>
 <p>
-  The background color for high-priority actions (Level 1).
-  Typically used for Primary Buttons to draw user focus toward the main task flow.
+  The <code>faColors.action.fill.primary</code> token defines the most prominent background color for primary actions, such as "Submit", "Save", or "Confirm" buttons.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.primary</code> represents the highest level of interactive emphasis. It uses the boldest brand color from the theme palette to ensure it commands immediate attention. This token is specifically designed for high-density components where a strong visual "fill" is required.
+</p>
+
+<div class="warning-box">
+  <strong>Critical Accessibility Rule:</strong><br>
+  Always pair this background with <code>faColors.action.ink.onPrimaryFill</code> for its content (text/icons).
+  <b>NEVER</b> use <code>faColors.action.ink.primary</code> on top of this fill, as it is intended for standalone elements and will lack contrast here.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a high-emphasis Primary Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+  decoration: BoxDecoration(
+    // The bold primary fill for main actions
+    color: context.faColors.action.fill.primary,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.check_rounded,
+        // CORRECT: Contrast ink for primary background
+        color: context.faColors.action.ink.onPrimaryFill,
+        size: 18,
+      ),
+      const SizedBox(width: 8),
+      Text(
+        'Confirm Action',
+        style: TextStyle(
+          // CORRECT: Contrast ink for primary background
+          color: context.faColors.action.ink.onPrimaryFill,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: <code>faColors.action.fill.primary</code> is mapped to the main brand color in FaActionSurfaceResolvers.</i>
