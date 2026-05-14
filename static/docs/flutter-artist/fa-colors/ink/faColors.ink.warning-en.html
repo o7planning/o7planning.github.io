@@ -1,0 +1,52 @@
+<h1>faColors.ink.warning</h1>
+<p>
+  The <code>faColors.ink.warning</code> token defines the semantic amber/orange color for static text and icons that communicate caution, potential risks, or non-blocking alerts on expansive <b>Surface</b> layers.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Surface - Ink - Stroke</b> hierarchy, <code>ink.warning</code> is engineered to stand out through its warm hue. It is specifically tuned to maintain sufficient contrast on <code>faColors.surface.primary</code> or <code>secondary</code>, ensuring that "Pay attention" notes are visible without causing the immediate alarm associated with red error tones.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for caution messages (e.g., "Session expires soon"), pending status labels, and "warning" icons.</li>
+    <li><b>DON'T:</b> Use as a background color (Fill).</li>
+    <li><b>DON'T:</b> Use for interactive primary buttons (use <code>action.fill.warning</code> or <code>action.ink.warning</code> instead).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for a warning message on a surface
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.surface.secondary,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Row(
+    children: [
+      Icon(
+        Icons.warning_amber_rounded,
+        // CORRECT: Static warning icon
+        color: context.faColors.ink.warning,
+      ),
+      const SizedBox(width: 12),
+      Expanded(
+        child: Text(
+          'Your password will expire in 3 days. Please update it.',
+          style: TextStyle(
+            // CORRECT: Static warning text
+            color: context.faColors.ink.warning,
+            fontSize: 14,
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.warning</code> is often a deep amber or orange, optimized to avoid the common "low contrast" issue of yellow-based tones on light backgrounds.</i>

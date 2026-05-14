@@ -1,0 +1,52 @@
+<h1>faColors.ink.info</h1>
+<p>
+  The <code>faColors.ink.info</code> token defines the semantic blue color for static text and icons that provide system guidance, helpful hints, or neutral status updates on expansive <b>Surface</b> layers.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Surface - Ink - Stroke</b> hierarchy, <code>ink.info</code> is designed to be distinct from neutral primary/secondary tones. Its cool blue hue signals "System Information" rather than "User Data", creating a clear mental model where blue content represents helpful context provided by the application.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for informational banners, help text (e.g., "Learn more about security"), and neutral system notifications.</li>
+    <li><b>DON'T:</b> Use as a background color (Fill).</li>
+    <li><b>DON'T:</b> Use for primary actions (use <code>action.fill.primary</code> instead).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for an information tip on a surface
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.surface.secondary,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Row(
+    children: [
+      Icon(
+        Icons.help_outline_rounded,
+        // CORRECT: Static info icon
+        color: context.faColors.ink.info,
+      ),
+      const SizedBox(width: 12),
+      Expanded(
+        child: Text(
+          'Tip: You can drag and drop items to reorder them.',
+          style: TextStyle(
+            // CORRECT: Static info/guidance text
+            color: context.faColors.ink.info,
+            fontSize: 14,
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.info</code> is mapped to a clear, professional blue that ensures high legibility on light and dark surfaces alike.</i>

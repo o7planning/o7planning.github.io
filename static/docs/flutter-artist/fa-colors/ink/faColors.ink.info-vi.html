@@ -1,0 +1,52 @@
+<h1>faColors.ink.info</h1>
+<p>
+  Token <code>faColors.ink.info</code> xác định màu xanh dương ngữ nghĩa cho văn bản tĩnh và biểu tượng cung cấp chỉ dẫn hệ thống, mẹo hữu ích hoặc các cập nhật trạng thái trung tính trên các lớp <b>Surface</b> lớn.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong hệ thống phân cấp <b>Surface - Ink - Stroke</b>, <code>ink.info</code> được thiết kế để phân biệt rõ ràng với các tông màu trung tính (primary/secondary). Tông màu xanh dịu của nó báo hiệu "Thông tin hệ thống" thay vì "Dữ liệu của người dùng", tạo ra một mô hình tâm trí rõ ràng: nội dung màu xanh đại diện cho ngữ cảnh hữu ích do ứng dụng cung cấp.
+</p>
+
+<div class="warning-box">
+  <strong>Hướng dẫn sử dụng:</strong><br>
+  <ul>
+    <li><b>NÊN:</b> Sử dụng cho các biểu ngữ thông tin, văn bản trợ giúp (ví dụ: "Learn more about security") và các thông báo hệ thống trung tính.</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng làm màu nền (Fill).</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng cho các hành động chính (hãy dùng <code>action.fill.primary</code>).</li>
+  </ul>
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Sử dụng đúng cho một mẹo nhỏ thông tin trên bề mặt
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.surface.secondary,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Row(
+    children: [
+      Icon(
+        Icons.help_outline_rounded,
+        // ĐÚNG: Biểu tượng info tĩnh
+        color: context.faColors.ink.info,
+      ),
+      const SizedBox(width: 12),
+      Expanded(
+        child: Text(
+          'Tip: You can drag and drop items to reorder them.',
+          style: TextStyle(
+            // ĐÚNG: Văn bản chỉ dẫn/info tĩnh
+            color: context.faColors.ink.info,
+            fontSize: 14,
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.ink.info</code> được ánh xạ tới một màu xanh dương chuyên nghiệp, đảm bảo khả năng đọc cao trên cả nền sáng và tối.</i>

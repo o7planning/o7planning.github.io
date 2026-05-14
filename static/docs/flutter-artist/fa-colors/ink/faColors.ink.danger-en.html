@@ -1,0 +1,59 @@
+<h1>faColors.ink.danger</h1>
+<p>
+  The <code>faColors.ink.danger</code> token defines the semantic red color for static text and icons that indicate errors, critical alerts, or dangerous states on expansive <b>Surface</b> layers.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Surface - Ink - Stroke</b> hierarchy, <code>ink.danger</code> is optimized for high visibility and rapid recognition. It is specifically tuned to maintain a strong contrast ratio on <code>faColors.surface.primary</code> or <code>secondary</code>, ensuring that users can immediately identify "What went wrong" without needing an interactive button.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for validation error messages (e.g., "Invalid password"), critical status labels, and error icons.</li>
+    <li><b>DON'T:</b> Use as a background color (Fill).</li>
+    <li><b>DON'T:</b> Use for interactive buttons (use <code>action.fill.danger</code> or <code>action.ink.danger</code> instead).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for an error message on a surface
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Credit Card Number',
+      style: TextStyle(
+        color: context.faColors.ink.label,
+        fontSize: 12,
+      ),
+    ),
+    const SizedBox(height: 8),
+    // ... Input Field Stroke here ...
+    const SizedBox(height: 4),
+    Row(
+      children: [
+        Icon(
+          Icons.error_outline,
+          // CORRECT: Static error icon
+          color: context.faColors.ink.danger,
+          size: 14,
+        ),
+        const SizedBox(width: 4),
+        Text(
+          'The card number is incorrect',
+          style: TextStyle(
+            // CORRECT: Static error message text
+            color: context.faColors.ink.danger,
+            fontSize: 12,
+          ),
+        ),
+      ],
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.danger</code> is mapped to a high-saturation red that commands attention while remaining comfortable enough for reading short phrases.</i>

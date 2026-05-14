@@ -1,0 +1,55 @@
+<h1>faColors.ink.muted</h1>
+<p>
+  The <code>faColors.ink.muted</code> token defines the lowest-contrast color for non-essential content on large <b>Surface</b> layers. It is primarily used for placeholder text, disabled states of static elements, and very minor hints.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Surface - Ink - Stroke</b> hierarchy, <code>ink.muted</code> is designed to sit at the edge of legibility. Its purpose is to signal that the information is either "secondary to the secondary" or currently "inactive". This ensures that the user's cognitive focus remains entirely on the primary and secondary information.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for input placeholders (e.g., "Enter your name..."), disabled labels, and non-critical helper text.</li>
+    <li><b>DON'T:</b> Use for any content that requires guaranteed readability for all users (be mindful of accessibility/WCAG).</li>
+    <li><b>DON'T:</b> Use for interactive components like <b>Buttons or Chips</b>.</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for placeholder and disabled static text
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Search query',
+      style: TextStyle(
+        // CORRECT: Label for the field structure
+        color: context.faColors.ink.label,
+        fontSize: 12,
+      ),
+    ),
+    const SizedBox(height: 8),
+    Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: context.faColors.surface.secondary,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Text(
+        'Type to search...',
+        style: TextStyle(
+          // CORRECT: Muted ink for placeholder suggestion
+          color: context.faColors.ink.muted,
+          fontSize: 14,
+          fontStyle: FontStyle.italic,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.muted</code> is typically a very soft gray with low opacity, ensuring it "fades" into the surface background.</i>

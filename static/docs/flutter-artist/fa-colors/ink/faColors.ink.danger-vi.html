@@ -1,0 +1,59 @@
+<h1>faColors.ink.danger</h1>
+<p>
+  Token <code>faColors.ink.danger</code> xác định màu đỏ ngữ nghĩa cho văn bản tĩnh và biểu tượng chỉ thị lỗi, cảnh báo nghiêm trọng hoặc các trạng thái nguy hiểm trên các lớp <b>Surface</b> lớn.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong hệ thống phân cấp <b>Surface - Ink - Stroke</b>, <code>ink.danger</code> được tối ưu hóa cho khả năng hiển thị cao và nhận diện nhanh chóng. Nó được tinh chỉnh đặc biệt để duy trì tỷ lệ tương phản mạnh trên <code>faColors.surface.primary</code> hoặc <code>secondary</code>, đảm bảo người dùng có thể nhận ra ngay lập tức "Điều gì đã xảy ra lỗi" mà không cần đến một nút bấm tương tác.
+</p>
+
+<div class="warning-box">
+  <strong>Hướng dẫn sử dụng:</strong><br>
+  <ul>
+    <li><b>NÊN:</b> Sử dụng cho thông báo lỗi xác thực (ví dụ: "Invalid password"), nhãn trạng thái quan trọng và biểu tượng lỗi.</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng làm màu nền (Fill).</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng cho các nút bấm tương tác (hãy dùng <code>action.fill.danger</code> hoặc <code>action.ink.danger</code>).</li>
+  </ul>
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Sử dụng đúng cho thông báo lỗi trên bề mặt
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Credit Card Number',
+      style: TextStyle(
+        color: context.faColors.ink.label,
+        fontSize: 12,
+      ),
+    ),
+    const SizedBox(height: 8),
+    // ... Input Field Stroke ở đây ...
+    const SizedBox(height: 4),
+    Row(
+      children: [
+        Icon(
+          Icons.error_outline,
+          // ĐÚNG: Biểu tượng lỗi tĩnh
+          color: context.faColors.ink.danger,
+          size: 14,
+        ),
+        const SizedBox(width: 4),
+        Text(
+          'The card number is incorrect',
+          style: TextStyle(
+            // ĐÚNG: Văn bản thông báo lỗi tĩnh
+            color: context.faColors.ink.danger,
+            fontSize: 12,
+          ),
+        ),
+      ],
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.ink.danger</code> được ánh xạ tới một màu đỏ có độ bão hòa cao nhằm thu hút sự chú ý nhưng vẫn đủ dễ chịu để đọc các cụm từ ngắn.</i>

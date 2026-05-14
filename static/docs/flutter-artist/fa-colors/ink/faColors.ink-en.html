@@ -1,52 +1,52 @@
-<h1>faColors.bar</h1>
+<h1>faColors.ink</h1>
 <p>
-  The <code>faColors.bar</code> namespace defines the background layers for structural and functional navigation components. It is the "command center" of the layout, providing distinct zones for headers, toolbars, and navigation rails.
+  The <code>faColors.ink</code> namespace defines the palette for all static content, including typography and iconography, that resides on expansive <b>Surface</b> layers. It is the core system responsible for information legibility and hierarchy.
 </p>
 
 <h3>Architectural Philosophy</h3>
 <p>
-  Under the <b>Fill - Ink - Stroke</b> architecture, the Bar namespace serves as a bridge between the static <code>surface</code> and active <code>action</code> components. Its primary goal is to provide <b>Environmental Context</b>—letting the user know exactly where the tools end and the data begins.
+  Under the <b>Surface - Ink - Stroke</b> hierarchy, the Ink namespace is strictly dedicated to content representation. It is architecturally decoupled from interactive "Action Inks" to ensure that the primary information layer remains stable, accessible, and distinct from functional controls.
 </p>
 <ul>
-  <li><b>Consistency:</b> Bars provide a stable horizontal or vertical anchor that persists while content scrolls.</li>
-  <li><b>Functional Hierarchy:</b> Uses varying levels of contrast (Subtle → Standard → Strong) to categorize the importance of the tools hosted within.</li>
-  <li><b>Overlay Integration:</b> Designed to work seamlessly with <code>faColors.action.state.xxx</code> for interactive elements like navigation icons or tab items.</li>
+  <li><b>Legibility First:</b> Every token is mathematically tuned to pass WCAG contrast standards against its corresponding Surface.</li>
+  <li><b>Semantic Precision:</b> Uses color to convey meaning (Success, Danger, Info, Warning) without requiring user interaction.</li>
+  <li><b>Structural Hierarchy:</b> Organizes information from high-emphasis (Primary) to low-emphasis (Muted).</li>
 </ul>
 
 <h3>Key Token Groups</h3>
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>
     <tr style="background-color: #f2f2f2;">
-      <th>Token</th>
-      <th>Visual Weight</th>
-      <th>Primary Use Case</th>
+      <th>Group</th>
+      <th>Tokens</th>
+      <th>Primary Purpose</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><b>bar.subtle</b></td>
-      <td>Low</td>
-      <td>Contextual filter bars, status indicators, and secondary bottom bars.</td>
+      <td><b>Neutral Content</b></td>
+      <td><code>primary</code>, <code>secondary</code></td>
+      <td>Main body text, descriptions, and supporting metadata.</td>
     </tr>
     <tr>
-      <td><b>bar.standard</b></td>
-      <td>Medium</td>
-      <td>Main Application Bars (AppBars) and primary header navigation.</td>
+      <td><b>Structural</b></td>
+      <td><code>label</code>, <code>muted</code></td>
+      <td>Form headers, table identifiers, and placeholder hints.</td>
     </tr>
     <tr>
-      <td><b>bar.strong</b></td>
-      <td>High</td>
-      <td>Side navigation rails and footer bars that ground the layout.</td>
+      <td><b>Semantic</b></td>
+      <td><code>success</code>, <code>danger</code>, <code>warning</code>, <code>info</code></td>
+      <td>Status indicators, validation messages, and system guidance.</td>
     </tr>
   </tbody>
 </table>
 
 <div class="warning-box">
-  <strong>The Contrast Anchor:</strong><br>
-  Bars often act as the boundary between different surfaces. When using <code>faColors.bar</code>, ensure that the <b>Ink</b> color used for labels and icons is chosen based on the bar's specific luminance to meet high accessibility standards.
+  <strong>The Content-Only Boundary:</strong><br>
+  Tokens in this namespace <b>must not</b> be used as background colors (Fills). Furthermore, they are specifically designed for large layout surfaces. For text/icons inside small interactive components like Buttons or Chips, always refer to <code>faColors.action.ink.xxx</code>.
 </div>
 
 <h3>Design Intent</h3>
 <p>
-  The Bar namespace is crafted to eliminate visual clutter in dense enterprise applications. By providing a dedicated set of backgrounds for navigation, it ensures that functional controls are never "lost" in the sea of data surfaces.
+  The Ink namespace aims to reduce visual noise by providing a disciplined approach to typography. By separating "Label" from "Value" and "System Info" from "User Data", it creates a professional, organized reading experience essential for complex Enterprise applications.
 </p>

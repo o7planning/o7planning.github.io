@@ -1,0 +1,54 @@
+<h1>faColors.ink.success</h1>
+<p>
+  The <code>faColors.ink.success</code> token defines the semantic green color for static text and icons that indicate completed actions, positive states, or successful validations on expansive <b>Surface</b> layers.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Surface - Ink - Stroke</b> hierarchy, <code>ink.success</code> is tuned to provide a soothing yet clear visual confirmation. It is optimized to maintain an accessible contrast ratio on <code>faColors.surface.primary</code> or <code>secondary</code>, allowing the user to quickly verify that "Everything is correct" without the visual weight of an interactive button.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for success messages (e.g., "Payment completed"), positive status indicators, and "check" icons.</li>
+    <li><b>DON'T:</b> Use as a background color (Fill).</li>
+    <li><b>DON'T:</b> Use for interactive primary buttons (use <code>action.fill.success</code> or <code>action.ink.success</code> instead).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for a success message on a surface
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+    Icon(
+      Icons.check_circle_outline,
+      // CORRECT: Static success icon
+      color: context.faColors.ink.success,
+      size: 48,
+    ),
+    const SizedBox(height: 16),
+    Text(
+      'Payment successful!',
+      style: TextStyle(
+        // CORRECT: Static success text
+        color: context.faColors.ink.success,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    const SizedBox(height: 8),
+    Text(
+      'Your transaction ID: #12345',
+      style: TextStyle(
+        color: context.faColors.ink.secondary,
+        fontSize: 14,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.success</code> is mapped to a balanced green that symbolizes growth and completion, ensuring it stands out from neutral information.</i>
