@@ -1,0 +1,38 @@
+<h1>faColors.action.state.pressed</h1>
+<p>
+  The <code>faColors.action.state.pressed</code> token defines the overlay color applied to an interactive element at the exact moment it is clicked or tapped.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>pressed</code> is the deepest state layer. It typically uses a higher opacity than <code>hover</code> (usually 10% to 16%) to create a clear tactile sensation. This visual "weight" ensures that users feel an immediate response from the UI, which is crucial for reducing perceived latency in enterprise applications.
+</p>
+
+<div class="warning-box">
+  <strong>Dynamic Feedback:</strong><br>
+  Like the hover state, this is an <b>overlay</b>. It is designed to darken or tint the underlying <code>fill.primary</code> or <code>fill.danger</code>, meaning you don't need a specific "Pressed Red" or "Pressed Blue" – the system handles it dynamically.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Implementing a tactile feedback on a Button
+InkWell(
+  onTap: () => print('Action Executed'),
+  // Flutter's built-in property for the pressed state
+  splashColor: context.faColors.action.state.pressed,
+  highlightColor: context.faColors.action.state.pressed,
+  child: Container(
+    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+    decoration: BoxDecoration(
+      color: context.faColors.action.fill.primary,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: Text(
+      'SUBMIT',
+      style: TextStyle(color: context.faColors.action.ink.onPrimaryFill),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.state.pressed</code> is typically a darker neutral overlay that provides a "pressed down" effect by reducing the luminance of the base color.</i>

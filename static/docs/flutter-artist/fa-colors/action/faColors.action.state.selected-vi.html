@@ -1,0 +1,36 @@
+<h1>faColors.action.state.selected</h1>
+<p>
+  Token <code>faColors.action.state.selected</code> xác định màu lớp phủ (overlay) được áp dụng cho một yếu tố tương tác để chỉ thị trạng thái đang hoạt động hoặc đã được chọn trong một nhóm.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>selected</code> là một lớp trạng thái duy trì. Khác với <code>hover</code> hay <code>pressed</code> mang tính tạm thời, lớp phủ này vẫn hiển thị chừng nào yếu tố đó còn ở trạng thái được chọn. Nó thường sử dụng độ mờ mang sắc thái thương hiệu (thường khoảng 8% đến 12%) để làm nổi bật lựa chọn mà không làm lu mờ nội dung bên dưới.
+</p>
+
+<div class="warning-box">
+  <strong>Phân cấp lựa chọn:</strong><br>
+  Đối với các lựa chọn cần độ nhấn mạnh cao (như Tab chính), hãy dùng <code>faColors.action.fill.selected</code>.
+  Đối với các lựa chọn có độ nhấn mạnh thấp (như một hàng trong DataGrid hoặc mục trong Navigation Rail), hãy sử dụng <b>lớp phủ trạng thái</b> này đè lên một bề mặt trung tính.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Áp dụng lớp phủ trạng thái selected cho một List Item
+Container(
+  decoration: BoxDecoration(
+    color: isSelected
+      ? context.faColors.action.state.selected
+      : Colors.transparent,
+  ),
+  child: ListTile(
+    selected: isSelected,
+    title: Text('Bản ghi dữ liệu #102'),
+    // Đảm bảo mực (ink) cũng phản ánh trạng thái được chọn
+    selectedColor: context.faColors.action.ink.primary,
+    onTap: () => setState(() => isSelected = true),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.state.selected</code> thường là một phiên bản bán trong suốt của màu thương hiệu chính để tạo cảm giác "đang hoạt động" thống nhất trong toàn bộ ứng dụng.</i>

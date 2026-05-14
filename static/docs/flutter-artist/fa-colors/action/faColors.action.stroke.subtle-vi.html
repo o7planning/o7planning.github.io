@@ -1,0 +1,36 @@
+<h1>faColors.action.stroke.subtle</h1>
+<p>
+  Token <code>faColors.action.stroke.subtle</code> xác định màu đường viền rất mờ cho các yếu tố tương tác, được sử dụng để cung cấp định nghĩa cấu trúc có độ tương phản thấp cho các vùng phụ hoặc các khung chứa nhập liệu.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.stroke.subtle</code> sử dụng tông màu trung tính có độ mờ thấp. Mục đích chính của nó là tạo ra một ranh giới "vô hình", lý tưởng để nhóm các hành động liên quan hoặc xác định vùng bấm của một thẻ tương tác tinh tế mà không làm rối mắt bằng các đường kẻ đậm.
+</p>
+
+<div class="warning-box">
+  <strong>Giao diện mật độ cao:</strong><br>
+  Token này là "người bạn thân" trong các môi trường dữ liệu dày đặc. Hãy sử dụng nó cho viền của các mục không quan trọng hoặc để ngăn cách các phân đoạn trong một thanh công cụ. Nó duy trì trật tự trong khi vẫn giữ cho giao diện cảm giác thông thoáng và dễ thở.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Định nghĩa một khung chứa hoặc thẻ tương tác tinh tế
+Container(
+  decoration: BoxDecoration(
+    color: context.faColors.surface.primary,
+    border: Border.all(
+      // Đường viền cực mờ cho cấu trúc phụ
+      color: context.faColors.action.stroke.subtle,
+      width: 1.0,
+    ),
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: ListTile(
+    title: Text('Tùy chọn phụ'),
+    trailing: Icon(Icons.chevron_right, color: context.faColors.action.ink.muted),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, token này thường được ánh xạ tới màu xám rất nhạt hoặc màu của đường kẻ phân cách (divider) có độ mờ thấp, được tối ưu hóa để xếp chồng lên các cấp độ bề mặt khác nhau.</i>

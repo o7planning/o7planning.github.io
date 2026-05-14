@@ -1,0 +1,40 @@
+<h1>faColors.action.stroke.primary</h1>
+<p>
+  The <code>faColors.action.stroke.primary</code> token defines the border color for primary outlined actions, such as "Add New", "Sign Up", or secondary-emphasis primary buttons.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.stroke.primary</code> provides structural definition using the primary brand color. It allows for the creation of "hollow" interactive elements that maintain a strong brand identity while reducing the overall visual "heaviness" of the interface compared to a solid <code>fill.primary</code>.
+</p>
+
+<div class="warning-box">
+  <strong>The Outlined Rule:</strong><br>
+  For a professional Outlined Button, always pair this stroke with <code>faColors.action.ink.primary</code>. This ensures that the border and the content (text/icon) share the same chromatic intent, creating a unified interactive object.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Primary Outlined Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // The primary brand border
+    border: Border.all(
+      color: context.faColors.action.stroke.primary,
+      width: 1.5,
+    ),
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Text(
+    'Create Account',
+    style: TextStyle(
+      // Match the ink with the stroke for architectural consistency
+      color: context.faColors.action.ink.primary,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.stroke.primary</code> is usually identical to <code>faColors.action.ink.primary</code>, but separated in the API to allow for specific border-weight or opacity adjustments in complex themes.</i>

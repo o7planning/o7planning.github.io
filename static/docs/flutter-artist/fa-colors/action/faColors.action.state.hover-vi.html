@@ -1,0 +1,38 @@
+<h1>faColors.action.state.hover</h1>
+<p>
+  Token <code>faColors.action.state.hover</code> xác định màu lớp phủ (overlay) được áp dụng cho một yếu tố tương tác khi con trỏ (chuột) nằm bên trên nó.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>hover</code> được xử lý như một lớp trạng thái động. Nó thường sử dụng màu trung tính hoặc màu thương hiệu có độ mờ thấp, "xếp chồng" lên trên lớp <code>fill</code> hoặc <code>surface</code> hiện có. Điều này cung cấp phản hồi thị giác tức thì, xác nhận rằng yếu tố đó có thể tương tác mà không làm thay đổi bản sắc cơ bản của nó.
+</p>
+
+<div class="warning-box">
+  <strong>Nguyên tắc Xếp chồng:</strong><br>
+  Vì đây là một lớp phủ, nó nên được triển khai bằng <code>Stack</code> hoặc <code>ColorFilter</code> trong Flutter.
+  <b>Mẹo chuyên nghiệp:</b> Hãy đảm bảo độ mờ ở mức tinh tế (thường từ 4% đến 8%) để duy trì khả năng đọc của lớp mực ("Ink") bên dưới.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Áp dụng trạng thái hover cho một nút tùy chỉnh
+InkWell(
+  onTap: () {},
+  // Cách tích hợp sẵn của Flutter để sử dụng token hover
+  hoverColor: context.faColors.action.state.hover,
+  child: Container(
+    padding: const EdgeInsets.all(12),
+    decoration: BoxDecoration(
+      color: context.faColors.action.fill.primary,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: Text(
+      'Di chuột vào tôi',
+      style: TextStyle(color: context.faColors.action.ink.onPrimaryFill),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.state.hover</code> thường là màu đen bán trong suốt (trong Chế độ Sáng) hoặc trắng (trong Chế độ Tối) để làm đậm hoặc sáng nhẹ màu sắc bên dưới.</i>

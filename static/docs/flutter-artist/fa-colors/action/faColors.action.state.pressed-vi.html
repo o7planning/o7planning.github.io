@@ -1,0 +1,38 @@
+<h1>faColors.action.state.pressed</h1>
+<p>
+  Token <code>faColors.action.state.pressed</code> xác định màu lớp phủ (overlay) được áp dụng cho một yếu tố tương tác ngay tại thời điểm nó được nhấp chuột hoặc chạm vào.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>pressed</code> là lớp trạng thái đậm nhất. Nó thường sử dụng độ mờ cao hơn so với <code>hover</code> (thường từ 10% đến 16%) để tạo ra cảm giác xúc giác rõ rệt. "Trọng lượng" thị giác này đảm bảo người dùng cảm nhận được phản hồi tức thì từ UI, điều này cực kỳ quan trọng để giảm thiểu cảm giác trễ (latency) trong các ứng dụng doanh nghiệp.
+</p>
+
+<div class="warning-box">
+  <strong>Phản hồi động:</strong><br>
+  Giống như trạng thái hover, đây là một <b>lớp phủ (overlay)</b>. Nó được thiết kế để làm đậm hoặc nhuộm màu lớp <code>fill.primary</code> hoặc <code>fill.danger</code> bên dưới, nghĩa là ông giáo không cần một màu "Đỏ khi bấm" hay "Xanh khi bấm" riêng biệt – hệ thống sẽ tự xử lý động.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Triển khai phản hồi xúc giác trên một Nút bấm
+InkWell(
+  onTap: () => print('Hành động được thực thi'),
+  // Các thuộc tính tích hợp của Flutter cho trạng thái nhấn
+  splashColor: context.faColors.action.state.pressed,
+  highlightColor: context.faColors.action.state.pressed,
+  child: Container(
+    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+    decoration: BoxDecoration(
+      color: context.faColors.action.fill.primary,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: Text(
+      'GỬI ĐI',
+      style: TextStyle(color: context.faColors.action.ink.onPrimaryFill),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.state.pressed</code> thường là một lớp phủ trung tính tối giúp tạo hiệu ứng "nhấn xuống" bằng cách giảm độ sáng của màu nền cơ sở.</i>

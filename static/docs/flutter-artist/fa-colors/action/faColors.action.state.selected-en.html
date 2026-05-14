@@ -1,0 +1,36 @@
+<h1>faColors.action.state.selected</h1>
+<p>
+  The <code>faColors.action.state.selected</code> token defines the overlay color applied to an interactive element to indicate its current active or selected status within a group.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>selected</code> is a persistent state layer. Unlike <code>hover</code> or <code>pressed</code>, which are transient, this overlay remains visible as long as the element is in a selected state. It typically uses a brand-tinted opacity (often around 8% to 12%) to highlight the selection without overwhelming the content underneath.
+</p>
+
+<div class="warning-box">
+  <strong>Selection Hierarchy:</strong><br>
+  For high-emphasis selection (like a primary Tab), use <code>faColors.action.fill.selected</code>.
+  For low-emphasis selection (like a row in a DataGrid or a Navigation Rail item), use this <b>state overlay</b> on top of a neutral surface.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Applying a selected state overlay to a List Item
+Container(
+  decoration: BoxDecoration(
+    color: isSelected
+      ? context.faColors.action.state.selected
+      : Colors.transparent,
+  ),
+  child: ListTile(
+    selected: isSelected,
+    title: Text('Data Record #102'),
+    // Ensure the ink also reflects the selection status
+    selectedColor: context.faColors.action.ink.primary,
+    onTap: () => setState(() => isSelected = true),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.state.selected</code> is often a semi-transparent version of the primary brand color to create a cohesive "active" feel across the application.</i>
