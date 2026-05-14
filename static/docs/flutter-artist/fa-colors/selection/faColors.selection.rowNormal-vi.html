@@ -1,5 +1,43 @@
-<h1> faColors.selection.rowNormal </h1>
+<h1>faColors.selection.rowNormal</h1>
 <p>
-  Đây là màu nền mặc định của một dòng (row) trong bảng hoặc danh sách khi ở trạng thái nghỉ, không có sự tương tác.
-  Nó thường trùng với màu <code>faColors.selection.surface.base</code> hoặc <code>faColors.selection.surface.container</code> để tạo sự liền mạch cho giao diện.
+  Token <code>faColors.selection.rowNormal</code> xác định màu nền mặc định cho một hàng (trong Table, ListView, hoặc bất kỳ tập hợp nào) khi ở trạng thái nghỉ hoặc trung tính.
 </p>
+
+<h3>Triết lý thiết kế</h3>
+<p>
+  Trong hệ sinh thái FlutterArtist, <code>faColors.selection.rowNormal</code> đóng vai trò là <b>"Mặt đất" (Ground)</b>. Đây là một bề mặt ổn định, trung tính được thiết kế để mang lại khả năng đọc tối đa cho nội dung mà không gây xao nhãng cho người dùng.
+</p>
+
+<div class="warning-box">
+  <strong>Nguyên lý "Tam sên":</strong><br>
+  Để có vẻ ngoài chuyên nghiệp, hãy luôn kết hợp <code>faColors.selection.rowNormal</code> (Bề mặt) với <code>faColors.selection.inkNormal</code> (Mực/Nội dung) và <code>faColors.stroke.subtle</code> (Đường kẻ chỉ).
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Sử dụng rowNormal cho một item danh sách
+Container(
+  // Màu bề mặt ở trạng thái nghỉ
+  color: context.faColors.selection.rowNormal,
+  decoration: BoxDecoration(
+    border: Border(
+      bottom: BorderSide(
+        // Sử dụng stroke subtle để làm đường chia hàng
+        color: context.faColors.stroke.subtle,
+        width: 1,
+      ),
+    ),
+  ),
+  child: ListTile(
+    title: Text(
+      'Kiến trúc sạch với FlutterArtist',
+      style: TextStyle(
+        // Sử dụng mực tương ứng cho trạng thái normal
+        color: context.faColors.selection.inkNormal,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: <code>rowNormal</code> thường được ánh xạ từ <code>faColors.surface.ground</code> để đảm bảo sự hòa hợp tuyệt đối với nền tảng ứng dụng.</i>

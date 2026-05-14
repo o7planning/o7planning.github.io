@@ -1,8 +1,41 @@
-
-
-<h1> faColors.selection.rowSelected </h1>
+<h1>faColors.selection.rowCurrent</h1>
 <p>
-  Được sử dụng làm màu nền cho các dòng đã được người dùng chọn (Selected).
-  Màu này thường có một lớp phủ (overlay) nhẹ để làm nổi bật mục được chọn mà không gây chói mắt, giúp người dùng nhận diện các thực thể đang nằm trong bộ nhớ tạm.
+  The <code>faColors.selection.rowCurrent</code> token identifies the background surface for the row that currently holds the active focus or is being hovered over in a navigation-heavy context.
 </p>
- 
+
+<h3>Technical Logic</h3>
+<p>
+  Unlike a persistent selection, <code>rowCurrent</code> represents a transient or navigational state. It serves as a visual "pointer." In the <b>Fill - Ink - Stroke</b> system, it uses a secondary-level fill to provide enough distinction from <code>rowNormal</code> without competing for the same visual weight as <code>rowSelected</code>.
+</p>
+
+<div class="warning-box">
+  <strong>Design Integration:</strong><br>
+  To maintain a clean hierarchy, it is recommended to pair <code>rowCurrent</code> with <code>faColors.stroke.standard</code> to subtly define its boundaries.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Highlighting the current focused row in a list
+Container(
+  // Transient fill for the current focused state
+  color: context.faColors.selection.rowCurrent,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Use standard stroke to indicate focus depth
+      color: context.faColors.stroke.standard,
+      width: 1,
+    ),
+  ),
+  child: ListTile(
+    title: Text(
+      'Current Focused Item',
+      style: TextStyle(
+        // Use primary ink to maintain high legibility
+        color: context.faColors.selection.inkCurrent,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: <code>faColors.selection.rowCurrent</code> is often aliased to <code>faColors.surface.emphasized</code> or a secondary brand tint in the FaColorGraph.</i>
