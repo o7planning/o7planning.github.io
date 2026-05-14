@@ -1,7 +1,36 @@
-
-
-<h1> faColors.surface.subtle </h1>
+<h1>faColors.surface.standard</h1>
 <p>
-  Defines the color for surfaces with low elevation or "recessed" content areas.
-  Commonly used to distinguish secondary regions without distracting the user from the primary content.
+  The <code>faColors.surface.subtle</code> token represents the lightest surface level in the hierarchy, providing a delicate distinction from the base ground.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Within the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.surface.subtle</code> is mapped to the lowest elevation container color. It is designed to create very soft zones or logical groupings on a screen without creating a strong visual break.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Context:</strong><br>
+  Ideal for subtle content grouping, such as background for sort panels, secondary toolbars, or nested list containers where a clear card-like shadow is not desired.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a subtle background for a Sort Panel
+Container(
+  // The lightest surface level
+  color: context.faColors.surface.subtle,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Pair with subtle stroke for a refined boundary
+      color: context.faColors.stroke.subtle,
+      width: 1,
+    ),
+  ),
+  child: const Padding(
+    padding: EdgeInsets.all(8.0),
+    child: Text('Subtle Sort Panel Content'),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.surface.subtle</code> is mapped to <code>surfaceContainerLowest</code> to ensure it remains the closest layer to the ground.</i>

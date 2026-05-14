@@ -1,5 +1,36 @@
-<h1> faColors.surface.ground </h1>
+<h1>faColors.surface.ground</h1>
 <p>
-  Đây là lớp nền tảng thấp nhất của ứng dụng, thường được sử dụng làm màu nền cho <code>Scaffold</code>.
-  Mọi thành phần khác đều được đặt trên lớp này, giúp tạo ra một bề mặt nhất quán và sạch sẽ cho toàn bộ màn hình.
+  Token <code>faColors.surface.ground</code> xác định lớp nền tảng tuyệt đối của giao diện ứng dụng. Đây là bề mặt sơ khai nhất, nơi tất cả các thành phần, lớp chứa và yếu tố điều hướng khác được đặt lên.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Là lớp móng trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.surface.ground</code> thường được ánh xạ tới màu nền của <code>Scaffold</code>. Nó được thiết kế với độ cao thị giác thấp nhất, tạo ra một Canvas trung tính cho phép các bề mặt cấp cao hơn (như Card hoặc Dialog) tạo ra chiều sâu thông qua sự tương phản.
+</p>
+
+<div class="warning-box">
+  <strong>Vai trò kiến trúc:</strong><br>
+  Luôn sử dụng <code>faColors.surface.ground</code> cho nền chính của màn hình. Tránh đặt các đường viền quá đậm hoặc đổ bóng trực tiếp lên lớp này; thay vào đó, hãy để các bề mặt cấp cao hơn xử lý việc tạo độ nổi thị giác.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Thiết lập scaffold nền tảng cho một màn hình
+Scaffold(
+  // Bề mặt nền tảng cuối cùng
+  backgroundColor: context.faColors.surface.ground,
+  body: Column(
+    children: [
+      Text(
+        'Base Canvas Layer',
+        style: TextStyle(
+          // Sử dụng mực primary để đạt độ đọc tốt nhất trên nền ground
+          color: context.faColors.ink.primary,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>surface.ground</code> được liên kết trực tiếp với <code>scheme.surface</code> của theme để đảm bảo tính nhất quán toàn cục.</i>

@@ -1,7 +1,36 @@
-
-
-<h1> faColors.surface.subtle </h1>
+<h1>faColors.surface.subtle</h1>
 <p>
-  Định nghĩa màu cho các bề mặt có độ cao thấp hoặc các vùng nội dung mang tính chất "chìm" xuống (recessed).
-  Thường được sử dụng để phân biệt các khu vực phụ trợ mà không làm xao nhãng người dùng khỏi nội dung chính.
+  Token <code>faColors.surface.subtle</code> đại diện cho cấp độ bề mặt nhẹ nhất trong hệ thống phân cấp, tạo ra một sự phân biệt tinh tế so với lớp nền (ground).
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.surface.subtle</code> được ánh xạ tới màu container có độ cao thị giác thấp nhất. Nó được thiết kế để tạo ra các vùng hoặc nhóm logic trên màn hình một cách nhẹ nhàng mà không tạo ra sự đứt gãy thị giác mạnh.
+</p>
+
+<div class="warning-box">
+  <strong>Ngữ cảnh sử dụng:</strong><br>
+  Lý tưởng cho việc nhóm nội dung nhẹ, chẳng hạn như nền cho Sort Panel, thanh công cụ phụ hoặc các lớp chứa danh sách lồng nhau khi bạn không muốn sử dụng hiệu ứng đổ bóng mạnh.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một nền nhẹ nhàng cho Sort Panel
+Container(
+  // Cấp độ bề mặt nhẹ nhất
+  color: context.faColors.surface.subtle,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Kết hợp với stroke subtle để tạo ranh giới tinh tế
+      color: context.faColors.stroke.subtle,
+      width: 1,
+    ),
+  ),
+  child: const Padding(
+    padding: EdgeInsets.all(8.0),
+    child: Text('Subtle Sort Panel Content'),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.surface.subtle</code> được ánh xạ tới <code>surfaceContainerLowest</code> để đảm bảo nó luôn là lớp gần với ground nhất.</i>

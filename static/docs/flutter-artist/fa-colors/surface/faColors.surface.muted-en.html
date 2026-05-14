@@ -1,7 +1,41 @@
-
-
-<h1> faColors.surface.muted </h1>
+<h1>faColors.surface.muted</h1>
 <p>
-  Defines the color for surfaces with low elevation or "recessed" content areas.
-  Commonly used to distinguish secondary regions without distracting the user from the primary content.
+  The <code>faColors.surface.muted</code> token defines a "quiet" surface level, specifically designed for secondary background areas or elements that need to be visually de-emphasized.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.surface.muted</code> provides a slightly more visible presence than <code>faColors.surface.subtle</code> but remains significantly less prominent than the standard surface. It is often used to indicate a "dormant" or "secondary" status within the UI hierarchy.
+</p>
+
+<div class="warning-box">
+  <strong>Strategic Use:</strong><br>
+  Use <code>faColors.surface.muted</code> for backgrounds of disabled components, empty state containers, or secondary panels that should not compete with the main content area.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Using muted surface for a secondary information panel
+Container(
+  // The muted surface color for de-emphasized areas
+  color: context.faColors.surface.muted,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Pair with subtle stroke to maintain a soft boundary
+      color: context.faColors.stroke.subtle,
+      width: 1,
+    ),
+  ),
+  child: ListTile(
+    title: Text(
+      'Secondary System Information',
+      style: TextStyle(
+        // Use muted ink to match the muted surface aesthetic
+        color: context.faColors.ink.muted,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.surface.muted</code> is mapped to <code>surfaceContainerLow</code> to provide a distinct yet soft contrast against the ground.</i>
