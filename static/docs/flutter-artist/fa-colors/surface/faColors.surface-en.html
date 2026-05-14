@@ -1,30 +1,57 @@
-<h1>Surface Hierarchy (Surface Namespace)</h1>
+<h1>faColors.surface</h1>
 <p>
-  The <b>Surface Namespace</b> defines the fundamental layers of your application. It hosts all content, manages layouts, and creates visual depth through overlapping surface levels.
+  The <code>faColors.surface</code> namespace is the architectural bedrock of the FlutterArtist design system. It defines the background layers, containers, and structural planes upon which all other interactive components reside.
 </p>
 
-<h3>1. Large Surface Layers</h3>
+<h3>Architectural Philosophy</h3>
 <p>
-  Tokens in the <code>faColors.surface.xxx</code> group are designed for high-area components such as Scaffold Base, Containers, Cards, or Dialogs.
-</p>
-
-<h3>2. The "Foundational Trio" Rule</h3>
-<p>
-  Since Surfaces consist of large color areas, coordination between text and borders is crucial:
+  In the <b>Fill - Ink - Stroke</b> trinity, Surface acts as the ultimate "Fill" for the entire application environment. It is designed to manage <b>Visual Elevation</b> and <b>Content Grouping</b> without using shadows as the primary signifier, relying instead on subtle tonal shifts to indicate depth.
 </p>
 <ul>
-  <li><b>Text & Icons:</b> Must use <code>faColors.ink.xxx</code> to ensure optimal readability.</li>
-  <li><b>Borders:</b> Use <code>faColors.border.subtle</code> for gentle content separation (Cards) or <code>faColors.border.strong</code> for solid structural outlines.</li>
+  <li><b>Layering:</b> Surfaces are organized from "Primary" (the lowest level) to "Emphasized" (the highest attention level).</li>
+  <li><b>Neutrality:</b> These tokens use a neutral or slightly tinted palette to ensure they don't compete with functional Action colors.</li>
+  <li><b>Consistency:</b> Every Surface token has a corresponding <code>faColors.ink</code> counterpart to ensure perfect legibility of static content.</li>
 </ul>
 
+<h3>Key Token Groups</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Group</th>
+      <th>Purpose</th>
+      <th>Usage Scenario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Primary / Secondary</b></td>
+      <td>Base application layers.</td>
+      <td>Main window backgrounds and sidebar panels.</td>
+    </tr>
+    <tr>
+      <td><b>Tertiary / Quaternary</b></td>
+      <td>Structural nesting.</td>
+      <td>Cards, grouped list containers, and inner sections.</td>
+    </tr>
+    <tr>
+      <td><b>Emphasized / Dimmed</b></td>
+      <td>Contrast management.</td>
+      <td>Highlighted content zones or modal backdrops.</td>
+    </tr>
+    <tr>
+      <td><b>Inverted</b></td>
+      <td>High-contrast exceptions.</td>
+      <td>Dark tooltips on light themes or snackbars.</td>
+    </tr>
+  </tbody>
+</table>
+
 <div class="warning-box">
-  <strong>THE GOLDEN RULE:</strong>
-  When using background colors from <code>faColors.surface.xxx</code>, always pair them with <code>faColors.ink.xxx</code> and <code>faColors.border.xxx</code>. This set is calibrated to ensure safe contrast ratios across all themes.
+  <strong>The Depth Discipline:</strong><br>
+  Avoid jumping levels arbitrarily. Always move from <code>primary</code> to <code>secondary</code> for nested content. This logical progression creates a sense of "physical" structure that guides the user's eye naturally through the data hierarchy.
 </div>
 
-<h3>3. Visual Elevation (Z-Index)</h3>
+<h3>Design Intent</h3>
 <p>
-  The system provides levels from <code>low</code> to <code>high</code>. Use <code>surface.low</code> for recessed components and <code>surface.high</code> for elements that need to "float" above, creating a clear visual hierarchy.
+  Surface tokens are optimized for long-term usage in Enterprise environments. By prioritizing low-fatigue neutrals and clear tonal separation, they ensure that users can focus on complex data for extended periods without visual exhaustion.
 </p>
-
-<p><i>Technical color values are available in the <b>Token Docs</b> tab.</i></p>
