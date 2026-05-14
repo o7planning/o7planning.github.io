@@ -1,0 +1,52 @@
+<h1>faColors.bar</h1>
+<p>
+  The <code>faColors.bar</code> namespace defines the background layers for structural and functional navigation components. It is the "command center" of the layout, providing distinct zones for headers, toolbars, and navigation rails.
+</p>
+
+<h3>Architectural Philosophy</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, the Bar namespace serves as a bridge between the static <code>surface</code> and active <code>action</code> components. Its primary goal is to provide <b>Environmental Context</b>—letting the user know exactly where the tools end and the data begins.
+</p>
+<ul>
+  <li><b>Consistency:</b> Bars provide a stable horizontal or vertical anchor that persists while content scrolls.</li>
+  <li><b>Functional Hierarchy:</b> Uses varying levels of contrast (Subtle → Standard → Strong) to categorize the importance of the tools hosted within.</li>
+  <li><b>Overlay Integration:</b> Designed to work seamlessly with <code>faColors.action.state.xxx</code> for interactive elements like navigation icons or tab items.</li>
+</ul>
+
+<h3>Key Token Groups</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Token</th>
+      <th>Visual Weight</th>
+      <th>Primary Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>bar.subtle</b></td>
+      <td>Low</td>
+      <td>Contextual filter bars, status indicators, and secondary bottom bars.</td>
+    </tr>
+    <tr>
+      <td><b>bar.standard</b></td>
+      <td>Medium</td>
+      <td>Main Application Bars (AppBars) and primary header navigation.</td>
+    </tr>
+    <tr>
+      <td><b>bar.strong</b></td>
+      <td>High</td>
+      <td>Side navigation rails and footer bars that ground the layout.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="warning-box">
+  <strong>The Contrast Anchor:</strong><br>
+  Bars often act as the boundary between different surfaces. When using <code>faColors.bar</code>, ensure that the <b>Ink</b> color used for labels and icons is chosen based on the bar's specific luminance to meet high accessibility standards.
+</div>
+
+<h3>Design Intent</h3>
+<p>
+  The Bar namespace is crafted to eliminate visual clutter in dense enterprise applications. By providing a dedicated set of backgrounds for navigation, it ensures that functional controls are never "lost" in the sea of data surfaces.
+</p>

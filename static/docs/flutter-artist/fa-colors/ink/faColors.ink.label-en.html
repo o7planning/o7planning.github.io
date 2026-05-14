@@ -1,0 +1,56 @@
+<h1>faColors.ink.label</h1>
+<p>
+  The <code>faColors.ink.label</code> token defines the specific color for structural identifiers such as input field labels, table headers, and form titles on expansive <b>Surface</b> layers.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>ink.label</code> provides a professional, medium-to-high contrast that distinguishes "Metadata Labels" from "Actual Data". It is designed to be persistent and stable, ensuring that the structure of the UI remains visible and organized at a glance.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for form labels (e.g., "Email Address"), column headers in DataGrids, and category titles.</li>
+    <li><b>DON'T:</b> Use for placeholder text (use <code>ink.muted</code> instead).</li>
+    <li><b>DON'T:</b> Use as a background color or inside small interactive components like <b>Chips or Badges</b>.</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for form labels and data structure
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'FULL NAME',
+      style: TextStyle(
+        // CORRECT: Label ink for formal field identification
+        color: context.faColors.ink.label,
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 1.1,
+      ),
+    ),
+    const SizedBox(height: 8),
+    Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: context.faColors.surface.secondary,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Text(
+        'Johnathan Doe',
+        style: TextStyle(
+          // CORRECT: Primary ink for the actual data
+          color: context.faColors.ink.primary,
+          fontSize: 16,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.label</code> is often tuned to be slightly more "stony" or neutral than primary ink to maintain a clear distinction between the form's skeleton and its content.</i>

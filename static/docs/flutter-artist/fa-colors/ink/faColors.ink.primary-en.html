@@ -1,0 +1,45 @@
+<h1>faColors.ink.primary</h1>
+<p>
+  The <code>faColors.ink.primary</code> token defines the default, high-contrast color for static text and icons that reside on expansive <b>Surface</b> layers. It is the backbone of readability for the core content of the application.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>ink.primary</code> is strictly a content-only token. It is optimized to provide the highest level of legibility on <code>faColors.surface.primary</code> or <code>secondary</code>. Unlike action inks, this token does not imply interactivity; it implies <b>information</b>.
+</p>
+
+<div class="warning-box">
+  <strong>Strict Usage Boundaries:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for body text, headings, and static icons on large layouts.</li>
+    <li><b>DON'T:</b> Use as a background color for any component.</li>
+    <li><b>DON'T:</b> Use for text/icons inside small interactive components like <b>Buttons, Chips, or Badges</b> (use <code>action.ink.xxx</code> instead).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for static content on a main surface
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Account Overview',
+      style: TextStyle(
+        // CORRECT: Primary ink for a static heading
+        color: context.faColors.ink.primary,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    const SizedBox(height: 8),
+    Icon(
+      Icons.info_outline,
+      // CORRECT: Static icon indicating information
+      color: context.faColors.ink.primary,
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.primary</code> is mathematically tuned to contrast against the main application background, typically appearing as near-black in light mode and near-white in dark mode.</i>

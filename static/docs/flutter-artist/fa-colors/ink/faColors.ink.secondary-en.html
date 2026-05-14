@@ -1,0 +1,46 @@
+<h1>faColors.ink.secondary</h1>
+<p>
+  The <code>faColors.ink.secondary</code> token defines the medium-contrast color for supporting text and non-critical icons on large <b>Surface</b> layers. It helps create a clear information hierarchy by de-emphasizing supplementary details.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>ink.secondary</code> provides enough contrast for legibility while visually receding compared to <code>ink.primary</code>. This prevents visual fatigue in data-rich layouts by guiding the user's focus to the primary information first.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for sub-headers, descriptions, timestamps, and secondary metadata on main surfaces.</li>
+    <li><b>DON'T:</b> Use for primary body text or critical alerts.</li>
+    <li><b>DON'T:</b> Use inside small interactive components like <b>Buttons or Badges</b> (keep the specialized action inks for those).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct usage for secondary descriptive text
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Account Balance',
+      style: TextStyle(
+        color: context.faColors.ink.primary, // Main information
+        fontSize: 18,
+      ),
+    ),
+    const SizedBox(height: 4),
+    Text(
+      'Last updated 2 minutes ago',
+      style: TextStyle(
+        // CORRECT: Secondary ink for supporting metadata
+        color: context.faColors.ink.secondary,
+        fontSize: 12,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.ink.secondary</code> is often a slightly desaturated or lighter version of the primary ink to create a natural visual step-down.</i>

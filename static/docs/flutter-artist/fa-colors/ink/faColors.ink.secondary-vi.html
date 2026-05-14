@@ -1,0 +1,46 @@
+<h1>faColors.ink.secondary</h1>
+<p>
+  Token <code>faColors.ink.secondary</code> xác định màu có độ tương phản trung bình cho văn bản bổ trợ và các biểu tượng không quan trọng trên các lớp <b>Surface</b> lớn. Nó giúp tạo ra một hệ thống phân cấp thông tin rõ ràng bằng cách giảm sự nhấn mạnh vào các chi tiết phụ.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>ink.secondary</code> cung cấp đủ độ tương phản để dễ đọc nhưng lại "lùi bước" về mặt thị giác so với <code>ink.primary</code>. Điều này ngăn chặn sự mệt mỏi thị giác trong các bố cục giàu dữ liệu bằng cách dẫn dắt sự chú ý của người dùng vào thông tin chính trước tiên.
+</p>
+
+<div class="warning-box">
+  <strong>Hướng dẫn sử dụng:</strong><br>
+  <ul>
+    <li><b>NÊN:</b> Sử dụng cho tiêu đề phụ, mô tả, dấu thời gian và dữ liệu phụ trên các bề mặt chính.</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng cho văn bản nội dung chính hoặc các cảnh báo quan trọng.</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng bên trong các thành phần tương tác nhỏ như <b>Nút (Buttons) hoặc Badge</b> (hãy giữ các loại mực hành động chuyên biệt cho chúng).</li>
+  </ul>
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Sử dụng đúng cho văn bản mô tả phụ
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Account Balance',
+      style: TextStyle(
+        color: context.faColors.ink.primary, // Thông tin chính
+        fontSize: 18,
+      ),
+    ),
+    const SizedBox(height: 4),
+    Text(
+      'Last updated 2 minutes ago',
+      style: TextStyle(
+        // ĐÚNG: Mực secondary cho dữ liệu phụ trợ
+        color: context.faColors.ink.secondary,
+        fontSize: 12,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.ink.secondary</code> thường là một phiên bản ít bão hòa hơn hoặc nhạt hơn của mực primary để tạo ra một bước hạ bậc thị giác tự nhiên.</i>

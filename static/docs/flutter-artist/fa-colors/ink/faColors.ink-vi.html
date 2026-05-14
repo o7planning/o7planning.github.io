@@ -1,0 +1,52 @@
+<h1>faColors.bar</h1>
+<p>
+  Namespace <code>faColors.bar</code> xác định các lớp nền cho các thành phần điều hướng chức năng và cấu trúc. Đây là "trung tâm điều khiển" của bố cục, cung cấp các vùng riêng biệt cho tiêu đề (headers), thanh công cụ (toolbars) và thanh điều hướng (navigation rails).
+</p>
+
+<h3>Triết lý kiến trúc</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, namespace Bar đóng vai trò là cầu nối giữa các thành phần <code>surface</code> tĩnh và <code>action</code> động. Mục tiêu chính của nó là cung cấp <b>Ngữ cảnh môi trường (Environmental Context)</b> — giúp người dùng biết chính xác nơi công cụ kết thúc và dữ liệu bắt đầu.
+</p>
+<ul>
+  <li><b>Tính nhất quán:</b> Các thanh bar cung cấp điểm neo ngang hoặc dọc ổn định, tồn tại cố định khi nội dung cuộn bên dưới.</li>
+  <li><b>Phân cấp chức năng:</b> Sử dụng các mức độ tương phản khác nhau (Subtle → Standard → Strong) để phân loại tầm quan trọng của các công cụ được chứa bên trong.</li>
+  <li><b>Tích hợp lớp phủ:</b> Được thiết kế để hoạt động mượt mà với <code>faColors.action.state.xxx</code> cho các yếu tố tương tác như biểu tượng điều hướng hoặc các mục tab.</li>
+</ul>
+
+<h3>Các nhóm Token chính</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Token</th>
+      <th>Trọng lượng thị giác</th>
+      <th>Trường hợp sử dụng chính</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>bar.subtle</b></td>
+      <td>Thấp</td>
+      <td>Thanh lọc ngữ cảnh, chỉ báo trạng thái và các thanh dưới cùng phụ trợ.</td>
+    </tr>
+    <tr>
+      <td><b>bar.standard</b></td>
+      <td>Trung bình</td>
+      <td>Thanh ứng dụng chính (AppBars) và điều hướng tiêu đề chính.</td>
+    </tr>
+    <tr>
+      <td><b>bar.strong</b></td>
+      <td>Cao</td>
+      <td>Thanh điều hướng bên (Side rails) và thanh chân trang giúp định vị bố cục.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="warning-box">
+  <strong>Điểm neo tương phản:</strong><br>
+  Các thanh Bar thường đóng vai trò là ranh giới giữa các bề mặt khác nhau. Khi sử dụng <code>faColors.bar</code>, hãy đảm bảo màu <b>Ink</b> được chọn cho nhãn và biểu tượng dựa trên độ sáng cụ thể của thanh đó để đáp ứng các tiêu chuẩn truy cập cao.
+</div>
+
+<h3>Ý đồ thiết kế</h3>
+<p>
+  Namespace Bar được tinh chỉnh để loại bỏ sự lộn xộn về thị giác trong các ứng dụng doanh nghiệp có mật độ dữ liệu cao. Bằng cách cung cấp một bộ nền chuyên biệt cho điều hướng, nó đảm bảo rằng các nút điều khiển chức năng không bao giờ bị "lạc lối" giữa biển bề mặt dữ liệu.
+</p>

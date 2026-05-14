@@ -1,0 +1,45 @@
+<h1>faColors.ink.primary</h1>
+<p>
+  Token <code>faColors.ink.primary</code> xác định màu mặc định có độ tương phản cao cho văn bản tĩnh và biểu tượng nằm trên các lớp <b>Surface</b> (bề mặt) lớn. Đây là xương sống cho khả năng đọc của nội dung cốt lõi trong ứng dụng.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>ink.primary</code> nghiêm ngặt là một token chỉ dành cho nội dung. Nó được tối ưu hóa để cung cấp mức độ dễ đọc cao nhất trên <code>faColors.surface.primary</code> hoặc <code>secondary</code>. Khác với các loại mực dành cho hành động, token này không hàm ý tính tương tác; nó hàm ý <b>thông tin</b>.
+</p>
+
+<div class="warning-box">
+  <strong>Ranh giới sử dụng nghiêm ngặt:</strong><br>
+  <ul>
+    <li><b>NÊN:</b> Sử dụng cho văn bản nội dung, tiêu đề và các biểu tượng tĩnh trên các bố cục lớn.</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng làm màu nền cho bất kỳ thành phần nào.</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng làm màu chữ/biểu tượng bên trong các thành phần nhỏ có tính tương tác như <b>Nút (Buttons), Chip, hoặc Badge</b> (hãy sử dụng <code>action.ink.xxx</code> để thay thế).</li>
+  </ul>
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Sử dụng đúng cho nội dung tĩnh trên bề mặt chính
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    Text(
+      'Account Overview',
+      style: TextStyle(
+        // ĐÚNG: Mực primary cho tiêu đề tĩnh
+        color: context.faColors.ink.primary,
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    const SizedBox(height: 8),
+    Icon(
+      Icons.info_outline,
+      // ĐÚNG: Biểu tượng tĩnh dùng để chỉ thị thông tin
+      color: context.faColors.ink.primary,
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.ink.primary</code> được tinh chỉnh toán học để tương phản với nền ứng dụng chính, thường xuất hiện dưới dạng gần như đen ở chế độ sáng và gần như trắng ở chế độ tối.</i>
