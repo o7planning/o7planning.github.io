@@ -1,40 +1,52 @@
-<h1>Visual Language for Interaction (Selection Namespace)</h1>
+<h1>faColors.selection</h1>
 <p>
-  In complex data management applications, clearly defining where the user is and what they have selected is crucial. The <b>Selection Namespace</b> is specifically designed to handle row interactions in Data Tables or Lists, ensuring a consistent and professional feedback loop.
+  The <code>faColors.selection</code> namespace provides a specialized set of tokens for handling data selection, focus, and highlight states. This is the primary system for identifying active items in complex components like DataGrids, TreeViews, and Picker lists.
 </p>
 
-<h3>1. When to use the Selection Namespace?</h3>
+<h3>Architectural Philosophy</h3>
 <p>
-  Imagine building a Product Catalog or an Order List. When a user hovers over a row, clicks to select one or multiple items, or uses arrow keys to navigate – that is precisely when you should invoke <code>context.faColors.selection</code>.
-</p>
-
-<h3>2. Supported Interaction States</h3>
-<ul>
-  <li><b>Normal State:</b> The default background color when no action is taken.</li>
-  <li><b>Selected State:</b> Highlights items that have been chosen and persisted in memory.</li>
-  <li><b>Current State (Focus):</b> Indicates the user's active cursor position, essential for keyboard navigation.</li>
-  <li><b>Feedback States (Hover & Pressed):</b> Provides immediate visual cues during mouse or touch interactions.</li>
-</ul>
-
-<h3>3. The "Unified Trio" Rule (Surface - Text - Border)</h3>
-<p>
-  A key strength of FlutterArtist is its group-based color coordination. For optimal aesthetics and contrast, always use tokens in their designated sets:
+  Unlike the Action namespace which focuses on "doing", the Selection namespace focuses on "identifying". It is built to ensure that selected data remains legible and visually distinct from the rest of the UI without competing with primary action buttons.
 </p>
 <ul>
-  <li><b>Background (Surface):</b> Use <code>faColors.selection.rowXXX</code> to set the row's surface color.</li>
-  <li><b>Content (Text/Icon):</b> Use <code>faColors.selection.inkXXX</code>. These colors are calibrated to remain perfectly readable against their respective backgrounds.</li>
-  <li><b>Emphasis (Border):</b> Use <code>faColors.selection.borderXXX</code> to create sharp outlines, making the item "pop" from the general layout.</li>
+  <li><b>Fill:</b> Defines the background for selected rows or items, ensuring they stand out in a list.</li>
+  <li><b>Ink:</b> Provides high-contrast content (Text/Icons) for the selected background to maintain WCAG accessibility.</li>
+  <li><b>Stroke:</b> Defines focus rings and selection boundaries to indicate where the user's attention is currently locked.</li>
 </ul>
+
+<h3>Key Token Groups</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Group</th>
+      <th>Purpose</th>
+      <th>Usage Scenario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Selection Fill</b></td>
+      <td>Identifies the active container.</td>
+      <td>Selected rows in a table, active cards, or chosen list items.</td>
+    </tr>
+    <tr>
+      <td><b>On-Selection Ink</b></td>
+      <td>Contrast for selected content.</td>
+      <td>Text and icons inside a selected row or chip.</td>
+    </tr>
+    <tr>
+      <td><b>Focus / Highlight</b></td>
+      <td>Temporary attention indicators.</td>
+      <td>Keyboard navigation focus rings or search result highlights.</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="warning-box">
-  <strong>ARTIST'S WARNING:</strong>
-  Never mix <code>faColors.selection</code> with other color groups like <code>faColors.ink.xxx</code> (designed for large Surfaces) or <code>faColors.action.xxx</code> (reserved for Buttons/Chips). Mixing these groups will break the contrast logic and compromise the UI's professionalism.
+  <strong>Semantic Integrity:</strong><br>
+  The Selection namespace is designed to be subtle. While <code>action.fill.primary</code> might be a bold brand color, <code>selection.fill</code> is often a tinted or softer shade to ensure that multiple selected items do not overwhelm the user's eye.
 </div>
 
-<h3>4. Advanced Design Philosophy</h3>
-<ul>
-  <li><b>Text Coloring Logic:</b> Selection text colors are designed to be calm and professional, unlike high-contrast Action buttons, ensuring readability for long periods without eye fatigue.</li>
-  <li><b>Border Mirroring:</b> Combining a distinct border with the Selected background creates a "solid" identification frame, giving the selected row depth and a premium feel.</li>
-</ul>
-
-<p><i>To explore specific color values, please check the <b>Token Docs</b> tab for each individual item.</i></p>
+<h3>Design Intent</h3>
+<p>
+  Selection tokens are the backbone of data-heavy Enterprise applications. By using this dedicated namespace, you ensure that the "Selection" state is architecturally separated from "Active Interaction" states, allowing for more granular control over complex data visualization.
+</p>

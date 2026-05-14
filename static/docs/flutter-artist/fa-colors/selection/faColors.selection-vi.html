@@ -1,40 +1,52 @@
-<h1>Ngôn ngữ Thị giác cho Sự lựa chọn (Selection Namespace)</h1>
+<h1>faColors.selection</h1>
 <p>
-  Trong các ứng dụng quản lý dữ liệu phức tạp, việc giúp người dùng xác định rõ họ đang đứng ở đâu và đã chọn những gì là yếu tố then chốt. <b>Selection Namespace</b> được thiết kế riêng để giải quyết bài toán tương tác trên các dòng (rows) của Bảng dữ liệu hoặc Danh sách.
+  Namespace <code>faColors.selection</code> cung cấp một bộ token chuyên biệt để xử lý việc chọn dữ liệu, tiêu điểm (focus) và các trạng thái làm nổi bật. Đây là hệ thống chính để xác định các mục đang hoạt động trong các thành phần phức tạp như DataGrids, TreeViews và danh sách Picker.
 </p>
 
-<h3>1. Khi nào bạn cần đến Selection Namespace?</h3>
+<h3>Triết lý kiến trúc</h3>
 <p>
-  Hãy tưởng tượng bạn đang xây dựng một bảng Danh mục sản phẩm hoặc một Danh sách đơn hàng. Khi người dùng di chuyển chuột qua một dòng, click để chọn hoặc điều hướng bàn phím – đó chính là lúc bạn cần gọi đến <code>context.faColors.selection</code>.
-</p>
-
-<h3>2. Các trạng thái tương tác được hỗ trợ</h3>
-<ul>
-  <li><b>Trạng thái Nghỉ (Normal):</b> Màu nền mặc định khi dòng chưa có tác động.</li>
-  <li><b>Trạng thái Lựa chọn (Selected):</b> Đánh dấu các mục đã được chọn và lưu vào bộ nhớ.</li>
-  <li><b>Trạng thái Tập trung (Current):</b> Chỉ định vị trí con trỏ hiện tại (Focus).</li>
-  <li><b>Trạng thái Phản hồi (Hover & Pressed):</b> Cung cấp hiệu ứng thị giác tức thì khi di chuột hoặc nhấn giữ.</li>
-</ul>
-
-<h3>3. Quy tắc "Bộ ba đồng nhất" (Surface - Text - Border)</h3>
-<p>
-  Để đạt được hiệu quả thẩm mỹ tối ưu, bạn nên sử dụng các token theo bộ:
+  Khác với namespace Action tập trung vào việc "thực thi", namespace Selection tập trung vào việc "định danh". Nó được xây dựng để đảm bảo dữ liệu được chọn vẫn dễ đọc và khác biệt rõ rệt với phần còn lại của UI mà không tranh chấp sự chú ý với các nút hành động chính.
 </p>
 <ul>
-  <li><b>Nền (Surface):</b> Sử dụng <code>faColors.selection.rowXXX</code>.</li>
-  <li><b>Nội dung (Text/Icon):</b> Sử dụng <code>faColors.selection.inkXXX</code>.</li>
-  <li><b>Điểm nhấn (Border):</b> Sử dụng <code>faColors.selection.borderXXX</code>.</li>
+  <li><b>Fill (Lớp lấp đầy):</b> Xác định nền cho các hàng hoặc mục được chọn, đảm bảo chúng nổi bật trong một danh sách.</li>
+  <li><b>Ink (Mực):</b> Cung cấp nội dung (Văn bản/Biểu tượng) có độ tương phản cao cho nền được chọn để duy trì tiêu chuẩn truy cập WCAG.</li>
+  <li><b>Stroke (Đường viền):</b> Xác định các vòng tiêu điểm (focus rings) và ranh giới lựa chọn để chỉ thị nơi sự chú ý của người dùng đang được khóa lại.</li>
 </ul>
+
+<h3>Các nhóm Token chính</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Nhóm</th>
+      <th>Mục đích</th>
+      <th>Kịch bản sử dụng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Selection Fill</b></td>
+      <td>Định danh khung chứa đang hoạt động.</td>
+      <td>Hàng được chọn trong bảng, thẻ đang hoạt động hoặc các mục danh sách được chọn.</td>
+    </tr>
+    <tr>
+      <td><b>On-Selection Ink</b></td>
+      <td>Tương phản cho nội dung được chọn.</td>
+      <td>Văn bản và biểu tượng bên trong một hàng hoặc chip được chọn.</td>
+    </tr>
+    <tr>
+      <td><b>Focus / Highlight</b></td>
+      <td>Chỉ báo sự chú ý tạm thời.</td>
+      <td>Vòng tiêu điểm khi điều hướng bằng bàn phím hoặc làm nổi bật kết quả tìm kiếm.</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="warning-box">
-  <strong>ARTIST'S WARNING:</strong>
-  Tuyệt đối không trộn <code>faColors.selection</code> với <code>faColors.ink.xxx</code> (dành cho Surface lớn) hoặc <code>faColors.action.xxx</code> (dành cho Button). Việc này sẽ phá vỡ logic tương phản và làm UI thiếu nhất quán.
+  <strong>Tính toàn vẹn về mặt ngữ nghĩa:</strong><br>
+  Namespace Selection được thiết kế để mang tính tinh tế. Trong khi <code>action.fill.primary</code> có thể là một màu thương hiệu đậm, thì <code>selection.fill</code> thường là một sắc thái nhẹ hơn để đảm bảo rằng nhiều mục được chọn cùng lúc không gây nhức mắt cho người dùng.
 </div>
 
-<h3>4. Triết lý thiết kế chuyên sâu</h3>
-<ul>
-  <li><b>Sự điềm đạm:</b> Màu chữ trong Selection được thiết kế để đọc trong thời gian dài mà không mỏi mắt, khác với sự rực rỡ của Action buttons.</li>
-  <li><b>Viền đối ứng:</b> Kết hợp Border với nền Selected giúp item trông "lì" và có chiều sâu hơn.</li>
-</ul>
-
-<p><i>Xem chi tiết từng Token tại tab <b>Token Docs</b>.</i></p>
+<h3>Ý đồ thiết kế</h3>
+<p>
+  Các token Selection là xương sống của các ứng dụng Enterprise nặng về dữ liệu. Bằng cách sử dụng namespace chuyên biệt này, ông giáo đảm bảo rằng trạng thái "Lựa chọn" được tách biệt về mặt kiến trúc với các trạng thái "Tương tác chủ động", cho phép kiểm soát chi tiết hơn đối với việc trực quan hóa dữ liệu phức tạp.
+</p>
