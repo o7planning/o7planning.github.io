@@ -1,6 +1,49 @@
-
-<h1> faColors.action.fill.selected </h1>
+<h1>faColors.action.fill.selected</h1>
 <p>
-  The background color for components in a selected state, such as Chips or Toggle Buttons.
-  This color is usually softer than <code>faColors.action.fill.primary</code> to maintain aesthetics when multiple items are selected.
+  The <code>faColors.action.fill.selected</code> token defines the background fill color for interactive components that are currently in a persistent "Selected" state.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Within the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.selected</code> provides a clear visual confirmation of a choice. It is designed to be more prominent than <code>faColors.surface.xxx</code> layers but often maintains a balanced saturation to avoid visual fatigue when multiple items (like Chips) are selected simultaneously.
+</p>
+
+<div class="warning-box">
+  <strong>Selection Hierarchy:</strong><br>
+  Unlike <code>faColors.selection.rowSelected</code> (which is optimized for wide data rows), <code>faColors.action.fill.selected</code> is tailored for smaller UI components. Always pair this fill with <code>faColors.action.ink.onSelectedFill</code> to maintain accessibility standards.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Selected Filter Chip
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+  decoration: BoxDecoration(
+    // The active fill for selected state
+    color: context.faColors.action.fill.selected,
+    borderRadius: BorderRadius.circular(16),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.check_rounded,
+        // Use the dedicated ink for selected fill
+        color: context.faColors.action.ink.onSelectedFill,
+        size: 14,
+      ),
+      const SizedBox(width: 4),
+      Text(
+        'Selected Filter',
+        style: TextStyle(
+          // Use the dedicated ink for selected fill
+          color: context.faColors.action.ink.onSelectedFill,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.fill.selected</code> is typically aliased to a brand-tinted container color with optimal contrast.</i>

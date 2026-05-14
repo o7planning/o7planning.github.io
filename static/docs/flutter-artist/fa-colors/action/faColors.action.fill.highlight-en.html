@@ -1,7 +1,38 @@
-
-
-<h1> faColors.action.fill.highlight </h1>
+<h1>faColors.action.fill.highlight</h1>
 <p>
-  The background color for specialized action areas or technical highlights.
-  Commonly used for notification Badges or emphasized functional icons.
+  The <code>faColors.action.fill.highlight</code> token defines a high-visibility background color used to draw immediate attention to a specific interactive element or a newly created item.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.highlight</code> provides a visual "pop" that is stronger than <code>faColors.surface.emphasized</code> but more specialized than a standard brand fill. It is often used for transient states, such as highlighting a row that has just been updated or a badge that requires user inspection.
+</p>
+
+<div class="warning-box">
+  <strong>Attention Management:</strong><br>
+  Use this token sparingly to avoid visual clutter. It is most effective for "New" labels, active search result markers, or temporary focus states. Always pair this background with <code>faColors.action.ink.onHighlightFill</code>.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Highlighting a "New" status badge
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+  decoration: BoxDecoration(
+    // The high-visibility highlight fill
+    color: context.faColors.action.fill.highlight,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'NEW',
+    style: TextStyle(
+      // Correct ink for the highlight background
+      color: context.faColors.action.ink.onHighlightFill,
+      fontSize: 10,
+      fontWeight: FontWeight.black,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.fill.highlight</code> is typically mapped to a vibrant accent color (like amber or a bright brand secondary) to ensure it stands out from the standard UI palette.</i>

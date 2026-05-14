@@ -1,0 +1,41 @@
+<h1>faColors.action.ink.selected</h1>
+<p>
+  The <code>faColors.action.ink.selected</code> token defines the color for text and icons in interactive elements that are in a persistent "Selected" state but do not have a background fill.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.selected</code> provides a clear visual signal of selection through foreground color alone. It is visually identical to <code>faColors.action.fill.selected</code> (or its primary brand equivalent) to ensure brand consistency across different component styles.
+</p>
+
+<div class="warning-box">
+  <strong>Standalone Visibility:</strong><br>
+  This token is optimized for standalone elements. Because it uses a high-chroma brand color, it remains clearly visible when placed on neutral <code>faColors.surface.xxx</code> layers, making it the perfect choice for selected Tab labels or navigation icons.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a selected Tab item (No Background)
+Column(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Text(
+      'Active Tab',
+      style: TextStyle(
+        // CORRECT: Primary brand color for selected state ink
+        color: context.faColors.action.ink.selected,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    const SizedBox(height: 4),
+    // Underline indicator using the same logic
+    Container(
+      width: 20,
+      height: 2,
+      color: context.faColors.action.ink.selected,
+    ),
+  ],
+)
+</pre>
+
+<i>Note: Never use this token on top of <code>faColors.action.fill.selected</code>. Use <code>faColors.action.ink.onSelectedFill</code> for that scenario to ensure accessibility.</i>

@@ -1,6 +1,48 @@
-
-<h1> faColors.action.ink.highlight </h1>
+<h1>faColors.action.ink.highlight</h1>
 <p>
-  The dedicated text and icon color for components using <code>faColors.action.fill.highlight</code>.
-  This pairing ensures that highlighted technical information remains extremely sharp and prominent.
+  The <code>faColors.action.ink.highlight</code> token defines a high-visibility color for text and icons, used to emphasize specific content without requiring a background fill.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.highlight</code> provides visual prominence through foreground color alone. It is designed to be visually distinct from primary typography, making it ideal for signaling urgency or "featured" status on neutral surfaces.
+</p>
+
+<div class="warning-box">
+  <strong>Strategic Spotlight:</strong><br>
+  This token is most effective for highlighting search keywords, indicating "Hot" items in a list, or for icons that need to stand out within a dense UI (like a star icon for a favorited item).
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Highlighting a featured item in a list
+Row(
+  children: [
+    Icon(
+      Icons.star_rounded,
+      // CORRECT: Use highlight ink for a "featured" icon
+      color: context.faColors.action.ink.highlight,
+      size: 18,
+    ),
+    const SizedBox(width: 8),
+    RichText(
+      text: TextSpan(
+        text: 'Featured: ',
+        style: TextStyle(
+          // CORRECT: Use highlight ink for emphasis text
+          color: context.faColors.action.ink.highlight,
+          fontWeight: FontWeight.bold,
+        ),
+        children: [
+          TextSpan(
+            text: 'Advanced Data Grid Component',
+            style: TextStyle(color: context.faColors.ink.primary),
+          ),
+        ],
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.ink.highlight</code> is usually identical to <code>faColors.action.fill.highlight</code>, renamed for architectural consistency in foreground usage.</i>

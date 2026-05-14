@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.success</h1>
+<p>
+  Token <code>faColors.action.ink.success</code> xác định màu thành công (semantic success) dành riêng cho văn bản, biểu tượng và các yếu tố vector được sử dụng trong các hành động tương tác.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.success</code> có màu sắc giống hệt với <code>faColors.action.fill.success</code>. Việc tách biệt tên gọi là một yêu cầu kiến trúc nghiêm ngặt: "Ink" dùng để vẽ nội dung, đảm bảo văn bản mang chủ đề thành công luôn rõ ràng và đúng ngữ nghĩa trên các bề mặt trung tính.
+</p>
+
+<div class="warning-box">
+  <strong>Xác nhận độc lập:</strong><br>
+  Sử dụng token này cho các <b>TextButton</b>, các biểu tượng trạng thái "Đã hoàn thành" đứng độc lập, hoặc các thông báo thành công nằm trực tiếp trên các lớp <code>faColors.surface.xxx</code>. Nó cung cấp độ tương phản màu sắc cao trên nền trung tính.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Text Button Thành công (Không có nền)
+Row(
+  children: [
+    Icon(
+      Icons.done_all_rounded,
+      // ĐÚNG: Sử dụng mực success cho biểu tượng trạng thái độc lập
+      color: context.faColors.action.ink.success,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Đánh dấu đã giải quyết',
+        style: TextStyle(
+          // ĐÚNG: Màu success ngữ nghĩa cho văn bản tương tác
+          color: context.faColors.action.ink.success,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Tuyệt đối không dùng token này đè lên nền <code>faColors.action.fill.success</code>. Hãy sử dụng <code>faColors.action.ink.onSuccessFill</code> để đảm bảo nội dung không bị "chìm" vào nền.</i>

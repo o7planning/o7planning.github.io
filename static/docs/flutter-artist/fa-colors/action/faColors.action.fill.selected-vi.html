@@ -1,7 +1,49 @@
-
-<h1> faColors.action.surface.selected </h1>
+<h1>faColors.action.fill.selected</h1>
 <p>
-  Màu nền dành cho các thành phần đang ở trạng thái được chọn như Chip hoặc Toggle Button.
-  Màu này thường nhẹ nhàng hơn <code>faColors.action.surface.primary</code> để đảm bảo tính thẩm mỹ khi hiển thị số lượng lớn.
+  Token <code>faColors.action.fill.selected</code> xác định màu lấp đầy nền cho các thành phần tương tác hiện đang ở trạng thái "Đã chọn" (Selected).
 </p>
- 
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.selected</code> cung cấp một sự xác nhận thị giác rõ ràng về một lựa chọn. nó được thiết kế để nổi bật hơn các lớp <code>faColors.surface.xxx</code> nhưng thường duy trì độ bão hòa cân bằng để tránh gây mỏi mắt khi nhiều mục (như Chips) được chọn cùng lúc.
+</p>
+
+<div class="warning-box">
+  <strong>Phân cấp vùng chọn:</strong><br>
+  Khác với <code>faColors.selection.rowSelected</code> (vốn được tối ưu cho các hàng dữ liệu rộng), <code>faColors.action.fill.selected</code> được tinh chỉnh cho các thành phần UI nhỏ hơn. Luôn kết hợp lớp fill này với <code>faColors.action.ink.onSelectedFill</code> để duy trì các tiêu chuẩn về khả năng truy cập.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Filter Chip đang được chọn
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+  decoration: BoxDecoration(
+    // Lớp fill kích hoạt cho trạng thái selected
+    color: context.faColors.action.fill.selected,
+    borderRadius: BorderRadius.circular(16),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.check_rounded,
+        // Sử dụng mực chuyên dụng cho nền selected
+        color: context.faColors.action.ink.onSelectedFill,
+        size: 14,
+      ),
+      const SizedBox(width: 4),
+      Text(
+        'Selected Filter',
+        style: TextStyle(
+          // Sử dụng mực chuyên dụng cho nền selected
+          color: context.faColors.action.ink.onSelectedFill,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.fill.selected</code> thường được ánh xạ tới màu container mang sắc thái thương hiệu với độ tương phản tối ưu.</i>

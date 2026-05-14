@@ -1,6 +1,37 @@
-<h1> faColors.action.fill.muted </h1>
+<h1>faColors.action.fill.muted</h1>
 <p>
-  <b>TRẠNG THÁI VÔ HIỆU HÓA:</b> Màu nền dành riêng cho các thành phần Action đang ở trạng thái <i>Disabled</i>.
-  Màu sắc này được thiết kế để làm "chìm" thành phần xuống, thông báo cho người dùng rằng hành động này hiện không thể tương tác.
+  Token <code>faColors.action.fill.muted</code> xác định một lớp lấp đầy nền có cường độ thấp cho các yếu tố tương tác cần được giảm nhẹ về mặt thị giác.
 </p>
- 
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.muted</code> cung cấp sự hiện diện tương tác tinh tế nhất. Nó thường sử dụng màu xám trung tính hoặc một sắc thái thương hiệu đã được khử bão hòa mạnh để đảm bảo hòa nhập vào nền nhưng vẫn duy trì vùng bấm (hit area) rõ ràng cho người dùng.
+</p>
+
+<div class="warning-box">
+  <strong>Phân cấp thị giác:</strong><br>
+  Sử dụng lớp fill này cho các hành động có sẵn nhưng không được khuyến khích ưu tiên, chẳng hạn như "Thiết lập lại mặc định" hoặc các cài đặt phụ. Luôn kết hợp nền này với <code>faColors.action.ink.onMutedFill</code> để đảm bảo nội dung không bị chìm nghỉm trong tông màu trung tính.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Nút bấm Muted có độ ưu tiên thấp
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+  decoration: BoxDecoration(
+    // Lớp fill muted khiêm tốn
+    color: context.faColors.action.fill.muted,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'Reset to Default',
+    style: TextStyle(
+      // Mực đúng cho nền muted
+      color: context.faColors.action.ink.onMutedFill,
+      fontWeight: FontWeight.w500,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.fill.muted</code> thường được ánh xạ tới <code>surfaceContainerLow</code> hoặc một sắc thái trung tính tương đương trong FaActionSurfaceResolvers.</i>

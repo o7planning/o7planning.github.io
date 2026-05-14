@@ -1,0 +1,39 @@
+<h1>faColors.action.ink.onHighlightFill</h1>
+<p>
+  The <code>faColors.action.ink.onHighlightFill</code> token defines the specific ink color for text and icons that sit directly on top of a <code>faColors.action.fill.highlight</code> background.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, this token provides a high-contrast foreground color. Since <code>faColors.action.fill.highlight</code> is often a vibrant or warm color (like amber or bright yellow), this ink is mathematically tuned to maintain maximum legibility, preventing the content from "bleeding" into the bright background.
+</p>
+
+<div class="warning-box">
+  <strong>The Contrast Lock:</strong><br>
+  This token <b>MUST</b> be used with <code>faColors.action.fill.highlight</code>.
+  If you use <code>faColors.action.ink.onHighlightFill</code> for standalone text on a <code>faColors.surface.xxx</code>, it will likely lose its semantic meaning and visual clarity.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct implementation of a Highlighted Badge
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+  decoration: BoxDecoration(
+    // REQUIRED: The vibrant highlight fill
+    color: context.faColors.action.fill.highlight,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'HOT',
+    style: TextStyle(
+      // CORRECT: High-contrast ink for the highlight fill
+      color: context.faColors.action.ink.onHighlightFill,
+      fontWeight: FontWeight.black,
+      fontSize: 10,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, this token is typically mapped to a dark neutral (like deep gray or black) to provide the best contrast against the bright highlight surface.</i>

@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onSelectedFill</h1>
+<p>
+  Token <code>faColors.action.ink.onSelectedFill</code> xác định màu mực cụ thể cho văn bản và biểu tượng nằm trực tiếp trên lớp nền <code>faColors.action.fill.selected</code>.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, token này đóng vai trò là một lớp mực tương phản cao. Nó được tối ưu hóa về mặt toán học để duy trì khả năng đọc tối đa trên lớp lấp đầy trạng thái được chọn, đảm bảo các lựa chọn đang hoạt động (như Chips hoặc Segments được chọn) luôn dễ đọc bất kể cường độ màu sắc thương hiệu chính là bao nhiêu.
+</p>
+
+<div class="warning-box">
+  <strong>Rủi ro "Vô hình":</strong><br>
+  Token này <b>BẮT BUỘC</b> phải đi đôi với <code>faColors.action.fill.selected</code>.
+  Việc sử dụng <code>faColors.action.ink.onSelectedFill</code> trên một bề mặt trung tính hoặc không có nền sẽ khiến nội dung trở nên <b>vô hình</b>, vì nó được thiết kế để tương phản với màu sắc rực rỡ chứ không phải nền trung tính.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Triển khai đúng cho một Segment/Chip đang được chọn
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+  decoration: BoxDecoration(
+    // BẮT BUỘC: Lớp lấp đầy selection đang hoạt động
+    color: context.faColors.action.fill.selected,
+    borderRadius: BorderRadius.circular(20),
+  ),
+  child: Text(
+    'Active Selection',
+    style: TextStyle(
+      // ĐÚNG: Mực tương phản chuyên dụng dành cho nền selected
+      color: context.faColors.action.ink.onSelectedFill,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, token này thường được ánh xạ tới một màu trung tính có độ tương phản cao (thường là trắng hoặc một sắc thái thương hiệu cực tối) để thỏa mãn các tiêu chuẩn về khả năng truy cập WCAG trên nền đã chọn.</i>

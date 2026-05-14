@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onSelectedFill</h1>
+<p>
+  The <code>faColors.action.ink.onSelectedFill</code> token defines the specific ink color for text and icons that are placed directly on top of a <code>faColors.action.fill.selected</code> background.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, this token serves as a high-contrast ink layer. It is mathematically optimized to maintain maximum legibility against the selected state fill, ensuring that active choices (like selected Chips or Segments) are easily readable regardless of the primary brand color's intensity.
+</p>
+
+<div class="warning-box">
+  <strong>The "Invisible" Risk:</strong><br>
+  This token <b>MUST</b> be paired with <code>faColors.action.fill.selected</code>.
+  Using <code>faColors.action.ink.onSelectedFill</code> on a neutral surface or without a background will likely result in the content becoming <b>invisible</b>, as it is designed for high-chroma contrast, not neutral grounds.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct implementation of a Selected Segment/Chip
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+  decoration: BoxDecoration(
+    // REQUIRED: The active selection fill
+    color: context.faColors.action.fill.selected,
+    borderRadius: BorderRadius.circular(20),
+  ),
+  child: Text(
+    'Active Selection',
+    style: TextStyle(
+      // CORRECT: Dedicated contrast ink for the selected fill
+      color: context.faColors.action.ink.onSelectedFill,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, this token is typically mapped to a high-contrast neutral (often white or a dark brand tint) to satisfy WCAG accessibility standards on the selected background.</i>

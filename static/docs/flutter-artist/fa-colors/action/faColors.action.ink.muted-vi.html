@@ -1,18 +1,44 @@
-
-
-<h1> faColors.action.ink.muted </h1>
+<h1>faColors.action.ink.muted</h1>
 <p>
-  Đây là màu chữ và Icon được thiết kế riêng để hiển thị trên nền <code>faColors.action.fill.muted</code>.
-  Token này giúp duy trì sự tinh tế cho các hành động phụ, đảm bảo nội dung vẫn có thể đọc được nhưng không tranh chấp thị giác với các hành động quan trọng hơn.
+  Token <code>faColors.action.ink.muted</code> xác định màu sắc có độ nhấn thấp cho văn bản và biểu tượng được sử dụng trong các yếu tố tương tác không yêu cầu lớp lấp đầy nền.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.muted</code> cung cấp một gợi ý tương tác tinh tế. Nó được thiết kế để "tĩnh lặng" hơn so với hệ typography chính, giúp nó trở nên lý tưởng cho các hành động phụ chỉ nên được phát hiện khi cần thiết, thay vì đòi hỏi sự chú ý ngay lập tức.
 </p>
 
 <div class="warning-box">
-  <strong>GHI CHÚ HỆ THỐNG:</strong>
-  Cặp bài trùng <code>faColors.action.fill.muted</code> và <code>faColors.action.ink.muted</code> thường được sử dụng cho các nút "Bỏ qua", "Đóng" hoặc các nhãn trạng thái mang tính chất tham khảo. Đừng nhầm lẫn nó với <code>faColors.ink.muted</code> (dành cho văn bản trên bề mặt lớn).
+  <strong>Gợi ý tinh tế:</strong><br>
+  Token này là lựa chọn hoàn hảo cho các TextButton phụ, các liên kết ở chân trang (footer), hoặc các biểu tượng "Tìm hiểu thêm". Nó đảm bảo giao diện luôn sạch sẽ và không bị rối rắm trong khi vẫn cung cấp các lối đi rõ ràng cho các tương tác nâng cao.
 </div>
 
-<h3>Ứng dụng thực tế:</h3>
-<ul>
-  <li>Dùng cho chữ bên trong các Chip thông tin không quan trọng.</li>
-  <li>Dùng cho các nút bấm có vai trò "hủy bỏ" hoặc "đóng" trong các giao diện phức tạp để giảm tải áp lực thị giác.</li>
-</ul>
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Text Button có độ nhấn thấp
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Icon(
+      Icons.help_outline_rounded,
+      // ĐÚNG: Mực muted tinh tế cho biểu tượng thông tin phụ
+      color: context.faColors.action.ink.muted,
+      size: 16,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Xem tài liệu hướng dẫn',
+        style: TextStyle(
+          // ĐÚNG: Mực muted cho văn bản tương tác thứ cấp
+          color: context.faColors.action.ink.muted,
+          fontSize: 13,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.ink.muted</code> thường có giá trị giống với <code>faColors.ink.muted</code>, đảm bảo văn bản tương tác phụ vẫn giữ nguyên trọng số thị giác như văn bản phụ không tương tác.</i>

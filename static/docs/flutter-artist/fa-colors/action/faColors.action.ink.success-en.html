@@ -1,0 +1,43 @@
+<h1>faColors.action.ink.success</h1>
+<p>
+  The <code>faColors.action.ink.success</code> token defines the semantic success color for text, icons, and vector elements used in interactive actions.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.success</code> is visually identical to <code>faColors.action.fill.success</code>. The naming separation is a strict architectural requirement: "Ink" is for drawing content, ensuring that success-themed text remains legible and semantically correct on neutral surfaces.
+</p>
+
+<div class="warning-box">
+  <strong>Standalone Confirmation:</strong><br>
+  Use this token for <b>TextButtons</b>, standalone "Completed" status icons, or success messages that sit directly on <code>faColors.surface.xxx</code> layers. It provides high chroma contrast against neutral backgrounds.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Success Text Button (No Background)
+Row(
+  children: [
+    Icon(
+      Icons.done_all_rounded,
+      // CORRECT: Use success ink for a standalone status icon
+      color: context.faColors.action.ink.success,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Mark as Resolved',
+        style: TextStyle(
+          // CORRECT: Semantic success color for interactive text
+          color: context.faColors.action.ink.success,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: Never use this token on top of <code>faColors.action.fill.success</code>. Use <code>faColors.action.ink.onSuccessFill</code> instead to ensure the content doesn't "disappear" into the background.</i>

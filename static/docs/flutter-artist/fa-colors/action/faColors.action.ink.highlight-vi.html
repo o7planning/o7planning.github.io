@@ -1,6 +1,48 @@
-
-<h1> faColors.action.ink.highlight </h1>
+<h1>faColors.action.ink.highlight</h1>
 <p>
-  Màu chữ và Icon dành riêng cho các thành phần sử dụng <code>faColors.action.fill.highlight</code>.
-  Sự kết hợp này giúp các thông tin quan trọng trở nên cực kỳ sắc nét và nổi bật.
+  Token <code>faColors.action.ink.highlight</code> xác định màu sắc có độ hiển thị cao cho văn bản và biểu tượng, được sử dụng để nhấn mạnh nội dung cụ thể mà không cần lớp lấp đầy nền.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.highlight</code> cung cấp sự nổi bật thị giác chỉ thông qua màu sắc tiền cảnh. Nó được thiết kế để khác biệt rõ rệt với hệ typography chính, giúp nó trở nên lý tưởng để báo hiệu sự khẩn cấp hoặc trạng thái "nổi bật" trên các bề mặt trung tính.
+</p>
+
+<div class="warning-box">
+  <strong>Tiêu điểm chiến lược:</strong><br>
+  Token này hiệu quả nhất khi dùng để làm nổi bật từ khóa tìm kiếm, chỉ báo các mục "Hot" trong danh sách, hoặc cho các biểu tượng cần sự chú ý trong một giao diện dày đặc (như biểu tượng ngôi sao cho mục yêu thích).
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Làm nổi bật một mục đặc biệt trong danh sách
+Row(
+  children: [
+    Icon(
+      Icons.star_rounded,
+      // ĐÚNG: Sử dụng mực highlight cho icon "nổi bật"
+      color: context.faColors.action.ink.highlight,
+      size: 18,
+    ),
+    const SizedBox(width: 8),
+    RichText(
+      text: TextSpan(
+        text: 'Nổi bật: ',
+        style: TextStyle(
+          // ĐÚNG: Sử dụng mực highlight cho văn bản nhấn mạnh
+          color: context.faColors.action.ink.highlight,
+          fontWeight: FontWeight.bold,
+        ),
+        children: [
+          TextSpan(
+            text: 'Thành phần Data Grid Nâng cao',
+            style: TextStyle(color: context.faColors.ink.primary),
+          ),
+        ],
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.ink.highlight</code> thường có giá trị giống với <code>faColors.action.fill.highlight</code>, được đổi tên để đảm bảo tính nhất quán về mặt kiến trúc khi dùng cho tiền cảnh.</i>

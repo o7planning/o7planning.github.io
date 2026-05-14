@@ -1,6 +1,38 @@
-
-<h1> faColors.action.fill.highlight </h1>
+<h1>faColors.action.fill.highlight</h1>
 <p>
-  Màu nền dành cho các vùng hành động cần sự chú ý đặc biệt hoặc mang tính kỹ thuật.
-  Thường được dùng cho các Badge thông báo hoặc các icon chức năng nổi bật.
+  Token <code>faColors.action.fill.highlight</code> xác định màu nền có độ hiển thị cao, được sử dụng để thu hút sự chú ý ngay lập tức vào một yếu tố tương tác cụ thể hoặc một mục mới được tạo.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.highlight</code> tạo ra một điểm nhấn thị giác mạnh hơn so với <code>faColors.surface.emphasized</code> nhưng mang tính chuyên biệt hơn là lớp lấp đầy thương hiệu tiêu chuẩn. Nó thường được dùng cho các trạng thái tạm thời, chẳng hạn như làm nổi bật một hàng vừa được cập nhật hoặc một huy hiệu (badge) yêu cầu người dùng kiểm tra.
+</p>
+
+<div class="warning-box">
+  <strong>Quản lý sự chú ý:</strong><br>
+  Hãy sử dụng token này một cách tiết kiệm để tránh gây nhiễu loạn thị giác. Nó hiệu quả nhất cho các nhãn "Mới", các đánh dấu kết quả tìm kiếm đang hoạt động, hoặc các trạng thái tiêu điểm tạm thời. Luôn kết hợp nền này với <code>faColors.action.ink.onHighlightFill</code>.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Làm nổi bật một huy hiệu trạng thái "Mới"
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+  decoration: BoxDecoration(
+    // Lớp fill highlight có độ hiển thị cao
+    color: context.faColors.action.fill.highlight,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'NEW',
+    style: TextStyle(
+      // Mực đúng cho nền highlight
+      color: context.faColors.action.ink.onHighlightFill,
+      fontSize: 10,
+      fontWeight: FontWeight.black,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.fill.highlight</code> thường được ánh xạ tới một màu nhấn rực rỡ (như màu hổ phách hoặc màu thương hiệu phụ sáng) để đảm bảo nó tách biệt hoàn toàn khỏi bảng màu UI tiêu chuẩn.</i>

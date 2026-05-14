@@ -1,0 +1,39 @@
+<h1>faColors.action.ink.onHighlightFill</h1>
+<p>
+  Token <code>faColors.action.ink.onHighlightFill</code> xác định màu mực cụ thể cho văn bản và biểu tượng nằm trực tiếp trên nền <code>faColors.action.fill.highlight</code>.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, token này cung cấp màu sắc tiền cảnh có độ tương phản cao. Vì <code>faColors.action.fill.highlight</code> thường là một màu rực rỡ hoặc tông màu ấm (như màu hổ phách hoặc vàng sáng), loại mực này được tinh chỉnh để duy trì khả năng đọc tối đa, ngăn chặn nội dung bị "nhòe" vào nền sáng.
+</p>
+
+<div class="warning-box">
+  <strong>Khóa tương phản:</strong><br>
+  Token này <b>BẮT BUỘC</b> phải được sử dụng đi kèm với <code>faColors.action.fill.highlight</code>.
+  Nếu bạn sử dụng <code>faColors.action.ink.onHighlightFill</code> cho văn bản đứng độc lập trên một <code>faColors.surface.xxx</code>, nó sẽ làm mất đi ý nghĩa ngữ nghĩa và độ rõ nét về mặt thị giác.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Triển khai đúng cho một huy hiệu (Badge) nổi bật
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+  decoration: BoxDecoration(
+    // BẮT BUỘC: Lớp lấp đầy highlight rực rỡ
+    color: context.faColors.action.fill.highlight,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'HOT',
+    style: TextStyle(
+      // ĐÚNG: Mực tương phản cao dành cho nền highlight
+      color: context.faColors.action.ink.onHighlightFill,
+      fontWeight: FontWeight.black,
+      fontSize: 10,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, token này thường được ánh xạ tới một màu trung tính tối (như xám đậm hoặc đen) để mang lại độ tương phản tốt nhất trên bề mặt highlight sáng.</i>

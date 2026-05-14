@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onSuccessFill</h1>
+<p>
+  The <code>faColors.action.ink.onSuccessFill</code> token defines the specific ink color for text and icons that sit directly on top of a <code>faColors.action.fill.success</code> background.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, this token acts as a high-contrast companion. It is mathematically tuned to provide maximum legibility against the success green, ensuring that confirmation messages or primary "Done" actions are immediately readable under any lighting conditions.
+</p>
+
+<div class="warning-box">
+  <strong>The Contrast Commandment:</strong><br>
+  This token <b>MUST</b> be used with <code>faColors.action.fill.success</code>.
+  If you attempt to use <code>faColors.action.ink.onSuccessFill</code> for a standalone TextButton on a <code>faColors.surface.xxx</code>, the content will likely become <b>invisible</b> or extremely faint.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct implementation of a Success Primary Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+  decoration: BoxDecoration(
+    // REQUIRED: The success fill layer
+    color: context.faColors.action.fill.success,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Text(
+    'Payment Success',
+    style: TextStyle(
+      // CORRECT: High-contrast ink for the success fill
+      color: context.faColors.action.ink.onSuccessFill,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, this token is typically mapped to a solid white or a very dark forest green, depending on the specific luminance of the success fill to meet WCAG standards.</i>

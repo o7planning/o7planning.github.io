@@ -1,0 +1,50 @@
+<h1>faColors.action.fill.success</h1>
+<p>
+  The <code>faColors.action.fill.success</code> token defines the background color for positive actions or completed states, such as "Success", "Done", or "Approve" buttons.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.success</code> provides a strong visual signal of completion and correctness. It uses a specific green hue from the theme palette, optimized to be distinguishable from primary brand colors while maintaining a "safe" and encouraging aesthetic.
+</p>
+
+<div class="warning-box">
+  <strong>Positivity Implementation:</strong><br>
+  Always pair this background with <code>faColors.action.ink.onSuccessFill</code>.
+  <b>NEVER</b> use <code>faColors.action.ink.success</code> on top of this fill, as it is intended for standalone content and will fail contrast requirements here.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Success Action Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // The positive success fill
+    color: context.faColors.action.fill.success,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Icon(
+        Icons.check_circle_outline_rounded,
+        // CORRECT: Contrast ink for success background
+        color: context.faColors.action.ink.onSuccessFill,
+        size: 18,
+      ),
+      const SizedBox(width: 8),
+      Text(
+        'Transaction Complete',
+        style: TextStyle(
+          // CORRECT: Contrast ink for success background
+          color: context.faColors.action.ink.onSuccessFill,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.fill.success</code> is mapped to the semantic success color in FaActionSurfaceResolvers.</i>
