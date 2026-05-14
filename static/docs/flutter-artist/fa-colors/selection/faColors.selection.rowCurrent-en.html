@@ -1,7 +1,41 @@
-
-
-<h1> faColors.selection.rowCurrent </h1>
+<h1>faColors.selection.rowCurrent</h1>
 <p>
-Defines the background color for the row that is currently focused on by the cursor or keyboard.
-In the FlutterArtist philosophy, <code>faColors.selection.rowCurrent</code> helps the user know where they are navigating, even if that row hasn't been selected yet. 
+  The <code>faColors.selection.rowCurrent</code> token identifies the background surface for the row that currently holds the active focus or is being navigated in a list or table context.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Unlike a persistent selection, <code>rowCurrent</code> represents a transient state. It acts as a visual pointer. In the <b>Fill - Ink - Stroke</b> system, it uses a secondary-level fill to provide enough distinction from <code>rowNormal</code> without competing for the same visual weight as <code>rowSelected</code>.
+</p>
+
+<div class="warning-box">
+  <strong>Design Integration:</strong><br>
+  To maintain a clean hierarchy, it is recommended to pair <code>rowCurrent</code> with <code>faColors.stroke.standard</code> to subtly define its boundaries.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Highlighting the current focused row in a list
+Container(
+  // Transient fill for the current focused state
+  color: context.faColors.selection.rowCurrent,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Use standard stroke to indicate focus depth
+      color: context.faColors.stroke.standard,
+      width: 1,
+    ),
+  ),
+  child: ListTile(
+    title: Text(
+      'Current Focused Item',
+      style: TextStyle(
+        // Use primary ink to maintain high legibility
+        color: context.faColors.selection.inkCurrent,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: <code>faColors.selection.rowCurrent</code> is often aliased to <code>faColors.surface.emphasized</code> in the FaColorGraph to ensure a "lifted" feel compared to the ground.</i>

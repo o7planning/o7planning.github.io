@@ -1,7 +1,41 @@
-
-
-<h1> faColors.selection.rowCurrent </h1>
+<h1>faColors.selection.rowCurrent</h1>
 <p>
-  Xác định màu nền cho dòng đang được tập trung (Focus) bởi con trỏ hoặc bàn phím.
-  Trong triết lý FlutterArtist, <code>faColors.selection.rowCurrent</code> giúp người dùng biết họ đang điều hướng ở đâu, ngay cả khi dòng đó chưa được thực hiện hành động "chọn".
+  Token <code>faColors.selection.rowCurrent</code> xác định bề mặt nền cho hàng hiện đang giữ tiêu điểm (Focus) hoặc đang được điều hướng trong danh sách hoặc bảng dữ liệu.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Khác với trạng thái lựa chọn vĩnh viễn (Selection), <code>rowCurrent</code> đại diện cho một trạng thái điều hướng tạm thời. Trong hệ thống <b>Fill - Ink - Stroke</b>, nó sử dụng một lớp lấp đầy cấp độ phụ để tạo sự phân biệt vừa đủ với <code>rowNormal</code> mà không tranh chấp trọng số thị giác với <code>rowSelected</code>.
+</p>
+
+<div class="warning-box">
+  <strong>Tích hợp thiết kế:</strong><br>
+  Để duy trì một phân cấp sạch sẽ, bạn nên kết hợp <code>rowCurrent</code> với <code>faColors.stroke.standard</code> để xác định ranh giới một cách tinh tế.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Làm nổi bật hàng đang giữ tiêu điểm trong danh sách
+Container(
+  // Lớp fill tạm thời cho trạng thái focus hiện tại
+  color: context.faColors.selection.rowCurrent,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Sử dụng stroke standard để chỉ báo độ sâu tiêu điểm
+      color: context.faColors.stroke.standard,
+      width: 1,
+    ),
+  ),
+  child: ListTile(
+    title: Text(
+      'Current Focused Item',
+      style: TextStyle(
+        // Sử dụng mực primary để duy trì khả năng đọc cao
+        color: context.faColors.selection.inkCurrent,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: <code>faColors.selection.rowCurrent</code> thường được ánh xạ tới <code>faColors.surface.emphasized</code> trong FaColorGraph để tạo cảm giác hàng được "nâng nhẹ" lên so với mặt đất.</i>
