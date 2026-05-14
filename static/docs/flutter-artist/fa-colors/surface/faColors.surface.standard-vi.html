@@ -1,7 +1,42 @@
-
-
-<h1> faColors.surface.standard </h1>
+<h1>faColors.surface.standard</h1>
 <p>
-  Màu nền tiêu chuẩn cho các khối chứa nội dung như Card, Dialog hoặc các vùng làm việc chính.
-  Nó tạo ra một sự phân tách nhẹ nhàng so với <code>faColors.surface.base</code>, giúp các khối thông tin trở nên rõ ràng và có tổ chức hơn.
+  Token <code>faColors.surface.standard</code> xác định cấp độ bề mặt mặc định cho các vùng nội dung chính. Đây là bề mặt được sử dụng thường xuyên nhất cho các thành phần giao diện tiêu chuẩn.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.surface.standard</code> cung cấp một độ cao cơ sở để phân biệt nội dung với nền tảng tuyệt đối. Nó được cân bằng về mặt toán học để đảm bảo tất cả các token mực (ink) chủ đạo duy trì độ tương phản tối ưu cho việc đọc và tương tác lâu dài.
+</p>
+
+<div class="warning-box">
+  <strong>Vai trò chủ đạo:</strong><br>
+  Sử dụng <code>faColors.surface.standard</code> cho các khung chứa nội dung chính, nền danh sách và các vùng biểu mẫu tiêu chuẩn. Nó được thiết kế để trở thành "lựa chọn mặc định đáng tin cậy" cho bố cục ứng dụng của bạn.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một khung chứa nội dung tiêu chuẩn
+Container(
+  // Bề mặt mặc định cho nội dung chính
+  color: context.faColors.surface.standard,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Kết hợp với stroke tiêu chuẩn để tạo cấu trúc rõ ràng
+      color: context.faColors.stroke.standard,
+      width: 1,
+    ),
+  ),
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Text(
+      'Standard Content Area',
+      style: TextStyle(
+        // Hoàn toàn tương thích với mực primary
+        color: context.faColors.ink.primary,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.surface.standard</code> được ánh xạ tới <code>surfaceContainer</code> để đại diện cho một độ cao trung bình và ổn định.</i>

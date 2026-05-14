@@ -1,6 +1,44 @@
-
-<h1> faColors.surface.emphasized </h1>
+<h1>faColors.surface.emphasized</h1>
 <p>
-  The background color for components that need to "float" at the highest level or have the highest visual priority.
-  Pairing this with <code>faColors.border.subtle</code> makes elements like Dialogs or Popups appear extremely sharp and professional.
+  The <code>faColors.surface.emphasized</code> token defines a prominent surface level, specifically designed to highlight specific content blocks or interactive containers within the layout.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.surface.emphasized</code> provides a higher visual elevation than the standard surface. It creates a clear "raised" effect, making it ideal for components that require immediate user attention or signify a distinct logical section.
+</p>
+
+<div class="warning-box">
+  <strong>Strategic Highlighting:</strong><br>
+  Use <code>faColors.surface.emphasized</code> for high-importance cards, active status panels, or containers that house primary call-to-action elements.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a highlighted card container
+Container(
+  // The emphasized surface for high-visibility blocks
+  color: context.faColors.surface.emphasized,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Pair with standard stroke to define the boundary clearly
+      color: context.faColors.stroke.standard,
+      width: 1,
+    ),
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Text(
+      'Featured Content Block',
+      style: TextStyle(
+        // Maintains perfect legibility with primary ink
+        color: context.faColors.ink.primary,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.surface.emphasized</code> is mapped to <code>surfaceContainerHigh</code> to ensure a distinct elevation jump from the base and standard layers.</i>

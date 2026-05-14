@@ -1,7 +1,44 @@
-
-
-<h1> faColors.surface.emphasized </h1>
+<h1>faColors.surface.emphasized</h1>
 <p>
-  Màu nền dành cho các thành phần cần "nổi" lên trên cùng hoặc có độ ưu tiên thị giác cao nhất (Floating elements).
-  Sự kết hợp giữa màu này và <code>faColors.border.subtle</code> giúp các thành phần như Dialog hoặc Popup trở nên cực kỳ sắc nét và chuyên nghiệp.
+  Token <code>faColors.surface.emphasized</code> xác định một cấp độ bề mặt nổi bật, được thiết kế đặc biệt để làm nổi bật các khối nội dung cụ thể hoặc các khung chứa tương tác trong bố cục.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.surface.emphasized</code> cung cấp độ cao thị giác cao hơn so với bề mặt tiêu chuẩn. Nó tạo ra hiệu ứng "nổi" rõ rệt, lý tưởng cho các thành phần yêu cầu sự chú ý ngay lập tức của người dùng hoặc biểu thị một phần logic riêng biệt.
+</p>
+
+<div class="warning-box">
+  <strong>Làm nổi bật chiến lược:</strong><br>
+  Sử dụng <code>faColors.surface.emphasized</code> cho các thẻ (cards) có tầm quan trọng cao, các bảng trạng thái đang hoạt động, hoặc các khung chứa các yếu tố kêu gọi hành động (call-to-action) chính.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một khung chứa thẻ được làm nổi bật
+Container(
+  // Bề mặt emphasized cho các khối cần sự chú ý cao
+  color: context.faColors.surface.emphasized,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Kết hợp với stroke standard để xác định ranh giới rõ ràng
+      color: context.faColors.stroke.standard,
+      width: 1,
+    ),
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Text(
+      'Featured Content Block',
+      style: TextStyle(
+        // Duy trì độ đọc hoàn hảo với mực primary
+        color: context.faColors.ink.primary,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.surface.emphasized</code> được ánh xạ tới <code>surfaceContainerHigh</code> để đảm bảo một bước nhảy độ cao rõ rệt so với các lớp base và standard.</i>

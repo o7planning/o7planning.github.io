@@ -1,7 +1,42 @@
-
-
-<h1> faColors.surface.standard </h1>
+<h1>faColors.surface.standard</h1>
 <p>
-  The standard background color for content containers such as Cards, Dialogs, or main workspace areas.
-  It provides a subtle separation from <code>faColors.surface.base</code>, making information blocks more distinct and organized.
+  The <code>faColors.surface.standard</code> token defines the default surface level for primary content areas. It is the most frequently used surface for standard UI elements.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.surface.standard</code> provides a baseline elevation that distinguishes content from the absolute background. It is mathematically balanced to ensure that all primary ink tokens maintain optimal contrast for long-term reading and interaction.
+</p>
+
+<div class="warning-box">
+  <strong>Primary Role:</strong><br>
+  Use <code>faColors.surface.standard</code> for main content containers, list backgrounds, and standard form areas. It is designed to be the "reliable default" for your application's layout.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a standard content container
+Container(
+  // The default surface for main content
+  color: context.faColors.surface.standard,
+  decoration: BoxDecoration(
+    border: Border.all(
+      // Pair with standard stroke for a clear structure
+      color: context.faColors.stroke.standard,
+      width: 1,
+    ),
+  ),
+  child: Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Text(
+      'Standard Content Area',
+      style: TextStyle(
+        // Perfectly compatible with primary ink
+        color: context.faColors.ink.primary,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.surface.standard</code> is mapped to <code>surfaceContainer</code> to represent a stable, mid-level elevation.</i>
