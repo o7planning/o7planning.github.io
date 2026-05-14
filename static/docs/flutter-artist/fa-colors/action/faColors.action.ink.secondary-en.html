@@ -1,7 +1,43 @@
-
-
-<h1> faColors.action.ink.secondary </h1>
+<h1>faColors.action.ink.secondary</h1>
 <p>
-  The text and icon color for secondary action surfaces or idle states.
-  It provides a softer look compared to <code>faColors.action.ink.primary</code>, improving content hierarchy.
+  The <code>faColors.action.ink.secondary</code> token defines the secondary brand color specifically for text, icons, and vector graphics used in interactive actions.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.secondary</code> is visually identical to <code>faColors.action.fill.secondary</code>. The naming distinction exists solely to maintain architectural integrity: "Ink" is for drawing foreground content, while "Fill" is for background layers.
+</p>
+
+<div class="warning-box">
+  <strong>Strategic Usage:</strong><br>
+  This token is ideal for secondary <b>TextButtons</b> or auxiliary icons that require interactive affordance without the visual weight of a primary action. Because it is a "standalone" ink, it remains visible when placed on neutral <code>faColors.surface.xxx</code> or <code>faColors.bar.xxx</code> layers.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a secondary Text Button (No Background)
+Row(
+  children: [
+    Icon(
+      Icons.history_rounded,
+      // CORRECT: Use secondary action ink for standalone auxiliary icon
+      color: context.faColors.action.ink.secondary,
+      size: 18,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'View History',
+        style: TextStyle(
+          // CORRECT: Secondary brand color for interactive text
+          color: context.faColors.action.ink.secondary,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: Never use this token on top of <code>faColors.action.fill.secondary</code>. It is strictly meant for standalone elements to ensure proper contrast ratios.</i>

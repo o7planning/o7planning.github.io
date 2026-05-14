@@ -1,6 +1,38 @@
-
-<h1> faColors.action.fill.secondary </h1>
+<h1>faColors.action.fill.secondary</h1>
 <p>
-  Màu nền cho các hành động bổ trợ (Cấp độ 2).
-  Nó giúp phân tách mức độ ưu tiên, tránh việc có quá nhiều nút Primary gây rối mắt người dùng.
+  Token <code>faColors.action.fill.secondary</code> xác định màu nền cho các hành động phụ, chẳng hạn như các nút "Hủy", "Quay lại" hoặc "Thiết lập lại".
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.secondary</code> cung cấp một mức độ nhấn mạnh tương tác trung bình. Nó thường sử dụng một phiên bản nhẹ nhàng của màu thương hiệu hoặc một sắc thái trung tính để đảm bảo có thể phân biệt được với lớp nền (ground) mà không tranh chấp trọng số thị giác với hành động chính.
+</p>
+
+<div class="warning-box">
+  <strong>Quy tắc tương phản:</strong><br>
+  Để tích hợp chuyên nghiệp, luôn kết hợp nền này với <code>faColors.action.ink.onSecondaryFill</code>.
+  <b>TUYỆT ĐỐI KHÔNG</b> sử dụng <code>faColors.action.ink.secondary</code> đè lên nền này, vì token đó dành cho các phần tử đứng độc lập và sẽ không đủ độ tương phản tại đây.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Nút bấm Phụ (Secondary Button)
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+  decoration: BoxDecoration(
+    // Lớp fill secondary tinh tế cho các hành động bổ trợ
+    color: context.faColors.action.fill.secondary,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Text(
+    'Cancel Process',
+    style: TextStyle(
+      // ĐÚNG: Mực tương phản dành cho nền secondary
+      color: context.faColors.action.ink.onSecondaryFill,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: <code>faColors.action.fill.secondary</code> thường được ánh xạ tới một biến thể có độ bão hòa thấp của bảng màu thương hiệu trong FaActionSurfaceResolvers.</i>

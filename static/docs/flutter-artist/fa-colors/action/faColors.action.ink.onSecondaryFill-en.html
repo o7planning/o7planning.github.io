@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onSecondaryFill</h1>
+<p>
+  The <code>faColors.action.ink.onSecondaryFill</code> token defines the specific ink color used for text and icons that sit directly on top of a <code>faColors.action.fill.secondary</code> background.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, this token serves as a specialized contrast ink. It is mathematically tuned to provide optimal legibility against the medium-emphasis surface of the secondary fill, ensuring that auxiliary actions are clear but remain visually subordinate to primary actions.
+</p>
+
+<div class="warning-box">
+  <strong>Critical Usage Warning:</strong><br>
+  This token <b>MUST</b> be used exclusively with <code>faColors.action.fill.secondary</code>.
+  If you use <code>faColors.action.ink.onSecondaryFill</code> for a button without a background (TextButton) placed on a <code>faColors.surface.xxx</code> or <code>faColors.bar.xxx</code>, the text will likely become <b>invisible</b> due to the lack of contrast.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Correct implementation of a Secondary Action Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // REQUIRED: The secondary fill layer
+    color: context.faColors.action.fill.secondary,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Text(
+    'Reset Settings',
+    style: TextStyle(
+      // CORRECT: High-contrast ink for the secondary fill
+      color: context.faColors.action.ink.onSecondaryFill,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: Within the FaColorGraph, this token is typically mapped to a specific neutral tone that complements the secondary brand tint while maintaining accessibility standards.</i>

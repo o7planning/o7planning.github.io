@@ -1,6 +1,38 @@
-
-<h1> faColors.action.fill.secondary </h1>
+<h1>faColors.action.fill.secondary</h1>
 <p>
-  The background color for supporting actions (Level 2).
-  It helps manage visual priority, preventing too many primary elements from overwhelming the user.
+  The <code>faColors.action.fill.secondary</code> token defines the background color for secondary actions, such as "Cancel", "Back", or "Reset" buttons.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.secondary</code> provides a medium interactive emphasis. It typically uses a muted version of the brand color or a neutral tinted shade to ensure it remains distinguishable from the ground without competing for the same visual weight as the primary action.
+</p>
+
+<div class="warning-box">
+  <strong>The Contrast Rule:</strong><br>
+  For professional integration, always pair this background with <code>faColors.action.ink.onSecondaryFill</code>.
+  <b>NEVER</b> use <code>faColors.action.ink.secondary</code> on top of this fill, as it is intended for standalone elements and will lack the necessary contrast here.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a secondary emphasis Action Button
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+  decoration: BoxDecoration(
+    // The subtle secondary fill for auxiliary actions
+    color: context.faColors.action.fill.secondary,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Text(
+    'Cancel Process',
+    style: TextStyle(
+      // CORRECT: Contrast ink designed for secondary background
+      color: context.faColors.action.ink.onSecondaryFill,
+      fontWeight: FontWeight.w600,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: <code>faColors.action.fill.secondary</code> is often mapped to a low-saturation variant of the brand palette in FaActionSurfaceResolvers.</i>
