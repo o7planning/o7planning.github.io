@@ -1,46 +1,59 @@
-<h1>Ngôn ngữ Tương tác & Phản hồi (Action Namespace)</h1>
+<h1>faColors.action</h1>
 <p>
-  Nếu Selection dành cho các dòng dữ liệu, thì <b>Action Namespace</b> là linh hồn của các thành phần tương tác độc lập. Đây là bộ màu được tối ưu riêng cho các bề mặt nhỏ nhưng có cường độ tương tác cao, giúp người dùng nhận diện đâu là nơi có thể chạm, nhấn hoặc ra lệnh.
+  Namespace <code>faColors.action</code> là động cơ cốt lõi của tính tương tác trong hệ sinh thái FlutterArtist. Nó cung cấp một bộ token toàn diện được thiết kế để xử lý mọi giai đoạn tương tác của người dùng, từ các nút tĩnh đến các trạng thái tương tác phức tạp.
 </p>
 
-<h3>1. Phạm vi áp dụng của Action</h3>
+<h3>Triết lý kiến trúc</h3>
 <p>
-  Bất cứ khi nào bạn tạo ra các thành phần "có thể nhấn được" mà không phải là một dòng trong bảng, hãy nghĩ ngay đến Action. Cụ thể là:
+  Được xây dựng trên bộ ba <b>Fill - Ink - Stroke</b>, namespace này đảm bảo mọi hành động đều rõ ràng về mặt ngữ nghĩa và nhất quán về mặt thị giác:
 </p>
 <ul>
-  <li><b>Thành phần điều hướng:</b> Buttons (Primary, Secondary, Ghost).</li>
-  <li><b>Thành phần trạng thái & nhãn:</b> Chips, Badges, Tags.</li>
-  <li><b>Thành phần lựa chọn nhanh:</b> Các bộ lọc (Filters) hoặc nút chuyển đổi trạng thái.</li>
+  <li><b>Fill (Lớp lấp đầy):</b> Xác định "thân xác" hoặc nền của hành động (ví dụ: Primary, Success, Danger).</li>
+  <li><b>Ink (Mực):</b> Xác định "linh hồn" hoặc nội dung (Văn bản/Biểu tượng) truyền tải thông điệp.</li>
+  <li><b>Stroke (Đường viền):</b> Xác định "cấu trúc" hoặc ranh giới, lý tưởng cho các nút dạng khung (outlined) và nút "ma" (ghost buttons).</li>
+  <li><b>State (Trạng thái):</b> Các lớp phủ động (Hover, Pressed, Selected) cung cấp phản hồi xúc giác trong thời gian thực.</li>
 </ul>
 
-<h3>2. Triết lý "Bộ ba Tương tác" (Surface - Text - Border)</h3>
-<p>
-  Để đảm bảo các nút bấm luôn nổi bật và sắc nét trên mọi loại nền, Action Namespace tuân thủ chặt chẽ sự phối hợp giữa:
-</p>
-<ul>
-  <li><b>Màu nền (Surface):</b> <code>faColors.action.fill.xxx</code> thiết lập màu cho thân nút hoặc chip.</li>
-  <li><b>Màu nội dung (Text/Icon):</b> <code>faColors.action.ink.xxx</code> đảm bảo chữ và icon luôn có độ tương phản hoàn hảo so với nền nút.</li>
-  <li><b>Màu viền (Border):</b> <code>faColors.action.border.xxx</code> đặc biệt quan trọng cho các dạng Outlined Button hoặc các Chip cần sự tách biệt tinh tế.</li>
-</ul>
-
-<h3>3. Khả năng thích ứng đa môi trường</h3>
-<p>
-  Một trong những điểm mạnh nhất của bộ Action là khả năng "sinh tồn" trên nhiều bề mặt khác nhau. Các Button và Chip này có thể được đặt an toàn trên:
-</p>
-<ul>
-  <li><b>Surface thông thường:</b> Các vùng Content chính.</li>
-  <li><b>Thanh công cụ (Bars):</b> Đặt trong AppBar hoặc ToolBar.</li>
-  <li><b>Thanh điều hướng (Navigation Bar):</b> Nơi các Action có thể đóng vai trò như các Menu Item.</li>
-</ul>
+<h3>Các nhóm Token chính</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Nhóm</th>
+      <th>Mục đích</th>
+      <th>Kịch bản sử dụng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Primary / Secondary</b></td>
+      <td>Tương tác định hướng thương hiệu.</td>
+      <td>Các nút kêu gọi hành động (CTA) chính và điều hướng phụ.</td>
+    </tr>
+    <tr>
+      <td><b>Ngữ nghĩa (Success, Warning, Danger, Info)</b></td>
+      <td>Truyền đạt trạng thái và rủi ro.</td>
+      <td>Xác nhận, cảnh báo và các hành động phá hủy.</td>
+    </tr>
+    <tr>
+      <td><b>Muted / Subtle</b></td>
+      <td>Tương tác có độ ưu tiên thấp.</td>
+      <td>Cài đặt, liên kết "Tìm hiểu thêm" và các tác vụ nền.</td>
+    </tr>
+    <tr>
+      <td><b>States (Trạng thái)</b></td>
+      <td>Phản hồi tương tác.</td>
+      <td>Di chuột, chạm nhấn và duy trì lựa chọn.</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="warning-box">
-  <strong>LƯU Ý VỀ ĐIỀU HƯỚNG:</strong>
-  Trong trường hợp các Button/Chip được dùng như các mục Menu chính trên thanh điều hướng, bạn có một sự lựa chọn linh hoạt: Sử dụng <code>faColors.action.xxx</code> cho các tương tác độc lập, hoặc sử dụng <code>faColors.nav.xxx</code> để tận dụng các trạng thái Active/Inactive chuyên biệt cho luồng điều hướng.
+  <strong>Quy tắc theo cặp:</strong><br>
+  Để đạt được khả năng truy cập tối đa và tính toàn vẹn thị giác, hãy luôn tuân thủ quy ước đặt tên <b>onFill</b>.
+  Nếu bạn sử dụng <code>action.fill.primary</code>, bạn <b>bắt buộc</b> phải sử dụng <code>action.ink.onPrimaryFill</code> cho nội dung của nó. Việc trộn lẫn các token từ các nhóm ý định khác nhau sẽ làm hỏng logic của FaColorGraph.
 </div>
 
-<h3>4. Quy tắc phối hợp "Không trộn lẫn"</h3>
+<h3>Ý đồ thiết kế</h3>
 <p>
-  Tương tự như Selection, bạn <b>không nên</b> lấy màu chữ thông thường (<code>faColors.ink.primary</code>) để đặt lên một nút Primary Action. Hãy luôn dùng cặp bài trùng của nó là <code>faColors.action.ink.primary</code> để đảm bảo các thuật toán tính toán độ tương phản (Contrast ratio) của FlutterArtist hoạt động chính xác nhất.
+  Namespace Action được thiết kế để giảm tải nhận thức cho người dùng. Bằng cách sử dụng các màu sắc ngữ nghĩa nhất quán (Đỏ cho Danger, Xanh dương cho Info), người dùng có thể điều hướng các giao diện Enterprise phức tạp một cách trực quan mà không cần đọc hết tất cả các nhãn.
 </p>
-
-<p><i>Khám phá chi tiết thông số kỹ thuật tại tab <b>Token Docs</b>.</i></p>

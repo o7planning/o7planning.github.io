@@ -1,46 +1,59 @@
-<h1>Interaction & Feedback Language (Action Namespace)</h1>
+<h1>faColors.action</h1>
 <p>
-  While Selection is dedicated to data rows, the <b>Action Namespace</b> is the soul of independent interactive components. This set is optimized for small surfaces with high interaction density, helping users intuitively identify clickable and command-driven elements.
+  The <code>faColors.action</code> namespace is the core engine of interactivity within the FlutterArtist ecosystem. It provides a comprehensive suite of tokens designed to handle every phase of user engagement, from static buttons to complex interactive states.
 </p>
 
-<h3>1. Scope of Application</h3>
+<h3>Architectural Philosophy</h3>
 <p>
-  Whenever you create "clickable" elements that are not table rows, think of Action tokens. Specifically:
+  Built on the <b>Fill - Ink - Stroke</b> trinity, this namespace ensures that every action is semantically clear and visually consistent:
 </p>
 <ul>
-  <li><b>Navigation Elements:</b> Buttons (Primary, Secondary, Ghost).</li>
-  <li><b>Status & Label Elements:</b> Chips, Badges, Tags.</li>
-  <li><b>Quick Selection:</b> Filters or toggle switches.</li>
+  <li><b>Fill:</b> Defines the "body" or background of the action (e.g., Primary, Success, Danger).</li>
+  <li><b>Ink:</b> Defines the "soul" or content (Text/Icons) that conveys the message.</li>
+  <li><b>Stroke:</b> Defines the "structure" or borders, ideal for outlined and ghost buttons.</li>
+  <li><b>State:</b> Dynamic overlays (Hover, Pressed, Selected) that provide real-time tactile feedback.</li>
 </ul>
 
-<h3>2. The "Interactive Trio" Philosophy (Surface - Text - Border)</h3>
-<p>
-  To ensure buttons remain sharp and prominent on any background, the Action Namespace strictly follows the coordination between:
-</p>
-<ul>
-  <li><b>Background (Surface):</b> <code>faColors.action.fill.xxx</code> defines the color for the button or chip body.</li>
-  <li><b>Content (Text/Icon):</b> <code>faColors.action.ink.xxx</code> ensures text and icons maintain perfect contrast against the button surface.</li>
-  <li><b>Stroke (Border):</b> <code>faColors.action.border.xxx</code> is essential for Outlined Buttons or Chips requiring subtle separation.</li>
-</ul>
-
-<h3>3. Multi-Environment Adaptability</h3>
-<p>
-  One of the core strengths of the Action set is its ability to "survive" on various surfaces. These Buttons and Chips can be safely placed on:
-</p>
-<ul>
-  <li><b>Standard Surfaces:</b> Main content areas.</li>
-  <li><b>Control Bars:</b> Inside AppBars or ToolBars.</li>
-  <li><b>Navigation Bars:</b> Where Actions can function as Menu Items.</li>
-</ul>
+<h3>Key Token Groups</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Group</th>
+      <th>Purpose</th>
+      <th>Usage Scenario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>Primary / Secondary</b></td>
+      <td>Brand-driven interaction.</td>
+      <td>Main CTAs and auxiliary navigation.</td>
+    </tr>
+    <tr>
+      <td><b>Semantic (Success, Warning, Danger, Info)</b></td>
+      <td>Communication of status and risk.</td>
+      <td>Confirmations, alerts, and destructive actions.</td>
+    </tr>
+    <tr>
+      <td><b>Muted / Subtle</b></td>
+      <td>Low-priority interaction.</td>
+      <td>Settings, "Learn More" links, and background tasks.</td>
+    </tr>
+    <tr>
+      <td><b>States</b></td>
+      <td>Interactive feedback.</td>
+      <td>Mouse hovers, touch presses, and selection persistence.</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="warning-box">
-  <strong>NAVIGATION NOTE:</strong>
-  When Buttons or Chips serve as primary Menu Items on a navigation bar, you have a flexible choice: Use <code>faColors.action.xxx</code> for independent interactions, or <code>faColors.nav.xxx</code> to leverage specialized Active/Inactive states for navigation flows.
+  <strong>The Pairwise Rule:</strong><br>
+  For maximum accessibility and visual integrity, always respect the <b>onFill</b> naming convention.
+  If you use <code>action.fill.primary</code>, you <b>must</b> use <code>action.ink.onPrimaryFill</code> for its content. Mixing tokens from different intent groups will break the FaColorGraph logic.
 </div>
 
-<h3>4. The "No-Mix" Coordination Rule</h3>
+<h3>Design Intent</h3>
 <p>
-  Similar to Selection, you <b>should not</b> use standard text colors (<code>faColors.ink.primary</code>) on a Primary Action button. Always use its designated partner, <code>faColors.action.ink.primary</code>, to ensure FlutterArtist's contrast calculation algorithms perform at their best.
+  The Action namespace is designed to reduce cognitive load. By using consistent semantic colors (Red for Danger, Blue for Info), users can navigate complex Enterprise UIs intuitively without reading every label.
 </p>
-
-<p><i>Explore specific technical values in the <b>Token Docs</b> tab.</i></p>
