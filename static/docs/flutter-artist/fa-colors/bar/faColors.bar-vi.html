@@ -1,26 +1,52 @@
-<h1>Thanh điều khiển & Công cụ (Bar Namespace)</h1>
+<h1>faColors.bar</h1>
 <p>
-  <b>Bar Namespace</b> tập trung vào các thành phần định hướng và điều khiển nằm ở các cạnh của ứng dụng. Khác với Surface mang tính chất "chứa đựng", Bar mang tính chất "chỉ dẫn".
+  Namespace <code>faColors.bar</code> xác định các lớp nền cho các thành phần điều hướng chức năng và cấu trúc. Đây là "trung tâm điều khiển" của bố cục, cung cấp các vùng riêng biệt cho tiêu đề (headers), thanh công cụ (toolbars) và thanh điều hướng (navigation rails).
 </p>
 
-<h3>1. Khi nào dùng Bar thay vì Surface?</h3>
+<h3>Triết lý kiến trúc</h3>
 <p>
-  Mặc dù Bar cũng là một bề mặt, nhưng nó được tách riêng để quản lý hệ thống điều hướng như: AppBar (phía trên), BottomBar/Footer (phía dưới) hoặc các ToolBar chức năng.
-</p>
-
-<h3>2. Kỹ thuật ngăn cách bằng Border</h3>
-<p>
-  Đối với các thanh Bar, Border đóng vai trò là "Đường kẻ kỹ thuật" cực kỳ quan trọng:
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, namespace Bar đóng vai trò là cầu nối giữa các thành phần <code>surface</code> tĩnh và <code>action</code> động. Mục tiêu chính của nó là cung cấp <b>Ngữ cảnh môi trường (Environmental Context)</b> — giúp người dùng biết chính xác nơi công cụ kết thúc và dữ liệu bắt đầu.
 </p>
 <ul>
-  <li><b>AppBar:</b> Sử dụng <code>faColors.border.strong</code> ở cạnh dưới để phân tách tiêu đề với nội dung.</li>
-  <li><b>BottomBar:</b> Sử dụng <code>faColors.border.strong</code> ở cạnh trên để định vị vùng công cụ.</li>
-  <li><b>Phân tách dọc:</b> Sử dụng <code>faColors.border.subtle</code> để chia nhỏ các nhóm icon trên thanh công cụ.</li>
+  <li><b>Tính nhất quán:</b> Các thanh bar cung cấp điểm neo ngang hoặc dọc ổn định, tồn tại cố định khi nội dung cuộn bên dưới.</li>
+  <li><b>Phân cấp chức năng:</b> Sử dụng các mức độ tương phản khác nhau (Subtle → Standard → Strong) để phân loại tầm quan trọng của các công cụ được chứa bên trong.</li>
+  <li><b>Tích hợp lớp phủ:</b> Được thiết kế để hoạt động mượt mà với <code>faColors.action.state.xxx</code> cho các yếu tố tương tác như biểu tượng điều hướng hoặc các mục tab.</li>
 </ul>
 
+<h3>Các nhóm Token chính</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Token</th>
+      <th>Trọng lượng thị giác</th>
+      <th>Trường hợp sử dụng chính</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>bar.subtle</b></td>
+      <td>Thấp</td>
+      <td>Thanh lọc ngữ cảnh, chỉ báo trạng thái và các thanh dưới cùng phụ trợ.</td>
+    </tr>
+    <tr>
+      <td><b>bar.standard</b></td>
+      <td>Trung bình</td>
+      <td>Thanh ứng dụng chính (AppBars) và điều hướng tiêu đề chính.</td>
+    </tr>
+    <tr>
+      <td><b>bar.strong</b></td>
+      <td>Cao</td>
+      <td>Thanh điều hướng bên (Side rails) và thanh chân trang giúp định vị bố cục.</td>
+    </tr>
+  </tbody>
+</table>
+
 <div class="warning-box">
-  <strong>MẸO THIẾT KẾ:</strong>
-  Nếu bạn đặt các nút bấm (Action) lên trên Bar, hãy dùng Ghost hoặc Outlined Button để giữ cho thanh điều hướng thanh thoát, không bị tranh chấp thị giác với đường viền <code>border.strong</code> của Bar.
+  <strong>Điểm neo tương phản:</strong><br>
+  Các thanh Bar thường đóng vai trò là ranh giới giữa các bề mặt khác nhau. Khi sử dụng <code>faColors.bar</code>, hãy đảm bảo màu <b>Ink</b> được chọn cho nhãn và biểu tượng dựa trên độ sáng cụ thể của thanh đó để đáp ứng các tiêu chuẩn truy cập cao.
 </div>
 
-<p><i>Tham khảo cách áp dụng thực tế tại phần <b>Live Preview</b> của tab Bar.</i></p>
+<h3>Ý đồ thiết kế</h3>
+<p>
+  Namespace Bar được tinh chỉnh để loại bỏ sự lộn xộn về thị giác trong các ứng dụng doanh nghiệp có mật độ dữ liệu cao. Bằng cách cung cấp một bộ nền chuyên biệt cho điều hướng, nó đảm bảo rằng các nút điều khiển chức năng không bao giờ bị "lạc lối" giữa biển bề mặt dữ liệu.
+</p>

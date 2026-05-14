@@ -1,26 +1,52 @@
-<h1>Control & Toolbars (Bar Namespace)</h1>
+<h1>faColors.bar</h1>
 <p>
-  The <b>Bar Namespace</b> focuses on directional and control components located at the edges of the application. Unlike the "containing" nature of Surfaces, Bars are "instructional" by nature.
+  The <code>faColors.bar</code> namespace defines the background layers for structural and functional navigation components. It is the "command center" of the layout, providing distinct zones for headers, toolbars, and navigation rails.
 </p>
 
-<h3>1. When to use Bar instead of Surface?</h3>
+<h3>Architectural Philosophy</h3>
 <p>
-  Even though a Bar is technically a surface, it is separated to manage navigation systems such as: AppBar (top), BottomBar/Footer (bottom), or functional ToolBars.
-</p>
-
-<h3>2. Border Separation Techniques</h3>
-<p>
-  For Bars, Borders act as essential "Technical Lines":
+  Under the <b>Fill - Ink - Stroke</b> architecture, the Bar namespace serves as a bridge between the static <code>surface</code> and active <code>action</code> components. Its primary goal is to provide <b>Environmental Context</b>—letting the user know exactly where the tools end and the data begins.
 </p>
 <ul>
-  <li><b>AppBar:</b> Use <code>faColors.border.strong</code> at the bottom edge to separate the header from the content.</li>
-  <li><b>BottomBar:</b> Use <code>faColors.border.strong</code> at the top edge to anchor the tool area.</li>
-  <li><b>Vertical Splits:</b> Use <code>faColors.border.subtle</code> to divide icon groups within a toolbar.</li>
+  <li><b>Consistency:</b> Bars provide a stable horizontal or vertical anchor that persists while content scrolls.</li>
+  <li><b>Functional Hierarchy:</b> Uses varying levels of contrast (Subtle → Standard → Strong) to categorize the importance of the tools hosted within.</li>
+  <li><b>Overlay Integration:</b> Designed to work seamlessly with <code>faColors.action.state.xxx</code> for interactive elements like navigation icons or tab items.</li>
 </ul>
 
+<h3>Key Token Groups</h3>
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Token</th>
+      <th>Visual Weight</th>
+      <th>Primary Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>bar.subtle</b></td>
+      <td>Low</td>
+      <td>Contextual filter bars, status indicators, and secondary bottom bars.</td>
+    </tr>
+    <tr>
+      <td><b>bar.standard</b></td>
+      <td>Medium</td>
+      <td>Main Application Bars (AppBars) and primary header navigation.</td>
+    </tr>
+    <tr>
+      <td><b>bar.strong</b></td>
+      <td>High</td>
+      <td>Side navigation rails and footer bars that ground the layout.</td>
+    </tr>
+  </tbody>
+</table>
+
 <div class="warning-box">
-  <strong>DESIGN TIP:</strong>
-  When placing buttons (Actions) on a Bar, consider using Ghost or Outlined buttons to keep the navigation bar clean and avoid visual conflict with the Bar's <code>border.strong</code> lines.
+  <strong>The Contrast Anchor:</strong><br>
+  Bars often act as the boundary between different surfaces. When using <code>faColors.bar</code>, ensure that the <b>Ink</b> color used for labels and icons is chosen based on the bar's specific luminance to meet high accessibility standards.
 </div>
 
-<p><i>Check out real-world applications in the <b>Live Preview</b> section of the Bar tab.</i></p>
+<h3>Design Intent</h3>
+<p>
+  The Bar namespace is crafted to eliminate visual clutter in dense enterprise applications. By providing a dedicated set of backgrounds for navigation, it ensures that functional controls are never "lost" in the sea of data surfaces.
+</p>
