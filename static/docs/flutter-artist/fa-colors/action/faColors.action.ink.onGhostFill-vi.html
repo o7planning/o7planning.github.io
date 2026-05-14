@@ -1,0 +1,36 @@
+<h1>faColors.action.ink.onGhostFill</h1>
+<p>
+  Token <code>faColors.action.ink.onGhostFill</code> xác định màu mực cho văn bản và biểu tượng khi chúng được đặt cụ thể bên trong một khung chứa <code>faColors.action.fill.ghost</code>.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.onGhostFill</code> đóng vai trò là một lớp tương phản dành riêng cho các bề mặt ghost. Vì lớp lấp đầy ghost thường trong suốt hoặc có độ mờ cực thấp, loại mực này được thiết kế để kế thừa khả năng đọc của bề mặt bên dưới trong khi vẫn duy trì ngữ nghĩa tương tác riêng biệt.
+</p>
+
+<div class="warning-box">
+  <strong>Ghi chú triển khai:</strong><br>
+  Mặc dù <code>faColors.action.fill.ghost</code> là trong suốt, loại mực chuyên dụng này đảm bảo rằng ngay cả khi khung chứa ghost có sự chuyển đổi trạng thái (ví dụ: trong một hiệu ứng hover nhẹ), nội dung vẫn luôn đồng bộ hoàn hảo với mục tiêu tương tác.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Vẽ nội dung trên một bề mặt hành động ghost
+Container(
+  decoration: BoxDecoration(
+    // Lớp lấp đầy ghost trong suốt
+    color: context.faColors.action.fill.ghost,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'Ghost Action',
+    style: TextStyle(
+      // Mực chuyên dụng dành cho nền ghost
+      color: context.faColors.action.ink.onGhostFill,
+      fontSize: 13,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong nhiều cấu hình FaColorGraph, <code>faColors.action.ink.onGhostFill</code> thường được ánh xạ tới <code>faColors.ink.primary</code> hoặc <code>faColors.action.ink.ghost</code> do tính chất trong suốt của nền.</i>

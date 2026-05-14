@@ -1,0 +1,36 @@
+<h1>faColors.action.ink.onGhostFill</h1>
+<p>
+  The <code>faColors.action.ink.onGhostFill</code> token defines the ink color for text and icons when they are placed specifically inside a <code>faColors.action.fill.ghost</code> container.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.onGhostFill</code> serves as a dedicated contrast layer for ghost surfaces. Since ghost fills are often transparent or have extremely low opacity, this ink is designed to inherit the legibility of the underlying surface while maintaining a distinct interactive semantic.
+</p>
+
+<div class="warning-box">
+  <strong>Implementation Note:</strong><br>
+  While <code>faColors.action.fill.ghost</code> is transparent, this specialized ink ensures that even if the ghost container transitions (e.g., during a subtle hover animation), the content remains perfectly synchronized with the interactive intent.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Drawing content on a ghost action surface
+Container(
+  decoration: BoxDecoration(
+    // The transparent ghost fill
+    color: context.faColors.action.fill.ghost,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'Ghost Action',
+    style: TextStyle(
+      // Dedicated ink for ghost background
+      color: context.faColors.action.ink.onGhostFill,
+      fontSize: 13,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In many FaColorGraph implementations, <code>faColors.action.ink.onGhostFill</code> is often aliased to <code>faColors.ink.primary</code> or <code>faColors.action.ink.ghost</code> due to the transparent nature of the background.</i>

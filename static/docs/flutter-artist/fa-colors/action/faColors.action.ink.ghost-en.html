@@ -1,0 +1,41 @@
+<h1>faColors.action.ink.ghost</h1>
+<p>
+  The <code>faColors.action.ink.ghost</code> token defines the ink color for text and icons used in low-emphasis, transparent interactive elements.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.ghost</code> is designed to be visually neutral. It is typically mapped to a muted or semi-transparent version of the primary ink, ensuring that it provides a clear interactive hint while allowing the underlying <code>faColors.surface.xxx</code> to remain the dominant visual element.
+</p>
+
+<div class="warning-box">
+  <strong>The "Quiet" Interaction:</strong><br>
+  This token is the perfect companion for <code>faColors.action.fill.ghost</code>. Use it for secondary actions in dense UIs, such as "Close" icons in chips, breadcrumb separators, or auxiliary toolbar labels where brand colors would be too distracting.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a subtle Ghost Label (Auxiliary Action)
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Icon(
+      Icons.settings_outlined,
+      // CORRECT: Subtle ghost ink for auxiliary icon
+      color: context.faColors.action.ink.ghost,
+      size: 16,
+    ),
+    const SizedBox(width: 4),
+    Text(
+      'Advanced Settings',
+      style: TextStyle(
+        // CORRECT: Neutral ink for low-emphasis action text
+        color: context.faColors.action.ink.ghost,
+        fontSize: 12,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.ink.ghost</code> is often an alias for <code>faColors.ink.muted</code> or <code>faColors.ink.label</code> to maintain a calm and professional aesthetic.</i>

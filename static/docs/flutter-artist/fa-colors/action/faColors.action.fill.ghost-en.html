@@ -1,6 +1,35 @@
-
-<h1> faColors.action.fill.ghost </h1>
+<h1>faColors.action.fill.ghost</h1>
 <p>
-  Defines a transparent background for "Ghost" style buttons.
-  The visual emphasis for these elements relies on <code>faColors.action.ink.ghost</code> and interaction effects rather than a solid fill.
+  The <code>faColors.action.fill.ghost</code> token defines a transparent background fill, primarily used for interactive elements that should remain invisible in their idle state but provide feedback upon interaction.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.fill.ghost</code> is essentially a zero-opacity or high-transparency layer. It is designed for low-emphasis actions where the surface should only become visible during <code>Hover</code> or <code>Pressed</code> states, preserving the visual purity of the underlying <code>faColors.surface.xxx</code>.
+</p>
+
+<div class="warning-box">
+  <strong>Design Integration:</strong><br>
+  Ghost fills are perfect for toolbar buttons, window controls, or secondary navigation items. Always pair this fill with <code>faColors.action.ink.ghost</code> to maintain a consistent "transparent" aesthetic throughout the interactive cycle.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a subtle Ghost Button (Icon Button)
+Container(
+  padding: const EdgeInsets.all(8),
+  decoration: BoxDecoration(
+    // Invisible background in idle state
+    color: context.faColors.action.fill.ghost,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Icon(
+    Icons.more_vert_rounded,
+    // Use ghost ink for the standalone interactive icon
+    color: context.faColors.action.ink.ghost,
+    size: 20,
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.action.fill.ghost</code> is typically mapped to <code>Colors.transparent</code> or a very subtle tint of the primary ink.</i>

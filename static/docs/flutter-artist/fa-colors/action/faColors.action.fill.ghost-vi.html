@@ -1,7 +1,35 @@
-
-
-<h1> faColors.action.fill.ghost </h1>
+<h1>faColors.action.fill.ghost</h1>
 <p>
-  Định nghĩa màu nền trong suốt cho các nút dạng "Ghost".
-  Sự nhấn mạnh thị giác của các nút này không nằm ở màu nền mà nằm ở màu của <code>faColors.action.ink.ghost</code> và hiệu ứng khi tương tác.
+  Token <code>faColors.action.fill.ghost</code> xác định một lớp lấp đầy nền trong suốt, chủ yếu được sử dụng cho các yếu tố tương tác cần giữ trạng thái vô hình khi nghỉ nhưng vẫn cung cấp phản hồi khi có tương tác.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.ghost</code> về cơ bản là một lớp có độ mờ bằng không hoặc độ trong suốt cực cao. Nó được thiết kế cho các hành động có độ nhấn thấp, nơi bề mặt nền chỉ nên xuất hiện trong trạng thái <code>Hover</code> hoặc <code>Pressed</code>, nhằm bảo vệ sự thuần khiết thị giác của lớp <code>faColors.surface.xxx</code> bên dưới.
+</p>
+
+<div class="warning-box">
+  <strong>Tích hợp thiết kế:</strong><br>
+  Lớp lấp đầy Ghost hoàn hảo cho các nút trên thanh công cụ, các nút điều khiển cửa sổ hoặc các mục điều hướng phụ. Luôn kết hợp lớp fill này với <code>faColors.action.ink.ghost</code> để duy trì thẩm mỹ "trong suốt" nhất quán trong suốt chu kỳ tương tác.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Nút bấm Ghost tinh tế (Icon Button)
+Container(
+  padding: const EdgeInsets.all(8),
+  decoration: BoxDecoration(
+    // Nền vô hình ở trạng thái nghỉ
+    color: context.faColors.action.fill.ghost,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Icon(
+    Icons.more_vert_rounded,
+    // Sử dụng mực ghost cho biểu tượng tương tác độc lập
+    color: context.faColors.action.ink.ghost,
+    size: 20,
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.action.fill.ghost</code> thường được ánh xạ tới <code>Colors.transparent</code> hoặc một sắc thái cực nhẹ của mực primary.</i>
