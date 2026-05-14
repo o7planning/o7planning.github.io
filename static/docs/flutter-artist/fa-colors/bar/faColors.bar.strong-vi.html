@@ -1,0 +1,42 @@
+<h1>faColors.bar.strong</h1>
+<p>
+  Token <code>faColors.bar.strong</code> xác định màu nền có độ tương phản cao cho các thanh tiêu điểm, chẳng hạn như thanh điều hướng bên (side rails), thanh công cụ đậm hoặc thanh chân trang (footers) cần một "trọng lượng" thị giác rõ ràng để định vị giao diện.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.bar.strong</code> cung cấp độ tương phản cấu trúc cao nhất trong namespace Bar. Nó được tinh chỉnh một cách chiến lược để đậm hơn (trong chế độ sáng) hoặc bão hòa hơn (trong chế độ tối) so với các bề mặt xung quanh, đảm bảo điểm neo điều hướng hoặc điều khiển luôn không thể nhầm lẫn ngay cả trong các bố cục dày đặc dữ liệu.
+</p>
+
+<div class="warning-box">
+  <strong>Định vị cấu trúc:</strong><br>
+  Sử dụng token này cho các thành phần đóng vai trò là "khung xương" của ứng dụng, chẳng hạn như Thanh điều hướng trái hoặc Thanh hành động dưới cùng. Tính chất "strong" giúp người dùng phân loại khu vực này một cách trực giác là vùng điều khiển cố định thay vì vùng nội dung.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Triển khai một Thanh điều hướng bên (Side Rail) mạnh mẽ
+Container(
+  width: 72,
+  decoration: BoxDecoration(
+    // Nền thanh bar có độ tương phản mạnh
+    color: context.faColors.bar.strong,
+    border: Border(
+      right: BorderSide(color: context.faColors.stroke.subtle),
+    ),
+  ),
+  child: Column(
+    children: [
+      const SizedBox(height: 20),
+      Icon(Icons.dashboard_rounded, color: context.faColors.ink.onSecondaryFill),
+      const SizedBox(height: 32),
+      Icon(Icons.analytics_outlined, color: context.faColors.ink.muted),
+      const Spacer(),
+      Icon(Icons.settings_suggest, color: context.faColors.ink.muted),
+      const SizedBox(height: 20),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.bar.strong</code> thường thiên về các tông trung tính đậm hoặc biến thể màu thương hiệu đặc để thiết lập một hệ thống phân cấp thị giác vững chắc.</i>

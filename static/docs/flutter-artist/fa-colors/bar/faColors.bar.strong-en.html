@@ -1,0 +1,42 @@
+<h1>faColors.bar.strong</h1>
+<p>
+  The <code>faColors.bar.strong</code> token defines a high-contrast background color for prominent bars, such as side navigation rails, heavy toolbars, or footer bars that require a clear visual "weight" to ground the interface.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.bar.strong</code> provides the highest structural contrast within the Bar namespace. It is strategically tuned to be darker (in light mode) or more saturated (in dark mode) than the surrounding surfaces, ensuring that the navigation or control anchor remains unmistakable even in complex, data-heavy layouts.
+</p>
+
+<div class="warning-box">
+  <strong>Structural Grounding:</strong><br>
+  Use this token for components that act as the "skeleton" of your app, such as a Left Navigation Bar or a Bottom Action Bar. Its "strong" nature helps users mentally categorize the area as a persistent control zone rather than a content area.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Implementing a Strong Side Navigation Rail
+Container(
+  width: 72,
+  decoration: BoxDecoration(
+    // The high-contrast strong bar background
+    color: context.faColors.bar.strong,
+    border: Border(
+      right: BorderSide(color: context.faColors.stroke.subtle),
+    ),
+  ),
+  child: Column(
+    children: [
+      const SizedBox(height: 20),
+      Icon(Icons.dashboard_rounded, color: context.faColors.ink.onSecondaryFill),
+      const SizedBox(height: 32),
+      Icon(Icons.analytics_outlined, color: context.faColors.ink.muted),
+      const Spacer(),
+      Icon(Icons.settings_suggest, color: context.faColors.ink.muted),
+      const SizedBox(height: 20),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.bar.strong</code> often leans towards a deeper neutral or a solid brand variant to establish a firm visual hierarchy.</i>

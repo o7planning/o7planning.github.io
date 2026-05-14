@@ -1,0 +1,41 @@
+<h1>faColors.bar.subtle</h1>
+<p>
+  Token <code>faColors.bar.subtle</code> xác định màu nền có độ tương phản thấp cho các thanh phụ trợ, chẳng hạn như thanh trạng thái (status bars), thanh lọc (filter bars), hoặc các khung chứa điều hướng dưới cùng cần được tách biệt về mặt thị giác với nội dung chính mà không gây khó chịu.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.bar.subtle</code> đóng vai trò là một lớp chuyển tiếp. Nó được thiết kế để khác biệt một chút so với <code>faColors.surface.primary</code> nhằm báo hiệu sự thay đổi chức năng (từ dữ liệu sang công cụ) trong khi vẫn duy trì độ trong suốt và sự "thông thoáng" cao trong bố cục.
+</p>
+
+<div class="warning-box">
+  <strong>Ranh giới "Tĩnh lặng":</strong><br>
+  Sử dụng token này cho các thanh mang tính bổ trợ cho tác vụ hiện tại của người dùng. Nó hoàn hảo cho một thanh lọc ngang nằm ngay trên DataGrid, cung cấp một điểm neo sạch sẽ cho các nút điều khiển mà không tạo ra sự đứt gãy thị giác nặng nề.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một thanh lọc (Filter Bar) tinh tế phía trên danh sách
+Container(
+  height: 48,
+  decoration: BoxDecoration(
+    // Nền thanh bar khiêm tốn
+    color: context.faColors.bar.subtle,
+    border: Border(
+      bottom: BorderSide(color: context.faColors.stroke.subtle),
+    ),
+  ),
+  child: Row(
+    children: [
+      Icon(Icons.filter_list, color: context.faColors.ink.secondary),
+      const SizedBox(width: 8),
+      Text(
+        'Lọc kết quả...',
+        style: TextStyle(color: context.faColors.ink.secondary),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, token này thường là một sắc thái trung tính nằm giữa <code>surface.primary</code> và <code>surface.secondary</code> để đảm bảo một dải chuyển màu thị giác mượt mà.</i>

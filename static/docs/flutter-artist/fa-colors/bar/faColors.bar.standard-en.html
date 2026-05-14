@@ -1,0 +1,52 @@
+<h1>faColors.bar.standard</h1>
+<p>
+  The <code>faColors.bar.standard</code> token defines the default background color for primary toolbars, application bars (AppBar), and main navigation headers.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.bar.standard</code> provides a clear structural anchor. It is designed with enough contrast to distinguish functional headers from the <code>faColors.surface</code> layers, creating a professional and organized hierarchy for enterprise-grade layouts.
+</p>
+
+<div class="warning-box">
+  <strong>The Functional Anchor:</strong><br>
+  This is the go-to token for the main AppBar or any persistent navigation component. It provides a stable "home" for primary actions, titles, and branding elements. Pair this with <code>faColors.ink.primary</code> or <code>faColors.action.xxx</code> for optimal clarity.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Standard Application Bar implementation
+Container(
+  height: 64,
+  padding: const EdgeInsets.symmetric(horizontal: 16),
+  decoration: BoxDecoration(
+    // The reliable standard bar background
+    color: context.faColors.bar.standard,
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.05),
+        blurRadius: 4,
+        offset: const Offset(0, 2),
+      ),
+    ],
+  ),
+  child: Row(
+    children: [
+      Icon(Icons.menu, color: context.faColors.ink.primary),
+      const SizedBox(width: 16),
+      Text(
+        'Inventory Management',
+        style: TextStyle(
+          color: context.faColors.ink.primary,
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      const Spacer(),
+      CircleAvatar(backgroundColor: context.faColors.surface.secondary),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.bar.standard</code> is typically mapped to a solid neutral or a very subtle brand-tinted surface that ensures long-term visual comfort for the user.</i>
