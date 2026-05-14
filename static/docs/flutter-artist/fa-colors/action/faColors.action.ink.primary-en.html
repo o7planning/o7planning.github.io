@@ -1,7 +1,42 @@
-
-
-<h1> faColors.action.ink.primary </h1>
+<h1>faColors.action.ink.primary</h1>
 <p>
-  The text and icon color displayed on <code>faColors.action.fill.primary</code>.
-  This token is calibrated for absolute contrast on the Primary surface, ensuring the action content is always legible.
+  The <code>faColors.action.ink.primary</code> token defines the primary brand color specifically for text, icons, and vector graphics used in interactive actions.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  Under the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.action.ink.primary</code> is visually identical to <code>faColors.action.fill.primary</code>. The naming distinction exists solely to prevent architectural confusion: "Ink" is for drawing content, while "Fill" is for filling backgrounds.
+</p>
+
+<div class="warning-box">
+  <strong>Strategic Usage:</strong><br>
+  This token is designed for <b>TextButtons</b> or buttons without a background. Because it uses the boldest brand color, these "transparent" buttons remain highly legible when placed on various <code>faColors.surface.xxx</code> layers or <code>faColors.bar.xxx</code> components.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a Brand-colored Text Button (No Background)
+Row(
+  children: [
+    Icon(
+      Icons.add_circle_outline_rounded,
+      // CORRECT: Use primary action ink for standalone icon
+      color: context.faColors.action.ink.primary,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Add New Item',
+        style: TextStyle(
+          // CORRECT: Primary brand color for interactive text
+          color: context.faColors.action.ink.primary,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: Never use this token on top of <code>faColors.action.fill.primary</code>. It is meant to stand alone on neutral surfaces or bars.</i>

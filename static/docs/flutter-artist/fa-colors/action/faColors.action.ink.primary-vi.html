@@ -1,6 +1,42 @@
-
-<h1> faColors.action.ink.primary </h1>
+<h1>faColors.action.ink.primary</h1>
 <p>
-  Màu chữ và Icon hiển thị trên nền <code>faColors.action.fill.primary</code>.
-  Token này được tính toán để có độ tương phản tuyệt đối trên nền Primary, đảm bảo nội dung hành động luôn rõ ràng.
+  Token <code>faColors.action.ink.primary</code> xác định màu thương hiệu chủ đạo dành riêng cho văn bản, biểu tượng và đồ họa vector được sử dụng trong các hành động tương tác.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.ink.primary</code> có màu sắc giống hệt với <code>faColors.action.fill.primary</code>. Sự khác biệt về tên gọi tồn tại duy nhất để ngăn chặn sự nhầm lẫn về mặt kiến trúc: "Ink" dùng để vẽ nội dung, trong khi "Fill" dùng để lấp đầy nền.
+</p>
+
+<div class="warning-box">
+  <strong>Sử dụng chiến lược:</strong><br>
+  Token này được thiết kế cho các <b>TextButton</b> hoặc các nút không có nền. Vì sử dụng màu thương hiệu đậm nhất, các loại nút "trong suốt" này vẫn đảm bảo khả năng đọc rất tốt khi đặt trên các lớp <code>faColors.surface.xxx</code> hoặc các thành phần <code>faColors.bar.xxx</code> khác nhau.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một Text Button mang màu thương hiệu (Không có nền)
+Row(
+  children: [
+    Icon(
+      Icons.add_circle_outline_rounded,
+      // ĐÚNG: Sử dụng mực action primary cho icon đứng độc lập
+      color: context.faColors.action.ink.primary,
+    ),
+    const SizedBox(width: 4),
+    TextButton(
+      onPressed: () {},
+      child: Text(
+        'Add New Item',
+        style: TextStyle(
+          // ĐÚNG: Màu thương hiệu chủ đạo cho văn bản tương tác
+          color: context.faColors.action.ink.primary,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Ghi chú: Tuyệt đối không dùng token này đè lên nền <code>faColors.action.fill.primary</code>. Nó được sinh ra để đứng độc lập trên các bề mặt trung tính hoặc các thanh điều hướng.</i>

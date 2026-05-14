@@ -1,0 +1,38 @@
+<h1>faColors.action.ink.onPrimaryFill</h1>
+<p>
+  Token <code>faColors.action.ink.onPrimaryFill</code> xác định màu mực cụ thể được sử dụng cho văn bản và biểu tượng nằm trực tiếp trên nền màu <code>faColors.action.fill.primary</code>.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, token này đóng vai trò là "người bạn đồng hành tương phản cao". Trong khi các loại mực tiêu chuẩn được thiết kế cho nền trung tính, <code>faColors.action.ink.onPrimaryFill</code> được tối ưu hóa về mặt toán học để đảm bảo khả năng đọc hoàn hảo trên nền màu thương hiệu có độ bão hòa cao.
+</p>
+
+<div class="warning-box">
+  <strong>Cảnh báo sử dụng quan trọng:</strong><br>
+  Token này <b>BẮT BUỘC</b> phải được sử dụng đi kèm với nền <code>faColors.action.fill.primary</code>.
+  Nếu bạn sử dụng <code>faColors.action.ink.onPrimaryFill</code> cho một nút không có nền (TextButton) mà nút đó đặt trên một <code>faColors.surface.xxx</code> hoặc <code>faColors.bar.xxx</code>, chữ sẽ <b>không thể nhìn thấy</b> do thiếu độ tương phản.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Triển khai đúng cho một nút hành động chính
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  decoration: BoxDecoration(
+    // BẮT BUỘC: Lớp lấp đầy primary
+    color: context.faColors.action.fill.primary,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Text(
+    'Save Changes',
+    style: TextStyle(
+      // ĐÚNG: Mực tương phản cao dành cho nền primary
+      color: context.faColors.action.ink.onPrimaryFill,
+      fontWeight: FontWeight.bold,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, token này thường được ánh xạ tới màu trắng tinh khiết hoặc màu trung tính cực tối, tùy thuộc vào độ sáng của màu thương hiệu chính.</i>
