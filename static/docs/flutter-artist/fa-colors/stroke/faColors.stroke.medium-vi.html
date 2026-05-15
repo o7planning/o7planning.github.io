@@ -1,0 +1,39 @@
+<h1>faColors.stroke.medium</h1>
+<p>
+  Token <code>faColors.stroke.medium</code> đóng vai trò là điểm neo cấu trúc tiêu chuẩn cho giao diện. Nó cung cấp ranh giới rõ ràng, chuyên nghiệp, giúp định nghĩa các component thành các khối chức năng riêng biệt.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Surface - Ink - Stroke</b>, <code>faColors.stroke.medium</code> mang lại sự cân bằng hoàn hảo giữa khả năng hiển thị và tính trung tính. Nó đủ mạnh để xác định "Cái hộp" của một thành phần chính (như Card, Sidebar, hoặc Modal) nhưng đủ tinh tế để sử dụng nhiều lần trên một trang mà không gây cảm giác nặng nề hay nhiễu thị giác.
+</p>
+
+<div class="warning-box">
+  <strong>Quy tắc cấu trúc:</strong><br>
+  Sử dụng <code>faColors.stroke.medium</code> khi bạn cần xác định chu vi bên ngoài của một container. Đối với các trang trí nội bộ hoặc phân tách nhẹ nhàng hơn bên trong các container đó, hãy cân nhắc sử dụng <code>faColors.stroke.subtle</code> để thay thế.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Xác định ranh giới rõ ràng cho một Card hoặc Container
+Container(
+  decoration: BoxDecoration(
+    color: context.faColors.surface.standard,
+    border: Border.all(
+      // ĐÚNG: Sử dụng stroke medium cho ranh giới của component
+      color: context.faColors.stroke.medium,
+      width: 1,
+    ),
+    borderRadius: BorderRadius.circular(12),
+  ),
+  child: const Padding(
+    padding: EdgeInsets.all(16),
+    child: Text(
+      'Functional Block Content',
+      style: TextStyle(color: context.faColors.ink.primary),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: <code>faColors.stroke.medium</code> là lựa chọn hàng đầu để duy trì tính toàn vẹn về mặt cấu trúc của toàn bộ bố cục (layout).</i>

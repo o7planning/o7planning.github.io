@@ -1,6 +1,35 @@
- 
-<h1> faColors.ink.danger </h1>
+<h1>faColors.stroke.subtle</h1>
 <p>
-  The text color representing errors, critical danger alerts, or irreversible actions.
-  <code>faColors.ink.danger</code> triggers a strong visual response, forcing users to stop and verify information carefully.
+  The <code>faColors.stroke.subtle</code> token defines the lightest boundary layer. It is designed for low-impact separation, creating a visual rhythm without interrupting the content flow.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Surface - Ink - Stroke</b> architecture, <code>stroke.subtle</code> provides a "hint" of structure. It is typically used for internal dividers where the proximity of elements already suggests a relationship, and a bolder line would be visually redundant or cluttered.
+</p>
+
+<div class="warning-box">
+  <strong>Best Practices:</strong><br>
+  <ul>
+    <li><b>USE FOR:</b> Horizontal dividers between list items, vertical separators in toolbars, or idle borders for input fields.</li>
+    <li><b>AVOID:</b> Using this for main container boundaries (like Dialogs or Sidebars) as it may be too faint on some screens or high-brightness environments.</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Using subtle stroke for list dividers
+ListView.separated(
+  itemCount: items.length,
+  // Using a divider to separate items within a list
+  separatorBuilder: (context, index) => Divider(
+    color: context.faColors.stroke.subtle,
+    height: 1,
+  ),
+  itemBuilder: (context, index) => ListTile(
+    title: Text('Item $index', style: TextStyle(color: context.faColors.ink.primary)),
+  ),
+)
+</pre>
+
+<i>Note: <code>faColors.stroke.subtle</code> is the most used stroke level in high-density data tables to maintain a "breathable" interface.</i>

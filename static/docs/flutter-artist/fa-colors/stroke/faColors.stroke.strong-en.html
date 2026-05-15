@@ -1,6 +1,43 @@
-
-<h1> faColors.ink.muted </h1>
+<h1>faColors.stroke.strong</h1>
 <p>
-  The lowest priority text color, typically used for metadata, timestamps, or small captions.
-  Despite being more subtle, <code>faColors.ink.muted</code> is calibrated to maintain essential legibility standards.
+  The <code>faColors.stroke.strong</code> token represents the highest level of structural emphasis. It is used to signal active focus, primary navigation indicators, or critical separation between high-level layout sections.
 </p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Surface - Ink - Stroke</b> hierarchy, <code>faColors.stroke.strong</code> commands maximum visual attention. It is designed to act as a definitive guide for the user's eye. When applied to a border, it usually indicates that the element is "Active", "In Focus", or serves as a major structural pillar of the application.
+</p>
+
+<div class="warning-box">
+  <strong>The Focus & Indicator Rule:</strong><br>
+  Always use <code>faColors.stroke.strong</code> for the focused state of interactive elements (like TextFields) or as the underline indicator for selected Tabs. This ensures high accessibility for all users by providing unmistakable visual feedback.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Highlighting a focused input field or a selected tab indicator
+Container(
+  decoration: BoxDecoration(
+    border: Border(
+      bottom: BorderSide(
+        // CORRECT: Use strong stroke for the active indicator
+        color: isSelected
+            ? context.faColors.stroke.strong
+            : Colors.transparent,
+        width: 2,
+      ),
+    ),
+  ),
+  child: Text(
+    'ACTIVE TAB',
+    style: TextStyle(
+      color: isSelected
+          ? context.faColors.ink.primary
+          : context.faColors.ink.muted,
+      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: Use <code>faColors.stroke.strong</code> sparingly. Overusing high-contrast borders can make the UI feel "boxy" and heavy.</i>

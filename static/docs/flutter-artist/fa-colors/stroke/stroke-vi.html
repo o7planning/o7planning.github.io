@@ -1,31 +1,45 @@
-<h1>Phân cấp Nội dung & Chữ viết (Typography Namespace)</h1>
+<h1>Namespace Stroke: Khung xương cấu trúc</h1>
 <p>
-  <b>Typography Namespace</b> không chỉ đơn thuần là các mã màu. Nó định nghĩa "vai trò" và "trọng số" của thông tin trong giao diện, giúp người dùng lướt nhanh và nắm bắt được những nội dung quan trọng nhất trong một biển dữ liệu phức tạp.
+  Trong kiến trúc <b>Surface - Ink - Stroke</b>, namespace Stroke chịu trách nhiệm định nghĩa các ranh giới, vạch ngăn cách và chỉ báo tiêu điểm. Nó tạo ra "độ bám" và "cấu trúc" cần thiết để ngăn giao diện trông bị phẳng lì hoặc mất trật tự.
 </p>
 
-<h3>1. Các vai trò ngữ nghĩa chính</h3>
-<p>
-  Mỗi token trong <code>context.faColors.ink.xxx</code> được thiết kế cho một mục đích cụ thể:
-</p>
+<h3>1. Phân cấp cường độ</h3>
+<p>FlutterArtist phân loại các đường kẻ dựa trên trọng số thị giác của chúng thông qua hệ thống ba cấp độ:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tên Token</th>
+      <th>Cường độ</th>
+      <th>Vai trò chính</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>faColors.stroke.subtle</code></td>
+      <td>Nhẹ</td>
+      <td>Phân tách nội bộ (Đường kẻ danh sách, vạch thanh công cụ).</td>
+    </tr>
+    <tr>
+      <td><code>faColors.stroke.medium</code></td>
+      <td>Vừa</td>
+      <td>Ranh giới component (Viền Card, viền Dialog).</td>
+    </tr>
+    <tr>
+      <td><code>faColors.stroke.strong</code></td>
+      <td>Mạnh</td>
+      <td>Trạng thái hoạt động (Viền focus, chỉ báo đang chọn).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2. Nguyên tắc thiết kế</h3>
 <ul>
-  <li><b>Primary:</b> Dùng cho tiêu đề chính (Headlines) và nội dung quan trọng nhất cần sự chú ý ngay lập tức.</li>
-  <li><b>Secondary:</b> Dùng cho nội dung mô tả, phụ đề hoặc các đoạn văn bản bổ trợ thông tin.</li>
-  <li><b>Label:</b> Chuyên dụng cho nhãn của các ô nhập liệu (Field labels), tiêu đề cột trong bảng hoặc metadata nhỏ.</li>
-  <li><b>Muted:</b> Dùng cho các dòng chú thích, mốc thời gian hoặc các trạng thái vô hiệu hóa (disabled) mà vẫn cần đảm bảo độ đọc.</li>
+  <li><b>Quy tắc 80/20:</b> Trong giao diện Doanh nghiệp chuyên nghiệp, 80% đường kẻ nên là <code>faColors.stroke.subtle</code>. Chỉ dành <code>strong</code> cho các điểm tiêu điểm quan trọng.</li>
+  <li><b>Tính nhất quán:</b> Tránh trộn lẫn nhiều cấp độ stroke trong cùng một thành phần nhỏ (ví dụ: không dùng viền đậm với vạch ngăn nhạt nếu chúng thuộc cùng một khối thị giác).</li>
+  <li><b>Tính dễ tiếp cận:</b> Sử dụng <code>faColors.stroke.strong</code> để đảm bảo người dùng điều hướng bằng bàn phím có thể thấy rõ phần tử nào đang được chọn (focus).</li>
 </ul>
 
-<h3>2. Quy tắc "Cặp bài trùng" với Surface</h3>
-<p>
-  Để đảm bảo tính thẩm mỹ và độ tương phản đạt chuẩn, Typography Namespace được thiết kế để hoạt động tốt nhất trên các lớp nền tảng.
-</p>
 <div class="warning-box">
-  <strong>LƯU Ý VỀ BỀ MẶT:</strong>
-  Các token Typography này được tối ưu để hiển thị trên <code>faColors.surface.xxx</code> (Base, Container, Low, High). Tuyệt đối không dùng chúng cho các nút bấm hoặc Chip; trong trường hợp đó hãy dùng <code>faColors.action.ink.xxx</code>.
+  <strong>Góc nhìn kỹ thuật:</strong> Tất cả các token stroke đều có tính phản ứng (reactive). Khi bạn chuyển sang <b>Dark Theme</b>, hệ thống sẽ tự động điều chỉnh tỷ lệ độ tương phản để đảm bảo khung xương của UI vẫn hiển thị rõ ràng mà không gây mỏi mắt.
 </div>
-
-<h3>3. Trạng thái và Thông báo</h3>
-<p>
-  Ngoài phân cấp thông thường, Typography còn cung cấp các màu trạng thái (Success, Warning, Danger, Info). Các màu này giúp truyền tải cảm xúc và mức độ khẩn cấp của thông báo ngay cả khi người dùng chưa đọc nội dung chữ.
-</p>
-
-<p><i>Bạn có thể tra cứu chi tiết thông số Hex của từng loại chữ tại tab <b>Token Docs</b>.</i></p>

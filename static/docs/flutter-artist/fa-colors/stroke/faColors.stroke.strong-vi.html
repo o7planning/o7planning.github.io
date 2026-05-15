@@ -1,6 +1,43 @@
-
-<h1> faColors.ink.muted </h1>
+<h1>faColors.stroke.strong</h1>
 <p>
-  Màu chữ có độ ưu tiên thấp nhất, thường dùng cho metadata, mốc thời gian (timestamps) hoặc các dòng chú thích nhỏ.
-  Dù mờ hơn các token khác, <code>faColors.ink.muted</code> vẫn được tính toán để đảm bảo tiêu chuẩn về độ đọc (Readability).
+  Token <code>faColors.stroke.strong</code> đại diện cho mức độ nhấn mạnh cấu trúc cao nhất. Nó được sử dụng để báo hiệu tiêu điểm hoạt động (active focus), các chỉ báo điều hướng chính, hoặc phân tách cực kỳ rõ ràng giữa các phần lớn của bố cục.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong phân cấp <b>Surface - Ink - Stroke</b>, <code>faColors.stroke.strong</code> thu hút sự chú ý thị giác tối đa. Nó được thiết kế để đóng vai trò là vật dẫn đường dứt khoát cho mắt người dùng. Khi áp dụng cho viền, nó thường chỉ ra rằng phần tử đó đang ở trạng thái "Hoạt động", "Đang được chọn", hoặc đóng vai trò là trụ cột cấu trúc chính của ứng dụng.
+</p>
+
+<div class="warning-box">
+  <strong>Quy tắc Tiêu điểm & Chỉ báo:</strong><br>
+  Luôn sử dụng <code>faColors.stroke.strong</code> cho trạng thái focus của các phần tử tương tác (như TextField) hoặc làm vạch kẻ dưới chỉ báo cho các Tab đang được chọn. Điều này đảm bảo tính dễ tiếp cận cao bằng cách cung cấp phản hồi thị giác không thể nhầm lẫn.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Làm nổi bật tiêu điểm của ô nhập liệu hoặc chỉ báo Tab đang chọn
+Container(
+  decoration: BoxDecoration(
+    border: Border(
+      bottom: BorderSide(
+        // ĐÚNG: Sử dụng stroke strong cho chỉ báo đang hoạt động
+        color: isSelected
+            ? context.faColors.stroke.strong
+            : Colors.transparent,
+        width: 2,
+      ),
+    ),
+  ),
+  child: Text(
+    'ACTIVE TAB',
+    style: TextStyle(
+      color: isSelected
+          ? context.faColors.ink.primary
+          : context.faColors.ink.muted,
+      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Hãy sử dụng <code>faColors.stroke.strong</code> một cách chắt lọc. Việc lạm dụng các đường viền có độ tương phản cao có thể khiến giao diện cảm thấy nặng nề và "tù túng".</i>

@@ -1,6 +1,35 @@
- 
-<h1> faColors.ink.danger </h1>
+<h1>faColors.stroke.subtle</h1>
 <p>
-  Màu chữ đại diện cho lỗi, thông báo nguy hiểm hoặc các hành động không thể hoàn tác.
-  <code>faColors.ink.danger</code> tạo ra phản ứng thị giác mạnh mẽ, buộc người dùng phải dừng lại và kiểm tra kỹ thông tin.
+  Token <code>faColors.stroke.subtle</code> xác định lớp ranh giới nhẹ nhất. Nó được thiết kế để phân tách các phần tử có tác động thấp, tạo ra nhịp điệu thị giác mà không làm gián đoạn luồng nội dung.
 </p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Surface - Ink - Stroke</b>, <code>stroke.subtle</code> cung cấp một "gợi ý" về cấu trúc. Nó thường được sử dụng cho các vạch ngăn cách nội bộ, nơi mà khoảng cách giữa các phần tử đã tự thân gợi lên một mối liên hệ, và một đường kẻ đậm hơn sẽ trở nên thừa thãi hoặc gây rối mắt.
+</p>
+
+<div class="warning-box">
+  <strong>Hướng dẫn sử dụng:</strong><br>
+  <ul>
+    <li><b>NÊN DÙNG:</b> Kẻ ngang giữa các mục danh sách, vạch dọc trên thanh công cụ, hoặc viền trạng thái rảnh (idle) của ô nhập liệu.</li>
+    <li><b>HẠN CHẾ:</b> Dùng cho ranh giới của các container chính (như Dialog hay Sidebar) vì nó có thể quá mờ trên một số màn hình hoặc môi trường có độ sáng cao.</li>
+  </ul>
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Sử dụng stroke subtle cho đường kẻ ngăn cách danh sách
+ListView.separated(
+  itemCount: items.length,
+  // Tạo đường kẻ phân tách giữa các hàng
+  separatorBuilder: (context, index) => Divider(
+    color: context.faColors.stroke.subtle,
+    height: 1,
+  ),
+  itemBuilder: (context, index) => ListTile(
+    title: Text('Item $index', style: TextStyle(color: context.faColors.ink.primary)),
+  ),
+)
+</pre>
+
+<i>Ghi chú: <code>faColors.stroke.subtle</code> là cấp độ stroke được sử dụng nhiều nhất trong các bảng dữ liệu dày đặc để duy trì một giao diện "thoáng đãng".</i>
