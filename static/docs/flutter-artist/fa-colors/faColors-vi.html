@@ -1,4 +1,3 @@
-
 <h1>Tổng quan hệ thống màu</h1>
 <p>
   Hệ thống màu của FlutterArtist được thiết kế dựa trên bản năng tự nhiên của lập trình viên.
@@ -6,8 +5,8 @@
   <b>Ink</b> (Mực/Nội dung) và <b>Stroke</b> (Đường viền).
 </p>
 
-<h3>1. Logic hiển thị thông thường (Light Theme)</h3>
-<p>Trong Light Theme (Nền sáng), quy tắc mặc định là: Bề mặt lớn thì Sáng, hành động và chữ thì Đậm.</p>
+<h3>1. Logic hiển thị (Light Theme)</h3>
+<p>Trong Light Theme, quy tắc mặc định là: Bề mặt lớn thì Sáng, hành động và chữ thì Đậm.</p>
 
 <table>
   <thead>
@@ -19,42 +18,39 @@
   </thead>
   <tbody>
     <tr><td><code>faColors.action.fill.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
+    <tr><td><code>faColors.action.fill.reverseXxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.action.ink.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
     <tr><td><code>faColors.action.ink.onXxxFill</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.surface.xxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.bar.xxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.ink.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
     <tr><td><code>faColors.stroke.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
-    <tr><td><code>faColors.selection.rowXxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
-    <tr><td><code>faColors.selection.inkXxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
   </tbody>
 </table>
 
-<h3>2. Bề mặt và Nội dung</h3>
-<p>
-  <b>Surface</b> (Nền bề mặt lớn) và <b>Bar</b> (Thanh cấu trúc) đóng vai trò là "Tờ giấy vẽ".
-  Vì chúng là <b>Nhạt/Sáng</b> trong Light Theme, nên chúng phải luôn đi kèm với
-  <code>faColors.ink.xxx</code> (Chữ đậm) và <code>faColors.stroke.xxx</code> (Viền đậm) để đảm bảo độ tương phản.
-</p>
+<h3>2. Ba chiến lược kết hợp màu (Action)</h3>
+<p>Khi xây dựng các thành phần tương tác (Button, Menu, Chip), hãy chọn 1 trong 3 cách sau:</p>
 
-<h3>3. Các thành phần tương tác (Button, Chip, Tab)</h3>
-<p>
-  Khi tạo các thành phần có thể nhấn được, <b>chỉ sử dụng các token trong nhánh <code>action</code></b>.
-</p>
 <ul>
-  <li><b>Fill:</b> Màu nền của hành động (Thường là màu đậm).</li>
-  <li><b>Ink:</b> Màu của chữ hoặc icon nằm bên trong hoặc liên quan đến hành động đó.</li>
-  <li><b>onXxxFill:</b> Được thiết kế riêng để đặt TRÊN một lớp Fill (Ví dụ: <code>onPrimaryFill</code> là màu Nhạt để viết chữ lên nền Primary Đậm).</li>
+  <li>
+    <b>Cách 1: Nhấn mạnh mạnh (Solid)</b><br>
+    Sử dụng <code>fill.primary</code> (Đậm) + <code>ink.onPrimaryFill</code> (Nhạt).<br>
+    <i>Dùng cho: Nút chính, FAB, các hành động quan trọng nhất.</i>
+  </li>
+  <li>
+    <b>Cách 2: Tối giản (Ghost)</b><br>
+    Không nền + <code>ink.primary</code> (Đậm).<br>
+    <i>Dùng cho: Nút phụ, icon thanh công cụ, các lựa chọn không cần nổi bật.</i>
+  </li>
+  <li>
+    <b>Cách 3: Nhấn mạnh nhẹ (Reverse) - KHUYÊN DÙNG CHO NAV</b><br>
+    Sử dụng <code>fill.reversePrimary</code> (Nhạt) + <code>ink.primary</code> (Đậm).<br>
+    <i>Dùng cho: Item đang chọn trong Menu/Sidebar, Chips, nhãn trạng thái.</i>
+  </li>
 </ul>
 
-<p><b>Quy tắc kết hợp vàng:</b></p>
-<ol>
-  <li><b>Kiểu Đậm (Solid):</b> Dùng <code>action.fill.primary</code> (Đậm) + <code>action.ink.onPrimaryFill</code> (Nhạt).</li>
-  <li><b>Kiểu Không nền (Ghost):</b> Dùng chữ <code>action.ink.primary</code> (Đậm).
-  Cách này cực kỳ ổn khi đặt trên một Container (<code>surface</code>) hoặc <code>bar</code> vốn đã có màu nhạt sẵn.</li>
-</ol>
-
 <div class="warning-box">
-  <strong>Ghi chú cho Dark Theme:</strong> Quy tắc "Đậm - Nhạt" ở trên sẽ <b>đảo ngược lại</b>.
-  Surface trở nên Tối và Ink trở nên Sáng. Hệ thống sẽ tự động xử lý việc đảo ngược này cho bạn.
+  <strong>Ghi chú kỹ thuật:</strong> Các token <code>reverse</code> được tính toán bằng cách đẩy độ sáng về phía biên (ví dụ ~95% cho Light theme) để đảm bảo làm nền cực êm cho chữ đậm mà vẫn giữ được sắc thái màu thương hiệu.
 </div>
+
+<p><i>Lưu ý: Với Dark Theme, logic Đậm/Nhạt trên sẽ tự động đảo ngược.</i></p>

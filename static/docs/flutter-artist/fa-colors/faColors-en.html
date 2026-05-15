@@ -1,13 +1,12 @@
-
 <h1>Color System Overview</h1>
 <p>
-  FlutterArtist Color System is designed to follow the natural intuition of developers.
-  Instead of memorizing complex rules, you only need to understand the relationship between <b>Fill</b> (Background),
+  The FlutterArtist Color System is designed to follow the natural intuition of developers.
+  You only need to understand the relationship between <b>Fill</b> (Background),
   <b>Ink</b> (Content), and <b>Stroke</b> (Border).
 </p>
 
-<h3>1. Standard Visual Logic (Light Theme)</h3>
-<p>In Light Theme, surfaces are generally bright, while interactive elements and text are dark.</p>
+<h3>1. Visual Logic (Light Theme)</h3>
+<p>In Light Theme, surfaces are generally bright, while actions and typography are deep/dark.</p>
 
 <table>
   <thead>
@@ -19,42 +18,39 @@
   </thead>
   <tbody>
     <tr><td><code>faColors.action.fill.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
+    <tr><td><code>faColors.action.fill.reverseXxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.action.ink.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
     <tr><td><code>faColors.action.ink.onXxxFill</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.surface.xxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.bar.xxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
     <tr><td><code>faColors.ink.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
     <tr><td><code>faColors.stroke.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
-    <tr><td><code>faColors.selection.rowXxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
-    <tr><td><code>faColors.selection.inkXxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
   </tbody>
 </table>
 
-<h3>2. Surfaces & Content</h3>
-<p>
-  The <b>Surface</b> (Large backgrounds) and <b>Bar</b> (Structural containers) provide the "Canvas".
-  Because they are <b>Light/Bright</b> in Light Theme, they must always be paired with
-  <code>faColors.ink.xxx</code> (Dark text) and <code>faColors.stroke.xxx</code> (Dark borders) to ensure readability.
-</p>
+<h3>2. Three Action Strategies</h3>
+<p>When building interactive components (Buttons, Menus, Chips), choose one of these patterns:</p>
 
-<h3>3. Interactive Elements (Buttons, Chips, Tabs)</h3>
-<p>
-  When creating interactive components, <b>only use tokens from the <code>action</code> namespace</b>.
-</p>
 <ul>
-  <li><b>Fill:</b> The background color of the action (Solid/Dark).</li>
-  <li><b>Ink:</b> The color for text or icons inside or related to that action.</li>
-  <li><b>onXxxFill:</b> Specifically designed to be placed on top of a Fill (e.g., <code>onPrimaryFill</code> is a Light color for text on a Dark Primary background).</li>
+  <li>
+    <b>Pattern 1: High Emphasis (Solid)</b><br>
+    Use <code>fill.primary</code> (Dark) + <code>ink.onPrimaryFill</code> (Light).<br>
+    <i>Best for: Primary buttons, FABs, critical triggers.</i>
+  </li>
+  <li>
+    <b>Pattern 2: Minimalist (Ghost)</b><br>
+    No Background + <code>ink.primary</code> (Dark).<br>
+    <i>Best for: Secondary actions, flat buttons, toolbar icons.</i>
+  </li>
+  <li>
+    <b>Pattern 3: Soft Emphasis (Reverse) - RECOMMENDED FOR NAV</b><br>
+    Use <code>fill.reversePrimary</code> (Light) + <code>ink.primary</code> (Dark).<br>
+    <i>Best for: Selected menu items, sidebars, chips, status banners.</i>
+  </li>
 </ul>
 
-<p><b>The Golden Rule of Combination:</b></p>
-<ol>
-  <li><b>Solid Style:</b> Use <code>action.fill.primary</code> (Dark) + <code>action.ink.onPrimaryFill</code> (Light).</li>
-  <li><b>Ghost Style:</b> No background. Use <code>action.ink.primary</code> (Dark).
-  This works perfectly when placed on a <code>surface</code> or <code>bar</code> because those backgrounds are already Light.</li>
-</ol>
-
 <div class="warning-box">
-  <strong>Note for Dark Theme:</strong> The "Light vs Dark" logic above is simply <b>reversed</b>.
-  Surfaces become Dark, and Inks become Light. The system handles this inversion automatically.
+  <strong>Technical Note:</strong> The <code>reverse</code> tokens are calculated by pushing the lightness toward the edge (~95% for Light theme) to provide a soft background for dark text while preserving the brand hue.
 </div>
+
+<p><i>Note: For Dark Theme, the Light/Dark logic is automatically reversed by the system.</i></p>
