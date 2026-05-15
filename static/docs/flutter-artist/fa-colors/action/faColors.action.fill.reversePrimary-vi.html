@@ -1,0 +1,49 @@
+<h1>faColors.action.fill.reversePrimary</h1>
+<p>
+  Token <code>faColors.action.fill.reversePrimary</code> cung cấp một lớp nền màu phớt (tint) tinh tế cho các thành phần tương tác cần "Nhấn mạnh nhẹ". Đây là phiên bản đối trọng của màu primary đặc, được thiết kế để chỉ thị trạng thái đang chọn hoặc đang hoạt động mà không làm nặng nề giao diện.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.action.fill.reversePrimary</code> đóng vai trò là lớp tương tác phụ. Nó giữ vững bản sắc màu sắc của thương hiệu nhưng chuyển đổi trọng số thị giác từ dạng "Khối đặc" sang dạng "Màu phớt". Token này là yếu tố cốt lõi để duy trì một giao diện sạch sẽ, thoáng đãng trong các ứng dụng Doanh nghiệp dày đặc dữ liệu.
+</p>
+
+<div class="warning-box">
+  <strong>Quy tắc "Nhấn mạnh nhẹ":</strong><br>
+  Khác với lớp nền primary đặc, lớp nền reverse này được thiết kế để kết hợp với <code>faColors.action.ink.primary</code>.
+  <b>TUYỆT ĐỐI KHÔNG</b> sử dụng <code>onPrimaryFill</code> tại đây, vì nền này đã đủ sáng và cần nội dung đậm màu để đạt độ tương phản tối ưu.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một mục Menu đang được chọn (Nhấn mạnh nhẹ)
+Container(
+  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+  decoration: BoxDecoration(
+    // Màu phớt nhẹ cho trạng thái điều hướng "Active"
+    color: context.faColors.action.fill.reversePrimary,
+    borderRadius: BorderRadius.circular(6),
+  ),
+  child: Row(
+    children: [
+      Icon(
+        Icons.dashboard_rounded,
+        // ĐÚNG: Mực primary đậm trên nền phớt nhạt
+        color: context.faColors.action.ink.primary,
+        size: 20,
+      ),
+      const SizedBox(width: 12),
+      Text(
+        'Bảng điều khiển',
+        style: TextStyle(
+          // ĐÚNG: Mực primary đậm trên nền phớt nhạt
+          color: context.faColors.action.ink.primary,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: <code>faColors.action.fill.reversePrimary</code> thường được sử dụng cho Thanh menu bên (Sidebar), Navigation Rail và các thẻ Chip đang được chọn.</i>
