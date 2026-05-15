@@ -1,41 +1,42 @@
-<h1>faColors.selection.rowCurrent</h1>
+<h1>faColors.selection.rowSelected</h1>
 <p>
-  The <code>faColors.selection.rowCurrent</code> token identifies the background surface for the row that currently holds the active focus or is being hovered over in a navigation-heavy context.
+  Token <code>faColors.selection.rowSelected</code> xác định nền bề mặt cho các thành phần (hàng, thẻ hoặc ô) đã được người dùng chọn một cách rõ ràng để xử lý hoặc đánh dấu là đang hoạt động.
 </p>
 
-<h3>Technical Logic</h3>
+<h3>Logic kỹ thuật</h3>
 <p>
-  Unlike a persistent selection, <code>rowCurrent</code> represents a transient or navigational state. It serves as a visual "pointer." In the <b>Fill - Ink - Stroke</b> system, it uses a secondary-level fill to provide enough distinction from <code>rowNormal</code> without competing for the same visual weight as <code>rowSelected</code>.
+  Trong kiến trúc <b>Surface - Ink - Stroke</b>, <code>rowSelected</code> mang trọng số thị giác cao hơn so với <code>rowCurrent</code> hoặc <code>rowHover</code>. Trong khi "Current" mang tính tạm thời (đi theo con trỏ/focus), thì "Selected" mang tính bền vững. Nó thường sử dụng một lớp màu phớt (tint) dựa trên màu chính của thương hiệu để báo hiệu trạng thái "Đã chọn" hoặc "Hoạt động" một cách rõ ràng.
 </p>
 
 <div class="warning-box">
-  <strong>Design Integration:</strong><br>
-  To maintain a clean hierarchy, it is recommended to pair <code>rowCurrent</code> with <code>faColors.stroke.standard</code> to subtly define its boundaries.
+  <strong>Phân cấp chọn lựa:</strong><br>
+  Khi một hàng vừa ở trạng thái <b>Selected</b> (Đã chọn) vừa ở trạng thái <b>Current</b> (Tiêu điểm hiện tại), style của <code>rowSelected</code> thường được ưu tiên cho phần nền, trong khi <code>stroke</code> hoặc một vạch chỉ báo riêng biệt có thể được dùng để hiển thị vị trí tiêu điểm.
 </div>
 
-<h3>Implementation Example</h3>
+<h3>Ví dụ triển khai</h3>
 <pre>
-// Highlighting the current focused row in a list
+// Áp dụng trạng thái chọn bền vững cho một hàng dữ liệu
 Container(
-  // Transient fill for the current focused state
-  color: context.faColors.selection.rowCurrent,
-  decoration: BoxDecoration(
-    border: Border.all(
-      // Use standard stroke to indicate focus depth
-      color: context.faColors.stroke.standard,
-      width: 1,
-    ),
-  ),
+  // Nền bền vững cho các mục đã chọn
+  color: isSelected
+      ? context.faColors.selection.rowSelected
+      : context.faColors.selection.rowNormal,
   child: ListTile(
+    leading: Icon(
+      isSelected ? Icons.check_box : Icons.check_box_outline_blank,
+      // ĐÚNG: Sử dụng mực chuyên dụng cho trạng thái chọn
+      color: context.faColors.selection.inkSelected,
+    ),
     title: Text(
-      'Current Focused Item',
+      'Selected Data Entry',
       style: TextStyle(
-        // Use primary ink to maintain high legibility
-        color: context.faColors.selection.inkCurrent,
+        // ĐÚNG: Mực có độ tương phản cao cho nền đã chọn
+        color: context.faColors.selection.inkSelected,
+        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
       ),
     ),
   ),
 )
 </pre>
 
-<i>Note: <code>faColors.selection.rowCurrent</code> is often aliased to <code>faColors.surface.emphasized</code> or a secondary brand tint in the FaColorGraph.</i>
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.selection.rowSelected</code> thường được ánh xạ tới một màu phớt nhạt của màu chính (giống như <code>action.fill.reversePrimary</code>) để đảm bảo văn bản vẫn dễ đọc khi sử dụng <code>inkSelected</code>.</i>
