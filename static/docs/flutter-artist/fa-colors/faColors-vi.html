@@ -17,40 +17,40 @@
     </tr>
   </thead>
   <tbody>
-    <tr><td><code>faColors.action.fill.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
-    <tr><td><code>faColors.action.fill.reverseXxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
-    <tr><td><code>faColors.action.ink.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
-    <tr><td><code>faColors.action.ink.onXxxFill</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
-    <tr><td><code>faColors.surface.xxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
-    <tr><td><code>faColors.bar.xxx</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
-    <tr><td><code>faColors.ink.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
-    <tr><td><code>faColors.stroke.xxx</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
+    <tr><td><code>faColors.action.fill.primary</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
+    <tr><td><code>faColors.action.fill.reversePrimary</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
+    <tr><td><code>faColors.action.ink.primary</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
+    <tr><td><code>faColors.action.ink.onPrimaryFill</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
+    <tr><td><code>faColors.surface.ground</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
+    <tr><td><code>faColors.bar.standard</code></td><td><span class="check-mark">&#10004;</span></td><td></td></tr>
+    <tr><td><code>faColors.ink.primary</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
+    <tr><td><code>faColors.stroke.strong</code></td><td></td><td><span class="check-mark">&#10004;</span></td></tr>
   </tbody>
 </table>
 
-<h3>2. Ba chiến lược kết hợp màu (Action)</h3>
-<p>Khi xây dựng các thành phần tương tác (Button, Menu, Chip), hãy chọn 1 trong 3 cách sau:</p>
+<h3>2. Ba chiến lược kết hợp màu (Action Namespace)</h3>
+<p>Khi xây dựng các thành phần tương tác (Button, Menu, Chip), hãy chọn 1 trong 3 mẫu triển khai chuẩn sau:</p>
 
 <ul>
   <li>
-    <b>Cách 1: Nhấn mạnh mạnh (Solid)</b><br>
-    Sử dụng <code>fill.primary</code> (Đậm) + <code>ink.onPrimaryFill</code> (Nhạt).<br>
-    <i>Dùng cho: Nút chính, FAB, các hành động quan trọng nhất.</i>
+    <b>Chiến lược 1: Nhấn mạnh mạnh (High Emphasis - Solid)</b><br>
+    Sử dụng <code>faColors.action.fill.primary</code> (Đậm) + <code>faColors.action.ink.onPrimaryFill</code> (Nhạt).<br>
+    <i>Phù hợp cho: Nút chính (Primary Button), FAB, các hành động kích hoạt quan trọng.</i>
   </li>
   <li>
-    <b>Cách 2: Tối giản (Ghost)</b><br>
-    Không nền + <code>ink.primary</code> (Đậm).<br>
-    <i>Dùng cho: Nút phụ, icon thanh công cụ, các lựa chọn không cần nổi bật.</i>
+    <b>Chiến lược 2: Tối giản (Minimalist - Ghost)</b><br>
+    Không dùng nền + <code>faColors.action.ink.primary</code> (Đậm).<br>
+    <i>Phù hợp cho: Nút phụ, icon trên thanh công cụ, các lựa chọn thứ cấp.</i>
   </li>
   <li>
-    <b>Cách 3: Nhấn mạnh nhẹ (Reverse) - KHUYÊN DÙNG CHO NAV</b><br>
-    Sử dụng <code>fill.reversePrimary</code> (Nhạt) + <code>ink.primary</code> (Đậm).<br>
-    <i>Dùng cho: Item đang chọn trong Menu/Sidebar, Chips, nhãn trạng thái.</i>
+    <b>Chiến lược 3: Nhấn mạnh nhẹ (Soft Emphasis - Reverse)</b><br>
+    Sử dụng <code>faColors.action.fill.reversePrimary</code> (Nhạt) + <code>faColors.action.ink.primary</code> (Đậm).<br>
+    <i>Phù hợp cho: Item đang chọn (Selected) trong Sidebar/Menu, Chips, nhãn trạng thái tinh tế.</i>
   </li>
 </ul>
 
-<div class="warning-box">
-  <strong>Ghi chú kỹ thuật:</strong> Các token <code>reverse</code> được tính toán bằng cách đẩy độ sáng về phía biên (ví dụ ~95% cho Light theme) để đảm bảo làm nền cực êm cho chữ đậm mà vẫn giữ được sắc thái màu thương hiệu.
+<div class="warning-box" style="background-color: #f8f9fa; border-left: 5px solid #007bff; padding: 15px; margin: 20px 0;">
+  <strong>Ghi chú kỹ thuật:</strong> Các token có hậu tố <code>reverse</code> (ví dụ <code>faColors.action.fill.reversePrimary</code>) được hệ thống tự động tính toán đẩy độ sáng lên biên độ ~95% (trong Light Theme). Điều này giúp tạo ra một lớp nền phớt nhạt cực kỳ chuyên nghiệp mà vẫn giữ được sắc thái (Hue) của thương hiệu.
 </div>
 
-<p><i>Lưu ý: Với Dark Theme, logic Đậm/Nhạt trên sẽ tự động đảo ngược.</i></p>
+<p><i>Lưu ý: Hệ thống sẽ tự động đảo ngược logic Đậm/Nhạt khi người dùng chuyển sang Dark Theme.</i></p>
