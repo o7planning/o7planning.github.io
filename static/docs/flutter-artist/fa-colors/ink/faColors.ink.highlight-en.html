@@ -1,0 +1,43 @@
+<h1>faColors.ink.highlight</h1>
+<p>
+  The <code>faColors.ink.highlight</code> token is a specialized typography color used to draw immediate attention to specific words, phrases, or technical markers within a body of text.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  Moving from the legacy <i>Special</i> namespace to <b>Ink</b>, this token serves as a "High-Visibility Ink". It is designed with a vibrant hue (often the brand's primary or a bright accent) to ensure that highlighted terms stand out against standard <code>ink.primary</code> text while maintaining strict contrast ratios on all <b>Surface</b> layers.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use for keyword highlighting in search results, important technical terms, or "New" badges.</li>
+    <li><b>DO:</b> Use for inline spans (e.g., <code>RichText</code>) to emphasize specific segments.</li>
+    <li><b>DON'T:</b> Use for long paragraphs (it causes visual fatigue).</li>
+    <li><b>DON'T:</b> Use for links (use <code>action.ink.primary</code> for interactive elements).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Using RichText to highlight a specific keyword
+RichText(
+  text: TextSpan(
+    style: TextStyle(color: context.faColors.ink.primary),
+    children: [
+      const TextSpan(text: 'FlutterArtist is an '),
+      TextSpan(
+        text: 'Enterprise-grade',
+        style: TextStyle(
+          // Highlighting the key attribute
+          color: context.faColors.ink.highlight,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      const TextSpan(text: ' framework.'),
+    ],
+  ),
+)
+</pre>
+
+<i>Note: Unlike <code>ink.info</code>, which represents a system state, <code>ink.highlight</code> is purely stylistic and used for content emphasis.</i>

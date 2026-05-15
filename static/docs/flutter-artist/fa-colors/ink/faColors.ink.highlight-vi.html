@@ -1,0 +1,43 @@
+<h1>faColors.ink.highlight</h1>
+<p>
+  Token <code>faColors.ink.highlight</code> là màu hệ thống chữ chuyên dụng được sử dụng để thu hút sự chú ý ngay lập tức vào các từ, cụm từ hoặc các dấu hiệu kỹ thuật cụ thể trong một khối văn bản.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Được chuyển từ namespace <i>Special</i> cũ sang <b>Ink</b>, token này đóng vai trò là "Mực có độ hiển thị cao". Nó được thiết kế với tông màu rực rỡ (thường là màu chính của thương hiệu hoặc màu nhấn sáng) để đảm bảo các thuật ngữ được làm nổi bật so với văn bản <code>ink.primary</code> tiêu chuẩn, trong khi vẫn duy trì tỷ lệ tương phản nghiêm ngặt trên tất cả các lớp <b>Surface</b>.
+</p>
+
+<div class="warning-box">
+  <strong>Hướng dẫn sử dụng:</strong><br>
+  <ul>
+    <li><b>NÊN:</b> Sử dụng để làm nổi bật từ khóa trong kết quả tìm kiếm, các thuật ngữ kỹ thuật quan trọng hoặc nhãn "Mới".</li>
+    <li><b>NÊN:</b> Sử dụng cho các đoạn văn bản nội dòng (ví dụ: <code>RichText</code>) để nhấn mạnh các phân đoạn cụ thể.</li>
+    <li><b>KHÔNG NÊN:</b> Sử dụng cho các đoạn văn dài (gây mỏi mắt).</li>
+    <li><b>KHÔNG NÊN:</b> Sử dụng cho các liên kết (hãy dùng <code>action.ink.primary</code> cho các thành phần tương tác).</li>
+  </ul>
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Sử dụng RichText để làm nổi bật một từ khóa cụ thể
+RichText(
+  text: TextSpan(
+    style: TextStyle(color: context.faColors.ink.primary),
+    children: [
+      const TextSpan(text: 'FlutterArtist là một '),
+      TextSpan(
+        text: 'Enterprise-grade',
+        style: TextStyle(
+          // Làm nổi bật thuộc tính chính
+          color: context.faColors.ink.highlight,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      const TextSpan(text: ' framework.'),
+    ],
+  ),
+)
+</pre>
+
+<i>Ghi chú: Khác với <code>ink.info</code> (đại diện cho một trạng thái hệ thống), <code>ink.highlight</code> thuần túy mang tính thẩm mỹ và được dùng để nhấn mạnh nội dung.</i>

@@ -1,0 +1,41 @@
+<h1>faColors.ink.sourceCode</h1>
+<p>
+  Token <code>faColors.ink.sourceCode</code> được thiết kế đặc biệt để hiển thị các văn bản kỹ thuật, đoạn mã (code snippets) và các dữ liệu định dạng monospaced.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Là một thành viên chuyên biệt trong namespace <b>Ink</b>, token này đảm bảo độ đọc tốt nhất cho các nội dung dày đặc ký tự. Nó thường sử dụng tông màu trung tính nhưng khác biệt để tách biệt phần logic khỏi văn bản thông thường, mang lại cảm giác như đang đọc trên "Terminal" mà vẫn tuân thủ các yêu cầu về độ tương phản của lớp <b>Surface</b> bên dưới.
+</p>
+
+<div class="warning-box">
+  <strong>Hướng dẫn sử dụng:</strong><br>
+  <ul>
+    <li><b>NÊN:</b> Sử dụng kết hợp với các font chữ đơn cách (monospaced) như Courier, Fira Code cho các khối mã hoặc log.</li>
+    <li><b>NÊN:</b> Sử dụng cho các giá trị kỹ thuật nội dòng như mã UUID, chuỗi Hash hoặc các câu lệnh SQL.</li>
+    <li><b>KHÔNG NÊN:</b> Sử dụng làm màu chính cho các nhãn (label) tiêu chuẩn của giao diện.</li>
+    <li><b>KHÔNG NÊN:</b> Áp dụng cho các thành phần tương tác như liên kết (trừ khi đó là hành động đặc thù trong trình chỉnh sửa mã).</li>
+  </ul>
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Bao bọc trong Container với nền surface.muted để tạo ngữ cảnh tốt hơn
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.surface.muted,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'git commit -m "feat: simplify namespaces"',
+    style: TextStyle(
+      fontFamily: 'monospace',
+      // Màu mực chuyên dụng cho các chuỗi ký tự kỹ thuật
+      color: context.faColors.ink.sourceCode,
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong khi <code>ink.highlight</code> dùng để nhấn mạnh ý nghĩa, <code>ink.sourceCode</code> dùng để nhấn mạnh bản chất kỹ thuật của nội dung.</i>

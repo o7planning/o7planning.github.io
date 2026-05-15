@@ -1,0 +1,41 @@
+<h1>faColors.ink.sourceCode</h1>
+<p>
+  The <code>faColors.ink.sourceCode</code> token is specifically designed for rendering technical text, code snippets, and monospaced data.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  As a specialized member of the <b>Ink</b> namespace, this token ensures optimal legibility for character-heavy content. It typically uses a neutral but distinct tone to separate logic from prose, providing a "Terminal-like" feel while respecting the contrast requirements of the underlying <b>Surface</b>.
+</p>
+
+<div class="warning-box">
+  <strong>Usage Guidelines:</strong><br>
+  <ul>
+    <li><b>DO:</b> Use with monospaced fonts (e.g., Courier, Fira Code) for logs or code blocks.</li>
+    <li><b>DO:</b> Use for inline technical values like UUIDs, Hash strings, or SQL queries.</li>
+    <li><b>DON'T:</b> Use as the primary text color for standard UI labels.</li>
+    <li><b>DON'T:</b> Apply to interactive elements like clickable links (unless it's a code-specific action).</li>
+  </ul>
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Wrap in a Container with a muted surface for better context
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.surface.muted,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'git commit -m "feat: simplify namespaces"',
+    style: TextStyle(
+      fontFamily: 'monospace',
+      // The dedicated ink for technical strings
+      color: context.faColors.ink.sourceCode,
+    ),
+  ),
+)
+</pre>
+
+<i>Note: While <code>ink.highlight</code> emphasizes meaning, <code>ink.sourceCode</code> emphasizes the technical nature of the content.</i>
