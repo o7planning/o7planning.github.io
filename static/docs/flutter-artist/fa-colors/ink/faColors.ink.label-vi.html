@@ -1,32 +1,32 @@
 <h1>faColors.ink.label</h1>
 <p>
-  The <code>faColors.ink.label</code> token defines the specific color for structural identifiers such as input field labels, table headers, and form titles on expansive <b>Surface</b> layers.
+  Token <code>faColors.ink.label</code> xác định màu sắc cụ thể cho các định danh cấu trúc như nhãn của trường nhập liệu (input field labels), tiêu đề bảng (table headers) và tiêu đề biểu mẫu trên các lớp <b>Surface</b> lớn.
 </p>
 
-<h3>Technical Logic</h3>
+<h3>Logic kỹ thuật</h3>
 <p>
-  Under the <b>Surface - Ink - Stroke</b> architecture, <code>ink.label</code> provides a professional, medium-to-high contrast that distinguishes "Metadata Labels" from "Actual Data". It is designed to be persistent and stable, ensuring that the structure of the UI remains visible and organized at a glance.
+  Trong kiến trúc <b>Surface - Ink - Stroke</b>, <code>ink.label</code> cung cấp độ tương phản từ trung bình đến cao, giúp phân biệt rõ ràng giữa "Nhãn siêu dữ liệu" (Metadata Labels) và "Dữ liệu thực tế" (Actual Data). Nó được thiết kế để mang tính bền vững và ổn định, đảm bảo cấu trúc của giao diện người dùng luôn hiển thị rõ ràng và ngăn nắp ngay cả khi nhìn lướt qua.
 </p>
 
 <div class="warning-box">
-  <strong>Usage Guidelines:</strong><br>
+  <strong>Hướng dẫn sử dụng:</strong><br>
   <ul>
-    <li><b>DO:</b> Use for form labels (e.g., "Email Address"), column headers in DataGrids, and category titles.</li>
-    <li><b>DON'T:</b> Use for placeholder text (use <code>ink.muted</code> instead).</li>
-    <li><b>DON'T:</b> Use as a background color or inside small interactive components like <b>Chips or Badges</b>.</li>
+    <li><b>NÊN:</b> Sử dụng cho nhãn biểu mẫu (ví dụ: "Email Address"), tiêu đề cột trong DataGrids và tiêu đề danh mục.</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng cho văn bản giữ chỗ - placeholder (hãy dùng <code>ink.muted</code> để thay thế).</li>
+    <li><b>KHÔNG ĐƯỢC:</b> Sử dụng làm màu nền hoặc bên trong các thành phần tương tác nhỏ như <b>Chips hay Badges</b>.</li>
   </ul>
 </div>
 
-<h3>Implementation Example</h3>
+<h3>Ví dụ triển khai</h3>
 <pre>
-// Correct usage for form labels and data structure
+// Sử dụng đúng cho nhãn biểu mẫu và cấu trúc dữ liệu
 Column(
   crossAxisAlignment: CrossAxisAlignment.start,
   children: [
     Text(
       'FULL NAME',
       style: TextStyle(
-        // CORRECT: Label ink for formal field identification
+        // ĐÚNG: Dùng mực Label cho việc định danh trường dữ liệu chính thức
         color: context.faColors.ink.label,
         fontSize: 12,
         fontWeight: FontWeight.w600,
@@ -43,7 +43,7 @@ Column(
       child: Text(
         'Johnathan Doe',
         style: TextStyle(
-          // CORRECT: Primary ink for the actual data
+          // ĐÚNG: Dùng mực Primary cho nội dung dữ liệu thực tế
           color: context.faColors.ink.primary,
           fontSize: 16,
         ),
@@ -53,4 +53,4 @@ Column(
 )
 </pre>
 
-<i>Note: In the FaColorGraph, <code>faColors.ink.label</code> is often tuned to be slightly more "stony" or neutral than primary ink to maintain a clear distinction between the form's skeleton and its content.</i>
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.ink.label</code> thường được tinh chỉnh để mang tông màu trung tính hoặc "màu đá" hơn một chút so với mực primary, nhằm duy trì sự phân biệt rõ ràng giữa khung xương của biểu mẫu và nội dung bên trong nó.</i>
