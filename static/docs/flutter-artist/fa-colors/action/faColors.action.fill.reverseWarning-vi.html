@@ -1,0 +1,20 @@
+<h1>faColors.action.fill.reverseWarning</h1>
+<p>
+  Token <code>faColors.action.fill.reverseWarning</code> cung cấp nền vàng phớt cho các thông điệp cảnh báo.
+</p>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Hộp cảnh báo tinh tế
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.action.fill.reverseWarning,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'Low disk space warning.',
+    style: TextStyle(color: context.faColors.action.ink.warning),
+  ),
+)
+</pre>

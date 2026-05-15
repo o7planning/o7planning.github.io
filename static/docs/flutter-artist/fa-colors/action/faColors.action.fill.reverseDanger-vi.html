@@ -1,0 +1,20 @@
+<h1>faColors.action.fill.reverseDanger</h1>
+<p>
+  Token <code>faColors.action.fill.reverseDanger</code> xác định nền đỏ phớt cho các trạng thái lỗi hoặc cảnh báo nguy hiểm cần sự chú ý nhẹ nhàng.
+</p>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Phản hồi lỗi nhập liệu
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.action.fill.reverseDanger, // Nền đỏ nhạt
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'This field is required.', // String tiếng Anh chuẩn quốc tế
+    style: TextStyle(color: context.faColors.action.ink.danger),
+  ),
+)
+</pre>

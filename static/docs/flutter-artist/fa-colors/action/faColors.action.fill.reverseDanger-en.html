@@ -1,0 +1,20 @@
+<h1>faColors.action.fill.reverseWarning</h1>
+<p>
+  The <code>faColors.action.fill.reverseWarning</code> token provides a soft amber background for cautionary messages.
+</p>
+
+<h3>Implementation Example</h3>
+<pre>
+// Warning Alert Box
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.action.fill.reverseWarning,
+    borderRadius: BorderRadius.circular(4),
+  ),
+  child: Text(
+    'Your session is about to expire.',  
+    style: TextStyle(color: context.faColors.action.ink.warning),
+  ),
+)
+</pre>

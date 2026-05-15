@@ -1,0 +1,26 @@
+<h1>faColors.action.fill.reverseSuccess</h1>
+<p>
+  Token <code>faColors.action.fill.reverseSuccess</code> xác định lớp nền xanh lá phớt nhẹ cho các thao tác thành công.
+</p>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo Banner thông báo thành công
+Container(
+  padding: const EdgeInsets.all(12),
+  decoration: BoxDecoration(
+    color: context.faColors.action.fill.reverseSuccess,
+    borderRadius: BorderRadius.circular(8),
+  ),
+  child: Row(
+    children: [
+      Icon(Icons.check_circle, color: context.faColors.action.ink.success),
+      const SizedBox(width: 8),
+      Text(
+        'Operation successful!',  
+        style: TextStyle(color: context.faColors.action.ink.success),
+      ),
+    ],
+  ),
+)
+</pre>
