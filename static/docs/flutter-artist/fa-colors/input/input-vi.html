@@ -1,17 +1,17 @@
 <h1>faColors.input</h1>
 <p>
-  Trong kiến trúc <b>Surface - Ink - Stroke</b>, namespace Input cung cấp một hệ thống chuyên biệt dành riêng cho các ô nhập liệu và trường văn bản (Form Fields). Bằng cách phân tách các biến tương tác thành hai nhánh con nghiêm ngặt là <code>fill</code> và <code>stroke</code>, FlutterArtist đảm bảo các thành phần nhập liệu luôn duy trì phản hồi trạng thái rõ ràng trên các biểu mẫu doanh nghiệp dày đặc.
+  Trong kiến trúc <b>Surface - Ink - Stroke</b>, namespace Input cung cấp một hệ sinh thái ngữ nghĩa thống nhất chuyên biệt để thiết lập kiểu dáng cho các ô nhập liệu, trường văn bản và các thành phần biểu mẫu. Bằng cách phân rã các biến thiết kế thành ba nhánh chức năng nghiêm ngặt (<code>fill</code>, <code>stroke</code>, và <code>ink</code>), FlutterArtist mang tới một giải pháp "One-Stop Shop" (Một điểm dừng) toàn diện, đảm bảo phản hồi trạng thái rõ ràng và duy trì độ tương phản chữ nhất quán trên các biểu mẫu doanh nghiệp dày đặc.
 </p>
 
-<h3>1. Phân rã cấu trúc</h3>
-<p>Hệ thống bố cục nhập liệu được chia thành hai lớp vận hành để xử lý các trạng thái vòng đời khác nhau:</p>
+<h3>1. Phân rã cấu trúc kiến trúc</h3>
+<p>Hệ thống bố cục nhập liệu được chia làm ba lớp vận hành chuyên biệt để quản lý trọn vẹn chu kỳ sinh mệnh của thành phần:</p>
 
 <table>
   <thead>
     <tr>
       <th>Nhánh con (Sub-Namespace)</th>
       <th>Tên Token đầy đủ</th>
-      <th>Thuộc tính tương ứng trong InputDecoration</th>
+      <th>Thuộc tính tương ứng trong InputDecoration / TextStyle</th>
     </tr>
   </thead>
   <tbody>
@@ -45,27 +45,38 @@
       <td><code>faColors.input.stroke.focusedError</code></td>
       <td><code>focusedErrorBorder</code></td>
     </tr>
+    <tr>
+      <td rowspan="5"><b><code>.ink</code></b> (Bí danh Chữ)</td>
+      <td><code>faColors.input.ink.primary</code></td>
+      <td><code>style: TextStyle(color: ...)</code> (Chữ người dùng gõ vào)</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.secondary</code></td>
+      <td><code>helperStyle</code> / Chữ nhãn tiêu đề (label) mặc định</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.muted</code></td>
+      <td><code>hintStyle</code> / Chữ gợi ý hoặc giá trị khi bị khóa chỉ đọc</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.danger</code></td>
+      <td><code>errorStyle</code> (Dòng văn bản báo lỗi validate)</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.highlight</code></td>
+      <td>Ký hiệu bắt buộc (dấu <code>*</code>) / Chữ nổi bật khi khớp từ khóa tìm kiếm</td>
+    </tr>
   </tbody>
 </table>
 
-<h3>2. Đồng bộ hóa Chữ (Typography & Ink)</h3>
-<p>
-  Để triệt tiêu sự trùng lặp cấu trúc, namespace <code>input</code> có chủ đích ủy quyền toàn bộ hành vi hiển thị chữ cho hệ thống toàn cục <code>faColors.ink</code>. Khi cấu hình các trường nhập liệu, nhà phát triển cần ánh xạ rõ ràng các lớp văn bản theo quy tắc tương phản sau:
-</p>
+<h3>2. Học thuyết thiết kế cốt lõi</h3>
 <ul>
-  <li><b>Chữ người dùng gõ (Input Value):</b> Định hình bởi <code>faColors.ink.primary</code> nhằm duy trì độ tương phản đọc tối ưu trên nền fill hoạt động.</li>
-  <li><b>Chữ gợi ý (Hint & Placeholder):</b> Định hình bởi <code>faColors.ink.muted</code> để thể hiện trạng thái gợi ý có độ tương phản thấp, mờ nhạt.</li>
-  <li><b>Chữ nhãn tiêu đề (Floating Label):</b> Định hình bởi <code>faColors.ink.primary</code> khi chuyển đổi trạng thái focus, và sử dụng <code>faColors.ink.secondary</code> khi ở trạng thái rảnh.</li>
-  <li><b>Dòng văn bản báo lỗi (Validation Helper):</b> Định hình bởi <code>faColors.ink.danger</code> để đồng bộ thị giác với các đường viền lỗi ngữ nghĩa đang hoạt động.</li>
-</ul>
-
-<h3>3. Học thuyết thiết kế cốt lõi</h3>
-<ul>
-  <li><b>Quy tắc khung nền trung tính:</b> Các token thuộc nhánh fill được liên kết chặt chẽ với các container trung tính đã qua hiệu chuẩn. Tuyệt đối không pha sắc độ thương hiệu hoặc bão hòa cao vào nhánh <code>fill</code> nhằm tránh gây mỏi mắt cho người dùng khi làm việc lâu với biểu mẫu.</li>
-  <li><b>Tính kiên định của trạng thái:</b> Khi một ô gặp lỗi dữ liệu, token <code>stroke.focusedError</code> đảm bảo đường viền duy trì bản sắc cảnh báo lỗi trong suốt quá trình người dùng đang tập trung sửa sai, không để trạng thái bị nhập nhằng.</li>
-  <li><b>Sự thay đổi trọng số cấu trúc:</b> Các token đường viền được thiết kế để thay đổi độ dày linh hoạt. Các trạng thái rảnh hoặc khóa (<code>enabled</code>, <code>disabled</code>, <code>error</code>) sử dụng độ dày tiêu chuẩn 1.0 logical pixel, trong khi các trạng thái tương tác trực tiếp (<code>focused</code>, <code>focusedError</code>) tăng lên 2.0 logical pixels để dẫn dắt thị giác.</li>
+  <li><b>Quy tắc bí danh kiến trúc (Tối ưu trải nghiệm DEV):</b> Các token nằm trong phạm vi <code>input.ink</code> vận hành như các proxy chỉ đọc trỏ thẳng về hệ thống chữ toàn cục <code>faColors.ink</code> và không có bộ xử lý độc lập. Tuy nhiên, các nhà phát triển được khuyến nghị luôn luôn sử dụng <code>faColors.input.ink.*</code> bên trong phạm vi biểu mẫu thay vì gọi mã ink tổng quát. Việc bao bọc tất cả thuộc tính cấu hình trong scope <code>faColors.input</code> giúp mã nguồn có tính liên kết bối cảnh cao, tường minh và sạch sẽ.</li>
+  <li><b>Quy tắc khung nền trung tính:</b> Các mã màu fill được ràng buộc chặt chẽ với các vùng container trung tính có cường độ thấp. Tuyệt đối không pha sắc độ thương hiệu bão hòa cao vào nền ô nhập liệu để bảo vệ mắt người dùng khỏi hiện tượng mỏi thị giác khi làm việc lâu với biểu mẫu.</li>
+  <li><b>Kỷ luật trạng thái kiên định:</b> Sắc độ viền và chữ báo lỗi phải tuyệt đối nhất quán. Khi một ô lỗi được click chọn để sửa, token <code>stroke.focusedError</code> giữ vai trò duy trì bản sắc cảnh báo lỗi ngữ nghĩa, không để trạng thái thị giác bị nhập nhằng, xáo trộn.</li>
+  <li><b>Sự thay đổi trọng số cấu trúc:</b> Đường biên stroke có khả năng co giãn linh hoạt. Các trạng thái thụ động sử dụng nét vẽ mỏng tiêu chuẩn 1.0 logical pixel, trong khi trạng thái tương tác tiêu điểm (focus) sẽ nở rộng lên 2.0 logical pixels để lập tức găm mắt người dùng vào vị trí trỏ chuột hiện hành.</li>
 </ul>
 
 <div class="warning-box">
-  <strong>Lưu ý kỹ thuật về tính phản ứng:</strong> Mọi token nằm trong phạm vi <code>faColors.input</code> đều có khả năng nhận biết bối cảnh. Khi chuyển sang <b>Dark Theme</b>, các bộ hiệu chỉnh độ mờ (opacity) và cao độ nền tự động điều chỉnh mượt mà trong bộ máy FaColorGraph engine để bảo vệ độ tương phản của chữ.
+  <strong>Tính phản ứng ngữ cảnh:</strong> Mọi token nằm trong namespace <code>faColors.input</code> đều tự động nhận biết độ sáng của Theme. Khi có hành vi hoán đổi giao diện Sáng/Tối, các tỷ lệ tương phản và lớp phủ mờ (opacity) sẽ lập tức tái cấu hình theo thuật toán của trục logic FaColorGraph.
 </div>

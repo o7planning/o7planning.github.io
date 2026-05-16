@@ -1,17 +1,17 @@
 <h1>faColors.input</h1>
 <p>
-  In the <b>Surface - Ink - Stroke</b> architecture, the Input namespace provides a dedicated system for form fields and text areas. By splitting interactive variables into strict <code>fill</code> and <code>stroke</code> sub-namespaces, FlutterArtist ensures that input components maintain unambiguous state feedback across dense enterprise forms.
+  In the <b>Surface - Ink - Stroke</b> architecture, the Input namespace provides a unified, semantic ecosystem for styling form controls, text fields, and data-entry components. By organizing design tokens into strict functional branches (<code>fill</code>, <code>stroke</code>, and <code>ink</code>), FlutterArtist offers a comprehensive "One-Stop Shop" solution that guarantees explicit state feedback and consistent typography contrast across complex enterprise forms.
 </p>
 
-<h3>1. Architecture Breakdown</h3>
-<p>The input layout system is divided into two operational layers to handle various lifecycle states:</p>
+<h3>1. Structural Architecture</h3>
+<p>The input layout ecosystem is divided into three specialized operational sub-namespaces to handle component lifecycles:</p>
 
 <table>
   <thead>
     <tr>
       <th>Sub-Namespace</th>
-      <th>Token Name</th>
-      <th>Target InputDecoration Property</th>
+      <th>Complete Token Name</th>
+      <th>Target InputDecoration / TextStyle Property</th>
     </tr>
   </thead>
   <tbody>
@@ -45,27 +45,38 @@
       <td><code>faColors.input.stroke.focusedError</code></td>
       <td><code>focusedErrorBorder</code></td>
     </tr>
+    <tr>
+      <td rowspan="5"><b><code>.ink</code></b> (Aliases)</td>
+      <td><code>faColors.input.ink.primary</code></td>
+      <td><code>style: TextStyle(color: ...)</code> (User input text value)</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.secondary</code></td>
+      <td><code>helperStyle</code> / Default idle Label text</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.muted</code></td>
+      <td><code>hintStyle</code> / Disabled read-only text</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.danger</code></td>
+      <td><code>errorStyle</code> (Validation message text)</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.ink.highlight</code></td>
+      <td>Mandatory markers (e.g., <code>*</code>) / Inline query match highlights</td>
+    </tr>
   </tbody>
 </table>
 
-<h3>2. Typography & Ink Alignment</h3>
-<p>
-  To eliminate structural redundancy, the <code>input</code> namespace deliberately delegates all typography behaviors to the global <code>faColors.ink</code> system. When configuring input text fields, developers must explicitly map textual layers according to the following contrast rules:
-</p>
+<h3>2. The Core Design Doctrines</h3>
 <ul>
-  <li><b>Input Value text:</b> Driven by <code>faColors.ink.primary</code> to maintain definitive reading contrast against the active container fill.</li>
-  <li><b>Hint & Placeholder text:</b> Driven by <code>faColors.ink.muted</code> to represent an inactive, low-contrast suggestion state.</li>
-  <li><b>Floating Label text:</b> Driven by <code>faColors.ink.primary</code> during focus transitions, and <code>faColors.ink.secondary</code> when resting idle.</li>
-  <li><b>Validation Helper text:</b> Driven by <code>faColors.ink.danger</code> to visually align with active semantic error boundaries.</li>
-</ul>
-
-<h3>3. The Core Design Doctrines</h3>
-<ul>
-  <li><b>The Neutral Canvas Rule:</b> Fill tokens are tied directly to calculated neutral containers. Never inject primary or high-saturation hues into the <code>fill</code> sub-namespace, preventing visual fatigue during extended data-entry sessions.</li>
-  <li><b>State Persistence:</b> When a field encounters an error, the <code>stroke.focusedError</code> token guarantees that the boundary color remains structural and urgent while the user is actively correcting the fault.</li>
-  <li><b>Structural Weight Shifts:</b> Boundary tokens are designed to scale gracefully. Idle and locked states (<code>enabled</code>, <code>disabled</code>, <code>error</code>) utilize a clean 1.0 logical pixel layout, while active states (<code>focused</code>, <code>focusedError</code>) expand to 2.0 logical pixels to guide the user's attention.</li>
+  <li><b>The Architectural Alias Rule (DX Focus):</b> Tokens inside the <code>input.ink</code> scope act as read-only proxies redirecting straight to the global <code>faColors.ink</code> system. They do not maintain distinct resolvers. However, developers should strictly implement <code>faColors.input.ink.*</code> inside forms instead of global ink tokens. Bounding all parameters within the <code>faColors.input</code> scope produces clean, contextual, and highly cohesive source code.</li>
+  <li><b>The Neutral Canvas Rule:</b> Fill tokens are bound to low-intensity neutral container baselines. Brand accent colors must never tint the input surface backgrounds, preventing eye strain during intense data entry sessions.</li>
+  <li><b>Unambiguous State Discipline:</b> Boundary and font colors remain strictly persistent during error interactions. When an invalid field gains focus, <code>stroke.focusedError</code> preserves the urgent error identity, preventing visual ambiguity during data correction.</li>
+  <li><b>Structural Weight Shifts:</b> Boundary strokes adapt dynamically. Passive states utilize a crisp 1.0 logical pixel layout, while interactive focus states expand to 2.0 logical pixels to instantly anchor user attention.</li>
 </ul>
 
 <div class="warning-box">
-  <strong>Theme Reactivity Note:</strong> Every token inside the <code>faColors.input</code> scope is context-aware. During a <b>Dark Theme</b> transition, opacity modifiers and container elevations adjust seamlessly within the FaColorGraph engine to protect text contrast.
+  <strong>Context Reactivity:</strong> Every token under the <code>faColors.input</code> namespace natively inherits theme brightness criteria. During Dark/Light mode hot swaps, contrast scales and opacity layers re-calibrate instantly within the backend FaColorGraph.
 </div>

@@ -1,0 +1,44 @@
+<h1>faColors.input.ink.secondary</h1>
+<p>
+  The <code>faColors.input.ink.secondary</code> token defines the secondary text color for sub-texts, auxiliary guide messages, or resting label widgets within an input scope.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.input.ink.secondary</code> functions strictly as a read-only architectural alias pointing directly to the global <code>faColors.ink.secondary</code> core engine. It does not possess an independent resolver and cannot be overridden individually, ensuring absolute color consistency across the typography system.
+</p>
+
+<div class="warning-box">
+  <strong>The Clean Namespace Rule (DX):</strong><br>
+  Although this token resolves to the exact same color as <code>faColors.ink.secondary</code>, developers should always explicitly use <code>faColors.input.ink.secondary</code> when configuring form elements. Keeping all form property declarations bounded within the <code>faColors.input</code> scope makes the source code highly cohesive, readable, and clean.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Explicitly mapping secondary helper text beneath a standard Flutter TextField
+Column(
+  cross: CrossAxisAlignment.start,
+  children: [
+    TextField(
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: context.faColors.input.fill.enabled,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: context.faColors.input.stroke.enabled),
+        ),
+      ),
+    ),
+    const SizedBox(height: 4),
+    Text(
+      'Password must be at least 8 characters long.',
+      style: TextStyle(
+        // CORRECT: Utilizing the specialized input ink alias for auxiliary guide text
+        color: context.faColors.input.ink.secondary,
+        fontSize: 12.0,
+      ),
+    ),
+  ],
+)
+</pre>
+
+<i>Note: By centralizing text under the <code>input.ink</code> namespace, IDE auto-complete engines can dynamically serve all necessary surface, boundary, and content metrics in a single keypress.</i>

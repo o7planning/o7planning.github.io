@@ -1,0 +1,40 @@
+<h1>faColors.input.ink.danger</h1>
+<p>
+  The <code>faColors.input.ink.danger</code> token defines the validation text color for error messages, helper alerts, or failure indicators within an input scope.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.input.ink.danger</code> functions strictly as a read-only architectural alias pointing directly to the global <code>faColors.ink.danger</code> core engine. It does not possess an independent resolver and cannot be overridden individually, ensuring absolute color consistency across the typography system.
+</p>
+
+<div class="warning-box">
+  <strong>The Clean Namespace Rule (DX):</strong><br>
+  Although this token resolves to the exact same color as <code>faColors.ink.danger</code>, developers should always explicitly use <code>faColors.input.ink.danger</code> when configuring form elements. Keeping all form property declarations bounded within the <code>faColors.input</code> scope makes the source code highly cohesive, readable, and clean.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Explicitly mapping validation error messages inside a Flutter TextField
+TextField(
+  style: TextStyle(
+    color: context.faColors.input.ink.primary,
+  ),
+  decoration: InputDecoration(
+    filled: true,
+    fillColor: context.faColors.input.fill.enabled,
+    errorText: 'Invalid email address format.',
+    // CORRECT: Utilizing the specialized input ink alias for validation error text
+    errorStyle: TextStyle(
+      color: context.faColors.input.ink.danger,
+      fontSize: 12.0,
+      fontWeight: FontWeight.medium,
+    ),
+    errorBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: context.faColors.input.stroke.error),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: By centralizing text under the <code>input.ink</code> namespace, IDE auto-complete engines can dynamically serve all necessary surface, boundary, and content metrics in a single keypress.</i>
