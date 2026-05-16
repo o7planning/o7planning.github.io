@@ -1,0 +1,35 @@
+<h1>faColors.common.transparent</h1>
+<p>
+  The <code>faColors.common.transparent</code> token defines an absolute, hardcoded primitive transparent constant (<code>0x00000000</code>) that remains entirely unaffected by system theme modifications.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> engine architecture, <code>faColors.common.transparent</code> acts as an invisible paint instruction. It completely bypasses all semantic color graph resolvers. This token guarantees a zero-alpha color vector across both Light and Dark mode swaps, making it an essential utility for erasing component outlines, disabling default container backgrounds, or establishing wide invisible touch targets that must capture gesture inputs without introducing rendering weight.
+</p>
+
+<div class="warning-box">
+  <strong>The Immutable Constant Rule (DX):</strong><br>
+  Although this token evaluates to the exact same value as Flutter's native <code>Colors.transparent</code>, developers should always explicitly use <code>faColors.common.transparent</code> when designing components within the FlutterArtist ecosystem. Keeping all baseline declarations bounded inside the <code>faColors.common</code> scope makes the source code highly cohesive, readable, and clean.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating an invisible hit-test area to capture gesture taps cleanly
+GestureDetector(
+  onTap: () =&gt; print("Invisible hotspot tapped!"),
+  child: Container(
+    width: 44.0,
+    height: 44.0,
+    decoration: BoxDecoration(
+      // CORRECT: Utilizing the specialized common alias to ensure zero visual footprint
+      color: context.faColors.common.transparent,
+    ),
+    child: const Center(
+      child: CustomInvisibleAnchorWidget(),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: Avoid substituting this token with <code>null</code> color parameters inside material widgets, as explicitly passing <code>faColors.common.transparent</code> forces proper canvas hit-testing behavior while cleanly communicating intent in source code.</i>

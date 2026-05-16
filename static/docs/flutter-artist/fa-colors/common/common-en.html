@@ -1,0 +1,45 @@
+<h1>faColors.common</h1>
+<p>
+  In the <b>Surface - Ink - Stroke</b> engine architecture, the Common namespace hosts the immutable primitive constants of the design system. Unlike semantic tokens that dynamically shift based on device brightness contexts, variables within the <code>common</code> branch are absolute, theme-agnostic vectors reserved for technical paints, core graphics, or uncompromised high-contrast boundaries.
+</p>
+
+<h3>1. Architecture Breakdown</h3>
+<p>The common ecosystem establishes a strict trio of zero-resolver primitive anchors:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Complete Token Name</th>
+      <th>HEX Color Value</th>
+      <th>Core Technical Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>faColors.common.white</code></td>
+      <td><code>0xFFFFFFFF</code></td>
+      <td>Fixed white overlays, canvas stencil masks, graphic badge backgrounds.</td>
+    </tr>
+    <tr>
+      <td><code>faColors.common.black</code></td>
+      <td><code>0xFF000000</code></td>
+      <td>Hard backdrop filters, unattenuated dropshadow baselines, stencil shapes.</td>
+    </tr>
+    <tr>
+      <td><code>faColors.common.transparent</code></td>
+      <td><code>0x00000000</code></td>
+      <td>Invisible gesture hit-test spots, border erasures, spacer targets.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2. The Core Design Doctrines</h3>
+<ul>
+  <li><b>The Context-Free Mandate:</b> Every token inside the <code>faColors.common</code> scope completely bypasses the semantic theme evaluation loops of the backend FaColorGraph. A pure white or jet-black vector is maintained identically across both deep-density Dark modes and crisp Light layouts.</li>
+  <li><b>The Unified Namespace Principle (DX):</b> While these variables evaluate to the exact same memory primitives as Flutter's core <code>Colors.*</code> layer, engineers should exclusively call <code>faColors.common.*</code> inside the ecosystem. Keeping all baseline primitives contained within a predictable namespace drastically enhances source code cohesion and IDE auto-complete performance.</li>
+  <li><b>The Anti-Surface Rule:</b> Never misuse common primitives to style standard responsive surfaces or primary typography layers. Dynamic components must consistently map to context-aware branches (such as <code>faColors.surface.standard</code> or <code>faColors.ink.primary</code>) to shield the application from broken visual contrast rules during runtime theme hot-swaps.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>System Architecture Notice:</strong> Because the <code>faColors.common</code> tokens carry zero rendering overhead and operate completely decoupled from theme notification trees, they act as the safest, most performant inputs for heavy drawing procedures like custom painters or clipping paths.
+</div>

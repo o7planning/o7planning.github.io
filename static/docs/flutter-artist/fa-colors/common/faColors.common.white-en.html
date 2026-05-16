@@ -1,0 +1,34 @@
+<h1>faColors.common.white</h1>
+<p>
+  The <code>faColors.common.white</code> token defines an absolute, hardcoded primitive white constant (<code>0xFFFFFFFF</code>) that remains entirely unaffected by system theme modifications.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> engine architecture, while most tokens adapt dynamically via the FaColorGraph, <code>faColors.common.white</code> serves as a reliable, immutable anchor. It bypasses semantic theme resolvers completely. This ensures that regardless of whether the application is running in a deeply saturated Dark Theme or a high-contrast Light Theme, this token guarantees a pure white color vector, making it essential for specific graphic overlays, fixed canvas paints, or custom clipping path masks.
+</p>
+
+<div class="warning-box">
+  <strong>The Immutable Constant Rule (DX):</strong><br>
+  Although this token evaluates to the exact same value as Flutter's native <code>Colors.white</code>, developers should always explicitly use <code>faColors.common.white</code> when designing components within the FlutterArtist ecosystem. Keeping all baseline declarations bounded inside the <code>faColors.common</code> scope makes the source code highly cohesive, readable, and clean.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Drawing a custom painting canvas or badge background that must remain strictly white
+Container(
+  width: 40.0,
+  height: 40.0,
+  decoration: BoxDecoration(
+    // CORRECT: Utilizing the specialized common alias to guarantee absolute white
+    color: context.faColors.common.white,
+    shape: BoxShape.circle,
+    border: Border.all(
+      color: context.faColors.divider.subtle,
+    ),
+  ),
+  child: const Icon(Icons.star_rounded),
+)
+</pre>
+
+<i>Note: Never use <code>faColors.common.white</code> for standard page or container backgrounds. For standard adaptive layouts, leverage the adaptive surface namespace tokens like <code>faColors.surface.standard</code> instead, keeping pure constants reserved for specialized static elements.</i>
