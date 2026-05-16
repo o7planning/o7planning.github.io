@@ -1,4 +1,4 @@
-<h1>Input Namespace: The Data Entry Lifecycle</h1>
+<h1>faColors.input</h1>
 <p>
   In the <b>Surface - Ink - Stroke</b> architecture, the Input namespace provides a dedicated system for form fields and text areas. By splitting interactive variables into strict <code>fill</code> and <code>stroke</code> sub-namespaces, FlutterArtist ensures that input components maintain unambiguous state feedback across dense enterprise forms.
 </p>
@@ -48,7 +48,18 @@
   </tbody>
 </table>
 
-<h3>2. The Core Design Doctrines</h3>
+<h3>2. Typography & Ink Alignment</h3>
+<p>
+  To eliminate structural redundancy, the <code>input</code> namespace deliberately delegates all typography behaviors to the global <code>faColors.ink</code> system. When configuring input text fields, developers must explicitly map textual layers according to the following contrast rules:
+</p>
+<ul>
+  <li><b>Input Value text:</b> Driven by <code>faColors.ink.primary</code> to maintain definitive reading contrast against the active container fill.</li>
+  <li><b>Hint & Placeholder text:</b> Driven by <code>faColors.ink.muted</code> to represent an inactive, low-contrast suggestion state.</li>
+  <li><b>Floating Label text:</b> Driven by <code>faColors.ink.primary</code> during focus transitions, and <code>faColors.ink.secondary</code> when resting idle.</li>
+  <li><b>Validation Helper text:</b> Driven by <code>faColors.ink.danger</code> to visually align with active semantic error boundaries.</li>
+</ul>
+
+<h3>3. The Core Design Doctrines</h3>
 <ul>
   <li><b>The Neutral Canvas Rule:</b> Fill tokens are tied directly to calculated neutral containers. Never inject primary or high-saturation hues into the <code>fill</code> sub-namespace, preventing visual fatigue during extended data-entry sessions.</li>
   <li><b>State Persistence:</b> When a field encounters an error, the <code>stroke.focusedError</code> token guarantees that the boundary color remains structural and urgent while the user is actively correcting the fault.</li>
