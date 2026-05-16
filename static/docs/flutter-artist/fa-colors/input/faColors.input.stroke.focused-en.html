@@ -1,0 +1,41 @@
+<h1>faColors.input.stroke.focused</h1>
+<p>
+  The <code>faColors.input.stroke.focused</code> token defines the primary border color for an input field when it actively gains keyboard focus or user selection.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.input.stroke.focused</code> serves as a high-visibility structural indicator. It maps directly to the system's primary brand color within the FaColorGraph. When a user interacts with the input, this token replaces the default neutral outline, establishing a decisive visual anchor that clearly signals where the active data insertion point resides.
+</p>
+
+<div class="warning-box">
+  <strong>The Focus Weight Principle:</strong><br>
+  Focused borders are typically rendered with a slightly heavier line weight (e.g., 2.0 logical pixels instead of 1.0) alongside this token. This subtle structural thickness alteration, combined with the brand-driven focused color, ensures excellent accessibility feedback across all desktop and mobile layouts.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Configuring active focus borders within an input decoration scope
+TextField(
+  enabled: true,
+  decoration: InputDecoration(
+    filled: true,
+    fillColor: context.faColors.input.fill.enabled,
+    // Boundary stroke used when the text field becomes focused
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: context.faColors.input.stroke.focused,
+        width: 2.0, // Expanded width paired with focus state
+      ),
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: context.faColors.input.stroke.enabled,
+        width: 1.0,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.input.stroke.focused</code> links natively to scheme.primary, maintaining crisp contrast against input fill baselines in both Light and Dark environments.</i>

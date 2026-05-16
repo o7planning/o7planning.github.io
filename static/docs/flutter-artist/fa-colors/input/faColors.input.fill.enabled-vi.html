@@ -1,0 +1,34 @@
+<h1>faColors.input.fill.enabled</h1>
+<p>
+  Token <code>faColors.input.fill.enabled</code> xác định màu sắc bề mặt nền mặc định cho các ô nhập liệu khi chúng ở trạng thái hoạt động và sẵn sàng tương tác với người dùng.
+</p>
+
+<h3>Logic kỹ thuật</h3>
+<p>
+  Trong kiến trúc <b>Fill - Ink - Stroke</b>, <code>faColors.input.fill.enabled</code> cung cấp một lớp nền trung tính và sạch sẽ cho việc nhập liệu. Nó được ánh xạ chiến lược tới một bề mặt container cường độ thấp từ hệ màu Material Design 3, đảm bảo vùng nhập liệu hiển thị rõ ràng và tách biệt nhẹ nhàng khỏi nền ứng dụng chính (scaffold) mà không làm phân tán sự chú ý khỏi nội dung chữ.
+</p>
+
+<div class="warning-box">
+  <strong>Nguyên tắc nền trung tính:</strong><br>
+  Bề mặt ô nhập liệu phải tuyệt đối trung tính. Không bao giờ pha trộn màu sắc thương hiệu (primary/accent) vào token này, vì lớp nền có độ bão hòa màu cao trong các biểu mẫu sẽ gây mỏi mắt nghiêm trọng và làm giảm độ tương phản của chữ khi làm việc lâu.
+</div>
+
+<h3>Ví dụ triển khai</h3>
+<pre>
+// Tạo một ô nhập liệu tương tác tiêu chuẩn trong biểu mẫu
+TextField(
+  enabled: true,
+  decoration: InputDecoration(
+    filled: true,
+    // Áp dụng mã màu nền hoạt động mặc định
+    fillColor: context.faColors.input.fill.enabled,
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: context.faColors.input.stroke.enabled,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Ghi chú: Trong FaColorGraph, <code>faColors.input.fill.enabled</code> trỏ thẳng tới surfaceContainerLow của hệ thống, tạo ra sự tương phản dịu nhẹ và tự động chuyển đổi sắc độ mượt mà giữa giao diện Sáng và Tối.</i>

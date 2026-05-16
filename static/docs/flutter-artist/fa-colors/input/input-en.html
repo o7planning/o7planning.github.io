@@ -1,0 +1,60 @@
+<h1>Input Namespace: The Data Entry Lifecycle</h1>
+<p>
+  In the <b>Surface - Ink - Stroke</b> architecture, the Input namespace provides a dedicated system for form fields and text areas. By splitting interactive variables into strict <code>fill</code> and <code>stroke</code> sub-namespaces, FlutterArtist ensures that input components maintain unambiguous state feedback across dense enterprise forms.
+</p>
+
+<h3>1. Architecture Breakdown</h3>
+<p>The input layout system is divided into two operational layers to handle various lifecycle states:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sub-Namespace</th>
+      <th>Token Name</th>
+      <th>Target InputDecoration Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><b><code>.fill</code></b> (Surfaces)</td>
+      <td><code>faColors.input.fill.enabled</code></td>
+      <td><code>fillColor</code> (When <code>enabled: true</code>)</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.fill.disabled</code></td>
+      <td><code>fillColor</code> (When <code>enabled: false</code>)</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><b><code>.stroke</code></b> (Boundaries)</td>
+      <td><code>faColors.input.stroke.enabled</code></td>
+      <td><code>enabledBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.disabled</code></td>
+      <td><code>disabledBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.focused</code></td>
+      <td><code>focusedBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.error</code></td>
+      <td><code>errorBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.focusedError</code></td>
+      <td><code>focusedErrorBorder</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2. The Core Design Doctrines</h3>
+<ul>
+  <li><b>The Neutral Canvas Rule:</b> Fill tokens are tied directly to calculated neutral containers. Never inject primary or high-saturation hues into the <code>fill</code> sub-namespace, preventing visual fatigue during extended data-entry sessions.</li>
+  <li><b>State Persistence:</b> When a field encounters an error, the <code>stroke.focusedError</code> token guarantees that the boundary color remains structural and urgent while the user is actively correcting the fault.</li>
+  <li><b>Structural Weight Shifts:</b> Boundary tokens are designed to scale gracefully. Idle and locked states (<code>enabled</code>, <code>disabled</code>, <code>error</code>) utilize a clean 1.0 logical pixel layout, while active states (<code>focused</code>, <code>focusedError</code>) expand to 2.0 logical pixels to guide the user's attention.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>Theme Reactivity Note:</strong> Every token inside the <code>faColors.input</code> scope is context-aware. During a <b>Dark Theme</b> transition, opacity modifiers and container elevations adjust seamlessly within the FaColorGraph engine to protect text contrast.
+</div>

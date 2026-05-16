@@ -1,0 +1,34 @@
+<h1>faColors.input.fill.enabled</h1>
+<p>
+  The <code>faColors.input.fill.enabled</code> token defines the default surface background color for input fields when they are active and available for user interaction.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> architecture, <code>faColors.input.fill.enabled</code> provides a clean, neutral canvas for data entry. It is strategically mapped to a low-intensity container surface from the Material Design 3 color scheme, ensuring that the input area remains highly legible and visually separated from the background scaffold, without shifting focus away from the actual text content.
+</p>
+
+<div class="warning-box">
+  <strong>The Neutral Fill Principle:</strong><br>
+  Input surfaces should remain strictly neutral. Never tint this token with primary or accent brand colors, as high-saturation backgrounds within forms heavily strain the user's eyes and impair text contrast over long data-entry sessions.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Creating a standard interactive input field within a form
+TextField(
+  enabled: true,
+  decoration: InputDecoration(
+    filled: true,
+    // Applying the standard active fill token
+    fillColor: context.faColors.input.fill.enabled,
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: context.faColors.input.stroke.enabled,
+      ),
+    ),
+  ),
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.input.fill.enabled</code> points directly to the system's surfaceContainerLow, creating a soft contrast that automatically shifts appropriately during Light/Dark theme transitions.</i>

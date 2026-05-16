@@ -1,0 +1,60 @@
+<h1>Namespace Input: Vòng đời của ô nhập liệu</h1>
+<p>
+  Trong kiến trúc <b>Surface - Ink - Stroke</b>, namespace Input cung cấp một hệ thống chuyên biệt dành riêng cho các ô nhập liệu và trường văn bản (Form Fields). Bằng cách phân tách các biến tương tác thành hai nhánh con nghiêm ngặt là <code>fill</code> và <code>stroke</code>, FlutterArtist đảm bảo các thành phần nhập liệu luôn duy trì phản hồi trạng thái rõ ràng trên các biểu mẫu doanh nghiệp dày đặc.
+</p>
+
+<h3>1. Phân rã cấu trúc</h3>
+<p>Hệ thống bố cục nhập liệu được chia thành hai lớp vận hành để xử lý các trạng thái vòng đời khác nhau:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nhánh con (Sub-Namespace)</th>
+      <th>Tên Token đầy đủ</th>
+      <th>Thuộc tính tương ứng trong InputDecoration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2"><b><code>.fill</code></b> (Bề mặt nền)</td>
+      <td><code>faColors.input.fill.enabled</code></td>
+      <td><code>fillColor</code> (Khi cấu hình <code>enabled: true</code>)</td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.fill.disabled</code></td>
+      <td><code>fillColor</code> (Khi cấu hình <code>enabled: false</code>)</td>
+    </tr>
+    <tr>
+      <td rowspan="5"><b><code>.stroke</code></b> (Đường viền khung)</td>
+      <td><code>faColors.input.stroke.enabled</code></td>
+      <td><code>enabledBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.disabled</code></td>
+      <td><code>disabledBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.focused</code></td>
+      <td><code>focusedBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.error</code></td>
+      <td><code>errorBorder</code></td>
+    </tr>
+    <tr>
+      <td><code>faColors.input.stroke.focusedError</code></td>
+      <td><code>focusedErrorBorder</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2. Học thuyết thiết kế cốt lõi</h3>
+<ul>
+  <li><b>Quy tắc khung nền trung tính:</b> Các token thuộc nhánh fill được liên kết chặt chẽ với các container trung tính đã qua hiệu chuẩn. Tuyệt đối không pha sắc độ thương hiệu hoặc bão hòa cao vào nhánh <code>fill</code> nhằm tránh gây mỏi mắt cho người dùng khi làm việc lâu với biểu mẫu.</li>
+  <li><b>Tính kiên định của trạng thái:</b> Khi một ô gặp lỗi dữ liệu, token <code>stroke.focusedError</code> đảm bảo đường viền duy trì bản sắc cảnh báo lỗi trong suốt quá trình người dùng đang tập trung sửa sai, không để trạng thái bị nhập nhằng.</li>
+  <li><b>Sự thay đổi trọng số cấu trúc:</b> Các token đường viền được thiết kế để thay đổi độ dày linh hoạt. Các trạng thái rảnh hoặc khóa (<code>enabled</code>, <code>disabled</code>, <code>error</code>) sử dụng độ dày tiêu chuẩn 1.0 logical pixel, trong khi các trạng thái tương tác trực tiếp (<code>focused</code>, <code>focusedError</code>) tăng lên 2.0 logical pixels để dẫn dắt thị giác.</li>
+</ul>
+
+<div class="warning-box">
+  <strong>Lưu ý kỹ thuật về tính phản ứng:</strong> Mọi token nằm trong phạm vi <code>faColors.input</code> đều có khả năng nhận biết bối cảnh. Khi chuyển sang <b>Dark Theme</b>, các bộ hiệu chỉnh độ mờ (opacity) và cao độ nền tự động điều chỉnh mượt mà trong bộ máy FaColorGraph để bảo vệ độ tương phản của chữ.
+</div>
