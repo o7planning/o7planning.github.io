@@ -1,0 +1,33 @@
+<h1>faColors.divider.subtle</h1>
+<p>
+  The <code>faColors.divider.subtle</code> token defines the light, low-intensity separator color used for internal content boundaries, list items, and table rows.
+</p>
+
+<h3>Technical Logic</h3>
+<p>
+  In the <b>Fill - Ink - Stroke</b> layout system, <code>faColors.divider.subtle</code> provides micro-structural organization without fracturing the visual group. It maps directly to the system's <code>outlineVariant</code> within the FaColorGraph but is injected with a calibrated alpha modifier (0.75 for Light Theme and 0.90 for Dark Theme). This precise attenuation guarantees that the separator remains clean and faintly visible on desktop UIs across varying monitor contrasts without drawing attention away from the primary data.
+</p>
+
+<div class="warning-box">
+  <strong>The Micro-Boundary Principle:</strong><br>
+  Use this token strictly for repeating inline elements or secondary boundaries (e.g., separating rows in a data grid). For structural page-level splits or separating major logical blocks, elevate the layout prominence by switching to <code>faColors.divider.strong</code> instead.
+</div>
+
+<h3>Implementation Example</h3>
+<pre>
+// Drawing a subtle row separator inside a data grid list layout
+Column(
+  children: [
+    const RowValueWidget(title: "Item Alpha"),
+    // Applying the crisp, low-intensity content divider
+    Divider(
+      color: context.faColors.divider.subtle,
+      thickness: 1.0,
+      height: 1.0,
+    ),
+    const RowValueWidget(title: "Item Beta"),
+  ],
+)
+</pre>
+
+<i>Note: In the FaColorGraph, <code>faColors.divider.subtle</code> shares the exact same backend engine logic as <code>faColors.stroke.subtle</code>, maintaining a flawless unified skeleton boundary baseline throughout the FlutterArtist framework.</i>

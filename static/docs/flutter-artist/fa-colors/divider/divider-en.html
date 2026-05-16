@@ -1,0 +1,41 @@
+<h1>faColors.divider</h1>
+<p>
+  In the <b>Surface - Ink - Stroke</b> architecture, the Divider namespace provides global utility vectors dedicated strictly to layout partitioning, row segmentation, and macro-structural division. By establishing a rigid binary separation between <code>subtle</code> and <code>strong</code> tokens, FlutterArtist enables scalable, consistent baseline grid control across high-density enterprise application dashboards.
+</p>
+
+<h3>1. Architecture Breakdown</h3>
+<p>The divider system categorizes layout separations into two deterministic physical weights:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Token Name</th>
+      <th>Visual Purpose</th>
+      <th>Recommended Line Weight / Height</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>faColors.divider.subtle</code></td>
+      <td>Internal content boundaries, repeating table grid rows, inline list segmentations.</td>
+      <td>Thickness: 1.0 logical pixel / Height: 1.0 logical pixel</td>
+    </tr>
+    <tr>
+      <td><code>faColors.divider.strong</code></td>
+      <td>Macro section breaks, page-level structural splits, panel partitions.</td>
+      <td>Thickness: 2.0 logical pixels / Height: 1.0 logical pixel</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>2. The Core Design Doctrines</h3>
+<ul>
+  <li><b>The Grid Breathing Principle:</b> <code>faColors.divider.subtle</code> acts as a micro-structural organizer. It introduces visual separation between identical data cells without fracturing the cohesive unity of the wrapping widget container.</li>
+  <li><b>The Section Firewall Rule:</b> <code>faColors.divider.strong</code> delivers unattenuated contrast boundaries. It functions as a definitive physical block, splitting highly complex form groupings or separating adjacent independent workspace sideboards to prevent cognitive overlap.</li>
+  <li><b>The Shared Baseline Mapping:</b> To protect structural system consistency, the <code>divider</code> namespace maps 1-1 with the <code>stroke</code> namespace engine inside the FaColorGraph backend (<code>subtle</code> aligns with <code>stroke.subtle</code>; <code>strong</code> aligns with <code>stroke.medium</code>).</li>
+</ul>
+
+<div class="warning-box">
+  <strong>The Anti-Bleed Rule:</strong><br>
+  Never blend divider weights arbitrarily. Interchanging these tokens within the same scope breaks layout hierarchy, causing secondary data loops to gain incorrect visual importance over major section-level breaks.
+</div>
