@@ -12,6 +12,7 @@ Under the **Surface - Ink - Stroke** architecture, `inkCurrent` ensures that con
 
 ### Implementation Example
 
+
 ```dart
 // Drawing content on a focused/current surface
 Row(

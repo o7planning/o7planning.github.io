@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.stroke.secondary` c
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Nút bấm Secondary dạng Outlined (ví dụ: Nút Hủy)
 Container(

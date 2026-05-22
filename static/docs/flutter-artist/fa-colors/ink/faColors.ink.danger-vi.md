@@ -8,13 +8,15 @@ Trong hệ thống phân cấp **Surface - Ink - Stroke**, `faColors.ink.danger`
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho thông báo lỗi xác thực (ví dụ: "Invalid password"), nhãn trạng thái quan trọng và biểu tượng lỗi.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng cho các nút bấm tương tác (hãy dùng `faColors.action.fill.danger` hoặc `faColors.action.ink.danger`).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho thông báo lỗi xác thực (ví dụ: "Invalid password"), nhãn trạng thái quan trọng và biểu tượng lỗi.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng cho các nút bấm tương tác (hãy dùng `faColors.action.fill.danger` hoặc `faColors.action.ink.danger`).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho thông báo lỗi trên bề mặt

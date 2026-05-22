@@ -12,6 +12,7 @@ Trong kiến trúc bộ máy **Fill - Ink - Stroke**, `faColors.common.transpare
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một vùng hit-test vô hình để bắt các cử chỉ nhấn một cách sạch sẽ
 GestureDetector(

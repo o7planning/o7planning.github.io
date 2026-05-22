@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** layout system, `faColors.divider.subtle` provides
 
 ### Implementation Example
 
+
 ```dart
 // Drawing a subtle row separator inside a data grid list layout
 Column(

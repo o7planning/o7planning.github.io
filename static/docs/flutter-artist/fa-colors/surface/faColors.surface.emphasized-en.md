@@ -12,6 +12,7 @@ In the **Surface - Ink - Stroke** architecture, `faColors.surface.emphasized` pr
 
 ### Implementation Example
 
+
 ```dart
 // Creating a highlighted card container
 Container(

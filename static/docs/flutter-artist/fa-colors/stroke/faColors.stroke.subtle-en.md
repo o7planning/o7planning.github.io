@@ -8,12 +8,13 @@ In the **Surface - Ink - Stroke** architecture, `stroke.subtle` provides a "hint
 
 > **Best Practices:**
 > 
->   <ul>
->     <li>**USE FOR:** Horizontal dividers between list items, vertical separators in toolbars, or idle borders for input fields.</li>
->     <li>**AVOID:** Using this for main container boundaries (like Dialogs or Sidebars) as it may be too faint on some screens or high-brightness environments.</li>
->   </ul>
+>   
+> * **USE FOR:** Horizontal dividers between list items, vertical separators in toolbars, or idle borders for input fields.
+> 
+>     * **AVOID:** Using this for main container boundaries (like Dialogs or Sidebars) as it may be too faint on some screens or high-brightness environments.
 
 ### Implementation Example
+
 
 ```dart
 // Using subtle stroke for list dividers

@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.stroke.focusedError
 
 ### Implementation Example
 
+
 ```dart
 // Configuring comprehensive validation and focus borders within an input decoration scope
 TextField(

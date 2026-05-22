@@ -13,6 +13,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.action.fill.primary` repr
 
 ### Implementation Example
 
+
 ```dart
 // Creating a high-emphasis Primary Button
 Container(

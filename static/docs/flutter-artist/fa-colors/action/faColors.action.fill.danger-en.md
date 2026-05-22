@@ -13,6 +13,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.action.fill.danger` serve
 
 ### Implementation Example
 
+
 ```dart
 // Creating a Destructive Action Button (e.g., Delete Account)
 Container(

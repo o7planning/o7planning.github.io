@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.primary` có m�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Text Button mang màu thương hiệu (Không có nền)
 Row(

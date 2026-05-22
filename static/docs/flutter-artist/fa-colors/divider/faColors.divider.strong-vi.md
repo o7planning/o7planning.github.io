@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.divider.strong` tạo ra c
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Phân chia không gian làm việc chính của bảng điều khiển với phân đoạn bổ sung liền kề
 Column(

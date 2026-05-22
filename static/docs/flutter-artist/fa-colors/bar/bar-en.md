@@ -6,13 +6,14 @@ The `faColors.bar` namespace defines the background layers for structural and fu
 
 Under the **Surface - Ink - Stroke** architecture, the Bar namespace serves as a bridge between the static `surface` and active `action` components. Its primary goal is to provide **Environmental Context**—letting the user know exactly where the tools end and the data begins.
 
-<ul>
-  <li>**Consistency:** Bars provide a stable horizontal or vertical anchor that persists while content scrolls.</li>
-  <li>**Functional Hierarchy:** Uses varying levels of contrast (Subtle → Standard → Strong) to categorize the importance of the tools hosted within.</li>
-  <li>**Overlay Integration:** Designed to work seamlessly with `faColors.action.state.xxx` for interactive elements like navigation icons or tab items.</li>
-</ul>
+* **Consistency:** Bars provide a stable horizontal or vertical anchor that persists while content scrolls.
+
+  * **Functional Hierarchy:** Uses varying levels of contrast (Subtle → Standard → Strong) to categorize the importance of the tools hosted within.
+
+  * **Overlay Integration:** Designed to work seamlessly with `faColors.action.state.xxx` for interactive elements like navigation icons or tab items.
 
 ### Key Token Groups
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>

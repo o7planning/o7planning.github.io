@@ -8,13 +8,15 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.ink.label` cung cấp �
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho nhãn biểu mẫu (ví dụ: "Email Address"), tiêu đề cột trong DataGrids và tiêu đề danh mục.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng cho văn bản giữ chỗ - placeholder (hãy dùng `faColors.ink.muted` để thay thế).</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng làm màu nền hoặc bên trong các thành phần tương tác nhỏ như **Chips hay Badges**.</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho nhãn biểu mẫu (ví dụ: "Email Address"), tiêu đề cột trong DataGrids và tiêu đề danh mục.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng cho văn bản giữ chỗ - placeholder (hãy dùng `faColors.ink.muted` để thay thế).
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng làm màu nền hoặc bên trong các thành phần tương tác nhỏ như **Chips hay Badges**.
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho nhãn biểu mẫu và cấu trúc dữ liệu

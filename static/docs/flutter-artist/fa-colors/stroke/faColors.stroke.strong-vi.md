@@ -12,6 +12,7 @@ Trong phân cấp **Surface - Ink - Stroke**, `faColors.stroke.strong` thu hút 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Làm nổi bật tiêu điểm của ô nhập liệu hoặc chỉ báo Tab đang chọn
 Container(

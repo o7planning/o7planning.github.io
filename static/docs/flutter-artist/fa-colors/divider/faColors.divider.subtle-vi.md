@@ -12,6 +12,7 @@ Trong hệ thống bố cục **Fill - Ink - Stroke**, `faColors.divider.subtle`
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Vẽ một đường phân cách hàng nhẹ nhàng bên trong bố cục danh sách dữ liệu
 Column(

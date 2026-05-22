@@ -4,6 +4,7 @@ Token `faColors.action.fill.reverseDanger` xác định nền đỏ phớt cho c
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Phản hồi lỗi nhập liệu
 Container(

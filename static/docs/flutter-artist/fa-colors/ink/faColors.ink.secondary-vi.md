@@ -8,13 +8,15 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.ink.secondary` cung c�
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho tiêu đề phụ, mô tả, dấu thời gian và dữ liệu phụ trên các bề mặt chính.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng cho văn bản nội dung chính hoặc các cảnh báo quan trọng.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng bên trong các thành phần tương tác nhỏ như **Nút (Buttons) hoặc Badge** (hãy giữ các loại mực hành động chuyên biệt cho chúng).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho tiêu đề phụ, mô tả, dấu thời gian và dữ liệu phụ trên các bề mặt chính.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng cho văn bản nội dung chính hoặc các cảnh báo quan trọng.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng bên trong các thành phần tương tác nhỏ như **Nút (Buttons) hoặc Badge** (hãy giữ các loại mực hành động chuyên biệt cho chúng).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho văn bản mô tả phụ

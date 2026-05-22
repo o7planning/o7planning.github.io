@@ -12,6 +12,7 @@ Under the **Surface - Ink - Stroke** architecture, `faColors.surface.strong` is 
 
 ### Implementation Example
 
+
 ```dart
 // Creating a high-contrast structural sidebar
 Container(

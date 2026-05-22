@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.action.fill.reverseSecond
 
 ### Implementation Example
 
+
 ```dart
 // Creating a Secondary Toggle or Filter Chip
 Container(

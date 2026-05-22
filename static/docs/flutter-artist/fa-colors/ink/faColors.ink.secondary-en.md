@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** architecture, `faColors.ink.secondary` prov
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for sub-headers, descriptions, timestamps, and secondary metadata on main surfaces.</li>
->     <li>**DON'T:** Use for primary body text or critical alerts.</li>
->     <li>**DON'T:** Use inside small interactive components like **Buttons or Badges** (keep the specialized action inks for those).</li>
->   </ul>
+>   
+> * **DO:** Use for sub-headers, descriptions, timestamps, and secondary metadata on main surfaces.
+> 
+>     * **DON'T:** Use for primary body text or critical alerts.
+> 
+>     * **DON'T:** Use inside small interactive components like **Buttons or Badges** (keep the specialized action inks for those).
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for secondary descriptive text

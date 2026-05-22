@@ -12,6 +12,7 @@ In the **Surface - Ink - Stroke** architecture, `faColors.surface.muted` provide
 
 ### Implementation Example
 
+
 ```dart
 // Using muted surface for a secondary information panel
 Container(

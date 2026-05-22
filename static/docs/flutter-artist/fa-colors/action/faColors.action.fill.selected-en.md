@@ -12,6 +12,7 @@ Within the **Fill - Ink - Stroke** architecture, `faColors.action.fill.selected`
 
 ### Implementation Example
 
+
 ```dart
 // Creating a Selected Filter Chip
 Container(

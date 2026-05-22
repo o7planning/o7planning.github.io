@@ -13,6 +13,7 @@ In the **Fill - Ink - Stroke** architecture, this token acts as the ultimate con
 
 ### Implementation Example
 
+
 ```dart
 // Correct implementation of a Critical Danger Button
 Container(

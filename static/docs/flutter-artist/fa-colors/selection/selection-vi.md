@@ -6,13 +6,14 @@ Namespace `faColors.selection` cung cấp một bộ token chuyên biệt để 
 
 Khác với namespace Action tập trung vào việc "thực thi", namespace Selection tập trung vào việc "định danh". Nó được xây dựng để đảm bảo dữ liệu được chọn vẫn dễ đọc và khác biệt rõ rệt với phần còn lại của UI mà không tranh chấp sự chú ý với các nút hành động chính.
 
-<ul>
-  <li>**Fill (Lớp lấp đầy):** Xác định nền cho các hàng hoặc mục được chọn, đảm bảo chúng nổi bật trong một danh sách.</li>
-  <li>**Ink (Mực):** Cung cấp nội dung (Văn bản/Biểu tượng) có độ tương phản cao cho nền được chọn để duy trì tiêu chuẩn truy cập WCAG.</li>
-  <li>**Stroke (Đường viền):** Xác định các vòng tiêu điểm (focus rings) và ranh giới lựa chọn để chỉ thị nơi sự chú ý của người dùng đang được khóa lại.</li>
-</ul>
+* **Fill (Lớp lấp đầy):** Xác định nền cho các hàng hoặc mục được chọn, đảm bảo chúng nổi bật trong một danh sách.
+
+  * **Ink (Mực):** Cung cấp nội dung (Văn bản/Biểu tượng) có độ tương phản cao cho nền được chọn để duy trì tiêu chuẩn truy cập WCAG.
+
+  * **Stroke (Đường viền):** Xác định các vòng tiêu điểm (focus rings) và ranh giới lựa chọn để chỉ thị nơi sự chú ý của người dùng đang được khóa lại.
 
 ### Các nhóm Token chính
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>

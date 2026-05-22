@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** engine architecture, while most tokens adapt dyna
 
 ### Implementation Example
 
+
 ```dart
 // Drawing a custom painting canvas or badge background that must remain strictly white
 Container(

@@ -13,6 +13,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.fill.reversePrimary
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một mục Menu đang được chọn (Nhấn mạnh nhẹ)
 Container(

@@ -12,6 +12,7 @@ Nằm trong kiến trúc **Surface - Ink - Stroke**, `inkNormal` đại diện c
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Vẽ nội dung bằng mực selection tiêu chuẩn
 Row(

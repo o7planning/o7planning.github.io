@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.ink.highlight` vận
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Ánh xạ rõ ràng một chỉ báo trường bắt buộc nhập bên trong bố cục của ô nhập liệu
 Row(

@@ -8,14 +8,17 @@ Moving from the legacy *Special* namespace to **Ink**, this token serves as a "H
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for keyword highlighting in search results, important technical terms, or "New" badges.</li>
->     <li>**DO:** Use for inline spans (e.g., `RichText`) to emphasize specific segments.</li>
->     <li>**DON'T:** Use for long paragraphs (it causes visual fatigue).</li>
->     <li>**DON'T:** Use for links (use `faColors.action.ink.primary` for interactive elements).</li>
->   </ul>
+>   
+> * **DO:** Use for keyword highlighting in search results, important technical terms, or "New" badges.
+> 
+>     * **DO:** Use for inline spans (e.g., `RichText`) to emphasize specific segments.
+> 
+>     * **DON'T:** Use for long paragraphs (it causes visual fatigue).
+> 
+>     * **DON'T:** Use for links (use `faColors.action.ink.primary` for interactive elements).
 
 ### Implementation Example
+
 
 ```dart
 // Using RichText to highlight a specific keyword

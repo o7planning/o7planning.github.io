@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.ink.secondary` vận
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Ánh xạ rõ ràng dòng chữ hướng dẫn phụ bên dưới một TextField tiêu chuẩn của Flutter
 Column(

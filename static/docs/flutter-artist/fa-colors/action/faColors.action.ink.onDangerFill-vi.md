@@ -13,6 +13,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, token này đóng vai trò là đi�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Triển khai đúng cho một nút bấm Nguy hiểm (Xác nhận xóa)
 Container(

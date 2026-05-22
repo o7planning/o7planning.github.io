@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.bar.strong` cung cấp 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Triển khai một Thanh điều hướng bên (Side Rail) mạnh mẽ
 Container(

@@ -8,13 +8,15 @@ Trong hệ thống phân cấp **Surface - Ink - Stroke**, `faColors.ink.warning
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho các thông báo thận trọng (ví dụ: "Session expires soon"), nhãn trạng thái chờ xử lý và biểu tượng "cảnh báo".</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng cho các nút bấm hành động chính (hãy dùng `faColors.action.fill.warning` hoặc `faColors.action.ink.warning`).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho các thông báo thận trọng (ví dụ: "Session expires soon"), nhãn trạng thái chờ xử lý và biểu tượng "cảnh báo".
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng cho các nút bấm hành động chính (hãy dùng `faColors.action.fill.warning` hoặc `faColors.action.ink.warning`).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho thông báo cảnh báo trên bề mặt

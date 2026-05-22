@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.surface.muted` mang l�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Sử dụng bề mặt muted cho một bảng thông tin phụ
 Container(

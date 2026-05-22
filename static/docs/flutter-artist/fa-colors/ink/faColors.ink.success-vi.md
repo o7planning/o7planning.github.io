@@ -8,13 +8,15 @@ Trong hệ thống phân cấp **Surface - Ink - Stroke**, `faColors.ink.success
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho các thông báo thành công (ví dụ: "Payment completed"), chỉ báo trạng thái tích cực và biểu tượng "tích xanh".</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng cho các nút bấm hành động chính (hãy dùng `faColors.action.fill.success` hoặc `faColors.action.ink.success`).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho các thông báo thành công (ví dụ: "Payment completed"), chỉ báo trạng thái tích cực và biểu tượng "tích xanh".
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng cho các nút bấm hành động chính (hãy dùng `faColors.action.fill.success` hoặc `faColors.action.ink.success`).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho thông báo thành công trên bề mặt

@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.stroke.focusedError`
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Cấu hình các bộ viền kiểm tra lỗi và tiêu điểm trong phạm vi thiết lập ô nhập liệu
 TextField(

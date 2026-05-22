@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.action.ink.onGhostFill` s
 
 ### Implementation Example
 
+
 ```dart
 // Drawing content on a ghost action surface
 Container(

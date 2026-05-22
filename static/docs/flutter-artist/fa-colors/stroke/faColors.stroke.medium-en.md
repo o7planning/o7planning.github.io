@@ -12,6 +12,7 @@ Within the **Surface - Ink - Stroke** architecture, `faColors.stroke.medium` off
 
 ### Implementation Example
 
+
 ```dart
 // Defining a clear boundary for a Card or Container
 Container(

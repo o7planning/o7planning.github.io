@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.ink.muted` vận hà
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Ánh xạ rõ ràng kiểu chữ gợi ý bên trong cấu hình một TextField tiêu chuẩn của Flutter
 TextField(

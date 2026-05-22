@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.bar.standard` cung cấ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Triển khai thanh ứng dụng (AppBar) tiêu chuẩn
 Container(

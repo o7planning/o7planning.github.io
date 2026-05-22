@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.highlight` cung
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Làm nổi bật một mục đặc biệt trong danh sách
 Row(

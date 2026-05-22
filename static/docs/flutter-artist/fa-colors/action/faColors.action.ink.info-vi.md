@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.info` được 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Text Button Thông tin (Không có nền)
 Row(

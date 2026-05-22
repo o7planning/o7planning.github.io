@@ -8,14 +8,17 @@ Token `faColors.ink.highlight` là màu hệ thống chữ chuyên dụng đư�
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng để làm nổi bật từ khóa trong kết quả tìm kiếm, các thuật ngữ kỹ thuật quan trọng hoặc nhãn "Mới".</li>
->     <li>**NÊN:** Sử dụng cho các đoạn văn bản nội dòng (ví dụ: `RichText`) để nhấn mạnh các phân đoạn cụ thể.</li>
->     <li>**KHÔNG NÊN:** Sử dụng cho các đoạn văn dài (gây mỏi mắt).</li>
->     <li>**KHÔNG NÊN:** Sử dụng cho các liên kết (hãy dùng `faColors.action.ink.primary` cho các thành phần tương tác).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng để làm nổi bật từ khóa trong kết quả tìm kiếm, các thuật ngữ kỹ thuật quan trọng hoặc nhãn "Mới".
+> 
+>     * **NÊN:** Sử dụng cho các đoạn văn bản nội dòng (ví dụ: `RichText`) để nhấn mạnh các phân đoạn cụ thể.
+> 
+>     * **KHÔNG NÊN:** Sử dụng cho các đoạn văn dài (gây mỏi mắt).
+> 
+>     * **KHÔNG NÊN:** Sử dụng cho các liên kết (hãy dùng `faColors.action.ink.primary` cho các thành phần tương tác).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng RichText để làm nổi bật một từ khóa cụ thể

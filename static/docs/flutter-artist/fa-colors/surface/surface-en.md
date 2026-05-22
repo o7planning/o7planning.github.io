@@ -6,13 +6,14 @@ The `faColors.surface` namespace is the architectural bedrock of the FlutterArti
 
 In the **Surface - Ink - Stroke** trinity, Surface acts as the ultimate "Fill" for the entire application environment. It is designed to manage **Visual Elevation** and **Content Grouping** without using shadows as the primary signifier, relying instead on subtle tonal shifts to indicate depth.
 
-<ul>
-  <li>**Layering:** Surfaces are organized from "Primary" (the lowest level) to "Emphasized" (the highest attention level).</li>
-  <li>**Neutrality:** These tokens use a neutral or slightly tinted palette to ensure they don't compete with functional Action colors.</li>
-  <li>**Consistency:** Every Surface token has a corresponding `faColors.ink` counterpart to ensure perfect legibility of static content.</li>
-</ul>
+* **Layering:** Surfaces are organized from "Primary" (the lowest level) to "Emphasized" (the highest attention level).
+
+  * **Neutrality:** These tokens use a neutral or slightly tinted palette to ensure they don't compete with functional Action colors.
+
+  * **Consistency:** Every Surface token has a corresponding `faColors.ink` counterpart to ensure perfect legibility of static content.
 
 ### Key Token Groups
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>

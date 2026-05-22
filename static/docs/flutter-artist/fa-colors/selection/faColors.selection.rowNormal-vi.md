@@ -12,6 +12,7 @@ Trong hệ sinh thái FlutterArtist, `faColors.selection.rowNormal` đóng vai t
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Sử dụng rowNormal cho một item danh sách
 Container(

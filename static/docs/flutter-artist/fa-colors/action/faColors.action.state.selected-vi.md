@@ -13,6 +13,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `selected` là một lớp trạng t
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Áp dụng lớp phủ trạng thái selected cho một List Item
 Container(

@@ -12,6 +12,7 @@ Under the **Fill - Ink - Stroke** architecture, `faColors.action.ink.ghost` is d
 
 ### Implementation Example
 
+
 ```dart
 // Creating a subtle Ghost Label (Auxiliary Action)
 Row(

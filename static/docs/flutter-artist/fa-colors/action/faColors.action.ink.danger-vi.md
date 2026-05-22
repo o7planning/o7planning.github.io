@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.danger` đượ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Text Button Danger (Không có nền)
 Row(

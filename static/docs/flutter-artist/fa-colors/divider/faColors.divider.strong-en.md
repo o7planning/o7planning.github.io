@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.divider.strong` delivers 
 
 ### Implementation Example
 
+
 ```dart
 // Splitting a main dashboard workspace from an adjacent layout section
 Column(

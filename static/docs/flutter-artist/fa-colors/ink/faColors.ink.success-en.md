@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** hierarchy, `faColors.ink.success` is tuned 
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for success messages (e.g., "Payment completed"), positive status indicators, and "check" icons.</li>
->     <li>**DON'T:** Use as a background color (Fill).</li>
->     <li>**DON'T:** Use for interactive primary buttons (use `faColors.action.fill.success` or `faColors.action.ink.success` instead).</li>
->   </ul>
+>   
+> * **DO:** Use for success messages (e.g., "Payment completed"), positive status indicators, and "check" icons.
+> 
+>     * **DON'T:** Use as a background color (Fill).
+> 
+>     * **DON'T:** Use for interactive primary buttons (use `faColors.action.fill.success` or `faColors.action.ink.success` instead).
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for a success message on a surface

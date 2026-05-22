@@ -8,13 +8,15 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.ink.primary` nghiêm ng
 
 > **Ranh giới sử dụng nghiêm ngặt:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho văn bản nội dung, tiêu đề và các biểu tượng tĩnh trên các bố cục lớn.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng làm màu nền cho bất kỳ thành phần nào.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng làm màu chữ/biểu tượng bên trong các thành phần nhỏ có tính tương tác như **Nút (Buttons), Chip, hoặc Badge** (hãy sử dụng `faColors.action.ink.xxx` để thay thế).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho văn bản nội dung, tiêu đề và các biểu tượng tĩnh trên các bố cục lớn.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng làm màu nền cho bất kỳ thành phần nào.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng làm màu chữ/biểu tượng bên trong các thành phần nhỏ có tính tương tác như **Nút (Buttons), Chip, hoặc Badge** (hãy sử dụng `faColors.action.ink.xxx` để thay thế).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho nội dung tĩnh trên bề mặt chính

@@ -13,6 +13,7 @@ In the **Fill - Ink - Stroke** architecture, this token provides a high-contrast
 
 ### Implementation Example
 
+
 ```dart
 // Correct implementation of a Highlighted Badge
 Container(

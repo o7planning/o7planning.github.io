@@ -12,6 +12,7 @@ Under the **Fill - Ink - Stroke** architecture, `faColors.action.stroke.primary`
 
 ### Implementation Example
 
+
 ```dart
 // Creating a Primary Outlined Button
 Container(

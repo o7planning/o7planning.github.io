@@ -12,6 +12,7 @@ As part of the **Surface - Ink - Stroke** architecture, `inkNormal` represents t
 
 ### Implementation Example
 
+
 ```dart
 // Drawing content with standard selection ink
 Row(

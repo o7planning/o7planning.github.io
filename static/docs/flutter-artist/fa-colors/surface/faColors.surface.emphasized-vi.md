@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.surface.emphasized` cun
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một khung chứa thẻ được làm nổi bật
 Container(

@@ -13,6 +13,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, token này đóng vai trò là một
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Triển khai đúng cho một Segment/Chip đang được chọn
 Container(

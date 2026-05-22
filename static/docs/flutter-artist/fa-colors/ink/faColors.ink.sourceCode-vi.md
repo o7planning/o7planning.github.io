@@ -8,14 +8,17 @@ Là một thành viên chuyên biệt trong namespace **Ink**, token này đảm
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng kết hợp với các font chữ đơn cách (monospaced) như Courier, Fira Code cho các khối mã hoặc log.</li>
->     <li>**NÊN:** Sử dụng cho các giá trị kỹ thuật nội dòng như mã UUID, chuỗi Hash hoặc các câu lệnh SQL.</li>
->     <li>**KHÔNG NÊN:** Sử dụng làm màu chính cho các nhãn (label) tiêu chuẩn của giao diện.</li>
->     <li>**KHÔNG NÊN:** Áp dụng cho các thành phần tương tác như liên kết (trừ khi đó là hành động đặc thù trong trình chỉnh sửa mã).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng kết hợp với các font chữ đơn cách (monospaced) như Courier, Fira Code cho các khối mã hoặc log.
+> 
+>     * **NÊN:** Sử dụng cho các giá trị kỹ thuật nội dòng như mã UUID, chuỗi Hash hoặc các câu lệnh SQL.
+> 
+>     * **KHÔNG NÊN:** Sử dụng làm màu chính cho các nhãn (label) tiêu chuẩn của giao diện.
+> 
+>     * **KHÔNG NÊN:** Áp dụng cho các thành phần tương tác như liên kết (trừ khi đó là hành động đặc thù trong trình chỉnh sửa mã).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Bao bọc trong Container với nền surface.muted để tạo ngữ cảnh tốt hơn

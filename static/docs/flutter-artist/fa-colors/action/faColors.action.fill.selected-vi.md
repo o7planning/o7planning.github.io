@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.fill.selected` cung
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Filter Chip đang được chọn
 Container(

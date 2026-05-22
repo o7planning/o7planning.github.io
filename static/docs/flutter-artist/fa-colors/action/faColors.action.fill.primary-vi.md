@@ -13,6 +13,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.fill.primary` đạ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Nút bấm Chính (Primary Button) có độ nhấn cao
 Container(

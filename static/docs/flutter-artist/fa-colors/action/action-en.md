@@ -6,46 +6,22 @@ The `faColors.action` namespace is the core engine of interactivity within the F
 
 Built on the **Fill - Ink - Stroke** trinity, this namespace ensures that every action is semantically clear and visually consistent:
 
-<ul>
-  <li>**Fill:** Defines the "body" or background of the action (e.g., Primary, Success, Danger).</li>
-  <li>**Ink:** Defines the "soul" or content (Text/Icons) that conveys the message.</li>
-  <li>**Stroke:** Defines the "structure" or borders, ideal for outlined and ghost buttons.</li>
-  <li>**State:** Dynamic overlays (Hover, Pressed, Selected) that provide real-time tactile feedback.</li>
-</ul>
+* **Fill:** Defines the "body" or background of the action (e.g., Primary, Success, Danger).
+
+  * **Ink:** Defines the "soul" or content (Text/Icons) that conveys the message.
+
+  * **Stroke:** Defines the "structure" or borders, ideal for outlined and ghost buttons.
+
+  * **State:** Dynamic overlays (Hover, Pressed, Selected) that provide real-time tactile feedback.
 
 ### Key Token Groups
 
-<table>
-  <thead>
-    <tr style="background-color: #f2f2f2;">
-      <th>Group</th>
-      <th>Purpose</th>
-      <th>Usage Scenario</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>**Primary / Secondary**</td>
-      <td>Brand-driven interaction.</td>
-      <td>Main CTAs and auxiliary navigation.</td>
-    </tr>
-    <tr>
-      <td>**Semantic (Success, Warning, Danger, Info)**</td>
-      <td>Communication of status and risk.</td>
-      <td>Confirmations, alerts, and destructive actions.</td>
-    </tr>
-    <tr>
-      <td>**Muted / Subtle**</td>
-      <td>Low-priority interaction.</td>
-      <td>Settings, "Learn More" links, and background tasks.</td>
-    </tr>
-    <tr>
-      <td>**States**</td>
-      <td>Interactive feedback.</td>
-      <td>Mouse hovers, touch presses, and selection persistence.</td>
-    </tr>
-  </tbody>
-</table>
+| Group | Purpose | Usage Scenario |
+| --- | --- | --- |
+| **Primary / Secondary** | Brand-driven interaction. | Main CTAs and auxiliary navigation. |
+| **Semantic (Success, Warning, Danger, Info)** | Communication of status and risk. | Confirmations, alerts, and destructive actions. |
+| **Muted / Subtle** | Low-priority interaction. | Settings, "Learn More" links, and background tasks. |
+| **States** | Interactive feedback. | Mouse hovers, touch presses, and selection persistence. |
 
 > **The Pairwise Rule:**
 > 

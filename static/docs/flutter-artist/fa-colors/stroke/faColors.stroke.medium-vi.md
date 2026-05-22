@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.stroke.medium` mang l�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Xác định ranh giới rõ ràng cho một Card hoặc Container
 Container(

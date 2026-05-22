@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.surface.strong` đượ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một thanh bên cấu trúc có độ tương phản cao
 Container(

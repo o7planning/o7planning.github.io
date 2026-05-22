@@ -12,6 +12,7 @@ Under the **Fill - Ink - Stroke** architecture, `faColors.action.fill.ghost` is 
 
 ### Implementation Example
 
+
 ```dart
 // Creating a subtle Ghost Button (Icon Button)
 Container(

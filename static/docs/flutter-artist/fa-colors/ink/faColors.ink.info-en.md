@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** hierarchy, `faColors.ink.info` is designed 
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for informational banners, help text (e.g., "Learn more about security"), and neutral system notifications.</li>
->     <li>**DON'T:** Use as a background color (Fill).</li>
->     <li>**DON'T:** Use for primary actions (use `faColors.action.fill.primary` instead).</li>
->   </ul>
+>   
+> * **DO:** Use for informational banners, help text (e.g., "Learn more about security"), and neutral system notifications.
+> 
+>     * **DON'T:** Use as a background color (Fill).
+> 
+>     * **DON'T:** Use for primary actions (use `faColors.action.fill.primary` instead).
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for an information tip on a surface

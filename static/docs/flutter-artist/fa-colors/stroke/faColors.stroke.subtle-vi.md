@@ -8,12 +8,13 @@ Trong kiến trúc **Surface - Ink - Stroke**, `stroke.subtle` cung cấp một 
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN DÙNG:** Kẻ ngang giữa các mục danh sách, vạch dọc trên thanh công cụ, hoặc viền trạng thái rảnh (idle) của ô nhập liệu.</li>
->     <li>**HẠN CHẾ:** Dùng cho ranh giới của các container chính (như Dialog hay Sidebar) vì nó có thể quá mờ trên một số màn hình hoặc môi trường có độ sáng cao.</li>
->   </ul>
+>   
+> * **NÊN DÙNG:** Kẻ ngang giữa các mục danh sách, vạch dọc trên thanh công cụ, hoặc viền trạng thái rảnh (idle) của ô nhập liệu.
+> 
+>     * **HẠN CHẾ:** Dùng cho ranh giới của các container chính (như Dialog hay Sidebar) vì nó có thể quá mờ trên một số màn hình hoặc môi trường có độ sáng cao.
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng stroke subtle cho đường kẻ ngăn cách danh sách

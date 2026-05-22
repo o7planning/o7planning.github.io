@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** hierarchy, `faColors.ink.warning` is engine
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for caution messages (e.g., "Session expires soon"), pending status labels, and "warning" icons.</li>
->     <li>**DON'T:** Use as a background color (Fill).</li>
->     <li>**DON'T:** Use for interactive primary buttons (use `faColors.action.fill.warning` or `faColors.action.ink.warning` instead).</li>
->   </ul>
+>   
+> * **DO:** Use for caution messages (e.g., "Session expires soon"), pending status labels, and "warning" icons.
+> 
+>     * **DON'T:** Use as a background color (Fill).
+> 
+>     * **DON'T:** Use for interactive primary buttons (use `faColors.action.fill.warning` or `faColors.action.ink.warning` instead).
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for a warning message on a surface

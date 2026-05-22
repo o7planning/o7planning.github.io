@@ -6,13 +6,14 @@ Namespace `faColors.ink` xác định bảng màu cho tất cả các nội dung
 
 Trong hệ thống phân cấp **Surface - Ink - Stroke**, namespace Ink được dành riêng hoàn toàn cho việc hiển thị nội dung. Nó được tách biệt về mặt kiến trúc khỏi các loại "Mực hành động" (Action Inks) để đảm bảo rằng lớp thông tin chính luôn ổn định, dễ tiếp cận và khác biệt với các nút điều khiển chức năng.
 
-<ul>
-  <li>**Ưu tiên khả năng đọc:** Mỗi token được tinh chỉnh về mặt toán học để vượt qua các tiêu chuẩn tương phản WCAG so với Surface tương ứng.</li>
-  <li>**Chính xác về ngữ nghĩa:** Sử dụng màu sắc để truyền tải ý nghĩa (Success, Danger, Info, Warning) mà không cần người dùng phải tương tác.</li>
-  <li>**Phân cấp cấu trúc:** Tổ chức thông tin từ nhấn mạnh cao (Primary) đến nhấn mạnh thấp (Muted).</li>
-</ul>
+* **Ưu tiên khả năng đọc:** Mỗi token được tinh chỉnh về mặt toán học để vượt qua các tiêu chuẩn tương phản WCAG so với Surface tương ứng.
+
+  * **Chính xác về ngữ nghĩa:** Sử dụng màu sắc để truyền tải ý nghĩa (Success, Danger, Info, Warning) mà không cần người dùng phải tương tác.
+
+  * **Phân cấp cấu trúc:** Tổ chức thông tin từ nhấn mạnh cao (Primary) đến nhấn mạnh thấp (Muted).
 
 ### Các nhóm Token chính
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>

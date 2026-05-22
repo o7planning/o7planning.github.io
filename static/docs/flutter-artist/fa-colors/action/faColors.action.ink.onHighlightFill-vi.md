@@ -13,6 +13,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, token này cung cấp màu sắc ti�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Triển khai đúng cho một huy hiệu (Badge) nổi bật
 Container(

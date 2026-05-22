@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.stroke.focused` ser
 
 ### Implementation Example
 
+
 ```dart
 // Configuring active focus borders within an input decoration scope
 TextField(

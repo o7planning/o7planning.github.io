@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.fill.disabled` serv
 
 ### Implementation Example
 
+
 ```dart
 // Creating a locked/non-interactive form input field
 TextField(

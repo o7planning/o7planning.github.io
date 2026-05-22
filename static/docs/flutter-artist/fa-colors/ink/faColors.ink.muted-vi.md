@@ -8,13 +8,15 @@ Trong hệ thống phân cấp **Surface - Ink - Stroke**, `faColors.ink.muted` 
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho văn bản gợi ý trong ô nhập liệu (ví dụ: "Type to search..."), các nhãn tĩnh bị vô hiệu hóa và văn bản trợ giúp không quan trọng.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng cho bất kỳ nội dung nào yêu cầu đảm bảo khả năng đọc cho tất cả người dùng (cần lưu ý tiêu chuẩn truy cập WCAG).</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng bên trong các thành phần tương tác như **Nút (Buttons) hoặc Chip**.</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho văn bản gợi ý trong ô nhập liệu (ví dụ: "Type to search..."), các nhãn tĩnh bị vô hiệu hóa và văn bản trợ giúp không quan trọng.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng cho bất kỳ nội dung nào yêu cầu đảm bảo khả năng đọc cho tất cả người dùng (cần lưu ý tiêu chuẩn truy cập WCAG).
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng bên trong các thành phần tương tác như **Nút (Buttons) hoặc Chip**.
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho văn bản gợi ý và văn bản tĩnh bị vô hiệu hóa

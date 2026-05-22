@@ -12,6 +12,7 @@ Under the **Surface - Ink - Stroke** architecture, `faColors.bar.subtle` acts as
 
 ### Implementation Example
 
+
 ```dart
 // Creating a subtle Filter Bar above a list
 Container(

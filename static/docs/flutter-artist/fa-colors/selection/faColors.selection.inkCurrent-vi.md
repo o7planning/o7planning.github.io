@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `inkCurrent` đảm bảo rằng 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Vẽ nội dung trên một bề mặt đang giữ tiêu điểm
 Row(

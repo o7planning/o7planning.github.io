@@ -12,6 +12,7 @@ Within the **Surface - Ink - Stroke** architecture, `faColors.surface.subtle` is
 
 ### Implementation Example
 
+
 ```dart
 // Creating a subtle background for a Sort Panel
 Container(

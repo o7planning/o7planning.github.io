@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.action.ink.selected` prov
 
 ### Implementation Example
 
+
 ```dart
 // Creating a selected Tab item (No Background)
 Column(

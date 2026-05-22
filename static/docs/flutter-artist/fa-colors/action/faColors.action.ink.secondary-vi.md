@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.secondary` có 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Text Button phụ (Không có nền)
 Row(

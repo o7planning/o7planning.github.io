@@ -12,6 +12,7 @@ Under the **Surface - Ink - Stroke** architecture, `faColors.bar.strong` provide
 
 ### Implementation Example
 
+
 ```dart
 // Implementing a Strong Side Navigation Rail
 Container(

@@ -13,6 +13,7 @@ In the **Fill - Ink - Stroke** architecture, this token serves as a "high-contra
 
 ### Implementation Example
 
+
 ```dart
 // Correct implementation of a Primary Action Button
 Container(

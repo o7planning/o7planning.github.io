@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.stroke.subtle` sử
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Định nghĩa một khung chứa hoặc thẻ tương tác tinh tế
 Container(

@@ -12,6 +12,7 @@ In the **Surface - Ink - Stroke** architecture, `rowSelected` carries a higher v
 
 ### Implementation Example
 
+
 ```dart
 // Applying a persistent selected state to a data row
 Container(

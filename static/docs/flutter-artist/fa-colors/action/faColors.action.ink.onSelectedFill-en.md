@@ -13,6 +13,7 @@ Under the **Fill - Ink - Stroke** architecture, this token serves as a high-cont
 
 ### Implementation Example
 
+
 ```dart
 // Correct implementation of a Selected Segment/Chip
 Container(

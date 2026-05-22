@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.onGhostFill` đ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Vẽ nội dung trên một bề mặt hành động ghost
 Container(

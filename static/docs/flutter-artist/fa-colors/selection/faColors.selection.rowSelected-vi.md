@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `rowSelected` mang trọng số t
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Áp dụng trạng thái chọn bền vững cho một hàng dữ liệu
 Container(

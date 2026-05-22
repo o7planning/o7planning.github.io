@@ -13,6 +13,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.fill.danger` đóng
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một Nút bấm Phá hủy (Nút Xóa vĩnh viễn)
 Container(

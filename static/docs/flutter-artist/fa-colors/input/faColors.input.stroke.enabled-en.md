@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** layout system, `faColors.input.stroke.enabled` fo
 
 ### Implementation Example
 
+
 ```dart
 // Configuring a standard active form boundary border
 TextField(

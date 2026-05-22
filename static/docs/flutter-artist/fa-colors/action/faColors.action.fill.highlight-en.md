@@ -12,6 +12,7 @@ Under the **Fill - Ink - Stroke** architecture, `faColors.action.fill.highlight`
 
 ### Implementation Example
 
+
 ```dart
 // Highlighting a "New" status badge
 Container(

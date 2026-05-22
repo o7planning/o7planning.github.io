@@ -12,6 +12,7 @@ Là lớp móng trong kiến trúc **Surface - Ink - Stroke**, `faColors.surface
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Thiết lập scaffold nền tảng cho một màn hình
 Scaffold(

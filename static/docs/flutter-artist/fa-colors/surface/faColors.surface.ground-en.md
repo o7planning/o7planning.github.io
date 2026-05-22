@@ -12,6 +12,7 @@ As the foundational layer in the **Surface - Ink - Stroke** architecture, `faCol
 
 ### Implementation Example
 
+
 ```dart
 // Setting up the base scaffold of a screen
 Scaffold(

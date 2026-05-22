@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.stroke.focused` đó
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Cấu hình đường viền tiêu điểm hoạt động trong phạm vi thiết lập ô nhập liệu
 TextField(

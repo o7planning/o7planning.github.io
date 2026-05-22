@@ -12,6 +12,7 @@ Trong hệ thống bố cục **Fill - Ink - Stroke**, `faColors.input.stroke.er
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Cấu hình ô nhập liệu hiển thị trạng thái lỗi kiểm tra dữ liệu
 TextField(

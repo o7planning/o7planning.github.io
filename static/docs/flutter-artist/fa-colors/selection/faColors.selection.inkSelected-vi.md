@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `inkSelected` là loại mực t�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Vẽ nội dung trên một bề mặt đang được chọn
 Row(

@@ -12,6 +12,7 @@ Trong hệ thống bố cục **Fill - Ink - Stroke**, `faColors.input.stroke.en
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Cấu hình đường viền chu vi tiêu chuẩn cho ô nhập liệu đang hoạt động
 TextField(

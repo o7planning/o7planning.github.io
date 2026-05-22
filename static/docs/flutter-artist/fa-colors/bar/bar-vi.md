@@ -6,13 +6,14 @@ Namespace `faColors.bar` xác định các lớp nền cho các thành phần đ
 
 Trong kiến trúc **Surface - Ink - Stroke**, namespace Bar đóng vai trò là cầu nối giữa các thành phần `surface` tĩnh và `action` động. Mục tiêu chính của nó là cung cấp **Ngữ cảnh môi trường (Environmental Context)** — giúp người dùng biết chính xác nơi công cụ kết thúc và dữ liệu bắt đầu.
 
-<ul>
-  <li>**Tính nhất quán:** Các thanh bar cung cấp điểm neo ngang hoặc dọc ổn định, tồn tại cố định khi nội dung cuộn bên dưới.</li>
-  <li>**Phân cấp chức năng:** Sử dụng các mức độ tương phản khác nhau (Subtle → Standard → Strong) để phân loại tầm quan trọng của các công cụ được chứa bên trong.</li>
-  <li>**Tích hợp lớp phủ:** Được thiết kế để hoạt động mượt mà với `faColors.action.state.xxx` cho các yếu tố tương tác như biểu tượng điều hướng hoặc các mục tab.</li>
-</ul>
+* **Tính nhất quán:** Các thanh bar cung cấp điểm neo ngang hoặc dọc ổn định, tồn tại cố định khi nội dung cuộn bên dưới.
+
+  * **Phân cấp chức năng:** Sử dụng các mức độ tương phản khác nhau (Subtle → Standard → Strong) để phân loại tầm quan trọng của các công cụ được chứa bên trong.
+
+  * **Tích hợp lớp phủ:** Được thiết kế để hoạt động mượt mà với `faColors.action.state.xxx` cho các yếu tố tương tác như biểu tượng điều hướng hoặc các mục tab.
 
 ### Các nhóm Token chính
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>

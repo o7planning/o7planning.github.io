@@ -6,13 +6,14 @@ The `faColors.selection` namespace provides a specialized set of tokens for hand
 
 Unlike the Action namespace which focuses on "doing", the Selection namespace focuses on "identifying". It is built to ensure that selected data remains legible and visually distinct from the rest of the UI without competing with primary action buttons.
 
-<ul>
-  <li>**Fill:** Defines the background for selected rows or items, ensuring they stand out in a list.</li>
-  <li>**Ink:** Provides high-contrast content (Text/Icons) for the selected background to maintain WCAG accessibility.</li>
-  <li>**Stroke:** Defines focus rings and selection boundaries to indicate where the user's attention is currently locked.</li>
-</ul>
+* **Fill:** Defines the background for selected rows or items, ensuring they stand out in a list.
+
+  * **Ink:** Provides high-contrast content (Text/Icons) for the selected background to maintain WCAG accessibility.
+
+  * **Stroke:** Defines focus rings and selection boundaries to indicate where the user's attention is currently locked.
 
 ### Key Token Groups
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>

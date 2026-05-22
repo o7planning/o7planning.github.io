@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.surface.standard` cung 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một khung chứa nội dung tiêu chuẩn
 Container(

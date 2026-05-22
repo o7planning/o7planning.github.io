@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** hierarchy, `faColors.ink.muted` is designed
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for input placeholders (e.g., "Enter your name..."), disabled labels, and non-critical helper text.</li>
->     <li>**DON'T:** Use for any content that requires guaranteed readability for all users (be mindful of accessibility/WCAG).</li>
->     <li>**DON'T:** Use for interactive components like **Buttons or Chips**.</li>
->   </ul>
+>   
+> * **DO:** Use for input placeholders (e.g., "Enter your name..."), disabled labels, and non-critical helper text.
+> 
+>     * **DON'T:** Use for any content that requires guaranteed readability for all users (be mindful of accessibility/WCAG).
+> 
+>     * **DON'T:** Use for interactive components like **Buttons or Chips**.
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for placeholder and disabled static text

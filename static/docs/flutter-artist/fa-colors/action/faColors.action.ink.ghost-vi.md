@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.ghost` được
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một nhãn Ghost tinh tế (Hành động bổ trợ)
 Row(

@@ -12,6 +12,7 @@ In the **Surface - Ink - Stroke** architecture, `faColors.surface.standard` prov
 
 ### Implementation Example
 
+
 ```dart
 // Creating a standard content container
 Container(

@@ -4,6 +4,7 @@ Token `faColors.action.fill.reverseSuccess` xác định lớp nền xanh lá ph
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo Banner thông báo thành công
 Container(

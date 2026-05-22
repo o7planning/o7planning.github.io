@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.ink.muted` function
 
 ### Implementation Example
 
+
 ```dart
 // Explicitly mapping hint text and placeholder styling inside a Flutter TextField
 TextField(

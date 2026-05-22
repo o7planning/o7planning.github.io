@@ -12,6 +12,7 @@ Within the **Fill - Ink - Stroke** architecture, `faColors.action.fill.muted` pr
 
 ### Implementation Example
 
+
 ```dart
 // Creating a low-priority Muted Button
 Container(

@@ -12,6 +12,7 @@ Trong kiến trúc bộ máy **Fill - Ink - Stroke**, trong khi các token ngữ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Cấu hình đổ bóng đậm hoặc mặt nạ khuân đúc tùy chỉnh bắt buộc phải giữ màu đen tuyệt đối
 Container(

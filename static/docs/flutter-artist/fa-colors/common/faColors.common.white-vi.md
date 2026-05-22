@@ -12,6 +12,7 @@ Trong kiến trúc bộ máy **Fill - Ink - Stroke**, trong khi hầu hết các
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Vẽ một nền huy hiệu hoặc canvas tùy chỉnh bắt buộc phải giữ màu trắng tuyệt đối
 Container(

@@ -12,6 +12,7 @@ In the **Surface - Ink - Stroke** hierarchy, `faColors.stroke.strong` commands m
 
 ### Implementation Example
 
+
 ```dart
 // Highlighting a focused input field or a selected tab indicator
 Container(

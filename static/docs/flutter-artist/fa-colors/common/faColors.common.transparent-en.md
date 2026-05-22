@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** engine architecture, `faColors.common.transparent
 
 ### Implementation Example
 
+
 ```dart
 // Creating an invisible hit-test area to capture gesture taps cleanly
 GestureDetector(

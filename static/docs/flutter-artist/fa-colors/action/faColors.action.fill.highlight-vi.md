@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.fill.highlight` t�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Làm nổi bật một huy hiệu trạng thái "Mới"
 Container(

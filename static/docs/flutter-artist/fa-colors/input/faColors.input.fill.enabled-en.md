@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.fill.enabled` provi
 
 ### Implementation Example
 
+
 ```dart
 // Creating a standard interactive input field within a form
 TextField(

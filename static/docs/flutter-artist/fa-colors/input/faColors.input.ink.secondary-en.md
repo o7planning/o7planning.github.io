@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.ink.secondary` func
 
 ### Implementation Example
 
+
 ```dart
 // Explicitly mapping secondary helper text beneath a standard Flutter TextField
 Column(

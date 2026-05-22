@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.surface.subtle` đượ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một nền nhẹ nhàng cho Sort Panel
 Container(

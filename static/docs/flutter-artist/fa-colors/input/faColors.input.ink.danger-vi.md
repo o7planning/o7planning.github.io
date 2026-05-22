@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.ink.danger` vận h�
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Ánh xạ rõ ràng dòng chữ báo lỗi kiểm tra dữ liệu bên trong một TextField tiêu chuẩn của Flutter
 TextField(

@@ -12,6 +12,7 @@ Under the **Surface - Ink - Stroke** architecture, `faColors.bar.standard` provi
 
 ### Implementation Example
 
+
 ```dart
 // Standard Application Bar implementation
 Container(

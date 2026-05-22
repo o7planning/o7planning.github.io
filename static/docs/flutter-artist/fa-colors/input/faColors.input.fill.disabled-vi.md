@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.fill.disabled` phụ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một ô nhập liệu bị khóa không cho phép chỉnh sửa trong biểu mẫu
 TextField(

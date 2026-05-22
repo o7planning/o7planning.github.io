@@ -12,6 +12,7 @@ Under the **Fill - Ink - Stroke** architecture, `faColors.action.stroke.secondar
 
 ### Implementation Example
 
+
 ```dart
 // Creating a Secondary Outlined Button (e.g., Cancel)
 Container(

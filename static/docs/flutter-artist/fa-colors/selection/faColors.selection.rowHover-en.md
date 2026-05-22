@@ -12,6 +12,7 @@ In the **Surface - Ink - Stroke** architecture, `rowHover` is designed as a subt
 
 ### Implementation Example
 
+
 ```dart
 // Applying hover effect to a list item
 // Note: Usually handled via InkWell or MouseRegion in Flutter

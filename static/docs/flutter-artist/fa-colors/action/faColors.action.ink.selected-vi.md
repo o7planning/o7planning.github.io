@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.ink.selected` cung 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một mục Tab đang được chọn (Không có nền)
 Column(

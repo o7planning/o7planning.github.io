@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `rowHover` được thiết kế 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Áp dụng hiệu ứng hover cho một item trong danh sách
 // Lưu ý: Thường được xử lý qua InkWell hoặc MouseRegion trong Flutter

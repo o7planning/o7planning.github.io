@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** hierarchy, `faColors.ink.danger` is optimiz
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for validation error messages (e.g., "Invalid password"), critical status labels, and error icons.</li>
->     <li>**DON'T:** Use as a background color (Fill).</li>
->     <li>**DON'T:** Use for interactive buttons (use `faColors.action.fill.danger` or `faColors.action.ink.danger` instead).</li>
->   </ul>
+>   
+> * **DO:** Use for validation error messages (e.g., "Invalid password"), critical status labels, and error icons.
+> 
+>     * **DON'T:** Use as a background color (Fill).
+> 
+>     * **DON'T:** Use for interactive buttons (use `faColors.action.fill.danger` or `faColors.action.ink.danger` instead).
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for an error message on a surface

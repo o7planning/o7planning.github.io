@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** layout system, `faColors.input.stroke.error` deli
 
 ### Implementation Example
 
+
 ```dart
 // Configuring a text field with error validation styling
 TextField(

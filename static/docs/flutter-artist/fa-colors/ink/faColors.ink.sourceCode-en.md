@@ -8,14 +8,17 @@ As a specialized member of the **Ink** namespace, this token ensures optimal leg
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use with monospaced fonts (e.g., Courier, Fira Code) for logs or code blocks.</li>
->     <li>**DO:** Use for inline technical values like UUIDs, Hash strings, or SQL queries.</li>
->     <li>**DON'T:** Use as the primary text color for standard UI labels.</li>
->     <li>**DON'T:** Apply to interactive elements like clickable links (unless it's a code-specific action).</li>
->   </ul>
+>   
+> * **DO:** Use with monospaced fonts (e.g., Courier, Fira Code) for logs or code blocks.
+> 
+>     * **DO:** Use for inline technical values like UUIDs, Hash strings, or SQL queries.
+> 
+>     * **DON'T:** Use as the primary text color for standard UI labels.
+> 
+>     * **DON'T:** Apply to interactive elements like clickable links (unless it's a code-specific action).
 
 ### Implementation Example
+
 
 ```dart
 // Wrap in a Container with a muted surface for better context

@@ -13,6 +13,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.action.fill.reversePrimar
 
 ### Implementation Example
 
+
 ```dart
 // Creating a Selected Menu Item (Soft Emphasis)
 Container(

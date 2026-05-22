@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.ink.highlight` func
 
 ### Implementation Example
 
+
 ```dart
 // Explicitly mapping a mandatory field indicator label inside an input layout
 Row(

@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.fill.enabled` cung c
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một ô nhập liệu tương tác tiêu chuẩn trong biểu mẫu
 TextField(

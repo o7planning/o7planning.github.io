@@ -12,6 +12,7 @@ Trong kiến trúc **Fill - Ink - Stroke**, `faColors.action.fill.reverseSeconda
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một thẻ Chip lọc hoặc nút chuyển đổi phụ
 Container(

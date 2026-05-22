@@ -6,13 +6,14 @@ Namespace `faColors.surface` là nền tảng kiến trúc của hệ thống th
 
 Trong bộ ba **Surface - Ink - Stroke**, Surface đóng vai trò là lớp "Fill" cuối cùng cho toàn bộ môi trường ứng dụng. Nó được thiết kế để quản lý **Độ cao thị giác (Visual Elevation)** và **Nhóm nội dung** mà không phụ thuộc vào đổ bóng làm chỉ báo chính, thay vào đó dựa trên các thay đổi sắc thái tinh tế để biểu thị chiều sâu.
 
-<ul>
-  <li>**Phân lớp:** Các bề mặt được tổ chức từ "Primary" (mức thấp nhất) đến "Emphasized" (mức độ chú ý cao nhất).</li>
-  <li>**Tính trung tính:** Các token này sử dụng bảng màu trung tính hoặc có sắc thái nhẹ để đảm bảo không tranh chấp với các màu Action chức năng.</li>
-  <li>**Tính nhất quán:** Mỗi token Surface đều có một đối trọng `faColors.ink` tương ứng để đảm bảo khả năng đọc hoàn hảo cho các nội dung tĩnh.</li>
-</ul>
+* **Phân lớp:** Các bề mặt được tổ chức từ "Primary" (mức thấp nhất) đến "Emphasized" (mức độ chú ý cao nhất).
+
+  * **Tính trung tính:** Các token này sử dụng bảng màu trung tính hoặc có sắc thái nhẹ để đảm bảo không tranh chấp với các màu Action chức năng.
+
+  * **Tính nhất quán:** Mỗi token Surface đều có một đối trọng `faColors.ink` tương ứng để đảm bảo khả năng đọc hoàn hảo cho các nội dung tĩnh.
 
 ### Các nhóm Token chính
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>

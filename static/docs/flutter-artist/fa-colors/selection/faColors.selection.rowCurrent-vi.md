@@ -12,6 +12,7 @@ Khác với trạng thái lựa chọn vĩnh viễn (Selection), `rowCurrent` đ
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Làm nổi bật hàng đang giữ tiêu điểm trong danh sách
 Container(

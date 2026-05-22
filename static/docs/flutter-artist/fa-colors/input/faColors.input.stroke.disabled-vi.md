@@ -12,6 +12,7 @@ Trong mô hình bố cục **Fill - Ink - Stroke**, `faColors.input.stroke.disab
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Áp dụng ranh giới mờ nhạt cho ô nhập liệu bị khóa trong biểu mẫu
 TextField(

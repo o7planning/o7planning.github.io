@@ -12,6 +12,7 @@ Under the **Surface - Ink - Stroke** architecture, `inkSelected` is a functional
 
 ### Implementation Example
 
+
 ```dart
 // Drawing content on a selected surface
 Row(

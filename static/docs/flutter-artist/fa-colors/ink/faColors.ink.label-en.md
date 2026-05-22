@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** architecture, `faColors.ink.label` provides
 
 > **Usage Guidelines:**
 > 
->   <ul>
->     <li>**DO:** Use for form labels (e.g., "Email Address"), column headers in DataGrids, and category titles.</li>
->     <li>**DON'T:** Use for placeholder text (use `faColors.ink.muted` instead).</li>
->     <li>**DON'T:** Use as a background color or inside small interactive components like **Chips or Badges**.</li>
->   </ul>
+>   
+> * **DO:** Use for form labels (e.g., "Email Address"), column headers in DataGrids, and category titles.
+> 
+>     * **DON'T:** Use for placeholder text (use `faColors.ink.muted` instead).
+> 
+>     * **DON'T:** Use as a background color or inside small interactive components like **Chips or Badges**.
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for form labels and data structure

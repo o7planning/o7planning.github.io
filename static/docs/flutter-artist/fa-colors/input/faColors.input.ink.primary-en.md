@@ -12,6 +12,7 @@ In the **Fill - Ink - Stroke** architecture, `faColors.input.ink.primary` functi
 
 ### Implementation Example
 
+
 ```dart
 // Explicitly mapping input values within a standard Flutter TextField
 TextField(

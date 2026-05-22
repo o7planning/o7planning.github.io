@@ -12,6 +12,7 @@ Unlike a persistent selection, `rowCurrent` represents a transient state. It act
 
 ### Implementation Example
 
+
 ```dart
 // Highlighting the current focused row in a list
 Container(

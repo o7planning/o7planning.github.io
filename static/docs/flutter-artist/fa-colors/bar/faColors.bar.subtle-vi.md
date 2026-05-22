@@ -12,6 +12,7 @@ Trong kiến trúc **Surface - Ink - Stroke**, `faColors.bar.subtle` đóng vai 
 
 ### Ví dụ triển khai
 
+
 ```dart
 // Tạo một thanh lọc (Filter Bar) tinh tế phía trên danh sách
 Container(

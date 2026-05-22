@@ -8,13 +8,15 @@ Trong hệ thống phân cấp **Surface - Ink - Stroke**, `faColors.ink.info` �
 
 > **Hướng dẫn sử dụng:**
 > 
->   <ul>
->     <li>**NÊN:** Sử dụng cho các biểu ngữ thông tin, văn bản trợ giúp (ví dụ: "Learn more about security") và các thông báo hệ thống trung tính.</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).</li>
->     <li>**KHÔNG ĐƯỢC:** Sử dụng cho các hành động chính (hãy dùng `faColors.action.fill.primary`).</li>
->   </ul>
+>   
+> * **NÊN:** Sử dụng cho các biểu ngữ thông tin, văn bản trợ giúp (ví dụ: "Learn more about security") và các thông báo hệ thống trung tính.
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng làm màu nền (Fill).
+> 
+>     * **KHÔNG ĐƯỢC:** Sử dụng cho các hành động chính (hãy dùng `faColors.action.fill.primary`).
 
 ### Ví dụ triển khai
+
 
 ```dart
 // Sử dụng đúng cho một mẹo nhỏ thông tin trên bề mặt

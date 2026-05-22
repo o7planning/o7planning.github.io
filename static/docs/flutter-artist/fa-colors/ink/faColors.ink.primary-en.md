@@ -8,13 +8,15 @@ Under the **Surface - Ink - Stroke** architecture, `faColors.ink.primary` is str
 
 > **Strict Usage Boundaries:**
 > 
->   <ul>
->     <li>**DO:** Use for body text, headings, and static icons on large layouts.</li>
->     <li>**DON'T:** Use as a background color for any component.</li>
->     <li>**DON'T:** Use for text/icons inside small interactive components like **Buttons, Chips, or Badges** (use `faColors.action.ink.xxx` instead).</li>
->   </ul>
+>   
+> * **DO:** Use for body text, headings, and static icons on large layouts.
+> 
+>     * **DON'T:** Use as a background color for any component.
+> 
+>     * **DON'T:** Use for text/icons inside small interactive components like **Buttons, Chips, or Badges** (use `faColors.action.ink.xxx` instead).
 
 ### Implementation Example
+
 
 ```dart
 // Correct usage for static content on a main surface

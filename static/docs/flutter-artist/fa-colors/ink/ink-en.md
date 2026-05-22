@@ -6,13 +6,14 @@ The `faColors.ink` namespace defines the palette for all static content, includi
 
 Under the **Surface - Ink - Stroke** hierarchy, the Ink namespace is strictly dedicated to content representation. It is architecturally decoupled from interactive "Action Inks" to ensure that the primary information layer remains stable, accessible, and distinct from functional controls.
 
-<ul>
-  <li>**Legibility First:** Every token is mathematically tuned to pass WCAG contrast standards against its corresponding Surface.</li>
-  <li>**Semantic Precision:** Uses color to convey meaning (Success, Danger, Info, Warning) without requiring user interaction.</li>
-  <li>**Structural Hierarchy:** Organizes information from high-emphasis (Primary) to low-emphasis (Muted).</li>
-</ul>
+* **Legibility First:** Every token is mathematically tuned to pass WCAG contrast standards against its corresponding Surface.
+
+  * **Semantic Precision:** Uses color to convey meaning (Success, Danger, Info, Warning) without requiring user interaction.
+
+  * **Structural Hierarchy:** Organizes information from high-emphasis (Primary) to low-emphasis (Muted).
 
 ### Key Token Groups
+
 
 <table border="1" style="width:100%; border-collapse: collapse;">
   <thead>
