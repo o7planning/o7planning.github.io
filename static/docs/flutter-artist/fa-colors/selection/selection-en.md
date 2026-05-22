@@ -1,0 +1,50 @@
+## faColors.selection
+
+The `faColors.selection` namespace provides a specialized set of tokens for handling data selection, focus, and highlight states. This is the primary system for identifying active items in complex components like DataGrids, TreeViews, and Picker lists.
+
+### Architectural Philosophy
+
+Unlike the Action namespace which focuses on "doing", the Selection namespace focuses on "identifying". It is built to ensure that selected data remains legible and visually distinct from the rest of the UI without competing with primary action buttons.
+
+<ul>
+  <li>**Fill:** Defines the background for selected rows or items, ensuring they stand out in a list.</li>
+  <li>**Ink:** Provides high-contrast content (Text/Icons) for the selected background to maintain WCAG accessibility.</li>
+  <li>**Stroke:** Defines focus rings and selection boundaries to indicate where the user's attention is currently locked.</li>
+</ul>
+
+### Key Token Groups
+
+<table border="1" style="width:100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Group</th>
+      <th>Purpose</th>
+      <th>Usage Scenario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>**Selection Fill**</td>
+      <td>Identifies the active container.</td>
+      <td>Selected rows in a table, active cards, or chosen list items.</td>
+    </tr>
+    <tr>
+      <td>**On-Selection Ink**</td>
+      <td>Contrast for selected content.</td>
+      <td>Text and icons inside a selected row or chip.</td>
+    </tr>
+    <tr>
+      <td>**Focus / Highlight**</td>
+      <td>Temporary attention indicators.</td>
+      <td>Keyboard navigation focus rings or search result highlights.</td>
+    </tr>
+  </tbody>
+</table>
+
+> **Semantic Integrity:**
+> 
+>   The Selection namespace is designed to be subtle. While `action.fill.primary` might be a bold brand color, `faColors.selection.fill` is often a tinted or softer shade to ensure that multiple selected items do not overwhelm the user's eye.
+
+### Design Intent
+
+Selection tokens are the backbone of data-heavy Enterprise applications. By using this dedicated namespace, you ensure that the "Selection" state is architecturally separated from "Active Interaction" states, allowing for more granular control over complex data visualization.
