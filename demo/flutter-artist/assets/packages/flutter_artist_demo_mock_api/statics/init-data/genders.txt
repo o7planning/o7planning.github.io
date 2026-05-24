@@ -1,5 +1,0 @@
-
-#Code, Name
-
-M; Male
-F; Female
