@@ -1,0 +1,40 @@
+## faColors.input.stroke.focusedError
+
+Token `faColors.input.stroke.focusedError` xác định màu sắc đường viền bao quanh cho ô nhập liệu khi nó đồng thời vừa chứa lỗi dữ liệu (validation error), vừa đang nhận tiêu điểm bàn phím (focus) từ người dùng.
+
+### Logic kỹ thuật
+
+Trong kiến trúc **Fill - Ink - Stroke**, `faColors.input.stroke.focusedError` xử lý một giao điểm trạng thái tương tác cực kỳ quan trọng. Nó liên kết trực tiếp với mã màu lỗi ngữ nghĩa (error) của hệ thống trong FaColorGraph. Khi người dùng click vào một ô đang sai thông tin để sửa lại, token này đảm bảo đường viền vẫn giữ nguyên bản sắc cảnh báo lỗi thay vì bị đè bởi màu focus thương hiệu thông thường, giúp duy trì bối cảnh trạng thái rõ ràng suốt quá trình chỉnh sửa.
+
+> **Quy tắc lỗi kiên định:**
+> 
+>   Trạng thái biểu mẫu tuyệt đối không được nhập nhằng. Khi một ô lỗi được chọn, hãy kết hợp token này với trọng số nét viền dày hơn (ví dụ: 2.0 logical pixels). Đường biên dày mang tính ngữ nghĩa này vừa nhắc nhở người dùng rằng dữ liệu hiện tại vẫn chưa hợp lệ, vừa cung cấp phản hồi cấu trúc của một tiêu điểm bàn phím đang hoạt động.
+
+### Ví dụ triển khai
+
+
+```dart
+// Cấu hình các bộ viền kiểm tra lỗi và tiêu điểm trong phạm vi thiết lập ô nhập liệu
+TextField(
+  enabled: true,
+  decoration: InputDecoration(
+    filled: true,
+    fillColor: context.faColors.input.fill.enabled,
+    // Đường viền stroke được dùng khi ô nhập liệu ĐANG CÓ LỖI và ĐANG ĐƯỢC FOCUS để sửa
+    focusedErrorBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: context.faColors.input.stroke.focusedError,
+        width: 2.0, // Áp dụng nét dày khi đang focus sửa lỗi để nhấn mạnh cấu trúc
+      ),
+    ),
+    errorBorder: OutlineInputBorder(
+      borderSide: BorderSide(
+        color: context.faColors.input.stroke.error,
+        width: 1.0,
+      ),
+    ),
+  ),
+)
+```
+
+*Ghi chú: Trong FaColorGraph, `faColors.input.stroke.focusedError` liên kết trực tiếp với thuộc tính scheme.error của theme, duy trì tính kỷ luật của trạng thái thị giác bên cạnh các đường viền focus ở cả môi trường Sáng và Tối.*

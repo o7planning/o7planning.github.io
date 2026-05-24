@@ -1,0 +1,41 @@
+## faColors.bar.strong
+
+The `faColors.bar.strong` token defines a high-contrast background color for prominent bars, such as side navigation rails, heavy toolbars, or footer bars that require a clear visual "weight" to ground the interface.
+
+### Technical Logic
+
+Under the **Surface - Ink - Stroke** architecture, `faColors.bar.strong` provides the highest structural contrast within the Bar namespace. It is strategically tuned to be darker (in light mode) or more saturated (in dark mode) than the surrounding surfaces, ensuring that the navigation or control anchor remains unmistakable even in complex, data-heavy layouts.
+
+> **Structural Grounding:**
+> 
+>   Use this token for components that act as the "skeleton" of your app, such as a Left Navigation Bar or a Bottom Action Bar. Its "strong" nature helps users mentally categorize the area as a persistent control zone rather than a content area.
+
+### Implementation Example
+
+
+```dart
+// Implementing a Strong Side Navigation Rail
+Container(
+  width: 72,
+  decoration: BoxDecoration(
+    // The high-contrast strong bar background
+    color: context.faColors.bar.strong,
+    border: Border(
+      right: BorderSide(color: context.faColors.stroke.subtle),
+    ),
+  ),
+  child: Column(
+    children: [
+      const SizedBox(height: 20),
+      Icon(Icons.dashboard_rounded, color: context.faColors.ink.onSecondaryFill),
+      const SizedBox(height: 32),
+      Icon(Icons.analytics_outlined, color: context.faColors.ink.muted),
+      const Spacer(),
+      Icon(Icons.settings_suggest, color: context.faColors.ink.muted),
+      const SizedBox(height: 20),
+    ],
+  ),
+)
+```
+
+*Note: In the FaColorGraph, `faColors.bar.strong` often leans towards a deeper neutral or a solid brand variant to establish a firm visual hierarchy.*
