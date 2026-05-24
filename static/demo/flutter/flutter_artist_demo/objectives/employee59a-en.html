@@ -1,0 +1,22 @@
+<h3>Field-Based JSON & Independent Cascading Filters</h3>
+<p>
+  This example demonstrates an advanced filtering architecture using <b>Field-Based JSON</b>,
+  allowing multiple independent instances of parent-child relationships within a single filter model.
+</p>
+
+<ul>
+  <li><b>Template-Based Independence:</b> Although <b>Company</b> and <b>Department</b> relationships
+  are defined once in the template, they are instantiated as independent pairs (e.g., <code>company~1/department~1</code>
+  and <code>company~2/department~2</code>) on the UI.</li>
+  <li><b>Isolated Reactivity:</b> Changing the selection on <code>company~1</code> triggers a data
+  reload for <code>department~1</code> only. This isolation ensures that interacting with one
+  cascading pair does not affect the state or data of another, even if they share the same base logic.</li>
+  <li><b>Unified Server Query:</b> All independent criteria are bundled into a <b>Field-Based JSON</b>
+  structure and sent to the server. This allows the backend to handle complex, multi-layered
+  filtering logic in a single request via the <code>performQuery()</code> method.</li>
+</ul>
+
+<p><i>Technical Focus: Mastering isolated cascading logic and Field-Based JSON for high-density,
+complex filtering interfaces.</i></p>
+<p>Check the <code>defineFilterModelStructure</code> in <b>Related Documentation</b> to see how
+these independent tilde-criteria are mapped.</p>

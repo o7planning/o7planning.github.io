@@ -1,0 +1,21 @@
+<h3>Tải xuống không gián đoạn với BackgroundWebDownloadAction</h3>
+<p>
+  Ví dụ này minh họa <b>BackgroundWebDownloadAction</b>, một cơ chế chuyên biệt dành cho
+  Flutter Web cho phép người dùng tải tệp xuống thông qua trình duyệt mà không làm gián đoạn
+  các tương tác với ứng dụng.
+</p>
+
+<ul>
+  <li><b>Thực thi trong nền:</b> Khác với các hành động tiêu chuẩn có thể sử dụng lớp phủ (overlay),
+  hành động này chạy "ngầm". Điều này có nghĩa là giao diện vẫn phản hồi hoàn toàn trong khi
+  trình duyệt xử lý việc truyền tải tệp.</li>
+  <li><b>Tích hợp trình duyệt:</b> Nó tận dụng khả năng tải xuống gốc của trình duyệt,
+  đảm bảo quá trình tải xuống (tiến trình, hoàn tất và lưu tệp) quen thuộc với
+  người dùng và được quản lý hiệu quả bởi môi trường web.</li>
+  <li><b>Bộ thực thi ngầm của FlutterArtist:</b> Cho thấy cách sử dụng
+  <code>backgroundExecutor</code> để kích hoạt hành động theo kiểu "fire-and-forget",
+  để <b>Action</b> tự xử lý logic <code>performDownload()</code> và đặt tên tệp một cách độc lập.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ việc tải tệp bất đồng bộ trong Flutter Web bằng cách sử dụng các hành động chạy ngầm để duy trì trải nghiệm người dùng mượt mà và hiệu năng cao.</i></p>
+<p>Vui lòng xem cách triển khai <code>_downloadImage</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cách kích hoạt hành động chạy ngầm.</p>

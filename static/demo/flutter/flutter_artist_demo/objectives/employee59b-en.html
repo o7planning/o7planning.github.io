@@ -1,0 +1,22 @@
+<h3>Advanced Field-Based JSON: Control Default Policies</h3>
+<p>
+  This example extends the <b>Field-Based JSON</b> architecture by demonstrating how to
+  finely control default value behavior using <code>DefaultSettingPolicy</code> across
+  independent cascading pairs.
+</p>
+
+<ul>
+  <li><b>Independent Cascading Logic:</b> Like example 59a, it maintains two isolated
+  Parent-Child pairs (<code>company~1/department~1</code> and <code>company~2/department~2</code>)
+  within a single model.</li>
+  <li><b>Dynamic Re-initialization (~1):</b> For the first pair, <code>DefaultSettingPolicy.onEveryLoad</code>
+  is applied. Whenever <b>company~1</b> changes, <b>department~1</b> is automatically
+  re-assigned its first available value, ensuring a continuous valid state.</li>
+  <li><b>Initial-Only Initialization (~2):</b> The second pair demonstrates the default
+  behavior (<code>onInitialOnly</code>). Default values are set only when the example starts.
+  If <b>company~2</b> changes later, <b>department~2</b> will remain empty, allowing
+  the user to make a fresh choice.</li>
+</ul>
+
+<p><i>Technical Focus: Mastering <code>DefaultSettingPolicy</code> within <code>TildeCriterionConfig</code> to customize the reset behavior of dependent filters.</i></p>
+<p>Check <code>defineFilterModelStructure</code> in <b>Related Documentation</b> to compare the Tilde configs.</p>

@@ -1,0 +1,20 @@
+<h3>Infinite Scroll with Sentinel Trigger Strategy</h3>
+<p>
+  This example demonstrates the <b>Sentinel Trigger</b> technique for infinite scrolling—a robust
+  strategy that leverages Flutter's lazy-rendering to automate data fetching.
+</p>
+
+<ul>
+  <li><b>The Sentinel Principle:</b> A special "sentinel" widget is appended to the end of the
+  list. Because <code>ListView.builder</code> only renders visible items, the act of
+  scrolling the sentinel into view automatically triggers the background loading logic.</li>
+  <li><b>Frictionless Loading:</b> By utilizing <code>Future.microtask()</code> within the
+  sentinel's build cycle, the <b>Block</b> initiates a <code>queryMore()</code> call safely,
+  ensuring no frame drops or build-phase conflicts.</li>
+  <li><b>Dynamic UI Feedback:</b> The sentinel is not just a trigger; it also serves as a
+  <b>CustomPaginationLoading</b> widget, providing immediate visual feedback to the user
+  that more content is on its way.</li>
+</ul>
+
+<p><i>Technical Focus: Implementing self-triggering pagination using the Sentinel pattern for cleaner, more declarative scroll logic.</i></p>
+<p>Check the <code>itemBuilder</code> logic in <b>Related Documentation</b> to see how the sentinel is integrated.</p>

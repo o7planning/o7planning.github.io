@@ -1,0 +1,20 @@
+<h3>Programmatic Form Patching with FormInput</h3>
+<p>
+  This example demonstrates how to use <b>FormInput</b> to programmatically update or "patch"
+  multiple fields within a <b>FormModel</b>, bypassing manual user entry.
+</p>
+
+<ul>
+  <li><b>Automated Data Entry:</b> Shows how <code>formModel.patchFormFields()</code> can
+  take a <code>Supplier26aFormInput</code> object and automatically fill corresponding
+  UI components (TextFields, Dropdowns, etc.) with new values.</li>
+  <li><b>Intelligent Data Mapping:</b> The <code>extractUpdateValuesForSimpleProps</code>
+  method illustrates how raw input data is mapped to specific form properties,
+  ensuring the internal state remains consistent with the visual representation.</li>
+  <li><b>Complex Object Resolution:</b> Demonstrates how to use a simple code
+  (e.g., "DI") from the input to automatically find and select the correct complex
+  object (<code>SupplierTypeInfo</code>) within a dropdown via <code>extractUpdateValueForMultiOptProp</code>.</li>
+</ul>
+
+<p><i>Technical Focus: Mastering programmatic form manipulation for advanced UX scenarios like auto-fill or external data integration.</i></p>
+<p>Check the <code>_patchFormFields26a</code> logic in <b>Related Documentation</b> to see the "magic" in action.</p>

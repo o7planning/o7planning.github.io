@@ -1,0 +1,24 @@
+<h3>Đồng bộ hóa xuyên Shelf với ExternalShelfEvents</h3>
+<p>
+  Ví dụ này minh họa một mô hình kiến trúc phức tạp, nơi hai <b>Shelf</b> độc lập giao tiếp
+  với nhau thông qua các sự kiện để duy trì tính nhất quán dữ liệu trên toàn ứng dụng.
+</p>
+
+<ul>
+  <li><b>Kiến trúc tách rời (Decoupled):</b> <code>Supplier27aShelf</code> (danh sách) và
+  <code>SingleSupplierShelf</code> (form chỉnh sửa) hoàn toàn tách biệt. Sự tách rời này
+  cho phép mỗi thành phần giữ được sự tinh gọn và khả năng tái sử dụng cao.</li>
+  <li><b>Phát sự kiện (Emitter):</b> <code>SingleSupplierBlock</code> được cấu hình với
+  <code>emitExternalShelfEvents: [Event(SupplierData)]</code>. Bất cứ khi nào một nhà cung cấp
+  được lưu hoặc sửa đổi, nó sẽ phát đi một tín hiệu tới toàn bộ ứng dụng.</li>
+  <li><b>Phản ứng cấp Block (Recipient):</b> <code>Supplier27aBlock</code> đóng vai trò là trình
+  lắng nghe thông qua <code>blockLevelReactionOn: [Event(SupplierData)]</code>. Khi nhận được
+  sự kiện, nó sẽ tự động truy vấn lại dữ liệu để phản ánh những thay đổi đã thực hiện từ shelf bên kia.</li>
+  <li><b>Mô hình Coordinator:</b> Nhấn mạnh việc sử dụng <code>Coordinator</code> để kết nối
+  hai bên. Nó xử lý việc chuẩn bị (truy vấn mục cụ thể) và điều hướng giữa shelf danh sách và shelf form.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ việc giao tiếp xuyên shelf và tận dụng blockLevelReactionOn
+để tự động làm mới dữ liệu trong các hệ thống phân tán phản xạ (reactive).</i></p>
+<p>Vui lòng xem <code>ExternalShelfEventBlockRecipient</code> trong phần <b>Bài viết liên quan</b>
+để hiểu cách cấu hình trình lắng nghe bên trong BlockConfig.</p>

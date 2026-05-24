@@ -1,0 +1,20 @@
+<h3>Infinite Scroll Pagination with NotificationListener</h3>
+<p>
+  This example demonstrates the <b>Infinite Scroll</b> pattern, providing a fluid and
+  uninterrupted browsing experience commonly found in modern social media and mobile apps.
+</p>
+
+<ul>
+  <li><b>Dynamic Content Loading:</b> Instead of clicking page numbers, data is fetched
+  automatically as the user reaches the end of the list. This creates a seamless flow
+  that encourages continuous content discovery.</li>
+  <li><b>Scroll Event Detection:</b> By utilizing <code>NotificationListener&lt;ScrollEndNotification&gt;</code>,
+  the system intelligently detects when the user has hit the <code>maxScrollExtent</code>
+  to trigger the next data fetch.</li>
+  <li><b>Efficient Data Appending:</b> Leverages the <code>block.queryMore()</code> method
+  to retrieve the next batch of records and append them to the current list without
+  re-rendering existing items, ensuring high performance.</li>
+</ul>
+
+<p><i>Technical Focus: Integrating Flutter's scroll notifications with Block's pagination API to achieve a high-performance infinite list.</i></p>
+<p>Refer to <code>_onScrollEndNotification</code> in <b>Related Documentation</b> to see the reach-bottom detection logic.</p>

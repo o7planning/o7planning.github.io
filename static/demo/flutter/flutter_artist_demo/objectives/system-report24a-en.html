@@ -1,0 +1,23 @@
+<h3>Reactive Statistics with Scalar-Level Event Listening</h3>
+<p>
+  This example demonstrates how a <b>Scalar</b> (representing summary data or statistics)
+  reactively updates itself in response to events triggered by external <b>Blocks</b>.
+</p>
+
+<ul>
+  <li><b>Cross-Shelf Statistics Sync:</b> <code>SystemReport24aScalar</code> manages global
+  counts (Employees, Suppliers, Products). It needs to stay accurate even when data is
+  modified in a completely different part of the system like <code>SingleSupplierShelf</code>.</li>
+  <li><b>Scalar-Level Reaction:</b> Using <code>scalarLevelReactionOn: [Event(SupplierData)]</code>,
+  the Scalar becomes an observer. The moment a new supplier is created, the Scalar
+  intercepts the event and triggers its own <code>performQuery()</code> to fetch updated counts.</li>
+  <li><b>Event Broadcaster:</b> Reinforces the <code>SingleSupplierBlock</code> role as an
+  emitter. By broadcasting <code>SupplierData</code> events, it ensures that all interested
+  components—whether they are Lists (Blocks) or Stats (Scalars)—can react accordingly.</li>
+  <li><b>Dashboard Integration Pattern:</b> Highlights a professional pattern for building
+  real-time Dashboards where summary widgets automatically reflect granular data changes
+  without manual page reloads.</li>
+</ul>
+
+<p><i>Technical Focus: Implementing high-performance reactive dashboards by bridging Block-level actions with Scalar-level event recipients.</i></p>
+<p>Refer to <code>ExternalShelfEventScalarRecipient</code> in <b>Related Documentation</b> to see the listener configuration for Scalars.</p>

@@ -1,0 +1,21 @@
+<h3>Phân trang bằng mã & Kiểm soát tùy chỉnh</h3>
+<p>
+  Ví dụ này minh họa cách tương tác thủ công với <b>Pagination API</b> của một Block,
+  cho phép nhà phát triển xây dựng các trải nghiệm điều hướng tùy chỉnh thay vì phụ thuộc
+  vào các widget tiêu chuẩn.
+</p>
+
+<ul>
+  <li><b>API phân trang của Block:</b> Khám phá các phương thức cốt lõi để điều hướng dữ liệu,
+  bao gồm <code>queryNextPage()</code>, <code>queryPreviousPage()</code>, và <code>queryMore()</code>.
+  Các phương thức này cung cấp quyền kiểm soát hoàn toàn việc tải dữ liệu khi nào và như thế nào.</li>
+  <li><b>Mô hình "Tải thêm":</b> Phương thức <code>queryMore()</code> làm nổi bật logic của
+  "Cuộn vô tận" (Infinite Scroll) bằng cách tải trang tiếp theo và nối trực tiếp vào danh sách hiện tại
+  thay vì thay thế toàn bộ danh sách.</li>
+  <li><b>Theo dõi Metadata thời gian thực:</b> Cho thấy cách truy cập <code>Block.paginationInfo</code>
+  để hiển thị các thông số quan trọng như Tổng số mục, Trang hiện tại và Tổng số trang, giúp
+  người dùng luôn nắm bắt được ngữ cảnh dữ liệu.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Tương tác trực tiếp với các phương thức phân trang của Block và giám sát metadata phân trang để tích hợp UI tùy chỉnh.</i></p>
+<p>Vui lòng xem <code>Teacher15aPaginationCtrl</code> trong phần <b>Bài viết liên quan</b> để tìm hiểu cách triển khai các hành động phân trang thủ công.</p>

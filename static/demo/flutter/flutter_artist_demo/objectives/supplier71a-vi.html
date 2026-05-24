@@ -1,0 +1,23 @@
+<h3>Trì hoãn & Tối ưu hóa Sự kiện ExternalShelfEvent(s)</h3>
+<p>
+  Ví dụ này minh họa một kỹ thuật tối ưu hóa hiệu năng cao: <b>Trì hoãn Sự kiện ExternalShelfEvent(s)</b>.
+  Nó tập trung vào việc các sự kiện được tổng hợp và chỉ kích hoạt khi <b>EndDrawer</b> bị đóng lại.
+</p>
+
+<ul>
+  <li><b>Mô hình Trì hoãn Sự kiện:</b> Thay vì phát đi tín hiệu ngay lập tức cho mỗi thay đổi dữ liệu,
+  các sự kiện được đưa vào hàng đợi trong khi <b>EndDrawer</b> vẫn đang mở. Điều này ngăn chặn
+  việc UI bị giật và lãng phí tài nguyên xử lý trong quá trình chỉnh sửa.</li>
+  <li><b>Tổng hợp khi Đóng:</b> Trọng tâm của ví dụ là <b>Logic Tổng hợp</b>. Khi EndDrawer được
+  đóng lại, FlutterArtist thu thập tất cả các sự kiện đang chờ, loại bỏ các mục trùng lặp và
+  thực thi chúng đồng thời theo lô (batch).</li>
+  <li><b>Hiệu suất Mạng & CPU:</b> Bằng cách xử lý phản ứng theo lô (ví dụ: gộp nhiều cập nhật
+  SupplierData thành một lần xử lý), hệ thống giảm thiểu đáng kể tải trọng lên API và số lượng
+  truy vấn lại của các Block nhận tin.</li>
+  <li><b>Triển khai thực tế:</b> Minh họa cách sử dụng
+  <code>openEndDrawerAndDeferExternalShelfEventsUntilClosed()</code>, một phương thức chiến lược
+  để quản lý vòng đời sự kiện trong các quy trình làm việc với bảng điều khiển cạnh (side-panel).</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ việc tổng hợp sự kiện khi đóng EndDrawer để xây dựng các hệ thống doanh nghiệp phản xạ và tối ưu hóa cực độ.</i></p>
+<p>Lưu ý: Ví dụ tiếp theo (<b>supplier71b</b>) sẽ minh họa cơ chế trì hoãn tương tự áp dụng cho <b>Dialog</b>.</p>

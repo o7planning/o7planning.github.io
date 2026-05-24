@@ -1,0 +1,28 @@
+<h3>Field-Based JSON: Một Cha, Nhiều Con phụ thuộc</h3>
+<p>
+  Ví dụ này minh họa một cấu trúc ánh xạ <b>Cha-Con</b> tinh vi, nơi nhiều tiêu chí con
+  độc lập cùng chia sẻ và phản ứng với một tiêu chí cha duy nhất.
+</p>
+
+<ul>
+  <li><b>Chia sẻ ngữ cảnh Cha:</b> Thông qua cấu hình <code>parentMatchSuffix: "~"</code>,
+  cả <code>department~1</code> và <code>department~2</code> đều được liên kết với
+  <code>company~</code>. Bất kỳ thay đổi nào ở Công ty cũng sẽ kích hoạt việc làm mới
+  dữ liệu đồng thời cho cả hai ô nhập liệu Phòng ban.</li>
+  <li><b>Chính sách mặc định khác biệt:</b> Ví dụ phô diễn sự kết hợp linh hoạt các hành vi:
+    <ul>
+      <li><b>department~1 (onEveryLoad):</b> Tự động chọn lại phòng ban đầu tiên mỗi khi
+      Công ty thay đổi, duy trì trạng thái chọn lựa hợp lệ liên tục.</li>
+      <li><b>department~2 (onInitialOnly):</b> Chỉ thiết lập giá trị mặc định trong lần tải đầu tiên.
+      Các thay đổi Công ty sau đó sẽ để trống ô nhập liệu này, yêu cầu người dùng tự chọn thủ công.</li>
+    </ul>
+  </li>
+  <li><b>Luồng dữ liệu tối ưu:</b> Cả ba tiêu chí được đóng gói vào một
+  <b>Field-Based JSON</b> duy nhất, cho phép máy chủ xử lý logic điều kiện "AND (OR)"
+  phức tạp đã định nghĩa trong <code>FilterConditionStructure</code>.</li>
+</ul>
+
+<p><i>Trọng tâm kỹ thuật: Làm chủ <code>parentMatchSuffix</code> cho các phụ thuộc chia sẻ
+và kết hợp <code>DefaultSettingPolicy</code> cho các yêu cầu UX đa dạng.</i></p>
+<p>Vui lòng xem <code>TildeCriterionConfig</code> trong phần <b>Bài viết liên quan</b> để
+tìm hiểu cách cấu hình ánh xạ chia sẻ này.</p>

@@ -1,0 +1,110 @@
+{
+   "pagination": {
+      "currentPage": 1,
+      "pageSize": 20,
+      "totalItems": 29,
+      "totalPages": 2
+   },
+   "items": [
+      {
+         "id": "USD",
+         "symbol": "$",
+         "name": "US Dollar"
+      },
+      {
+         "id": "EUR",
+         "symbol": "€",
+         "name": "Euro"
+      },
+      {
+         "id": "JPY",
+         "symbol": "¥",
+         "name": "Japanese Yen"
+      },
+      {
+         "id": "GBP",
+         "symbol": "£",
+         "name": "Pound Sterling"
+      },
+      {
+         "id": "AUD",
+         "symbol": "$",
+         "name": "Australian Dollar"
+      },
+      {
+         "id": "CAD",
+         "symbol": "$",
+         "name": "Canadian Dollar"
+      },
+      {
+         "id": "CHF",
+         "symbol": "Fr",
+         "name": "Swiss Franc"
+      },
+      {
+         "id": "CNH",
+         "symbol": "¥",
+         "name": "Chinese Renminbi"
+      },
+      {
+         "id": "HKD",
+         "symbol": "HK$",
+         "name": "Hong Kong Dollar"
+      },
+      {
+         "id": "NZD",
+         "symbol": "$",
+         "name": "New Zealand Dollar"
+      },
+      {
+         "id": "CRC",
+         "symbol": "₡",
+         "name": "Costa Rican Colón"
+      },
+      {
+         "id": "CZK",
+         "symbol": "Kč",
+         "name": "Czech Koruna"
+      },
+      {
+         "id": "GEL",
+         "symbol": "₾",
+         "name": "Georgian Lari"
+      },
+      {
+         "id": "GHS",
+         "symbol": "₵",
+         "name": "Ghanaian Cedi"
+      },
+      {
+         "id": "AMD",
+         "symbol": "֏",
+         "name": "Armenian Dram"
+      },
+      {
+         "id": "THB",
+         "symbol": "฿",
+         "name": "Thai Baht"
+      },
+      {
+         "id": "NGN",
+         "symbol": "₦",
+         "name": "Nigerian Naira"
+      },
+      {
+         "id": "KRW",
+         "symbol": "₩",
+         "name": "South Korean Won"
+      },
+      {
+         "id": "ILS",
+         "symbol": "₪",
+         "name": "Israeli New Shekel"
+      },
+      {
+         "id": "LAK",
+         "symbol": "₭",
+         "name": "Lao Kip"
+      }
+   ]
+}
