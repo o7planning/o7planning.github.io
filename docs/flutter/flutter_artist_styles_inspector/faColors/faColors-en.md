@@ -10,14 +10,14 @@ In Light Theme, structural surfaces remain bright, while interactive actions and
 
 | Token Namespace | Light? (Bright) | Dark? (Deep) |
 | --- | --- | --- |
-| `faColors.action.fill.primary` |  | <span class="check-mark">&#10004;</span> |
-| `faColors.action.fill.reversePrimary` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.action.ink.primary` |  | <span class="check-mark">&#10004;</span> |
-| `faColors.action.ink.onPrimaryFill` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.surface.standard` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.bar.standard` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.ink.primary` |  | <span class="check-mark">&#10004;</span> |
-| `faColors.stroke.subtle` |  | <span class="check-mark">&#10004;</span> |
+| `faColors.action.fill.primary` |  | &#10004; |
+| `faColors.action.fill.reversePrimary` | &#10004; |  |
+| `faColors.action.ink.primary` |  | &#10004; |
+| `faColors.action.ink.onPrimaryFill` | &#10004; |  |
+| `faColors.surface.standard` | &#10004; |  |
+| `faColors.bar.standard` | &#10004; |  |
+| `faColors.ink.primary` |  | &#10004; |
+| `faColors.stroke.subtle` |  | &#10004; |
 
 ### 2. Three Action Design Patterns
 

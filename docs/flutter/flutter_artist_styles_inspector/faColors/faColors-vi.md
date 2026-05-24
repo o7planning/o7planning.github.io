@@ -10,14 +10,14 @@ Trong Light Theme, quy tắc mặc định là: Bề mặt lớn thì Sáng, hà
 
 | Token Namespace | Nhạt? (Sáng) | Đậm? (Tối) |
 | --- | --- | --- |
-| `faColors.action.fill.primary` |  | <span class="check-mark">&#10004;</span> |
-| `faColors.action.fill.reversePrimary` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.action.ink.primary` |  | <span class="check-mark">&#10004;</span> |
-| `faColors.action.ink.onPrimaryFill` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.surface.ground` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.bar.standard` | <span class="check-mark">&#10004;</span> |  |
-| `faColors.ink.primary` |  | <span class="check-mark">&#10004;</span> |
-| `faColors.stroke.strong` |  | <span class="check-mark">&#10004;</span> |
+| `faColors.action.fill.primary` |  | &#10004; |
+| `faColors.action.fill.reversePrimary` | &#10004; |  |
+| `faColors.action.ink.primary` |  | &#10004; |
+| `faColors.action.ink.onPrimaryFill` | &#10004; |  |
+| `faColors.surface.ground` | &#10004; |  |
+| `faColors.bar.standard` | &#10004; |  |
+| `faColors.ink.primary` |  | &#10004; |
+| `faColors.stroke.strong` |  | &#10004; |
 
 ### 2. Ba chiến lược kết hợp màu (Action Namespace)
 
