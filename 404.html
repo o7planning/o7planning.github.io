@@ -7,13 +7,13 @@
         (function() {
             var currentUrl = window.location.href;
             var targetPrefix = "https://o7planning.github.io/demo/flutter/flutter_artist_demo/";
-            var stylesDemoPrefix = "https://o7planning.github.io/demo/flutter_artist_styles_demo/";
-            var dioDemoPrefix = "https://o7planning.github.io/demo/flutter_artist_dio_demo/";
+            var stylesDemoPrefix = "https://o7planning.github.io/demo/flutter_artist_styles_demo";
+            var dioDemoPrefix = "https://o7planning.github.io/demo/flutter_artist_dio_demo";
 
-            if(currentUrl == stylesDemoPrefix) {
+            if(currentUrl == stylesDemoPrefix || currentUrl == stylesDemoPrefix + "/") {
                 window.location.replace("https://o7planning.github.io/demo/flutter/flutter_artist_styles_demo/");
                 return;
-            } else if(currentUrl == dioDemoPrefix) {
+            } else if(currentUrl == dioDemoPrefix || currentUrl == dioDemoPrefix + "/") {
                 window.location.replace("https://o7planning.github.io/demo/flutter/flutter_artist_dio_demo/");
                 return;
             } else if (currentUrl.indexOf(targetPrefix) !== -1) {
@@ -22,6 +22,7 @@
             } else {
                 document.write('<h1>404 Not Found</h1><p>The requested page was not found on this server.</p>');
                 document.write('<a href="/">Go to Home</a>');
+                return;
             }
         })();
     </script>
