@@ -172878,9 +172878,9 @@
             case 0:
               // Function start
               A.print("Base URL: https://o7planning.github.io");
-              A.print(" - Path: /static/demo/flutter_artist_dio_demo/json/currency-infos.json");
+              A.print(" - Path: /static/demo/flutter/flutter_artist_dio_demo/json/currency-infos.json");
               $async$goto = 3;
-              return A._asyncAwait($.$get$flutterArtistDio().jsonGet$1$3$converter$queryParameters("/static/demo/flutter_artist_dio_demo/json/currency-infos.json", A.model_CurrencyInfoPage___fromJson_tearOff$closure(), A.LinkedHashMap_LinkedHashMap$_empty(type$.String, type$.dynamic), type$.CurrencyInfoPage), $async$query$1$pageable);
+              return A._asyncAwait($.$get$flutterArtistDio().jsonGet$1$3$converter$queryParameters("/static/demo/flutter/flutter_artist_dio_demo/json/currency-infos.json", A.model_CurrencyInfoPage___fromJson_tearOff$closure(), A.LinkedHashMap_LinkedHashMap$_empty(type$.String, type$.dynamic), type$.CurrencyInfoPage), $async$query$1$pageable);
             case 3:
               // returning from await.
               $async$returnValue = $async$result;
@@ -172909,7 +172909,7 @@
             case 0:
               // Function start
               $async$goto = 3;
-              return A._asyncAwait($.$get$flutterArtistDio().jsonGet$1$3$converter$queryParameters("/static/demo/flutter_artist_dio_demo/json/" + currencyId + ".json", A.model_CurrencyData___fromJson_tearOff$closure(), A.LinkedHashMap_LinkedHashMap$_empty(type$.String, type$.dynamic), type$.CurrencyData), $async$find$1$currencyId);
+              return A._asyncAwait($.$get$flutterArtistDio().jsonGet$1$3$converter$queryParameters("/static/demo/flutter/flutter_artist_dio_demo/json/" + currencyId + ".json", A.model_CurrencyData___fromJson_tearOff$closure(), A.LinkedHashMap_LinkedHashMap$_empty(type$.String, type$.dynamic), type$.CurrencyData), $async$find$1$currencyId);
             case 3:
               // returning from await.
               $async$returnValue = $async$result;

@@ -1,11 +1,11 @@
 {
-    "name": "flutter_artist_dio_demo",
-    "short_name": "flutter_artist_dio_demo",
+    "name": "flutter_artist_demo",
+    "short_name": "flutter_artist_demo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "FlutterArtist Dio Demo",
+    "description": "Flutter Artist Demo",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
