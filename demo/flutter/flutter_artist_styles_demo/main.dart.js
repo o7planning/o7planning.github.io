@@ -183621,7 +183621,7 @@
     },
     build$1(context) {
       $.$get$demoThemeController();
-      return new A.MaterialApp(B.ShowcaseScreen_null, "FaColors Adaptive System Demo", A.ThemeData_ThemeData(B.Brightness_1, B.ColorScheme_B5Z, null, null, true), false, null);
+      return new A.MaterialApp(B.ShowcaseScreen_null, "FaColors Adaptive System Demo", A.ThemeData_ThemeData(B.Brightness_1, B.ColorScheme_u1M, null, null, true), false, null);
     }
   };
   A._FaColorsDemoAppState__onThemeChanged_closure.prototype = {
@@ -202043,17 +202043,8 @@
     B.TextStyle_h0j = new A.TextStyle(true, null, B.Color_vNQ, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
     B.CodeConfig_Crs = new A.CodeConfig(B.TextStyle_h0j);
     B.ColorFilterType_1 = new A.ColorFilterType(1, "matrix");
-    B.Color_O8T = new A.Color(1, 0.20784313725490197, 0.3607843137254902, 0.6588235294117647, B.ColorSpace_0);
-    B.Color_wst = new A.Color(1, 1, 1, 1, B.ColorSpace_0);
-    B.Color_iTC = new A.Color(1, 0.023529411764705882, 0.7137254901960784, 0.8313725490196079, B.ColorSpace_0);
-    B.Color_Qhj = new A.Color(1, 0.8627450980392157, 0.14901960784313725, 0.14901960784313725, B.ColorSpace_0);
-    B.Color_Yla = new A.Color(1, 0.9725490196078431, 0.9803921568627451, 0.9882352941176471, B.ColorSpace_0);
-    B.Color_Oq9 = new A.Color(1, 0.058823529411764705, 0.09019607843137255, 0.16470588235294117, B.ColorSpace_0);
-    B.Color_uRq = new A.Color(1, 0.8862745098039215, 0.9098039215686274, 0.9411764705882353, B.ColorSpace_0);
-    B.Color_CUp = new A.Color(1, 0.2784313725490196, 0.3333333333333333, 0.4117647058823529, B.ColorSpace_0);
-    B.Color_xBM = new A.Color(1, 0.9450980392156862, 0.9607843137254902, 0.9764705882352941, B.ColorSpace_0);
-    B.ColorScheme_B5Z = new A.ColorScheme(B.Brightness_1, B.Color_O8T, B.Color_wst, null, null, null, null, null, null, B.Color_iTC, B.Color_vnR, null, null, null, null, null, null, null, null, null, null, null, null, null, null, B.Color_Qhj, B.Color_wst, null, null, B.Color_Yla, B.Color_Oq9, null, null, null, B.Color_wst, B.Color_Yla, B.Color_uRq, null, null, B.Color_CUp, null, null, null, null, null, null, null, null, B.Color_xBM, B.Color_vnR);
     B.Color_atC = new A.Color(1, 0.403921568627451, 0.3137254901960784, 0.6431372549019608, B.ColorSpace_0);
+    B.Color_wst = new A.Color(1, 1, 1, 1, B.ColorSpace_0);
     B.Color_WQu = new A.Color(1, 0.9176470588235294, 0.8666666666666667, 1, B.ColorSpace_0);
     B.Color_zc9 = new A.Color(1, 0.30980392156862746, 0.21568627450980393, 0.5450980392156862, B.ColorSpace_0);
     B.Color_NCR = new A.Color(1, 0.8156862745098039, 0.7372549019607844, 1, B.ColorSpace_0);
@@ -202098,6 +202089,17 @@
     B.Color_7Kv = new A.Color(1, 0.21176470588235294, 0.20392156862745098, 0.23137254901960785, B.ColorSpace_0);
     B.Color_1Cl = new A.Color(1, 0.5764705882352941, 0.5607843137254902, 0.6, B.ColorSpace_0);
     B.ColorScheme_NQE = new A.ColorScheme(B.Brightness_0, B.Color_NCR, B.Color_JT9, B.Color_zc9, B.Color_WQu, B.Color_WQu, B.Color_NCR, B.Color_nNC, B.Color_zc9, B.Color_T8U, B.Color_Oip, B.Color_v8D, B.Color_vh0, B.Color_vh0, B.Color_T8U, B.Color_I89, B.Color_v8D, B.Color_Nfe, B.Color_5Hl, B.Color_ASe, B.Color_BQC, B.Color_BQC, B.Color_Nfe, B.Color_Pho, B.Color_ASe, B.Color_4Am, B.Color_gDk, B.Color_h6L, B.Color_NS2, B.Color_gPD, B.Color_eHU, B.Color_P7g, B.Color_gPD, B.Color_Kb2, B.Color_ayE, B.Color_F6m, B.Color_088, B.Color_qgx, B.Color_7Kv, B.Color_EZ2, B.Color_1Cl, B.Color_P7g, B.Color_vnR, B.Color_vnR, B.Color_eHU, B.Color_xxB, B.Color_atC, B.Color_NCR, B.Color_gPD, B.Color_eHU);
+    B.Color_O8T = new A.Color(1, 0.20784313725490197, 0.3607843137254902, 0.6588235294117647, B.ColorSpace_0);
+    B.Color_iTC = new A.Color(1, 0.023529411764705882, 0.7137254901960784, 0.8313725490196079, B.ColorSpace_0);
+    B.Color_Qhj = new A.Color(1, 0.8627450980392157, 0.14901960784313725, 0.14901960784313725, B.ColorSpace_0);
+    B.Color_xBM = new A.Color(1, 0.9450980392156862, 0.9607843137254902, 0.9764705882352941, B.ColorSpace_0);
+    B.Color_Oq9 = new A.Color(1, 0.058823529411764705, 0.09019607843137255, 0.16470588235294117, B.ColorSpace_0);
+    B.Color_uRq = new A.Color(1, 0.8862745098039215, 0.9098039215686274, 0.9411764705882353, B.ColorSpace_0);
+    B.Color_BP3 = new A.Color(1, 0.796078431372549, 0.8352941176470589, 0.8823529411764706, B.ColorSpace_0);
+    B.Color_oyQ = new A.Color(1, 0.5803921568627451, 0.6392156862745098, 0.7215686274509804, B.ColorSpace_0);
+    B.Color_CUp = new A.Color(1, 0.2784313725490196, 0.3333333333333333, 0.4117647058823529, B.ColorSpace_0);
+    B.Color_Yla = new A.Color(1, 0.9725490196078431, 0.9803921568627451, 0.9882352941176471, B.ColorSpace_0);
+    B.ColorScheme_u1M = new A.ColorScheme(B.Brightness_1, B.Color_O8T, B.Color_wst, null, null, null, null, null, null, B.Color_iTC, B.Color_vnR, null, null, null, null, null, null, null, null, null, null, null, null, null, null, B.Color_Qhj, B.Color_wst, null, null, B.Color_xBM, B.Color_Oq9, null, null, null, null, null, B.Color_uRq, B.Color_BP3, B.Color_oyQ, B.Color_CUp, null, null, null, null, null, null, null, null, B.Color_Yla, B.Color_vnR);
     B.Color_5lH = new A.Color(1, 0.8431372549019608, 0.8666666666666667, 0.8901960784313725, B.ColorSpace_0);
     B.Color_73v = new A.Color(0.4, 0.7843137254901961, 0.7843137254901961, 0.7843137254901961, B.ColorSpace_0);
     B.Color_7NB = new A.Color(1, 0.8901960784313725, 0.9490196078431372, 0.9921568627450981, B.ColorSpace_0);
