@@ -10466,7 +10466,7 @@
       "lang_code": "en",
       "description": "English Documentation Channel",
       "draft_enabled": true,
-      "draft_base_url": "http://51.195.44.134/en",
+      "draft_base_url": "http://51.195.44.134:8080/en",
       "production_enabled": true
     },
     {
@@ -23796,7 +23796,7 @@
       "lang_code": "vi",
       "description": "Kênh tài liệu Tiếng Việt",
       "draft_enabled": true,
-      "draft_base_url": "http://51.195.44.134/vi",
+      "draft_base_url": "http://51.195.44.134:8080/vi",
       "production_enabled": true
     }
   ],
