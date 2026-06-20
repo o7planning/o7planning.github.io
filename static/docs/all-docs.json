@@ -10462,11 +10462,11 @@
           "published": true
         }
       ],
-      "base_url": "https://example.com",
+      "base_url": "https://o7planning.org",
       "lang_code": "en",
       "description": "English Documentation Channel",
       "draft_enabled": true,
-      "draft_base_url": "http://draft.example.com/en",
+      "draft_base_url": "http://51.195.44.134/en",
       "production_enabled": true
     },
     {
@@ -23792,11 +23792,11 @@
           "published": true
         }
       ],
-      "base_url": "https://example.com",
+      "base_url": "https://openplanning.net",
       "lang_code": "vi",
       "description": "Kênh tài liệu Tiếng Việt",
       "draft_enabled": true,
-      "draft_base_url": "http://draft.example.com/vi",
+      "draft_base_url": "http://51.195.44.134/vi",
       "production_enabled": true
     }
   ],
